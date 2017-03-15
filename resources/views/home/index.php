@@ -1,0 +1,12 @@
+//
+resources/views/home/index.php
+<!doctype
+html>
+<html>
+<head><!-­‐-­‐
+略
+-­‐-­‐></head>
+<body>
+<h1>Home</h1>
+</body>
+</html>
