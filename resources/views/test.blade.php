@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>4 Col Portfolio - Start Bootstrap Template</title>
+    <title>爬爬爬爬爬爬</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <a class="navbar-brand" href="#">回首頁</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
        
@@ -49,10 +49,10 @@
                         <a href="#">About</a>
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        <a href="#">搜尋</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="#">拍賣</a>
                     </li>
                 </ul>
             </div>
@@ -67,8 +67,8 @@
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Page Heading
-                    <small>Secondary Text</small>
+                <h1 class="page-header">爬蟲網站名
+                    <small>%%%</small>
                 </h1>
             </div>
         </div>
