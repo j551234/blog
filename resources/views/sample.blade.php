@@ -39,7 +39,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{URL(/index)}}">回首頁</a>
+                <a class="navbar-brand" href="{{URL('/sample')}}">回首頁</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
        
@@ -49,7 +49,7 @@
                         <a href="#">About</a>
                     </li>
                     <li>
-                        <a href="#">搜尋</a>
+                        <a href="{{URL('/search')}}">搜尋</a>
                     </li>
                     <li>
                         <a href="#">拍賣</a>
@@ -107,8 +107,8 @@
                 </a>
             </div>
             <div class="col-md-3 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                <a href="https://www.google.com.tw/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwjd7NOA6ufSAhXBvLwKHWjiAJoQjRwIBw&url=https%3A%2F%2Ffree.com.tw%2F10-important-google-urls%2F&psig=AFQjCNGXNJpIu0ugIkptDwUxYox9oI1MNA&ust=1490193628363292">
+                    <img class="img-responsive" src="https://free.com.tw/blog/wp-content/uploads/2014/03/2014-03-16_1421.png" alt="">
                 </a>
             </div>
             <div class="col-md-3 portfolio-item">
