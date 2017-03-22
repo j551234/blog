@@ -6,10 +6,10 @@ use View;
 
 
 
-class sampleController extends Controller {
+class resultController extends Controller {
 public function index()
 {
- return View::make('sample');
+ return View::make('result');
 
 }
 
