@@ -6,10 +6,10 @@ use View;
 
 
 
-class HomeController extends Controller {
+class indexController extends Controller {
 public function index()
 {
-return View::make('search')
+return View::make('index');
 
 }
 }
