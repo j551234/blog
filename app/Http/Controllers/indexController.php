@@ -7,9 +7,10 @@ use View;
 
 
 class indexController extends Controller {
-public function index()
-{
-return View::make('index');
+	public function index()
+	{
+	return View::make('index');
 
-}
+	}
+ 	
 }

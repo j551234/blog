@@ -4,14 +4,20 @@ namespace App\Http\Controllers;
 use Illuminate\Routing\Controller as BaseController;
 use View;
 use App\Pixnet;
-
+use Illuminate\Http\Request;
 
 class resultController extends Controller {
-public function index()
+public function index(Request $request)
 {
-	$data=Pixnet::all();
 
-    return view('result',['data'=>$data]);
+	$search = $request->input('search');
+	
+    $pixnetdata = Pixnet::where('title','like',"%$search%")->paginate(5);
+
+  
+
+    return view('result',['pixnetdata'=>$pixnetdata],['search'=> $search]);
+
 }
 
 }

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>1 Col Portfolio - Start Bootstrap Template</title>
+    <title>結果</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <a class="navbar-brand" href="{{URL('/index')}}">Home</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -66,20 +66,20 @@
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Page Heading
-                    <small>Secondary Text</small>
+                <h1 class="page-header">搜尋結果
+                    <small>{{$search}}</small>
                 </h1>
             </div>
         </div>
         <!-- /.row -->
 
         <!-- Project One -->
-       @foreach($data as $data)
+       @foreach($pixnetdata as $data)
        
         <div class="row">
             <div class="col-md-7">
                 <a href="#">
-                    <img class="img-responsive" src="https://free.com.tw/blog/wp-content/uploads/2014/03/2014-03-16_1421.png" alt="">
+                    <img class="img-responsive" src="{{$data->article_pic}}" alt="">
                 </a>
             </div>
             <div class="col-md-5">
@@ -94,7 +94,7 @@
         <hr>
 
       <!--  -->
-
+                {{$pixnetdata->links()}}
         <!-- Pagination -->
         <div class="row text-center">
             <div class="col-lg-12">

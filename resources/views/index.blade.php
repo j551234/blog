@@ -80,8 +80,8 @@
             <div class="header-content-inner">
                 <h1 id="homeHeading">M.R. 中鑒者</h1>
                 <hr>
-                <form id="searchForm" method="get">
-                <p><input type="search"  class="searchbar" name="search" placeholder="search..."></p>
+                <form id="searchForm" method="get" action="result">
+                <p><input type="text"  class="searchbar" name="search" placeholder="search..."></p>
                 <br>
                 <input type="submit" value="Find Out" id="submitButton" class="btn btn-primary btn-xl" />
                 </form>
