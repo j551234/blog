@@ -11,13 +11,19 @@ public function index(Request $request)
 {
 
 	$search = $request->input('search');
-	
-    $pixnetdata = Pixnet::where('title','like',"%$search%")->paginate(5);
+if(($search)!=null)
+ {
+ 	$pixnetdata = Pixnet::where('title','like',"%$search%")->paginate(5);
+	if(count($pixnetdata)>0)
+    	return view('result',['pixnetdata'=>$pixnetdata],['search'=> $search]);
+	else 
+		return view('index');
+ }
 
-  
-
-    return view('result',['pixnetdata'=>$pixnetdata],['search'=> $search]);
-
+else	
+	{
+		return view('index');
+	}
 }
 
 }
