@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>搜尋結果-{{$search}}</title>
+    <title>日期排行</title>
 
    <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -49,7 +49,7 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a class="page-scroll" href="#about">About</a>
@@ -77,18 +77,51 @@
         <!-- /.container-fluid -->
     </nav>
     <header>
-        <div class="header-content">
-            <div class="header-content-inner">
-                <h1 id="homeHeading">M.R. 中鑒者</h1>
-                <hr>
+
+    <div class="header-content">
+     <div class="header-content-inner">
+             <br>
+             <br>
+             <br>
+             <div>
                 <form id="searchForm" method="get" action="result">
-                <p><input type="text"  class="searchbar" name="search" placeholder="search..."></p>
-                <br>
+                <input type="text"  class="searchbar" name="search" placeholder="search...">
                 <input type="submit" value="Find Out" id="submitButton" class="btn btn-primary btn-xl" />
                 </form>
             </div>
+    @foreach($pixnetdata as $data)
+        <div class="container-fluid">
+            <div class="row no-gutter ">
+                <div class="col-lg-4 col-sm-6">
+                    <a href="{{$data->link}}" class="portfolio-box">
+                       <img class="img-responsive" src="{{$data->article_pic}}" alt="圖片未能抓取"  width="60%">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    {{$data->title}}
+                                </div>
+                                <div class="project-name">
+                                   {{$data->date}}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+    @endforeach
+    {{$pixnetdata->links()}}
+               
+
         </div>
+     </div>
+    
     </header>
+
+
+
+
+
+
 
     <!-- Page Content -->
     <div class="container">
@@ -96,8 +129,8 @@
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">搜尋結果
-                    <small><font color="blue">{{$search}}</font></small>
+                <h1 class="page-header">all
+                    <small><font color="blue"></font></small>
                     </h1>
                    
                     
@@ -109,14 +142,14 @@
   
 
         <!-- Project One -->
-    @if(count($resultdata)>0)
+  
 
-       @foreach($resultdata as $data)
-       
+       @foreach($pixnetdata as $data)
+        <section id="services">
         <div class="row">
             <div class="col-md-7">
                 <a href="{{$data->link}}">
-                    <img class="img-responsive" src="{{$data->article_pic}}" alt="圖片未能抓取" align>
+                    <img class="img-responsive" src="{{$data->article_pic}}" alt="圖片未能抓取" width="60%">
 
                 </a>
             </div>
@@ -127,18 +160,17 @@
                 <a class="btn btn-primary" href="{{$data->link}}">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
+        </section>
         <!-- /.row -->
         @endforeach
 
-    @else
-        return view('index');
-    @endif
+   
 
 
         <hr>
 
       <!--  -->
-              {{$resultdata->links()}}
+              {{$pixnetdata->links()}}
         <!-- Pagination -->
 
 
@@ -171,6 +203,15 @@
 
     <!-- Theme JavaScript -->
     <script src="js/creative.min.js"></script>
+
+
+
+
+    <!-- div handmake -->
+
+
+
+
 </body>
 
 </html>

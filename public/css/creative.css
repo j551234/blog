@@ -445,3 +445,6 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #222222;
 }
+.divtest{ position:relative;  
+  bottom:0px;}
+.div-inline{ display:inline;} 

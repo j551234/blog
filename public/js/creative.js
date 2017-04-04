@@ -60,5 +60,8 @@
             tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
         }
     });
+     $('.popup-CLICK').magnificPopup({
+       
+    });
 
 })(jQuery); // End of use strict

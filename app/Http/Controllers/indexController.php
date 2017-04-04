@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 use Illuminate\Routing\Controller as BaseController;
 use View;
+use App\Pixnet;
 
 
 
 class indexController extends Controller {
 	public function index()
 	{
-		
-		return View::make('index');
+		$pixnetdata = Pixnet::all();
+		return view('index',['pixnetdata'=>$pixnetdata]);
 	 
 
 	}

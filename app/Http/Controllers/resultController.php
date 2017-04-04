@@ -13,9 +13,9 @@ public function index(Request $request)
 	$search = $request->input('search');
 if(($search)!=null)
  {
- 	$pixnetdata = Pixnet::where('title','like',"%$search%")->paginate(5);
-	if(count($pixnetdata)>0)
-    	return view('result',['pixnetdata'=>$pixnetdata],['search'=> $search]);
+ 	$resultdata = Pixnet::where('title','like',"%$search%")->paginate(5);
+	if(count($resultdata)>0)
+    	return view('result',['resultdata'=>$resultdata],['search'=> $search]);
 	else 
 		return view('index');
  }
