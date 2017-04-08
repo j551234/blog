@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class categoryController extends Controller {
 	public function index(){
-		$pixnetdata = Pixnet::orderBy('date', 'desc')->paginate(6); 
+		$pixnetdata = Pixnet::orderBy('search_time', 'desc')->paginate(6); 
 		return view('category',['pixnetdata'=>$pixnetdata]); 
 							}
 

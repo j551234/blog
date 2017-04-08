@@ -93,15 +93,15 @@
         <div class="container-fluid">
             <div class="row no-gutter ">
                 <div class="col-lg-4 col-sm-6">
-                    <a href="{{$data->link}}" class="portfolio-box">
-                       <img class="img-responsive" src="{{$data->article_pic}}" alt="圖片未能抓取"  width="60%">
+                    <a href="{{$data->search_href}}" class="portfolio-box">
+                       <img class="img-responsive" src="{{$data->article_picture}}" alt="圖片未能抓取"  width="60%">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    {{$data->title}}
+                                    {{$data->search_title}}
                                 </div>
                                 <div class="project-name">
-                                   {{$data->date}}
+                                   {{$data->search_time}}
                                 </div>
                             </div>
                         </div>

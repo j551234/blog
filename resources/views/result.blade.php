@@ -58,6 +58,7 @@
         </div>
         <!-- /.row -->
         @endforeach
+            {{$resultdata->links()}}
 
     @else
         return view('index');
@@ -67,7 +68,7 @@
         <hr>
 
       <!--  -->
-              {{$resultdata->links()}}
+          
         <!-- Pagination -->
 
 
