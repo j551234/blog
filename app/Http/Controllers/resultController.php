@@ -11,19 +11,10 @@ public function index(Request $request)
 {
 
 	$search = $request->input('search');
-if(($search)!=null)
- {
  	$resultdata = Pixnet::where('search_title','like',"%$search%")->paginate(5);
-	if(count($resultdata)>0)
-    	return view('result',['resultdata'=>$resultdata],['search'=> $search]);
-	else 
-		return view('index');
- }
+	return view('result',['resultdata'=>$resultdata],['search'=> $search]);
+	
 
-else	
-	{
-		return view('index');
-	}
+
 }
-
 }

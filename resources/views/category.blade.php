@@ -108,8 +108,10 @@
                     </a>
                 </div>
 
+
     @endforeach
-    {{$pixnetdata->links()}}
+      {{$pixnetdata->links()}}
+    
                
 
         </div>

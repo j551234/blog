@@ -33,9 +33,9 @@
   
 
         <!-- Project One -->
-    @if(count($resultdata)>0)
 
-        @foreach($resultdata as $data)
+
+    @foreach($resultdata as $data)
   
        
         <div class="row">
@@ -59,10 +59,7 @@
         <!-- /.row -->
         @endforeach
             {{$resultdata->links()}}
-
-    @else
-        return view('index');
-    @endif
+  
 
 
         <hr>
