@@ -43,6 +43,24 @@ p {
   line-height: 1.5;
   margin-bottom: 20px;
 }
+#classification ul{
+    padding: 0px;
+    margin: 0px auto;
+    list-style: none;
+    max-width: 75%;
+    height: 24px;
+    overflow: hidden;
+    text-align:center;
+}
+#classification ul li{
+    padding: 0px 15px;
+    border-right: 1px dotted #666;
+    display: inline-block;
+    font-size: 13px;
+    letter-spacing: 1px;
+    vertical-align: middle;
+
+}
 .bg-primary {
   background-color: #F05F40;
 }
@@ -256,7 +274,8 @@ header .header-content .header-content-inner p {
   margin-bottom: 0;
 }
 .sequence { 
-   
+   font-size: 20px;
+
 }
 .sequence:hover { 
    text-decoration:none;

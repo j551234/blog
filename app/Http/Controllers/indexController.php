@@ -11,7 +11,7 @@ class indexController extends Controller {
 	public function index()
 	{
 
-		$pixnetdata = Pixnet::paginate(5);
+		$pixnetdata = Pixnet::paginate(8);
     
 		return view('index',['pixnetdata'=>$pixnetdata]);
 	 
