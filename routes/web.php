@@ -10,9 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () { return view('index'); });//主頁導向
+Route::get('/','indexController@index');//主頁導向
 Route::get('/result','resultController@index');
 Route::get('/index','indexController@index');
+Route::get('/popular','indexController@popular');
+Route::get('/appraise','indexController@appraise');
+Route::get('/random','indexController@random');
 Route::get('/category','categoryController@index');
 
 

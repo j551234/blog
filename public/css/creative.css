@@ -24,6 +24,7 @@ a {
   -moz-transition: all 0.35s;
   transition: all 0.35s;
   color: #F05F40;
+  text-decoration:none;
 }
 a:hover,
 a:focus {
@@ -254,6 +255,12 @@ header .header-content .header-content-inner p {
 .classification-box p {
   margin-bottom: 0;
 }
+.sequence { 
+   
+}
+.sequence:hover { 
+   text-decoration:none;
+}
 .portfolio-box {
   position: relative;
   display: block;
@@ -424,6 +431,7 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl {
   padding: 15px 30px;
 }
+
 ::-moz-selection {
   color: white;
   text-shadow: none;

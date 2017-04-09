@@ -41,33 +41,43 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="classification-box">
-                        <i class="fa fa-4x fa-cutlery text-primary sr-icons"></i>
+                        <a class="btn" href="#">
+                        <i class="fa fa-4x fa-cutlery text-primary sr-icons" ></i></a>
                         <h3>Foods</h3>
                         <p class="text-muted">來自各國各地的美食饗宴滿足你的味蕾，擺脫你總是找不到美食的惡夢！ </p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="classification-box">
-                        <i class="fa fa-4x fa-user text-primary sr-icons"></i>
+                         <a class="btn" href="#">
+                        <i class="fa fa-4x fa-user text-primary sr-icons"></i></a>
                         <h3>Dresses</h3>
                         <p class="text-muted"></p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="classification-box">
-                        <i class="fa fa-4x fa-plane text-primary sr-icons"></i>
+                        <a class="btn" href="#">
+                        <i class="fa fa-4x fa-plane text-primary sr-icons"></i></a>
                         <h3>Travel</h3>
                         <p class="text-muted"></p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="classification-box">
-                        <i class="fa fa-4x fa-laptop text-primary sr-icons"></i>
+                        <a class="btn" href="#">
+                        <i class="fa fa-4x fa-laptop text-primary sr-icons"></i></a>
                         <h3>Digital</h3>
                         <p class="text-muted"></p>
                     </div>
                 </div>
-            </div>
+            </div> 
+            
+        </div>
+        <div class="text-center">
+                <a class="sequence" href="{{URL('popular')}}">熱門文章</a>
+                <a class="sequence" href="{{URL('appraise')}}">評價最高</a>
+                <a class="sequence" href="{{URL('random')}}">隨機選取</a>
         </div>
     </section>
 
