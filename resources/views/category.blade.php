@@ -34,7 +34,7 @@
 
 </head>
 
-<body bgcolor="#000000">
+<body>
 
 
 
@@ -77,11 +77,39 @@
         <!-- /.container-fluid -->
     </nav>
     
-   
+   <!--  @foreach($pixnetdata as $data)
+        <div class="container-fluid">
+            <div class="row no-gutter ">
+                <div class="col-lg-4 col-sm-6">
+                    <a href="{{$data->search_href}}" class="portfolio-box">
+                       <img class="img-responsive" src="{{$data->article_picture}}" alt="圖片未能抓取"  width="60%">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    {{$data->search_title}}
+                                </div>
+                                <div class="project-name">
+                                   {{$data->search_time}}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+    @endforeach
+      {{$pixnetdata->links()}} -->
+    
                
 
         </div>
      </div>
+
+
+
+
+
+
+
+
     <!-- Page Content -->
     <div class="container">
 
@@ -100,33 +128,28 @@
         <!-- /.row -->
   
 
-        <!-- Project-->
+        <!-- Project One -->
   
 
-      @foreach($pixnetdata as $data)
-  
-       
+       @foreach($pixnetdata as $data)
+        <section id="services">
         <div class="row">
             <div class="col-md-7">
-                <a href="{{$data->search_href}}">
-                    <img class="img-responsive" src="{{$data->article_picture}}" alt="圖片未能抓取" align>
+                <a href="{{$data->link}}">
+                    <img class="img-responsive" src="{{$data->article_pic}}" alt="圖片未能抓取" width="60%">
 
                 </a>
             </div>
             <div class="col-md-5">
-                <h3>{{$data->search_title}}</h3>
-                <h4>{{$data->search_time}}</h4>
-                <h4>作者:{{$data->search_author}}</h4>
-                <h5>瀏覽人次:{{$data->search_view}}</h5>
-                <p>{{$data->search_subtitle}}</p>
-                 
-                
-                <a class="btn btn-primary" href="{{$data->search_href}}">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <h3>{{$data->title}}</h3>
+                <h4>{{$data->date}}</h4>
+                <p>{{$data->S_title}}</p>
+                <a class="btn btn-primary" href="{{$data->link}}">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
+        </section>
         <!-- /.row -->
         @endforeach
-          
 
    
 
@@ -134,8 +157,7 @@
         <hr>
 
       <!--  -->
-         {{$pixnetdata->links()}}
-  
+              {{$pixnetdata->links()}}
         <!-- Pagination -->
 
 

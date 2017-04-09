@@ -72,7 +72,7 @@
     </section>
 
     <section class="no-padding" id="portfolio">
-       @foreach($pixnetdata as $data)
+@foreach($pixnetdata as $data)
         <div class="container-fluid">
             <div class="row no-gutter ">
                 <div class="col-lg-4 col-sm-6">
@@ -91,8 +91,10 @@
                     </a>
                 </div>
     @endforeach
-      {{$pixnetdata->links()}}
+     
             </div>
+            <!--  Pagination -->
+             {{$pixnetdata->links()}}
         </div>
     </section>
 

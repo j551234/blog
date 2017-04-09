@@ -26,10 +26,9 @@
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">搜尋結果:{{$search}} </h1>
-                   <h3> <a href=""  onclick="sort(id)">以人氣排名</a>|<a href="">以日期排名</a></h3>
-                    
-                     
+                <h1 class="page-header">搜尋結果:{{$search}}</h1>
+                     <a href="URL{{'/vieworder'}}">以人氣排名</a>
+                     <a href="URL{{'/dateSorder'}}">以日期排名</a>
 
                
             </div>
@@ -60,7 +59,6 @@
                  
                 
                 <a class="btn btn-primary" href="{{$data->search_href}}">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
-                <button type="button">覺得有用</button><button type="button">覺得無趣</button>
             </div>
         </div>
         <!-- /.row -->
