@@ -75,9 +75,11 @@
             
         </div>
         <div class="text-center">
-                <a class="sequence" href="{{URL('popular')}}">熱門文章</a>
-                <a class="sequence" href="{{URL('appraise')}}">評價最高</a>
-                <a class="sequence" href="{{URL('random')}}">隨機選取</a>
+             <ul>
+                <li> <a class="sequence" href="{{URL('popular')}}">熱門文章</a> </li>
+                <li> <a class="sequence" href="{{URL('appraise')}}">評價最高</a></li>
+                <li> <a class="sequence" href="{{URL('random')}}">隨機選取</a></li>
+             </ul>
         </div>
     </section>
 
