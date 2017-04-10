@@ -41,43 +41,56 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="classification-box">
-                        <i class="fa fa-4x fa-cutlery text-primary sr-icons"></i>
+                        <a class="btn" href="#">
+                        <i class="fa fa-4x fa-cutlery text-primary sr-icons" ></i></a>
                         <h3>Foods</h3>
                         <p class="text-muted">來自各國各地的美食饗宴滿足你的味蕾，擺脫你總是找不到美食的惡夢！ </p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="classification-box">
-                        <i class="fa fa-4x fa-user text-primary sr-icons"></i>
+                         <a class="btn" href="#">
+                        <i class="fa fa-4x fa-user text-primary sr-icons"></i></a>
                         <h3>Dresses</h3>
                         <p class="text-muted"></p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="classification-box">
-                        <i class="fa fa-4x fa-plane text-primary sr-icons"></i>
+                        <a class="btn" href="#">
+                        <i class="fa fa-4x fa-plane text-primary sr-icons"></i></a>
                         <h3>Travel</h3>
                         <p class="text-muted"></p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="classification-box">
-                        <i class="fa fa-4x fa-laptop text-primary sr-icons"></i>
+                        <a class="btn" href="#">
+                        <i class="fa fa-4x fa-laptop text-primary sr-icons"></i></a>
                         <h3>Digital</h3>
                         <p class="text-muted"></p>
                     </div>
                 </div>
-            </div>
+            </div> 
+            
+        </div>
+        <div class="text-center">
+                <a class="sequence" href="{{URL('popular')}}">熱門文章</a>
+                <a class="sequence" href="{{URL('appraise')}}">評價最高</a>
+                <a class="sequence" href="{{URL('random')}}">隨機選取</a>
         </div>
     </section>
 
     <section class="no-padding" id="portfolio">
-@foreach($pixnetdata as $data)
+
+	@foreach($pixnetdata as $data)
+
         <div class="container-fluid">
             <div class="row no-gutter ">
-                <div class="col-lg-4 col-sm-6">
+   
+                <div class="col-lg-2 col-sm-3">
                     <a href="{{$data->search_href}}" class="portfolio-box">
-                       <img class="img-responsive" src="{{$data->article_picture}}" alt="圖片未能抓取"  width="60%">
+                       <img class="img-responsive" src="{{$data->article_picture}}" alt="圖片未能抓取"  width="100%">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
@@ -90,12 +103,16 @@
                         </div>
                     </a>
                 </div>
-    @endforeach
-     
+
+
+
+            @endforeach
+        
             </div>
             <!--  Pagination -->
              {{$pixnetdata->links()}}
         </div>
+
     </section>
 
     <section id="contact">

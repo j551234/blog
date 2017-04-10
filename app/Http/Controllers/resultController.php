@@ -16,8 +16,6 @@ public function index(Request $request)
  	$resultdata = Pixnet::where('search_title','like',"%$search%")
  	->paginate(5);
 	return view('result',['resultdata'=>$resultdata],['search'=> $search]);
-	
-
-
 }
+
 }

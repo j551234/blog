@@ -15,5 +15,27 @@ class indexController extends Controller {
 	 
 
 	}
+		public function popular()
+	{
+		$pixnetdata = Pixnet::orderBy('search_view', 'desc')->paginate(6); 
+		return view('index',['pixnetdata'=>$pixnetdata]);
+	 
+
+	}
+		public function appraise()
+	{
+		$pixnetdata = Pixnet::orderBy('search_time', 'desc')->paginate(6); 
+		return view('index',['pixnetdata'=>$pixnetdata]);
+	 
+
+	}
+		public function random()
+	{
+		$a=rand(0,9);
+		$pixnetdata = Pixnet::where('id','>',"$a")->paginate(6); 
+		return view('index',['pixnetdata'=>$pixnetdata]);
+	 
+
+	}
  	
 }
