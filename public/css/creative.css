@@ -39,9 +39,9 @@ h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 p {
+  margin: 0px auto 20 auto ;
   font-size: 16px;
   line-height: 1.5;
-  margin-bottom: 20px;
 }
 #classification ul{
     padding: 0px;
@@ -165,6 +165,11 @@ aside {
     color: #F05F40;
   }
 }
+header-result{
+  position: relative;
+  min-height: auto;
+  text-align: center;
+ }
 header {
   position: relative;
   width: 100%;
@@ -176,12 +181,13 @@ header {
   background-position: center;
   background-image: url('../img/header.jpg');
   text-align: center;
-  color: white;
+  color:white;
 }
 header .header-content {
   position: relative;
   text-align: center;
   padding: 100px 15px 100px;
+  margin:0px auto;
   width: 100%;
 }
 header .header-content .header-content-inner h1 {
@@ -203,17 +209,18 @@ header .header-content .header-content-inner p {
 #searchForm{
   /* The search form. */
   padding:0px 50px 80px;
-  margin:55px 0;
+  margin:55px auto;
   position:relative;
 }
 .searchbar {
   /* The search text box. */
- background: #fcfcfc;
+    background: #fcfcfc;
     border: 1px solid #d1d1d1;
     font: bold 16px Arial,Helvetica,Sans-serif;
     color: #bebebe;
     width: 500px;
     padding: 6px 15px 6px 35px;
+    margin:0,auto;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
