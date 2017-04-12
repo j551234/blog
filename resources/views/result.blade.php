@@ -27,9 +27,19 @@
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
+
                 <h2 class="page-header">搜尋結果:{{$search}} </h2>
                    <h3> <a href=""  onclick="sort(id)">以人氣排名</a>|<a href="">以日期排名</a></h3>
                     
+
+                <h1 class="page-header">搜尋結果:{{$search}} </h1>
+                <h2><a href="http://search.ruten.com.tw/search/s000.php?enc=u&searchfrom=indexbar&k={{$search}}&t=0" target="_blank">露天拍賣</a>
+                |<a href="https://tw.search.bid.yahoo.com/search/auction/product?kw={{$search}}&p={{$search}}" target="_blank">yahoo拍賣</a>
+                |<a href="http://ecshweb.pchome.com.tw/search/v3.3/?q={{$search}}" target="_blank">pchome</a></h2>
+
+                
+                
+
                      
 
                
@@ -60,8 +70,8 @@
                 <p>{{$data->search_subtitle}}</p>
                  
                 
-                <a class="btn btn-primary" href="{{$data->search_href}}">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
-                <button type="button">覺得有用</button><button type="button">覺得無趣</button>
+                <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
+               
             </div>
         </div>
         <!-- /.row -->
