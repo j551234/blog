@@ -21,7 +21,7 @@ class indexController extends Controller {
 		return view('index',['pixnetdata'=>$pixnetdata]);
 	 
 
-<<<<<<< HEAD
+
 	}
 		public function appraise()
 	{
@@ -34,10 +34,10 @@ class indexController extends Controller {
 	{
 		$a=rand(0,9);
 		$pixnetdata = Pixnet::where('id','>',"$a")->paginate(6); 
-=======
+
 		$pixnetdata = Pixnet::paginate(8);
     
->>>>>>> 9d9f95a5346a400898df7f149dadcab3953b43c9
+
 		return view('index',['pixnetdata'=>$pixnetdata]);
 	 
 
