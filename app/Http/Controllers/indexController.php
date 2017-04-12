@@ -32,14 +32,13 @@ class indexController extends Controller {
 	}
 		public function random()
 	{
-		$a=rand(0,9);
-		$pixnetdata = Pixnet::where('id','>',"$a")->paginate(6); 
-
-		$pixnetdata = Pixnet::paginate(8);
-    
-
+		$data= Pixnet::all();
+		$a=rand(0,count($data));
+		$pixnetdata = Pixnet::where('id','>',"$a")->paginate(6);
+	 
 		return view('index',['pixnetdata'=>$pixnetdata]);
 	 
+
 
 	}
  	

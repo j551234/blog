@@ -18,4 +18,7 @@ public function index(Request $request)
 	return view('result',['resultdata'=>$resultdata],['search'=> $search]);
 }
 
+
+
+
 }
