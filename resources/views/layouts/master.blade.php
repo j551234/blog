@@ -25,18 +25,20 @@
     <!-- Theme CSS -->
     <link href="css/creative.css" rel="stylesheet">
 
+    <!-- Star CSS -->
+    <link type="text/css" href="css/star-rating-svg.css" rel="stylesheet">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
 <body id="page-top">
-    @include('layouts.nav')     
-         @yield('content')
+   
   <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
 
@@ -50,6 +52,13 @@
 
     <!-- Theme JavaScript -->
     <script src="js/creative.min.js"></script>
+
+    <!-- star JavaScript -->
+    <script src="js/jquery.star-rating-svg.js"></script>
+     @include('layouts.nav')     
+         @yield('content')
 </body>
+
+
 
 </html>

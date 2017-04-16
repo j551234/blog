@@ -11,5 +11,7 @@ class Pixnet extends Model
     					,'search_time','search_author','article_picture','author_href'
     					,'author_picture','search_view'
     					];
-   
+
+    public $timestamps = false;
+   	
 }
