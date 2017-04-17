@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class resultController extends Controller {
 public function index(Request $request)
-{
+	{
 	  
       
 
@@ -16,8 +16,23 @@ public function index(Request $request)
  	$resultdata = Pixnet::where('search_title','like',"%$search%")
  	->paginate(5);
 	return view('result',['resultdata'=>$resultdata],['search'=> $search]);
-}
+	}
+	public function score(Request $request)
+	{
+		// echo $request->id;
+		$value = (int)$request->currentRating;
+		$scorepeople=pixnet::where('id',$request->id)
+          				->increment('scorepeople');
+		$scorepeople=pixnet::where('id',$request->id)
+          				->increment('totalscore',$value);
+      
 
+   //      $search = $request->input('search');
+ 		// $resultdata = Pixnet::where('search_title','like',"%$search%")
+ 		// ->paginate(5);
+        $resultdata = pixnet::find($request->id);
+		return $resultdata->toJson();
+	}
 
 
 
