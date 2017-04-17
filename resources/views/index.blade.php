@@ -4,7 +4,7 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading">M.R. 中鑒者</h1>
+                <h1 id="homeHeading">M.R.中鑒者</h1>
                 <hr>
                 <form id="searchForm" method="get" action="result">
                 <p><input type="text" class="searchbar" name="search" placeholder="search..."></p>
@@ -19,7 +19,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Find what you desire!</h2>
+                    <h2 class="section-heading">What you desire!</h2>
                     <hr class="light">
                     <h4 class="text-faded">不再被廣告所欺騙，不再讓網路垃圾訊息掩蓋住你所需要的商品資訊，我們透過大量的使用者體驗，找到最真實，最符合您的需求的商品</h4>
                     <a href="#classification" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>

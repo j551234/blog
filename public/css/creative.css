@@ -9,7 +9,7 @@ body {
   width: 100%;
 }
 body {
-  font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 hr {
   border-color: #F05F40;
@@ -31,12 +31,16 @@ a:focus {
   color: #eb3812;
 }
 h1,
-h2,
+h2 {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  letter-spacing: 2.5px;
+}
 h3,
 h4,
 h5,
 h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  letter-spacing: 1.5px;
 }
 p {
   margin: 0px auto 20 auto ;
@@ -87,11 +91,13 @@ aside {
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
+  letter-spacing: 1px;
 }
 .navbar-default .navbar-header .navbar-brand {
   color: #F05F40;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 700;
+  font-family: Megrim;
+  font-style: italic;
+  font-weight: 600;
   text-transform: uppercase;
 }
 .navbar-default .navbar-header .navbar-brand:hover,
@@ -216,11 +222,13 @@ header .header-content {
   width: 100%;
 }
 header .header-content .header-content-inner h1 {
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 60px;
+  font-family: 'Open Sans';
+  font-size: 50px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 26.4px;
+  letter-spacing: 12px;
 }
 header .header-content .header-content-inner hr {
   margin: 30px auto;
@@ -279,9 +287,6 @@ header .header-content .header-content-inner p {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-  }
-  header .header-content .header-content-inner h1 {
-    font-size: 50px;
   }
   header .header-content .header-content-inner p {
     font-size: 18px;
