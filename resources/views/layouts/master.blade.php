@@ -39,8 +39,9 @@
 </head>
 
 <body id="page-top">
+
    
-  <!-- jQuery -->
+    <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
@@ -50,14 +51,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
     <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-    <!-- Theme JavaScript -->
-    <script src="js/creative.min.js"></script>
-
     <!-- star JavaScript -->
     <script src="js/jquery.star-rating-svg.js"></script>
+
      @include('layouts.nav')     
-         @yield('content')
+         @yield('content') 
+         
+    <!-- Theme JavaScript -->
+    <script src="js/creative.min.js"></script>
 </body>
 
 
