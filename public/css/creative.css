@@ -487,9 +487,43 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl {
   padding: 15px 30px;
 }
-.dataCols{
-  list-style: none;
-  text-align: left;
+article .content {
+  margin:0px auto 50px auto;
+  max-width: 500px;
+}
+article .content p{
+  text-align: center;
+}
+#contact-form {
+    margin-top: 2em;
+}
+#contact-form label {
+    color:  #808080;
+    margin-bottom: .4em;
+}
+#contact-form select {
+    width: 100%;   
+    color:  #808080;
+    margin-bottom: 1.4em;
+    padding: 8px;
+}
+#contact-form textarea {
+    height: 10em;
+}
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    font: 1.2em "abril-text",Georgia,"Times New Roman",Times,serif;
+    color:  #808080;
+    background-color: #e8e8e8;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    margin-bottom: 1.4em;
+    padding: 8px;
+}
+#contact-form .submit-btn {
+  background-color: rgba(74, 66, 63, 1);
+  color:white;
+  height:3em;
 }
 
 ::-moz-selection {
