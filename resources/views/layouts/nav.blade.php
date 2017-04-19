@@ -22,10 +22,7 @@
                         <a class="page-scroll" href="#classification">classification</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="{{URL('/contact')}}">Contact</a>
                     </li>
                 </ul>
             </div>

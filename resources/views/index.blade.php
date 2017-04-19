@@ -76,14 +76,14 @@
         </div>
         <div class="text-center">
              <ul>
-                <li> <a class="sequence page-scroll" href="{{URL('popular')}}#portfolio">熱門文章</a> </li>
-                <li> <a class="sequence page-scroll" href="{{URL('appraise')}}#portfolio">評價最高</a></li>
-                <li> <a class="sequence page-scroll" href="{{URL('random')}}#portfolio">隨機選取</a></li>
+                <li> <a class="sequence page-scroll" href="{{URL('popular')}}#classification">熱門文章</a> </li>
+                <li> <a class="sequence page-scroll" href="{{URL('appraise')}}#classification">評價最高</a></li>
+                <li> <a class="sequence page-scroll" href="{{URL('random')}}#classification">隨機選取</a></li>
              </ul>
         </div>
     </section>
 
-    <section class="no-padding" id="portfolio">
+    <section class="no-padding" id="artical">
 
 	@foreach($pixnetdata as $data)
 
@@ -91,10 +91,10 @@
             <div class="row no-gutter ">
    
                 <div class="col-lg-2 col-sm-3">
-                    <a href="{{$data->search_href}}" class="portfolio-box">
+                    <a href="{{$data->search_href}}" class="artical-box">
                        <img class="img-responsive" src="{{$data->article_picture}}" alt="圖片未能抓取"  width="100%">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
+                        <div class="artical-box-caption">
+                            <div class="artical-box-caption-content">
                                 <div class="project-category text-faded">
                                     {{$data->search_title}}
                                 </div>
@@ -117,23 +117,5 @@
 
     </section>
 
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Let's Get In Touch!</h2>
-                    <hr class="primary">
-                    <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
-                </div>
-                <div class="col-lg-4 col-lg-offset-2 text-center">
-                    <i class="fa fa-phone fa-3x sr-contact"></i>
-                    <p>123-456-6789</p>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-                    <p><a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
+
 @endsection
