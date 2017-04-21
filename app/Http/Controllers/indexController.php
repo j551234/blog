@@ -25,7 +25,7 @@ class indexController extends Controller {
 	}
 		public function appraise()
 	{
-	$pixnetdata = Pixnet::orderBy('totalscore', 'desc')->paginate(6); 
+		$pixnetdata = Pixnet::orderBy('totalscore', 'desc')->paginate(6); 
 		return view('index',['pixnetdata'=>$pixnetdata]);
 
 	}

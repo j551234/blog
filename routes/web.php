@@ -19,7 +19,10 @@ Route::get('/popular','indexController@popular');
 Route::get('/appraise','indexController@appraise');
 Route::get('/random','indexController@random');
 Route::get('/category','categoryController@index');
-Route::get('/contact','contactController@contact');
+Route::get('/contact','contactController@index');
+Route::post('/mail','contactController@contact');
+
+
 
 
 
