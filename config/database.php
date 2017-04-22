@@ -52,6 +52,19 @@ return [
             'strict' => true,
             'engine' => null,
         ],
+        
+        'mysql2' => [
+        'driver'    => 'mysql',
+        'host'      => env('DB_HOST', 'localhost'),
+        'database'  => 'contact',
+        'username'  => 'root',
+        'password'  => '',
+        'charset'   => 'utf8',
+        'collation' => 'utf8_unicode_ci',
+        'prefix'    => '',
+        'strict'    => false,
+        ],
+
 
         'pgsql' => [
             'driver' => 'pgsql',
