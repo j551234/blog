@@ -21,6 +21,7 @@ Route::get('/random','indexController@random');
 Route::get('/category','categoryController@index');
 Route::get('/contact','contactController@index');
 Route::post('/mail','contactController@contact');
+Route::get('/message','messageController@index');
 
 
 

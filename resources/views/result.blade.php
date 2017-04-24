@@ -118,9 +118,11 @@
       <!--  -->
           
         <!-- Pagination -->
-    {{$resultdata->links()}}
+        <div class="paginate">
 
-     
+            {{$resultdata->links()}}
+
+        </div>
 
         <!-- Footer -->
         <footer>

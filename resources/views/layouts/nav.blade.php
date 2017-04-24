@@ -19,12 +19,15 @@
                         <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#classification">classification</a>
+                        <a class="page-scroll" href="#classification">Classification</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{{URL('/message')}}">MessageBoard</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="{{URL('/contact')}}">Contact</a>
                     </li>
-                </ul>
+                    
             </div>
             <!-- /.navbar-collapse -->
         </div>

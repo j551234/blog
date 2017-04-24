@@ -85,11 +85,11 @@
 
     <section class="no-padding" id="artical">
 
-	@foreach($pixnetdata as $data)
+	
 
         <div class="container-fluid">
             <div class="row no-gutter ">
-   
+            @foreach($pixnetdata as $data)
                 <div class="col-lg-2 col-sm-3">
                     <a href="{{$data->search_href}}" class="artical-box">
                        <img class="img-responsive" src="{{$data->article_picture}}" alt="圖片未能抓取"  width="100%">
@@ -108,11 +108,13 @@
 
 
 
+            
             @endforeach
-        
             </div>
             <!--  Pagination -->
-             {{$pixnetdata->links()}}
+            <div class="paginate">
+             {{$pixnetdata->links()}} 
+            </div>
         </div>
 
     </section>
