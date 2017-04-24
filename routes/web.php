@@ -12,15 +12,23 @@
 */
 
 Route::get('/','indexController@index');//主頁導向
+
+//result頁面
 Route::get('/result','resultController@index');
 Route::post('/score','resultController@score');
+//index頁面
 Route::get('/index','indexController@index');
 Route::get('/popular','indexController@popular');
 Route::get('/appraise','indexController@appraise');
 Route::get('/random','indexController@random');
-Route::get('/category','categoryController@index');
+
+
+//contact 頁面
 Route::get('/contact','contactController@index');
 Route::post('/mail','contactController@contact');
+Route::post('/board','boardController@index');
+
+
 
 
 

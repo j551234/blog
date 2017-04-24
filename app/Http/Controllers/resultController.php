@@ -22,9 +22,9 @@ public function index(Request $request)
 		// echo $request->id;
 		$value = (int)$request->currentRating;
 		$scorepeople=pixnet::where('id',$request->id)
-          				->increment('scorepeople');
+          				->increment('score_people');
 		$scorepeople=pixnet::where('id',$request->id)
-          				->increment('totalscore',$value);
+          				->increment('total_score',$value);
       
 
    //      $search = $request->input('search');

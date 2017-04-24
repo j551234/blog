@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Pixnet extends Model
+class Xuite extends Model
 {
-    protected $table='pixnet';
+    protected $table='xuite';
     protected $fillable=['id','search_title','search_subtitle'
     					,'search_time','search_author','article_picture','author_href'
-    					,'author_picture','search_view','score_people','total_score'
+    					,'author_picture','search_view'
     					];
 
     public $timestamps = false;
