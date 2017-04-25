@@ -39,10 +39,7 @@
         <!-- /.row -->
   
 
-        <!-- Project One -->
-
-
-        <!-- Project One -->
+        <!-- Pixnet -->
 
 
     @foreach($resultdata as $data)
@@ -109,7 +106,8 @@
         </div>
         <!-- /.row -->
         @endforeach
-            
+
+
   
 
 
@@ -118,10 +116,13 @@
       <!--  -->
           
         <!-- Pagination -->
-    {{$resultdata->links()}}
+      <!--   <div class="paginate">
+            {{$resultdata->links()}}
+          
 
-     
 
+        </div>
+ -->
         <!-- Footer -->
         <footer>
             <div class="row">

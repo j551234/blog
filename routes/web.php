@@ -26,8 +26,6 @@ Route::get('/random','indexController@random');
 //contact 頁面
 Route::get('/contact','contactController@index');
 Route::post('/mail','contactController@contact');
-Route::post('/board','boardController@index');
-
 
 
 

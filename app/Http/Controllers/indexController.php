@@ -10,14 +10,14 @@ use App\Pixnet;
 class indexController extends Controller {
 	public function index()
 	{
-		$pixnetdata = Pixnet::orderBy('search_time', 'desc')->paginate(6); 
+		$pixnetdata = Pixnet::orderBy('search_time', 'desc')->paginate(12); 
 		return view('index',['pixnetdata'=>$pixnetdata]);
 	 
 
 	}
 		public function popular()
 	{
-		$pixnetdata = Pixnet::orderBy('search_view', 'desc')->paginate(6); 
+		$pixnetdata = Pixnet::orderBy('search_view', 'desc')->paginate(12); 
 		return view('index',['pixnetdata'=>$pixnetdata]);
 	 
 
@@ -25,7 +25,7 @@ class indexController extends Controller {
 	}
 		public function appraise()
 	{
-		$pixnetdata = Pixnet::orderBy('totalscore', 'desc')->paginate(6); 
+		$pixnetdata = Pixnet::orderBy('totalscore', 'desc')->paginate(12); 
 		return view('index',['pixnetdata'=>$pixnetdata]);
 
 	}
@@ -33,7 +33,7 @@ class indexController extends Controller {
 	{
 		$data= Pixnet::all();
 		$a=rand(0,count($data));
-		$pixnetdata = Pixnet::where('id','>',"$a")->paginate(6);
+		$pixnetdata = Pixnet::where('id','>',"$a")->paginate(12);
 	 
 		return view('index',['pixnetdata'=>$pixnetdata]);
 	 

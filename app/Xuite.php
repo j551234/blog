@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Xuite extends Model
 {
-    protected $table='xuite';
+   	protected $table='xuite';
     protected $fillable=['id','search_title','search_subtitle'
     					,'search_time','search_author','article_picture','author_href'
-    					,'author_picture','search_view'
+    					,'author_picture','search_view','score_people','total_score'
     					];
 
     public $timestamps = false;
