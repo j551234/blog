@@ -17,7 +17,7 @@ class resultController extends Controller {
 public function index(Request $request)
 	{
 	$search = $request->input('search');
-	$key_word = '$search';
+	$key_word = $search;
 	$url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
 	$file1 = popen("start/b C://xampp/htdocs/done/SearchPixnet.py $url_key_word",'r');
 	$file2 = popen("start/b C://xampp/htdocs/done/SearchPtt.py $url_key_word",'r');
