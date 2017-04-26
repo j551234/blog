@@ -11,12 +11,12 @@ body {
 body {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
-hr {
+artical-box-caption-content {
   border-color: #F05F40;
   border-width: 3px;
   max-width: 50px;
 }
-hr.light {
+artical-box-caption-content.light {
   border-color: white;
 }
 a {
@@ -81,9 +81,9 @@ p {
   color: rgba(255, 255, 255, 0.7);
 }
 section {
-  padding: 100px 0;
+  padding: 50px 0;
 }
-aside {
+ {
   padding: 50px 0;
 }
 .no-padding {
@@ -235,7 +235,7 @@ header .header-content .header-content-inner h1 {
   line-height: 26.4px;
   letter-spacing: 12px;
 }
-header .header-content .header-content-inner hr {
+header .header-content .header-content-inner artical-box-caption-content {
   margin: 30px auto;
 }
 header .header-content .header-content-inner p {
@@ -346,8 +346,9 @@ header .header-content .header-content-inner p {
   width: 100%;
   text-align: center;
   position: absolute;
-  top: 50%;
+  top: 60%;
   transform: translateY(-50%);
+  height:80%;
 }
 .artical-box .artical-box-caption .artical-box-caption-content .project-category,
 .artical-box .artical-box-caption .artical-box-caption-content .project-name {
@@ -357,10 +358,16 @@ header .header-content .header-content-inner p {
 .artical-box .artical-box-caption .artical-box-caption-content .project-category {
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 18px;
 }
 .artical-box .artical-box-caption .artical-box-caption-content .project-name {
-  font-size: 18px;
+  font-size: 16px;
+}
+.artical-box .artical-box-caption .artical-box-caption-content .avgscore {
+  position: absolute;
+  font-size: 36px;
+  right:5%;
+  bottom: 5%;
 }
 .artical-box:hover .artical-box-caption {
   opacity: 1;
@@ -370,10 +377,10 @@ header .header-content .header-content-inner p {
 }
 @media (min-width: 768px) {
   .artical-box .artical-box-caption .artical-box-caption-content .project-category {
-    font-size: 16px;
+    font-size: 18px;
   }
   .artical-box .artical-box-caption .artical-box-caption-content .project-name {
-    font-size: 22px;
+    font-size: 16px;
   }
 }
 .call-to-action h2 {

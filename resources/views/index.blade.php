@@ -21,7 +21,9 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">What you desire!</h2>
                     <hr class="light">
-                    <h4 class="text-faded">不再被廣告所欺騙，不再讓網路垃圾訊息掩蓋住你所需要的商品資訊，我們透過大量的使用者體驗，找到最真實，最符合您的需求的商品</h4>
+                    <h4 class="text-faded aside">不再被廣告所欺騙，不再讓網路垃圾訊息掩蓋住你所需要的商品資訊，我們透過大量的使用者體驗，找到最真實，最符合您的需求的商品</h4>
+                    <br>
+                    <br>
                     <a href="#classification" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>
                 </div>
             </div>
@@ -98,8 +100,11 @@
                                 <div class="project-category text-faded">
                                     {{$data->search_title}}
                                 </div>
-                                <div class="project-name">
-                                   {{$data->search_time}}
+                                <div class="project-name text-faded">
+                                   {{$data->search_author}}
+                                </div>
+                                <div class="avgscore text-faded">
+                                    {{round($data->totalscore/$data->scorepeople,2)}}
                                 </div>
                             </div>
                         </div>
@@ -113,7 +118,7 @@
             </div>
             <!--  Pagination -->
             <div class="paginate">
-             {{$pixnetdata->links()}} 
+             {{$pixnetdata->fragment('classification')->links()}} 
             </div>
         </div>
 
