@@ -61,10 +61,11 @@
                 <h5>瀏覽人次:{{$data->search_view}}</h5>
                 
                 <h5 id="pixnetscore{{$data->id}}">網站評分:{{round($data->total_score/$data->score_people,2)}}</h5>
-
-                <p>{{$data->search_subtitle}}
+                <div class="subtitle">
+                <p class="JQellipsis">{{$data->search_subtitle}}</p>
+                </div>
                    <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
-               </p>
+               
             
                 <div class="my-rating-4" id="{{$data->id}}"> </div>
                 
@@ -131,9 +132,10 @@
                
                
                 <h5 id="xuitescore{{$data->id}}">網站評分:{{round($data->total_score/$data->score_people,2)}}</h5>
-
-                <p>{{$data->search_subtitle}}
-                 <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a></p>
+                <div class="subtitle">
+                <p class="JQellipsis">{{$data->search_subtitle}}</p>
+                </div>
+                 <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
              
                  <div class="my-rating-4" id="{{$data->id}}"></div>
                   <script type="text/javascript">                      
@@ -268,12 +270,11 @@
                
                
                 <h5 id="youtubescore{{$data->id}}">網站評分:{{round($data->total_score/$data->score_people,2)}}</h5>
-                
-  
-
-                <p>{{$data->search_subtitle}}
+                <div class="subtitle">
+                <p class="JQellipsis">{{$data->search_subtitle}}</p>
+                </div>
                    <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
-               </p>
+                
              
                
              
@@ -320,7 +321,7 @@
         </div>
         <!-- /.row -->
         <hr class="result">
-        
+
         @endforeach
 
 
@@ -363,5 +364,4 @@
 
     </div>
     <!-- /.container -->
-   
    @endsection
