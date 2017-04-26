@@ -25,30 +25,33 @@
     </header-result>
 
     <!-- Page Content -->
-    <div class="container">
     
- 
+    <div class="container"> 
 
+
+ 
+    <div class="result-contain">
+        
+    
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
-                    <h3 class="page-header">搜尋結果:{{$search}} </h3>
+                    <h4 class="page-header">搜尋結果: {{$search}} </h4>
             </div>
         </div>
                    
         <!-- /.row -->
   
 
-        <!-- Pixnet -->
-
+    
 
     @foreach($pixnetdata as $data)
-  
+        <!-- Pixnet -->
        
         <div class="row">
             <div class="col-md-7">
                 <a href="{{$data->search_href}}" target="_blank">
-                    <img class="img-responsive" src="{{$data->article_picture}}" alt="圖片未能抓取" align>
+                    <img class="img-result" src="{{$data->article_picture}}" alt="圖片未能抓取" align>
 
                 </a>
             </div>
@@ -106,6 +109,7 @@
             </div>
         </div>
         <!-- /.row -->
+        <hr class="result">
         @endforeach
         
         <!--xuitedata-->
@@ -116,7 +120,7 @@
         <div class="row">
             <div class="col-md-7">
                 <a href="{{$data->search_href}}" target="_blank">
-                    <img class="img-responsive" src="{{$data->article_picture}}" alt="圖片未能抓取" align>
+                    <img class="img-result" src="{{$data->article_picture}}" alt="圖片未能抓取" align>
 
                 </a>
             </div>
@@ -174,6 +178,7 @@
             </div>
         </div>
         <!-- /.row-->
+        <hr class="result">
         @endforeach
 
         <!--pttdata-->
@@ -184,7 +189,7 @@
         <div class="row">
             <div class="col-md-7">
                  <a href="{{$data->search_href}}" target="_blank">
-                    <img class="img-responsive" src="https://lh4.ggpht.com/XsAo-Kbh6o4Hm5s5c4zz3YaErInIWdD-7CR1zjEWp0v-kR76xW1kAk5A4RiKc_wNAlU=w300" alt="圖片未能抓取" width="50%">
+                    <img class="img-result" src="https://lh4.ggpht.com/XsAo-Kbh6o4Hm5s5c4zz3YaErInIWdD-7CR1zjEWp0v-kR76xW1kAk5A4RiKc_wNAlU=w300" alt="圖片未能抓取" width="50%">
 
                 </a>
             </div>
@@ -245,6 +250,7 @@
             </div>
         </div>
         <!-- /.row -->
+        <hr class="result">
         @endforeach
         <!--youtubedata-->
         @foreach($youtubedata as $data)
@@ -254,7 +260,7 @@
             <div class="col-md-7">
                <a href="{{$data->search_href}}" target="_blank">
 
-                    <img class="img-responsive" src="{{$data->article_picture}}" alt="圖片未能抓取" align>
+                    <img class="img-result" src="{{$data->article_picture}}" alt="圖片未能抓取" align>
 
                 </a>
                
@@ -316,6 +322,7 @@
             </div>
         </div>
         <!-- /.row -->
+        <hr class="result">
         @endforeach
         
         
@@ -355,6 +362,9 @@
             </div>
             <!-- /.row -->
         </footer>
+
+    </div>
+    <!-- /.result-contain -->
 
     </div>
     <!-- /.container -->
