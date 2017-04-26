@@ -3,7 +3,6 @@
 @section('content')
 
 
-
   
     <header-result>
         <div class="header-content">
@@ -49,7 +48,6 @@
             <div class="col-md-7">
                 <a href="{{$data->search_href}}" target="_blank">
                     <img class="img-responsive" src="{{$data->article_picture}}" alt="圖片未能抓取" align>
-
                 </a>
             </div>
             <div class="col-md-5">
@@ -57,14 +55,14 @@
                 <h4>{{$data->search_time}}</h4>
                 <h4>作者:<a href="{{$data->author_href}}" target="_blank">{{$data->search_author}}</a></h4>
                 <h5>瀏覽人次:{{$data->search_view}}</h5>
-                <h5 id="score_people{{$data->id}}">評分人次:{{$data->score_people}}</h5>
-                <h5 id="avg_score{{$data->id}}">平均評分:{{round($data->total_score/$data->score_people,2)}}</h5>
+                
+                <h5 id="pixnetscore{{$data->id}}">網站評分:{{round($data->total_score/$data->score_people,2)}}</h5>
 
                 <p>{{$data->search_subtitle}}
                    <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
                </p>
-             
-                <div class="my-rating-4" id="{{$data->id}}"></div>
+            
+                <div class="my-rating-4" id="{{$data->id}}"> </div>
                 
   
                 <script type="text/javascript">                      
@@ -84,15 +82,16 @@
                                 headers: {
                                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                                 },  
-                                url:"{{URL('score')}}",
+                                url:"{{URL('pixnetscore')}}",
                                 data:{    currentRating:currentRating,id: {{$data->id}}   },
                                 type: "POST",
                                 success: function(msg){
                                     msg = JSON.parse(msg);
                                     console.log(msg)
-                                    $('#score_people{{$data->id}}').text('評分人次:'+msg.score_people);
+                                  
                                 
-                                    $('#avg_score{{$data->id}}').text('評分:'+msg.total_score/msg.score_people,2);
+                                  
+                                    $('#pixnetscore{{$data->id}}').text('評分:'+msg.total_score/msg.score_people);
 
                                 },
                             });
@@ -125,16 +124,14 @@
                 <h4>{{$data->search_time}}</h4>
                 <h4>作者:<a href="{{$data->author_href}}" target="_blank">{{$data->search_author}}</a></h4>
                
-                <h5 id="score_people{{$data->id}}">評分人次:{{$data->score_people}}</h5>
-                <h5 id="avg_score{{$data->id}}">平均評分:{{round($data->total_score/$data->score_people,2)}}</h5>
+               
+                <h5 id="xuitescore{{$data->id}}">網站評分:{{round($data->total_score/$data->score_people,2)}}</h5>
 
                 <p>{{$data->search_subtitle}}
                  <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a></p>
              
-                <div class="my-rating-4" id="{{$data->id}}"></div>
-                
-  
-                <script type="text/javascript">                      
+                 <div class="my-rating-4" id="{{$data->id}}"></div>
+                  <script type="text/javascript">                      
                     $(".my-rating-4").starRating({
                         totalStars: 5,
                         emptyColor: 'lightgray',
@@ -151,15 +148,14 @@
                                 headers: {
                                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                                 },  
-                                url:"{{URL('score')}}",
+                                url:"{{URL('xuitescore')}}",
                                 data:{    currentRating:currentRating,id: {{$data->id}}   },
                                 type: "POST",
                                 success: function(msg){
                                     msg = JSON.parse(msg);
                                     console.log(msg)
-                                    $('#score_people{{$data->id}}').text('評分人次:'+msg.score_people);
-                                
-                                    $('#avg_score{{$data->id}}').text('評分:'+msg.total_score/msg.score_people,2);
+                                                                 
+                                   $('#xuitescore{{$data->id}}').text('評分:'+msg.total_score/msg.score_people);
 
                                 },
                             });
@@ -168,16 +164,14 @@
                  
          
                                                   
-                </script>  
-               
-               
+                    </script>   
             </div>
         </div>
         <!-- /.row-->
         @endforeach
 
         <!--pttdata-->
-          <!--xuitedata-->
+      
         @foreach($pttdata as $data)
   
        
@@ -195,17 +189,14 @@
                 <h4>推:{{$data->push_count}}</h4>
                 <h4>噓:{{$data->boo_count}}</h4>
                 <h4>箭頭:{{$data->arrow_count}}</h4>
+                <h5 id="pttscore{{$data->id}}">網站評分:{{round($data->total_score/$data->score_people,2)}}</h5>
+                <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
                
-               
-                <h5 id="score_people{{$data->id}}">評分人次:{{$data->score_people}}</h5>
-                <h5 id="avg_score{{$data->id}}">平均評分:{{round($data->total_score/$data->score_people,2)}}</h5>
 
-                
+              
              
-                <div class="my-rating-4" id="{{$data->id}}"></div>
-                
-  
-                <script type="text/javascript">                      
+                <div class="my-rating-4" id="{{$data->id}}">  </div>
+                  <script type="text/javascript">                      
                     $(".my-rating-4").starRating({
                         totalStars: 5,
                         emptyColor: 'lightgray',
@@ -222,15 +213,15 @@
                                 headers: {
                                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                                 },  
-                                url:"{{URL('score')}}",
+                                url:"{{URL('pttscore')}}",
                                 data:{    currentRating:currentRating,id: {{$data->id}}   },
                                 type: "POST",
                                 success: function(msg){
                                     msg = JSON.parse(msg);
                                     console.log(msg)
-                                    $('#score_people{{$data->id}}').text('評分人次:'+msg.score_people);
                                 
-                                    $('#avg_score{{$data->id}}').text('評分:'+msg.total_score/msg.score_people,2);
+                                  
+                                    $('#pttscore{{$data->id}}').text('評分:'+msg.total_score/msg.score_people);
 
                                 },
                             });
@@ -239,9 +230,10 @@
                  
          
                                                   
-                </script>  
-                <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
-               
+                    </script>  
+             
+            </div>
+                
             </div>
         </div>
         <!-- /.row -->
@@ -268,15 +260,19 @@
 
                
                
-                <h5 id="score_people{{$data->id}}">評分人次:{{$data->score_people}}</h5>
-                <h5 id="avg_score{{$data->id}}">平均評分:{{round($data->total_score/$data->score_people,2)}}</h5>
-
-                
-             
-                <div class="my-rating-4" id="{{$data->id}}"></div>
+               
+                <h5 id="youtubescore{{$data->id}}">網站評分:{{round($data->total_score/$data->score_people,2)}}</h5>
                 
   
-                <script type="text/javascript">                      
+
+                <p>{{$data->search_subtitle}}
+                   <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
+               </p>
+             
+               
+             
+                <div class="my-rating-4" id="{{$data->id}}"></div>
+                  <script type="text/javascript">                      
                     $(".my-rating-4").starRating({
                         totalStars: 5,
                         emptyColor: 'lightgray',
@@ -293,15 +289,16 @@
                                 headers: {
                                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                                 },  
-                                url:"{{URL('score')}}",
+                                url:"{{URL('pttscore')}}",
                                 data:{    currentRating:currentRating,id: {{$data->id}}   },
                                 type: "POST",
                                 success: function(msg){
                                     msg = JSON.parse(msg);
                                     console.log(msg)
-                                    $('#score_people{{$data->id}}').text('評分人次:'+msg.score_people);
+                                   
                                 
-                                    $('#avg_score{{$data->id}}').text('評分:'+msg.total_score/msg.score_people,2);
+                                  
+                                    $('#youtubescore{{$data->id}}').text('評分:'+msg.total_score/msg.score_people);
 
                                 },
                             });
@@ -310,16 +307,13 @@
                  
          
                                                   
-                </script>  
-                <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
-               
+                    </script>  
+             
+   
             </div>
         </div>
         <!-- /.row -->
         @endforeach
-        
-        
-
 
 
 

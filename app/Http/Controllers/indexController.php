@@ -4,12 +4,17 @@ namespace App\Http\Controllers;
 use Illuminate\Routing\Controller as BaseController;
 use View;
 use App\Pixnet;
+use App\Xuite;
+use App\Ptt;
+use App\Youtube;
 
 
 
 class indexController extends Controller {
 	public function index()
 	{
+		$pixnetdata = Pixnet::orderBy('search_time', 'desc')->paginate(12); 
+		$pixnetdata = Pixnet::orderBy('search_time', 'desc')->paginate(12); 
 		$pixnetdata = Pixnet::orderBy('search_time', 'desc')->paginate(12); 
 		return view('index',['pixnetdata'=>$pixnetdata]);
 	 
@@ -25,7 +30,7 @@ class indexController extends Controller {
 	}
 		public function appraise()
 	{
-		$pixnetdata = Pixnet::orderBy('totalscore', 'desc')->paginate(12); 
+		$pixnetdata = Pixnet::orderBy('total_score', 'desc')->paginate(12); 
 		return view('index',['pixnetdata'=>$pixnetdata]);
 
 	}

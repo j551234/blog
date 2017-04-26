@@ -2,6 +2,8 @@
 
 @section('content')
     <header>
+
+
         <div class="header-content">
             <div class="header-content-inner">
                 <h1 id="homeHeading">M.R.中鑒者</h1>
@@ -104,7 +106,7 @@
                                    {{$data->search_author}}
                                 </div>
                                 <div class="avgscore text-faded">
-                                    {{round($data->totalscore/$data->scorepeople,2)}}
+                                    {{round($data->total_score/$data->score_people,2)}}
                                 </div>
                             </div>
                         </div>
