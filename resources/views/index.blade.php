@@ -34,7 +34,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Classification</h2>
+                    <h2 class="section">Classification</h2>
                     <hr class="primary">
                 </div>
             </div>
@@ -104,7 +104,7 @@
                                    {{$data->search_author}}
                                 </div>
                                 <div class="avgscore text-faded">
-                                    {{round($data->totalscore/$data->scorepeople,2)}}
+                                    {{round($data->total_score/$data->score_people,2)}}
                                 </div>
                             </div>
                         </div>
