@@ -2,6 +2,8 @@
 
 @section('content')
     <header>
+
+
         <div class="header-content">
             <div class="header-content-inner">
                 <h1 id="homeHeading">M.R.中鑒者</h1>

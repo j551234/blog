@@ -34,35 +34,70 @@ public function index(Request $request)
  // 					->where('search_title','like',"%$search%")
  // 					->get();
  // 	$alldata= $pixnetdata->union($xuitedata)->union($pttdata);
-
- 	
-
-
- 
-
  	return view('result',['pixnetdata'=>$pixnetdata,
  						'xuitedata'=>$xuitedata,'pttdata'=>$pttdata,
  						'youtubedata'=>$youtubedata,'search'=> $search]);
 	}
-	public function score(Request $request)
+public function pixnetscore(Request $request)
 	{
 		// echo $request->id;
 		$value = (int)$request->currentRating;
-		$scorepeople=pixnet::where('id',$request->id)
+		$score_people=pixnet::where('id',$request->id)
           				->increment('score_people');
-		$score=pixnet::where('id',$request->id)
+		$total_score=pixnet::where('id',$request->id)
           				->increment('total_score',$value);
-        $scorepeople=pixnet::where('id',$request->id)
-          				->increment('score_people');
-		$score=pixnet::where('id',$request->id)
-          				->increment('total_score',$value);
+       
       
 
    //      $search = $request->input('search');
  		// $resultdata = Pixnet::where('search_title','like',"%$search%")
  		// ->paginate(5);
-        $resultdata = pixnet::find($request->id);
-		return $resultdata->toJson();
+        $pixnetchange = pixnet::find($request->id);
+		return $pixnetchange->toJson();
+	}
+public function xuitescore(Request $request)
+	{
+	
+		$value = (int)$request->currentRating;
+		$score_people=Xuite::where('id',$request->id)
+          				->increment('score_people');
+		$total_score=Xuite::where('id',$request->id)
+          				->increment('total_score',$value);
+      
+
+   
+        $xuitechange = xuite::find($request->id);
+		return $xuitechange->toJson();
+	}
+public function pttscore(Request $request)
+	{
+
+		$value = (int)$request->currentRating;
+		
+        $score_people=Ptt::where('id',$request->id)
+          				->increment('score_people');
+		$toal_score=ptt::where('id',$request->id)
+          				->increment('total_score',$value);
+      
+
+  
+        $pttchange = Ptt::find($request->id);
+		return $pttchange->toJson();
+	}
+public function youtubescore(Request $request)
+	{
+	
+		$value = (int)$request->currentRating;
+	
+        $score_people=youtube::where('id',$request->id)
+          				->increment('score_people');
+		$total_score=youtube::where('id',$request->id)
+          				->increment('total_score',$value);
+      
+
+ 
+        $youtubechange = youtube::find($request->id);
+		return $youtubechange->toJson();
 	}
 
 

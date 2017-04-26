@@ -11,7 +11,11 @@ body {
 body {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
+<<<<<<< HEAD
+hr{
+=======
 hr {
+>>>>>>> 89f0bac31f28d3f53f7ca271c0c93638f42ec4d4
   border-color: #F05F40;
   border-width: 3px;
   max-width: 50px;
@@ -246,7 +250,11 @@ header .header-content .header-content-inner h1 {
   line-height: 26.4px;
   letter-spacing: 12px;
 }
+<<<<<<< HEAD
+header .header-content .header-content-inner hr{
+=======
 header .header-content .header-content-inner hr {
+>>>>>>> 89f0bac31f28d3f53f7ca271c0c93638f42ec4d4
   margin: 30px auto;
 }
 header .header-content .header-content-inner p {
