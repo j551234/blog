@@ -24,30 +24,34 @@
     </header-result>
 
     <!-- Page Content -->
-    <div class="container">
     
- 
+    <div class="container"> 
 
+
+ 
+    <div class="result-contain">
+        
+    
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
-                    <h3 class="page-header">搜尋結果:{{$search}} </h3>
+                    <h4 class="page-header">搜尋結果: {{$search}} </h4>
             </div>
         </div>
                    
         <!-- /.row -->
   
 
-        <!-- Pixnet -->
-
+    
 
     @foreach($pixnetdata as $data)
-  
+        <!-- Pixnet -->
        
         <div class="row">
             <div class="col-md-7">
                 <a href="{{$data->search_href}}" target="_blank">
-                    <img class="img-responsive" src="{{$data->article_picture}}" alt="圖片未能抓取" align>
+                    <img class="img-result" src="{{$data->article_picture}}" alt="圖片未能抓取" align>
+
                 </a>
             </div>
             <div class="col-md-5">
@@ -57,10 +61,11 @@
                 <h5>瀏覽人次:{{$data->search_view}}</h5>
                 
                 <h5 id="pixnetscore{{$data->id}}">網站評分:{{round($data->total_score/$data->score_people,2)}}</h5>
-
-                <p>{{$data->search_subtitle}}
+                <div class="subtitle">
+                <p class="JQellipsis">{{$data->search_subtitle}}</p>
+                </div>
                    <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
-               </p>
+               
             
                 <div class="my-rating-4" id="{{$data->id}}"> </div>
                 
@@ -105,6 +110,7 @@
             </div>
         </div>
         <!-- /.row -->
+        <hr class="result">
         @endforeach
         
         <!--xuitedata-->
@@ -115,7 +121,7 @@
         <div class="row">
             <div class="col-md-7">
                 <a href="{{$data->search_href}}" target="_blank">
-                    <img class="img-responsive" src="{{$data->article_picture}}" alt="圖片未能抓取" align>
+                    <img class="img-result" src="{{$data->article_picture}}" alt="圖片未能抓取" align>
 
                 </a>
             </div>
@@ -126,9 +132,10 @@
                
                
                 <h5 id="xuitescore{{$data->id}}">網站評分:{{round($data->total_score/$data->score_people,2)}}</h5>
-
-                <p>{{$data->search_subtitle}}
-                 <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a></p>
+                <div class="subtitle">
+                <p class="JQellipsis">{{$data->search_subtitle}}</p>
+                </div>
+                 <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
              
                  <div class="my-rating-4" id="{{$data->id}}"></div>
                   <script type="text/javascript">                      
@@ -168,6 +175,7 @@
             </div>
         </div>
         <!-- /.row-->
+        <hr class="result">
         @endforeach
 
         <!--pttdata-->
@@ -178,7 +186,7 @@
         <div class="row">
             <div class="col-md-7">
                  <a href="{{$data->search_href}}" target="_blank">
-                    <img class="img-responsive" src="https://lh4.ggpht.com/XsAo-Kbh6o4Hm5s5c4zz3YaErInIWdD-7CR1zjEWp0v-kR76xW1kAk5A4RiKc_wNAlU=w300" alt="圖片未能抓取" width="50%">
+                    <img class="img-result" src="https://lh4.ggpht.com/XsAo-Kbh6o4Hm5s5c4zz3YaErInIWdD-7CR1zjEWp0v-kR76xW1kAk5A4RiKc_wNAlU=w300" alt="圖片未能抓取" width="50%">
 
                 </a>
             </div>
@@ -234,9 +242,9 @@
              
             </div>
                 
-            </div>
         </div>
         <!-- /.row -->
+        <hr class="result">
         @endforeach
         <!--youtubedata-->
         @foreach($youtubedata as $data)
@@ -246,7 +254,7 @@
             <div class="col-md-7">
                <a href="{{$data->search_href}}" target="_blank">
 
-                    <img class="img-responsive" src="{{$data->article_picture}}" alt="圖片未能抓取" align>
+                    <img class="img-result" src="{{$data->article_picture}}" alt="圖片未能抓取" align>
 
                 </a>
                
@@ -262,12 +270,11 @@
                
                
                 <h5 id="youtubescore{{$data->id}}">網站評分:{{round($data->total_score/$data->score_people,2)}}</h5>
-                
-  
-
-                <p>{{$data->search_subtitle}}
+                <div class="subtitle">
+                <p class="JQellipsis">{{$data->search_subtitle}}</p>
+                </div>
                    <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
-               </p>
+                
              
                
              
@@ -313,6 +320,8 @@
             </div>
         </div>
         <!-- /.row -->
+        <hr class="result">
+
         @endforeach
 
 
@@ -351,6 +360,8 @@
         </footer>
 
     </div>
+    <!-- /.result-contain -->
+
+    </div>
     <!-- /.container -->
-   
    @endsection

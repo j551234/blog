@@ -13,8 +13,7 @@ body {
 }
 
 
-hr {
-
+hr{
   border-color: #F05F40;
   border-width: 3px;
   max-width: 50px;
@@ -25,6 +24,13 @@ hr.light {
   max-width: none;
   opacity: 0.5;
 }
+hr.result{
+  border-color: #e0e0e0;
+  border-width:2px;
+  max-width: 850px;
+  opacity: 0.5;
+}
+
 a {
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
@@ -241,7 +247,7 @@ header .header-content .header-content-inner h1 {
   line-height: 26.4px;
   letter-spacing: 12px;
 }
-<<<<<<< HEAD
+
 header .header-content .header-content-inner hr{
 
   margin: 30px auto;
@@ -309,7 +315,13 @@ header .header-content .header-content-inner p {
   }
 }
 .section-heading {
-  margin-top: 50px;
+    margin-top: 50px;
+}
+.result-contain {
+    padding-right: 100px;
+    padding-left: 100px;
+    margin-right: auto;
+    margin-left: auto;
 }
 .classification-box {
   max-width: 400px;
