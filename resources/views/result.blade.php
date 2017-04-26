@@ -42,7 +42,7 @@
         <!-- Pixnet -->
 
 
-    @foreach($resultdata as $data)
+    @foreach($pixnetdata as $data)
   
        
         <div class="row">
@@ -60,7 +60,147 @@
                 <h5 id="score_people{{$data->id}}">評分人次:{{$data->score_people}}</h5>
                 <h5 id="avg_score{{$data->id}}">平均評分:{{round($data->total_score/$data->score_people,2)}}</h5>
 
-                <p>{{$data->search_subtitle}}</p>
+                <p>{{$data->search_subtitle}}
+                   <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
+               </p>
+             
+                <div class="my-rating-4" id="{{$data->id}}"></div>
+                
+  
+                <script type="text/javascript">                      
+                    $(".my-rating-4").starRating({
+                        totalStars: 5,
+                        emptyColor: 'lightgray',
+                        hoverColor: 'salmon',
+                        activeColor: 'cornflowerblue',
+                        initialRating: 0,
+                        strokeWidth: 0,
+                        useGradient: false,
+                        useFullStars: true,
+                        callback: function(currentRating, $el){
+                            alert('rated ' + currentRating);
+                            console.log('DOM element ', $el);
+                            $.ajax({
+                                headers: {
+                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                },  
+                                url:"{{URL('score')}}",
+                                data:{    currentRating:currentRating,id: {{$data->id}}   },
+                                type: "POST",
+                                success: function(msg){
+                                    msg = JSON.parse(msg);
+                                    console.log(msg)
+                                    $('#score_people{{$data->id}}').text('評分人次:'+msg.score_people);
+                                
+                                    $('#avg_score{{$data->id}}').text('評分:'+msg.total_score/msg.score_people,2);
+
+                                },
+                            });
+                        }
+                    });
+                 
+         
+                                                  
+                </script>  
+             
+            </div>
+        </div>
+        <!-- /.row -->
+        @endforeach
+        
+        <!--xuitedata-->
+       
+        @foreach($xuitedata as $data)
+  
+       
+        <div class="row">
+            <div class="col-md-7">
+                <a href="{{$data->search_href}}" target="_blank">
+                    <img class="img-responsive" src="{{$data->article_picture}}" alt="圖片未能抓取" align>
+
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3><a href="{{$data->search_href}}" target="_blank">{{$data->search_title}}</a></h3>
+                <h4>{{$data->search_time}}</h4>
+                <h4>作者:<a href="{{$data->author_href}}" target="_blank">{{$data->search_author}}</a></h4>
+               
+                <h5 id="score_people{{$data->id}}">評分人次:{{$data->score_people}}</h5>
+                <h5 id="avg_score{{$data->id}}">平均評分:{{round($data->total_score/$data->score_people,2)}}</h5>
+
+                <p>{{$data->search_subtitle}}
+                 <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a></p>
+             
+                <div class="my-rating-4" id="{{$data->id}}"></div>
+                
+  
+                <script type="text/javascript">                      
+                    $(".my-rating-4").starRating({
+                        totalStars: 5,
+                        emptyColor: 'lightgray',
+                        hoverColor: 'salmon',
+                        activeColor: 'cornflowerblue',
+                        initialRating: 0,
+                        strokeWidth: 0,
+                        useGradient: false,
+                        useFullStars: true,
+                        callback: function(currentRating, $el){
+                            alert('rated ' + currentRating);
+                            console.log('DOM element ', $el);
+                            $.ajax({
+                                headers: {
+                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                },  
+                                url:"{{URL('score')}}",
+                                data:{    currentRating:currentRating,id: {{$data->id}}   },
+                                type: "POST",
+                                success: function(msg){
+                                    msg = JSON.parse(msg);
+                                    console.log(msg)
+                                    $('#score_people{{$data->id}}').text('評分人次:'+msg.score_people);
+                                
+                                    $('#avg_score{{$data->id}}').text('評分:'+msg.total_score/msg.score_people,2);
+
+                                },
+                            });
+                        }
+                    });
+                 
+         
+                                                  
+                </script>  
+               
+               
+            </div>
+        </div>
+        <!-- /.row-->
+        @endforeach
+
+        <!--pttdata-->
+          <!--xuitedata-->
+        @foreach($pttdata as $data)
+  
+       
+        <div class="row">
+            <div class="col-md-7">
+                 <a href="{{$data->search_href}}" target="_blank">
+                    <img class="img-responsive" src="https://lh4.ggpht.com/XsAo-Kbh6o4Hm5s5c4zz3YaErInIWdD-7CR1zjEWp0v-kR76xW1kAk5A4RiKc_wNAlU=w300" alt="圖片未能抓取" width="50%">
+
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3><a href="{{$data->search_href}}" target="_blank">{{$data->search_title}}</a></h3>
+                <h4>{{$data->search_time}}</h4>
+                <h4>作者:<a href="{{$data->author_href}}" target="_blank">{{$data->search_author}}</a></h4>
+                <h4>推:{{$data->push_count}}</h4>
+                <h4>噓:{{$data->boo_count}}</h4>
+                <h4>箭頭:{{$data->arrow_count}}</h4>
+               
+               
+                <h5 id="score_people{{$data->id}}">評分人次:{{$data->score_people}}</h5>
+                <h5 id="avg_score{{$data->id}}">平均評分:{{round($data->total_score/$data->score_people,2)}}</h5>
+
+                
              
                 <div class="my-rating-4" id="{{$data->id}}"></div>
                 
@@ -106,6 +246,88 @@
         </div>
         <!-- /.row -->
         @endforeach
+        <!--youtubedata-->
+        @foreach($youtubedata as $data)
+  
+       
+        <div class="row">
+            <div class="col-md-7">
+               <a href="{{$data->search_href}}" target="_blank">
+
+                    <img class="img-responsive" src="{{$data->article_picture}}" alt="圖片未能抓取" align>
+
+                </a>
+               
+            </div>
+            <div class="col-md-5">
+                <h3><a href="{{$data->search_href}}" target="_blank">{{$data->search_title}}</a></h3>
+                <h4>{{$data->search_time}}</h4>
+                <h4>作者:{{$data->search_author}}</h4>
+                <h4>喜歡:{{$data->push_count}}</h4>
+                <h4>討厭:{{$data->boo_count}}</h4>
+
+               
+               
+                <h5 id="score_people{{$data->id}}">評分人次:{{$data->score_people}}</h5>
+                <h5 id="avg_score{{$data->id}}">平均評分:{{round($data->total_score/$data->score_people,2)}}</h5>
+
+                
+             
+                <div class="my-rating-4" id="{{$data->id}}"></div>
+                
+  
+                <script type="text/javascript">                      
+                    $(".my-rating-4").starRating({
+                        totalStars: 5,
+                        emptyColor: 'lightgray',
+                        hoverColor: 'salmon',
+                        activeColor: 'cornflowerblue',
+                        initialRating: 0,
+                        strokeWidth: 0,
+                        useGradient: false,
+                        useFullStars: true,
+                        callback: function(currentRating, $el){
+                            alert('rated ' + currentRating);
+                            console.log('DOM element ', $el);
+                            $.ajax({
+                                headers: {
+                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                },  
+                                url:"{{URL('score')}}",
+                                data:{    currentRating:currentRating,id: {{$data->id}}   },
+                                type: "POST",
+                                success: function(msg){
+                                    msg = JSON.parse(msg);
+                                    console.log(msg)
+                                    $('#score_people{{$data->id}}').text('評分人次:'+msg.score_people);
+                                
+                                    $('#avg_score{{$data->id}}').text('評分:'+msg.total_score/msg.score_people,2);
+
+                                },
+                            });
+                        }
+                    });
+                 
+         
+                                                  
+                </script>  
+                <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
+               
+            </div>
+        </div>
+        <!-- /.row -->
+        @endforeach
+        
+        
+
+
+
+
+
+
+
+
+
 
 
   
@@ -113,16 +335,17 @@
 
      
 
-      <!--  -->
+
           
         <!-- Pagination -->
-      <!--   <div class="paginate">
-            {{$resultdata->links()}}
+        <div class="paginate">
+
+            {{$pixnetdata->links()}}
           
 
 
         </div>
- -->
+
         <!-- Footer -->
         <footer>
             <div class="row">
