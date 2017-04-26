@@ -36,7 +36,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Classification</h2>
+                    <h2 class="section">Classification</h2>
                     <hr class="primary">
                 </div>
             </div>
