@@ -16,10 +16,22 @@ use Illuminate\Http\Request;
 class resultController extends Controller {
 public function index(Request $request)
 	{
+	$search = $request->input('search');
+	$key_word = '$search';
+	$url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
+	$file1 = popen("start/b C://xampp/htdocs/done/SearchPixnet.py $url_key_word",'r');
+	$file2 = popen("start/b C://xampp/htdocs/done/SearchPtt.py $url_key_word",'r');
+	$file3 = popen("start/b C://xampp/htdocs/done/SearchXuite.py $url_key_word",'r');
+	$file4 = popen("start/b C://xampp/htdocs/done/SearchYoutube.py $url_key_word",'r');
+	pclose($file1);
+	pclose($file2);
+	pclose($file3);
+	pclose($file4);
 	  
       
+   
 
-	$search = $request->input('search');
+	
  	$pixnetdata = Pixnet::where('search_title','like',"%$search%")->paginate(2);
  	$xuitedata = Xuite::where('search_title','like',"%$search%")->paginate(2);
  	$pttdata = Ptt::where('search_title','like',"%$search%")->paginate(2);
