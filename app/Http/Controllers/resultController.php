@@ -17,25 +17,22 @@ class resultController extends Controller {
 public function index(Request $request)
 	{
 	$search = $request->input('search');
-	$key_word = $search;
-	$url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
-	$file1 = popen("start/b C://xampp/htdocs/done/SearchPixnet.py $url_key_word",'r');
-	$file2 = popen("start/b C://xampp/htdocs/done/SearchPtt.py $url_key_word",'r');
-	$file3 = popen("start/b C://xampp/htdocs/done/SearchXuite.py $url_key_word",'r');
-	$file4 = popen("start/b C://xampp/htdocs/done/SearchYoutube.py $url_key_word",'r');
-	pclose($file1);
-	pclose($file2);
-	pclose($file3);
-	pclose($file4);
+	// $key_word = $search;
+	// $url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
+	// $file1 = popen("start/b C://xampp/htdocs/done/SearchPixnet.py $url_key_word",'r');
+	// $file2 = popen("start/b C://xampp/htdocs/done/SearchPtt.py $url_key_word",'r');
+	// $file3 = popen("start/b C://xampp/htdocs/done/SearchXuite.py $url_key_word",'r');
+	// $file4 = popen("start/b C://xampp/htdocs/done/SearchYoutube.py $url_key_word",'r');
+	// pclose($file1);
+	// pclose($file2);
+	// pclose($file3);
+	// pclose($file4);
 	  
       
    
 
 	
- 	$pixnetdata = Pixnet::where('search_title','like',"%$search%")->paginate(2);
- 	$xuitedata = Xuite::where('search_title','like',"%$search%")->paginate(2);
- 	$pttdata = Ptt::where('search_title','like',"%$search%")->paginate(2);
- 	$youtubedata= Youtube::where('search_title','like',"%$search%")->paginate(2);
+ 	
  // 	$pixnetdata =Pixnet::select('id', 'search_title','search_href','search_author','score_people','total_score')
  // 					->where('search_title','like',"%$search%")
  // 					->get();
@@ -46,9 +43,7 @@ public function index(Request $request)
  // 					->where('search_title','like',"%$search%")
  // 					->get();
  // 	$alldata= $pixnetdata->union($xuitedata)->union($pttdata);
- 	return view('result',['pixnetdata'=>$pixnetdata,
- 						'xuitedata'=>$xuitedata,'pttdata'=>$pttdata,
- 						'youtubedata'=>$youtubedata,'search'=> $search]);
+ 	return view('wait',['search'=> $search]);
 	}
 public function pixnetscore(Request $request)
 	{
@@ -110,6 +105,20 @@ public function youtubescore(Request $request)
  
         $youtubechange = youtube::find($request->id);
 		return $youtubechange->toJson();
+	}
+	public function show(Request $request)
+	{
+	$search = $request->input('search');
+
+	
+ 	$pixnetdata = Pixnet::where('search_title','like',"%$search%")->paginate(2);
+ 	$xuitedata = Xuite::where('search_title','like',"%$search%")->paginate(2);
+ 	$pttdata = Ptt::where('search_title','like',"%$search%")->paginate(2);
+ 	$youtubedata= Youtube::where('search_title','like',"%$search%")->paginate(2);
+ 
+ 	return view('result',['pixnetdata'=>$pixnetdata,
+ 						'xuitedata'=>$xuitedata,'pttdata'=>$pttdata,
+ 						'youtubedata'=>$youtubedata,'search'=> $search]);
 	}
 
 

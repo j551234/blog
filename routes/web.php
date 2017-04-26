@@ -19,6 +19,7 @@ Route::post('/pixnetscore','resultController@pixnetscore');
 Route::post('/xuitescore','resultController@xuitescore');
 Route::post('/pttscore','resultController@pttscore');
 Route::post('/youtubescore','resultController@youtubescore');
+Route::get('/show','resultController@show');
 
 //index頁面
 Route::get('/index','indexController@index');
@@ -30,6 +31,9 @@ Route::get('/random','indexController@random');
 //contact 頁面
 Route::get('/contact','contactController@index');
 Route::post('/mail','contactController@contact');
+//wait頁面
+Route::post('/wait','waitController@index');
+
 
 
 
