@@ -240,7 +240,6 @@
              
             </div>
                 
-            </div>
         </div>
         <!-- /.row -->
         <hr class="result">
@@ -321,6 +320,7 @@
         </div>
         <!-- /.row -->
         <hr class="result">
+        
         @endforeach
 
 
