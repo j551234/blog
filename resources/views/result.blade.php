@@ -39,10 +39,7 @@
         <!-- /.row -->
   
 
-        <!-- Project One -->
-
-
-        <!-- Project One -->
+        <!-- Pixnet -->
 
 
     @foreach($resultdata as $data)
@@ -60,8 +57,8 @@
                 <h4>{{$data->search_time}}</h4>
                 <h4>作者:<a href="{{$data->author_href}}" target="_blank">{{$data->search_author}}</a></h4>
                 <h5>瀏覽人次:{{$data->search_view}}</h5>
-                <h5 id="scorepeople{{$data->id}}">評分人次:{{$data->scorepeople}}</h5>
-                <h5 id="avgscore{{$data->id}}">平均評分:{{round($data->totalscore/$data->scorepeople,2)}}</h5>
+                <h5 id="score_people{{$data->id}}">評分人次:{{$data->score_people}}</h5>
+                <h5 id="avg_score{{$data->id}}">平均評分:{{round($data->total_score/$data->score_people,2)}}</h5>
 
                 <p>{{$data->search_subtitle}}</p>
              
@@ -91,9 +88,9 @@
                                 success: function(msg){
                                     msg = JSON.parse(msg);
                                     console.log(msg)
-                                    $('#scorepeople{{$data->id}}').text('評分人次:'+msg.scorepeople);
+                                    $('#score_people{{$data->id}}').text('評分人次:'+msg.score_people);
                                 
-                                    $('#avgscore{{$data->id}}').text('評分:'+msg.totalscore/msg.scorepeople,2);
+                                    $('#avg_score{{$data->id}}').text('評分:'+msg.total_score/msg.score_people,2);
 
                                 },
                             });
@@ -109,7 +106,8 @@
         </div>
         <!-- /.row -->
         @endforeach
-            
+
+
   
 
 
@@ -118,12 +116,13 @@
       <!--  -->
           
         <!-- Pagination -->
-        <div class="paginate">
-
+      <!--   <div class="paginate">
             {{$resultdata->links()}}
+          
+
 
         </div>
-
+ -->
         <!-- Footer -->
         <footer>
             <div class="row">
