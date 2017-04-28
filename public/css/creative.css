@@ -41,6 +41,7 @@ a {
 a:hover,
 a:focus {
   color: #eb3812;
+  text-decoration:none;
 }
 h1,
 h2 {
@@ -64,23 +65,53 @@ p {
   margin: 40px auto;
   text-align: center;
 }
-#classification ul{
-    padding: 0px;
-    margin: 0px auto;
-    list-style: none;
-    max-width: 75%;
-    height: 24px;
-    overflow: hidden;
-    text-align:center;
+.menu{
+  padding-top: 40px;
 }
-#classification ul li{
-    padding: 0px 15px;
-    border-right: 1px dotted #666;
-    display: inline-block;
-    font-size: 13px;
-    letter-spacing: 1px;
-    vertical-align: middle;
-
+.menu>.submenu{
+  padding-left: 0;
+}
+.menu>.submenu>li{
+  display: inline-block;
+  padding:0em 2em;
+  min-width: 10em;
+  border-right: 1px dotted #666;
+  position: relative;
+  font-size: 1.3em;
+  margin-bottom: 0.5em;
+}
+.menu>.submenu>li:hover >a{
+  color: #fff28a;
+}
+.menu>.submenu>li:last-child{
+  border-right: none;
+}
+.menu>.submenu>li:hover>ul{
+  max-height: 10em;
+}
+.menu>.submenu>li>ul{
+  padding: .5em;
+  transition: max-height 0.5s;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px; 
+  max-height: 0em;
+  overflow: hidden;
+  list-style-type: none;
+  position: absolute;
+  z-index: 100;
+  width:100%;
+  left: 0;
+  top:100%;
+  background-color: rgba(255,255,255,.87)
+}
+.menu>.submenu>li>ul>li{
+  letter-spacing: 0.1em;
+  font-size: 1em;
+  padding: 0.5em 0;
+}
+.menu>.submenu>li>ul>li:hover>a{
+  border-radius: 6px;
+  background-color: #f0f0f0;
 }
 .bg-primary {
   background-color: #F05F40;
@@ -335,13 +366,8 @@ header .header-content .header-content-inner p {
 .classification-box p {
   margin-bottom: 0;
 }
-.sequence { 
-   font-size: 20px;
 
-}
-.sequence:hover { 
-   text-decoration:none;
-}
+
 .artical-box {
   position: relative;
   display: block;

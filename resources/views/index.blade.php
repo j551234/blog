@@ -2,8 +2,6 @@
 
 @section('content')
     <header>
-
-
         <div class="header-content">
             <div class="header-content-inner">
                 <h1 id="homeHeading">M.R.中鑒者</h1>
@@ -48,7 +46,7 @@
                         <a class="btn" href="#">
                         <i class="fa fa-4x fa-cutlery text-primary sr-icons" ></i></a>
                         <h3>Foods</h3>
-                        <p class="text-muted">來自各國各地的美食饗宴滿足你的味蕾，擺脫你總是找不到美食的惡夢！ </p>
+                        <p class="text-muted"></p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
@@ -76,14 +74,42 @@
                     </div>
                 </div>
             </div> 
-            
+            <!--  row end -->
         </div>
-        <div class="text-center">
-             <ul>
-                <li> <a class="sequence page-scroll" href="{{URL('popular')}}#classification">熱門文章</a> </li>
-                <li> <a class="sequence page-scroll" href="{{URL('appraise')}}#classification">評價最高</a></li>
-                <li> <a class="sequence page-scroll" href="{{URL('random')}}#classification">隨機選取</a></li>
-             </ul>
+        <!--  container end -->
+        <div class="menu text-center">
+        <ul class="submenu">
+    
+        
+            <li class="mainlink"><a href="" class="firstMenu">Pixnet</a>
+                <ul class="sublink">
+                    <li> <a class="sequence page-scroll" href="{{URL('popular')}}#classification">熱門文章</a> </li>
+                    <li> <a class="sequence page-scroll" href="{{URL('appraise')}}#classification">評價最高</a></li>
+                    <li> <a class="sequence page-scroll" href="{{URL('random')}}#classification">隨機選取</a></li>
+                </ul>
+            </li>
+            <li class="mainlink"><a href="" class="firstMenu">Xuite</a>
+                <ul class="sublink">
+                    <li> <a class="sequence page-scroll" href="{{URL('popular')}}#classification">熱門文章</a> </li>
+                    <li> <a class="sequence page-scroll" href="{{URL('appraise')}}#classification">評價最高</a></li>
+                    <li> <a class="sequence page-scroll" href="{{URL('random')}}#classification">隨機選取</a></li>
+                </ul>
+            </li>
+            <li class="mainlink"><a href="" class="firstMenu">Ptt</a>
+                <ul class="sublink">
+                    <li> <a class="sequence page-scroll" href="{{URL('popular')}}#classification">熱門文章</a> </li>
+                    <li> <a class="sequence page-scroll" href="{{URL('appraise')}}#classification">評價最高</a></li>
+                    <li> <a class="sequence page-scroll" href="{{URL('random')}}#classification">隨機選取</a></li>
+                </ul>
+            </li>
+            <li class="mainlink"><a href="" class="firstMenu">Youtube</a>
+                <ul class="sublink">
+                    <li> <a class="sequence page-scroll" href="{{URL('popular')}}#classification">熱門文章</a> </li>
+                    <li> <a class="sequence page-scroll" href="{{URL('appraise')}}#classification">評價最高</a></li>
+                    <li> <a class="sequence page-scroll" href="{{URL('random')}}#classification">隨機選取</a></li>
+                </ul>
+            </li>
+        </ul>
         </div>
     </section>
 
