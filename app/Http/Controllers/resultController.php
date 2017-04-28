@@ -17,6 +17,7 @@ use Illuminate\Http\Request;
 class resultController extends Controller {
 	public function index(Request $request)
 	{
+
 		$search = $request->input('search');
 
 		$key_word = $search;
@@ -31,6 +32,8 @@ class resultController extends Controller {
 		pclose($file4);
 
 		return view('wait',['search'=> $search]);
+
+	
 	}
 	public function pixnetscore(Request $request)
 	{
