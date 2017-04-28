@@ -311,10 +311,7 @@
                                 },
                             });
                         }
-                    });
-                 
-         
-                                                  
+                    });               
                     </script>  
              
    
@@ -324,6 +321,7 @@
         <hr class="result">
 
         @endforeach
+
 
 
 
@@ -344,7 +342,7 @@
         <!-- Pagination -->
         <div class="paginate">
 
-            {{$pixnetdata->links()}}
+            {{$whoIsTheBestDog->links()}}
           
 
 
@@ -365,4 +363,14 @@
 
     </div>
     <!-- /.container -->
+    <script type="text/javascript">
+            let search=window.location.search.match(/search=[^&]+/)
+            if(search){
+                search=search[0]
+                Array.from(document.querySelectorAll(".pagination a")).forEach(a=>{
+                    a.href=`${a.href}&${search}`
+                })
+            }
+        </script>
    @endsection
+        

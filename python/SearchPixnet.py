@@ -4,7 +4,6 @@
 import MySQLdb
 import sys
 import requests
-import time
 import urllib.parse
 from bs4 import BeautifulSoup
 
