@@ -50,7 +50,8 @@
         <div class="row">
             <div class="col-md-7">
                 <a href="{{$data->search_href}}" target="_blank">
-                    <img class="img-result" src="{{$data->article_picture}}" alt="圖片未能抓取" align>
+             
+                 <img class="img-result" src="{{$data->article_picture}}" alt="圖片未能抓取" align>
 
                 </a>
             </div>
@@ -186,7 +187,7 @@
         <div class="row">
             <div class="col-md-7">
                  <a href="{{$data->search_href}}" target="_blank">
-                    <img class="img-result" src="https://lh4.ggpht.com/XsAo-Kbh6o4Hm5s5c4zz3YaErInIWdD-7CR1zjEWp0v-kR76xW1kAk5A4RiKc_wNAlU=w300" alt="圖片未能抓取" width="50%">
+                    <img class="img-result" src="./img/ptt.jpg" width="50%">
 
                 </a>
             </div>
