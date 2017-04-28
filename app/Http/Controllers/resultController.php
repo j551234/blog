@@ -19,15 +19,15 @@ public function index(Request $request)
 	$search = $request->input('search');
 
 	$key_word = $search;
-	// $url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
-	// $file1 = popen("start/b C://xampp/htdocs/project/python/SearchPixnet.py $url_key_word",'r');
-	// $file2 = popen("start/b C://xampp/htdocs/project/python/SearchPtt.py $url_key_word",'r');
-	// $file3 = popen("start/b C://xampp/htdocs/project/python/SearchXuite.py $url_key_word",'r');
-	// $file4 = popen("start/b C://xampp/htdocs/project/python/SearchYoutube.py $url_key_word",'r');
-	// pclose($file1);
-	// pclose($file2);
-	// pclose($file3);
-	// pclose($file4);
+	$url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
+	$file1 = popen("start/b C://xampp/htdocs/project/python/SearchPixnet.py $url_key_word",'r');
+	$file2 = popen("start/b C://xampp/htdocs/project/python/SearchPtt.py $url_key_word",'r');
+	$file3 = popen("start/b C://xampp/htdocs/project/python/SearchXuite.py $url_key_word",'r');
+	$file4 = popen("start/b C://xampp/htdocs/project/python/SearchYoutube.py $url_key_word",'r');
+	pclose($file1);
+	pclose($file2);
+	pclose($file3);
+	pclose($file4);
 
  	return view('wait',['search'=> $search]);
 	}
