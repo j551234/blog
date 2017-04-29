@@ -11,7 +11,6 @@ use App\Pixnet;
 use App\Xuite;
 use App\Ptt;
 use App\Youtube;
-
 use Illuminate\Http\Request;
 
 class resultController extends Controller {
