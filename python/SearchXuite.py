@@ -6,6 +6,10 @@ import urllib.parse
 from bs4 import BeautifulSoup
 
 #編碼使用
+
+
+
+
 url_key_word = sys.argv[1]
 chinese_key_word=urllib.parse.unquote(sys.argv[1])
 
