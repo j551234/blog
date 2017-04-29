@@ -6,7 +6,6 @@
    
    <section id="contact">
         <div class="contact-container">
-            
                 <div class="text-center">
                     <h2 class="section-heading">Let's Get In Touch!</h2>
                     <hr class="primary">

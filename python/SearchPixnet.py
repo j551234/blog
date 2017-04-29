@@ -25,7 +25,7 @@ for  x  in range(3*x-2,3*x+1) :
         
         #取出標題
         search_title = (item.select('.search-title')[0].text) 
- 
+        
         #取小標題
         a = item.select('.search-desc')[0].text
         search_subtitle = a.strip('繼續閱讀 »') 
