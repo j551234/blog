@@ -35,7 +35,7 @@ for  x  in range(1,11) :
                         #圖片
                         PICTURE =  picture['src'].strip('amp;')
 
-                        cur.execute(sqli,("美食",TITLE, AUTHOR, HREF, PICTURE)) #存入資料庫    
+                        cur.execute(sqli,("food",TITLE, AUTHOR, HREF, PICTURE)) #存入資料庫    
 
 
         for content in soup.select("#content"):
@@ -56,7 +56,7 @@ for  x  in range(1,11) :
                         #圖片
                         PICTURE =  picture['src'].strip('amp;')
 
-                        cur.execute(sqli,("美食",TITLE, AUTHOR, HREF, PICTURE)) #存入資料庫    
+                        cur.execute(sqli,("food",TITLE, AUTHOR, HREF, PICTURE)) #存入資料庫    
 
 
     else:
@@ -79,7 +79,7 @@ for  x  in range(1,11) :
                         #圖片
                         PICTURE =  picture['src'].strip('amp;')
 
-                        cur.execute(sqli,("美食",TITLE, AUTHOR, HREF, PICTURE)) #存入資料庫 
+                        cur.execute(sqli,("food",TITLE, AUTHOR, HREF, PICTURE)) #存入資料庫 
                     
 cur.close() #斷開連結
 conn.commit()
