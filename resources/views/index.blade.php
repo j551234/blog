@@ -81,32 +81,32 @@
         <ul class="submenu">
     
         
-            <li class="mainlink"><a href="" class="firstMenu">Pixnet</a>
+            <li class="mainlink"><a href="{{URL('showpixnet')}}#classification" class="firstMenu">Pixnet</a>
                 <ul class="sublink">
-                    <li> <a class="sequence page-scroll" href="{{URL('popular')}}#classification">熱門文章</a> </li>
-                    <li> <a class="sequence page-scroll" href="{{URL('appraise')}}#classification">評價最高</a></li>
-                    <li> <a class="sequence page-scroll" href="{{URL('random')}}#classification">隨機選取</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=pixnet")}}#classification'>熱門文章</a> </li>
+                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=pixnet")}}#classification'>評價最高</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("random?show=pixnet")}}#classification'>隨機選取</a></li>
                 </ul>
             </li>
-            <li class="mainlink"><a href="" class="firstMenu">Xuite</a>
+            <li class="mainlink"><a href="{{URL('showxuite')}}#classification" class="firstMenu">Xuite</a>
                 <ul class="sublink">
-                    <li> <a class="sequence page-scroll" href="{{URL('popular')}}#classification">熱門文章</a> </li>
-                    <li> <a class="sequence page-scroll" href="{{URL('appraise')}}#classification">評價最高</a></li>
-                    <li> <a class="sequence page-scroll" href="{{URL('random')}}#classification">隨機選取</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=xuite")}}#classification'>熱門文章</a> </li>
+                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=xuite")}}#classification'>評價最高</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("random?show=xuite")}}#classification'>隨機選取</a></li>
                 </ul>
             </li>
-            <li class="mainlink"><a href="" class="firstMenu">Ptt</a>
+            <li class="mainlink"><a href="{{URL('showptt')}}#classification" class="firstMenu">Ptt</a>
                 <ul class="sublink">
-                    <li> <a class="sequence page-scroll" href="{{URL('popular')}}#classification">熱門文章</a> </li>
-                    <li> <a class="sequence page-scroll" href="{{URL('appraise')}}#classification">評價最高</a></li>
-                    <li> <a class="sequence page-scroll" href="{{URL('random')}}#classification">隨機選取</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=ptt")}}#classification'>熱門文章</a> </li>
+                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=ptt")}}#classification'>評價最高</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("random?show=ptt")}}#classification'>隨機選取</a></li>
                 </ul>
             </li>
-            <li class="mainlink"><a href="" class="firstMenu">Youtube</a>
+            <li class="mainlink"><a href="{{URL('showyoutube')}}#classification" class="firstMenu">Youtube</a>
                 <ul class="sublink">
-                    <li> <a class="sequence page-scroll" href="{{URL('popular')}}#classification">熱門文章</a> </li>
-                    <li> <a class="sequence page-scroll" href="{{URL('appraise')}}#classification">評價最高</a></li>
-                    <li> <a class="sequence page-scroll" href="{{URL('random')}}#classification">隨機選取</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=youtube")}}#classification'>熱門文章</a> </li>
+                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=youtube")}}#classification'>評價最高</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("random?show=youtube")}}#classification'>隨機選取</a></li>
                 </ul>
             </li>
         </ul>
@@ -119,10 +119,11 @@
 
         <div class="container-fluid">
             <div class="row no-gutter ">
-            @foreach($pixnetdata as $data)
+            @foreach($showdata as $data)
                 <div class="col-lg-2 col-sm-3">
                     <a href="{{$data->search_href}}" class="artical-box">
-                       <img class="img-responsive" src="{{$data->article_picture}}" alt="圖片未能抓取"  width="100%">
+                       <img class="img-responsive" src="{{$data->article_picture}}" alt="圖片未能抓取"  width="100%"  
+                       onerror="this.src='./img/nodoge.jpg'">
                         <div class="artical-box-caption">
                             <div class="artical-box-caption-content">
                                 <div class="project-category text-faded">
@@ -146,11 +147,22 @@
             </div>
             <!--  Pagination -->
             <div class="paginate">
-             {{$pixnetdata->fragment('classification')->links()}} 
+             {{$showdata->fragment('classification')->links()}} 
             </div>
         </div>
 
     </section>
+     <script type="text/javascript">
+            let show=window.location.search.match(/show=[^&]+/)
+         
+            if(show){
+                show=show[0]
+                Array.from(document.querySelectorAll(".pagination a")).forEach(a=>{
+                    let index=a.href.match(/#.+$/).index
+                    a.href=`${a.href.substring(0,index)}&${show}${a.href.substring(index)}`
+                })
+            }
+        </script>
 
 
 @endsection
