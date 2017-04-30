@@ -83,30 +83,30 @@
         
             <li class="mainlink"><a href="{{URL('showpixnet')}}#classification" class="firstMenu">Pixnet</a>
                 <ul class="sublink">
-                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=pixnet")}}'>熱門文章</a> </li>
-                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=pixnet")}}'>評價最高</a></li>
-                    <li> <a class="sequence page-scroll" href='{{URL("random?show=pixnet")}}'>隨機選取</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=pixnet")}}#classification'>熱門文章</a> </li>
+                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=pixnet")}}#classification'>評價最高</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("random?show=pixnet")}}#classification'>隨機選取</a></li>
                 </ul>
             </li>
             <li class="mainlink"><a href="{{URL('showxuite')}}#classification" class="firstMenu">Xuite</a>
                 <ul class="sublink">
-                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=xuite")}}'>熱門文章</a> </li>
-                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=xuite")}}'>評價最高</a></li>
-                    <li> <a class="sequence page-scroll" href='{{URL("random?show=xuite")}}'>隨機選取</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=xuite")}}#classification'>熱門文章</a> </li>
+                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=xuite")}}#classification'>評價最高</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("random?show=xuite")}}#classification'>隨機選取</a></li>
                 </ul>
             </li>
             <li class="mainlink"><a href="{{URL('showptt')}}#classification" class="firstMenu">Ptt</a>
                 <ul class="sublink">
-                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=ptt")}}'>熱門文章</a> </li>
-                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=ptt")}}'>評價最高</a></li>
-                    <li> <a class="sequence page-scroll" href='{{URL("random?show=ptt")}}'>隨機選取</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=ptt")}}#classification'>熱門文章</a> </li>
+                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=ptt")}}#classification'>評價最高</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("random?show=ptt")}}#classification'>隨機選取</a></li>
                 </ul>
             </li>
             <li class="mainlink"><a href="{{URL('showyoutube')}}#classification" class="firstMenu">Youtube</a>
                 <ul class="sublink">
-                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=youtube")}}'>熱門文章</a> </li>
-                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=youtube")}}'>評價最高</a></li>
-                    <li> <a class="sequence page-scroll" href='{{URL("random?show=youtube")}}'>隨機選取</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=youtube")}}#classification'>熱門文章</a> </li>
+                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=youtube")}}#classification'>評價最高</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("random?show=youtube")}}#classification'>隨機選取</a></li>
                 </ul>
             </li>
         </ul>
