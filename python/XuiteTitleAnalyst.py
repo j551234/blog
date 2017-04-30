@@ -1,3 +1,6 @@
+#隨意窩Xuite:https://blog.xuite.net/
+# -*- coding: UTF-8 -*-
+
 import requests
 import MySQLdb
 from bs4 import BeautifulSoup
