@@ -249,6 +249,19 @@ header-result .header-content ul li{
    letter-spacing: 1px;
    vertical-align: middle;
 }
+header-result .header-content .searchtype {
+    font-size: 14px;
+    text-align-last: left;
+    padding-left: 290px;
+    padding-top: 10px;
+}
+header-result .header-content .searchweb {
+    font-size: 14px;
+    text-align-last: left;
+    padding-left: 290px;
+    padding-top: 10px;
+}
+
 header {
   position: relative;
   width: 100%;
@@ -289,6 +302,18 @@ header .header-content .header-content-inner p {
   font-size: 16px;
   margin-bottom: 50px;
 }
+header .header-content .header-content-inner .searchtype {
+    font-size: 14px;
+    text-align-last: left;
+    padding-left: 220px;
+    padding-top: 10px;
+  }
+header .header-content .header-content-inner .searchweb {
+    font-size: 14px;
+    text-align-last: left;
+    padding-left: 220px;
+    padding-top: 10px;
+  }
 #searchForm{
   /* The search form. */
   padding:0px 50px 0px;
@@ -339,10 +364,10 @@ header .header-content .header-content-inner p {
     margin-right: auto;
   }
   header .header-content .header-content-inner p {
-    font-size: 18px;
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 14px;
+    text-align-last: left;
+    padding-left: 220px;
+    padding-top: 10px;
   }
 }
 .section-heading {
@@ -353,6 +378,27 @@ header .header-content .header-content-inner p {
     padding-left: 100px;
     margin-right: auto;
     margin-left: auto;
+}
+.page-header {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  border-bottom: 1px solid #eee;
+}
+.page-header ul {
+    position: absolute;
+    list-style: none;
+    height: 24px;
+    overflow: hidden;
+    right: 40%;
+    top: 40%;
+}
+.page-header ul li {
+   padding: 0px 15px;
+   border-right: 1px dotted #666;
+   display: inline-block;
+   font-size: 13px;
+   letter-spacing: 1px;
+   vertical-align: middle;
 }
 .classification-box {
   max-width: 400px;

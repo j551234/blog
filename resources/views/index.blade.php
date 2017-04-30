@@ -4,12 +4,20 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading">M.R.中鑒者</h1>
-                <hr>
+            <hr>
                 <form id="searchForm" method="get" action="result">
-                <p><input type="text" class="searchbar" name="search" placeholder="search..."></p>
+                <input type="text" class="searchbar" name="search" placeholder="search...">
                 <br>
-                <input type="submit" value="Find Out" id="submitButton" class="btn btn-primary btn-xl" />
+                <div class="searchtype">
+                     <input type="radio" name="searchtype" value="author" />作者 
+                     <input type="radio" name="searchtype" value="title" />標題</div>
+                <div class="searchweb">
+                     <input type="checkbox" name="searchweb" value="pixnet">Pixnet
+                     <input type="checkbox" name="searchweb" value="xuite">Xuite
+                     <input type="checkbox" name="searchweb" value="ptt">Ptt
+                     <input type="checkbox" name="searchweb" value="youtube">Youtube</div>
+                <br>
+                <input type="submit" value="Find Out" id="submitButton" class="btn btn-primary btn-xl" />             
                 </form>
             </div>
         </div>

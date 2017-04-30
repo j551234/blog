@@ -22,9 +22,6 @@
                         <a class="page-scroll" href="{{URL('/index')}}#classification">Classification</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="{{URL('/message')}}">MessageBoard</a>
-                    </li>
-                    <li>
                         <a class="page-scroll" href="{{URL('/contact')}}">Contact</a>
                     </li>
                     
