@@ -10,6 +10,7 @@ from selenium import webdriver
 
 
 jieba.set_dictionary('dict.txt.big')
+jieba.load_userdict('userdict.txt')
 
 def remove_values_from_list(the_list, val):
     return [value for value in the_list if value != val]
@@ -28,35 +29,67 @@ cur = conn.cursor()
 cur.execute("SELECT search_href,id FROM ptt")
 results = cur.fetchall()
 
-with open('list.txt', 'r',encoding='UTF-8') as list:
-    list1=[]
-    for line in list:
-        list1.append(line.strip('\ufeff').strip())
-    list.close()
+with open('positive.txt', 'r',encoding='UTF-8') as positive:
+    pos=[]
+    for line in positive:
+        pos.append(line.strip('\ufeff').strip())
+    positive.close()
+
+with open('nagative.txt', 'r',encoding='UTF-8') as nagative:
+    nag=[]
+    for line in nagative:
+        nag.append(line.strip('\ufeff').strip())
+    nagative.close()
+
+with open('paid news.txt', 'r',encoding='UTF-8') as paidnews:
+    paid=[]
+    for line in paidnews:
+        paid.append(line.strip('\ufeff').strip())
+    paidnews.close()
+    
+print(pos)
+print(nag)
+print(paid)
+
+pos_set=set(pos)
+nag_set=set(nag)
+paid_set=set(paid)
 
 # 迴圈撈取資料
 
 for record in results: 
-    db_url = record[0]
+    url = record[0]
     ptt_id = record[1]
     
-    print (db_url)
-    soup=BeautifulSoup(get_web_page(db_url), "lxml")
+    print (url)
+    soup=BeautifulSoup(get_web_page(url), "lxml")
 
     article = soup.select('div[id="main-container"]')
-    #內文
+    #內文 
+    if article!=[]:
+        main_article=article[0].text.split("※ 發信站: 批踢踢實業坊(ptt.cc)")
+        content=main_article[0].strip()
+        sentence=content.split("\n")
+        sentence=remove_values_from_list(sentence,'')
 
-    main_article=article[0].text.split("※ 發信站: 批踢踢實業坊(ptt.cc)")
-    content=main_article[0].strip()
-    sentence=content.split("\n")
-    sentence=remove_values_from_list(sentence,'')
+        total_pos_count=0
+        total_nag_count=0
+        total_paid_count=0
+        for line in sentence:
 
-    total_count=0
-    for line in sentence:
-        words=jieba.lcut(line, cut_all=False)
-        s1 = set(list1)
-        s2 = set(words)
-        intersection=s1.intersection(s2)
-        count=len(intersection)
-        total_count=total_count+count
-    print(total_count)
+            line2=line.strip()
+            words=jieba.lcut(line2, cut_all=False)
+            words_set = set(words)
+            pos_intersection=words_set.intersection(pos_set)
+            nag_intersection=words_set.intersection(nag_set)
+            paid_intersection=words_set.intersection(paid_set)
+            pos_count=len(pos_intersection)
+            nag_count=len(nag_intersection)
+            paid_count=len(paid_intersection)
+
+        total_pos_count=total_pos_count+pos_count
+        total_nag_count=total_nag_count+nag_count
+        total_paid_count=total_paid_count+paid_count
+        print(total_pos_count)
+        print(total_nag_count)
+        print(total_paid_count)
