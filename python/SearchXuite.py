@@ -1,4 +1,6 @@
-#xuite
+#隨意窩Xuite:https://blog.xuite.net/
+# -*- coding: UTF-8 -*-
+
 import MySQLdb
 import sys
 import requests
