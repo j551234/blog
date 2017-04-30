@@ -22,19 +22,16 @@ jieba.set_dictionary('dict.txt.big')
 
 conn = MySQLdb.connect(host="localhost", user="root", passwd="", db="python",charset='utf8')#連結資料庫
 cur = conn.cursor()
-cur.execute("SELECT search_href,id FROM pixnet")
+cur.execute("SELECT search_href,id,search_title FROM pixnet")
 results = cur.fetchall()
 
-with open('list.txt', 'r',encoding='UTF-8') as list:
-    list1=[]
-    for line in list:
-        list1.append(line.strip('\ufeff').strip())
-    list.close()
-    
 for record in results:    
     db_url = record[0]
-
-    #ixnet_id = record[1]
+    pixnet_id = record[1]
+    title=record[2]
+    title_list=jieba.lcut(title,cut_all=False)
+    print(title_list)
+    
     res=requests.get(db_url)
     res.encoding='utf-8'
     soup = BeautifulSoup (res.text, "html5lib")
@@ -53,15 +50,22 @@ for record in results:
     sentence=content.split("\n")
     sentence=remove_values_from_list(sentence,'')
 
+
     total_count=0
+    total_article_count=0
     for line in sentence:
 
         line2=line.strip()
         words=jieba.lcut(line2, cut_all=False)
 
-        s1 = set(list1)
+        s1 = set(title_list)
         s2 = set(words)
+        article_count=len(s2)
+        total_article_count=total_article_count+article_count
         intersection=s1.intersection(s2)
         count=len(intersection)
         total_count=total_count+count
+    
+    print(total_article_count)
     print(total_count)
+    print(format(total_count/total_article_count,'0.1%'))

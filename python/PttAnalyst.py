@@ -1,4 +1,5 @@
-#encoding=utf-8 
+#PTT批踢踢實業坊 https://www.ptt.cc/
+# -*- coding: UTF-8 -*-
 import jieba
 import jieba.analyse
 import MySQLdb
