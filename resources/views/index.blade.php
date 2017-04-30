@@ -51,7 +51,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="classification-box">
-                        <a class="btn" href='{{URL("category?tag=美食")}}#classification'>
+                        <a class="btn" href='{{URL("category?show=$show&tag=美食")}}#classification'>
                         <i class="fa fa-4x fa-cutlery text-primary sr-icons" ></i></a>
                         <h3>Foods</h3>
                         <p class="text-muted"></p>
@@ -89,14 +89,14 @@
         <ul class="submenu">
     
         
-            <li class="mainlink"><a href='{{URL("index?show=pixnet")}}#classification' class="firstMenu">Pixnet</a>
+            <li class="mainlink"><a href='{{URL("index?show=pixnet&tag=$tag")}}#classification' class="firstMenu">Pixnet</a>
                 <ul class="sublink">
                     <li> <a class="sequence page-scroll" href='{{URL("popular?show=pixnet")}}#classification'>熱門文章</a> </li>
                     <li> <a class="sequence page-scroll" href='{{URL("appraise?show=pixnet")}}#classification'>評價最高</a></li>
                     <li> <a class="sequence page-scroll" href='{{URL("random?show=pixnet")}}#classification'>隨機選取</a></li>
                 </ul>
             </li>
-            <li class="mainlink"><a href='{{URL("index?show=xuite")}}#classification' class="firstMenu">Xuite</a>
+            <li class="mainlink"><a href='{{URL("index?show=xuite&tag=$tag")}}#classification' class="firstMenu">Xuite</a>
                 <ul class="sublink">
                     <li> <a class="sequence page-scroll" href='{{URL("popular?show=xuite")}}#classification'>熱門文章</a> </li>
                     <li> <a class="sequence page-scroll" href='{{URL("appraise?show=xuite")}}#classification'>評價最高</a></li>
@@ -158,19 +158,31 @@
              {{$showdata->fragment('classification')->links()}} 
             </div>
         </div>
-
+        $abc = "123";
+        "$abc" => 123
+        '$abc' => $abc
     </section>
      <script type="text/javascript">
             let show=window.location.search.match(/show=[^&]+/)
+            let tag=window.location.search.match(/tag=[^&]+/)
 
+            console.log(tag)
          
-            if(show){
-                show=show[0]
+            // if(show){
+                // show=show[0]
                 Array.from(document.querySelectorAll(".pagination a")).forEach(a=>{
                     let index=a.href.match(/#.+$/).index
-                    a.href=`${a.href.substring(0,index)}&${show}${a.href.substring(index)}`
+                    // a.href=`${a.href.substring(0,index)}&${tag}&${show}${a.href.substring(index)}`
+                    let sharp = a.href.substring(index);
+                    a.href = a.href.substring(0, index);
+                    if(show)
+                        a.href += "&"+show[0];
+                    if(tag)
+                        a.href += "&"+tag[0];
+                    a.href += sharp;
+                    // a.href = a.href.substring(0,index)+"&"+show+a.href.substring(index);
                 })
-            }
+            // }
         </script>
 
 

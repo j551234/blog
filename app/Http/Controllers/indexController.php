@@ -8,6 +8,7 @@ use App\Xuite;
 use App\Ptt;
 use App\Youtube;
 use App\Indexxuite;
+use App\Indexpixnet;
 use App\Http\Requests\StoreBlogPost;
 use Illuminate\Http\Request;
 
@@ -17,31 +18,48 @@ class indexController extends Controller {
 	
 
 	public function index(Request $request){
-	  
+	  	$tag= $request->input('tag');
 		$show= $request->input('show');
-		if($show!=null)
+		if($tag==null)
 			{
-				if($show=='pixnet')
-					$showdata =pixnet::orderBy('id', 'desc')->paginate(12); 
-				if($show=='xuite')
-					$showdata =xuite::orderBy('id', 'desc')->paginate(12); 
-				if($show=='ptt')
-					$showdata =ptt::orderBy('id', 'desc')->paginate(12);
-				if($show=='youtube')
-					$showdata =youtube::orderBy('id', 'desc')->paginate(12); }
+				if($show!=null)
+					{
+
+					if($show=='pixnet')
+						$showdata =pixnet::orderBy('id', 'desc')->paginate(12); 
+					if($show=='xuite')
+						$showdata =xuite::orderBy('id', 'desc')->paginate(12); 
+					if($show=='ptt')
+						$showdata =ptt::orderBy('id', 'desc')->paginate(12);
+
+					if($show=='youtube')
+						$showdata =youtube::orderBy('id', 'desc')->paginate(12); 
+					}
+					else
+					{
+						$showdata =pixnet::orderBy('id', 'desc')->paginate(12);
+					}
+				$tag=null;
+			}
 		else
 			{
-				$showdata =pixnet::orderBy('id', 'desc')->paginate(12); 
+				if($show!=null){
+					if($show=='pixnet')
+							{$showdata =indexpixnet::where('tag','=',$tag)->paginate(12); }
+					if($show=='xuite')
+							{$showdata =indexxuite::where('tag','=',$tag)->paginate(12); }
+					}
+			
+					
+				else{
+					$showdata =pixnet::orderBy('id', 'desc')->paginate(12);
+					$show==null;
+				}
 
 			}
 
 
-			return view('index',['showdata'=>$showdata]);
-	
-
-	 
-
-	}
+			return view('index',['showdata'=>$showdata,'tag'=>$tag,'show'=>$show]); }
 		public function popular(Request $request){
 		 $show= $request->input('show');
 			if($show=='pixnet')
@@ -82,7 +100,6 @@ class indexController extends Controller {
 			$show= $request->input('show');
 			if($show=='pixnet')
 			{$a=rand(0,count($rand1->all()));
-
 				$showdata = pixnet::whereBetween('id',array($a,$a+5))->paginate(6); }
 			if($show=='xuite')
 			{$b=rand(0,count($rand2->all()));
@@ -98,12 +115,44 @@ class indexController extends Controller {
 			return view('index',['showdata'=>$showdata]);
 	}
 	public function category(Request $request){
-		$tag= $request->input('tag');
-		$xuitedata = indexxuite::where('tag','=',$tag)->paginate(12); 
- 
-		return view('index',['showdata'=>$xuitedata]);
-	 
+			$tag= $request->input('tag');
+			$show= $request->input('show');
+				if($tag==null)
+					{
+						if($show!=null)
+							{
 
-	}
- 	
-}
+							if($show=='pixnet')
+								$showdata =pixnet::orderBy('id', 'desc')->paginate(12); 
+							if($show=='xuite')
+								$showdata =xuite::orderBy('id', 'desc')->paginate(12); 
+							if($show=='ptt')
+								$showdata =ptt::orderBy('id', 'desc')->paginate(12);
+
+							if($show=='youtube')
+								$showdata =youtube::orderBy('id', 'desc')->paginate(12); 
+							}
+							else
+							{
+								$showdata =pixnet::orderBy('id', 'desc')->paginate(12);
+							}
+						$tag=null;
+					}
+				else
+					{
+						if($show!=null){
+							if($show=='pixnet')
+									{$showdata =indexpixnet::where('tag','=',$tag)->paginate(12); }
+							if($show=='xuite')
+									{$showdata =indexxuite::where('tag','=',$tag)->paginate(12); }
+							}
+					
+							
+						else{
+							$showdata =pixnet::orderBy('id', 'desc')->paginate(12);
+							$show==null;
+						}
+					}
+
+			return view('index',['showdata'=>$showdata,'tag'=>$tag,'show'=>$show]); }
+		}
