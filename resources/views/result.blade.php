@@ -11,7 +11,7 @@
        
                 <form id="searchForm" method="get" action="result">
                 
-                
+
                 <input type="text"  class="searchbar" name="search" placeholder="search..." value="{{$search}}">
                 
                 <input type="submit" value="Find Out" id="submitButton" class="btn btn-primary btn-xl" />
@@ -27,7 +27,6 @@
                      <input type="checkbox" name="searchweb" value="ptt" id="pt"><label for="pt">Ptt</label>
                      <input type="checkbox" name="searchweb" value="youtube" id="y"><label for="y">Youtube</label>
                     </div>
-    
                 </div>
                
                 

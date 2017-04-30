@@ -250,21 +250,9 @@ header-result .header-content ul li{
    vertical-align: middle;
 }
 header-result .header-content .searchtype {
-    /*font-size: 14px;
-    padding-top: 10px;
-    padding-left: 0px;
-    display:inline-block;
-    margin-right:15em;
-    padding-bottom: 2em;*/
     float: left;
 }
 header-result .header-content .searchweb {
-    /*font-size: 14px;
-    padding-top: 10px;
-    padding-left: 0px;
-    display:inline-block;
-    margin-right:3em;
-    padding-bottom: 2em;*/
     float: right;
 }
 header-result .header-content .search {
@@ -314,22 +302,17 @@ header .header-content .header-content-inner p {
   font-size: 16px;
   margin-bottom: 50px;
 }
+header .header-content .header-content-inner .search {
+  width: 430px;
+  height: 50px;
+  display: block;
+  margin: 10px 240px 0px;
+}
 header .header-content .header-content-inner .searchtype {
-    font-size: 14px;
-    padding-top: 10px;
-    padding-left: 40px;
-    display:inline-block;
-    margin-right:6em;
-    padding-bottom: 2em;
-
+  float: left;
   }
 header .header-content .header-content-inner .searchweb {
-    font-size: 14px;
-    padding-top: 10px;
-    padding-left: 40px;
-    display:inline-block;
-    margin-right:2em;
-    padding-bottom: 2em;
+  float: right;
   }
 #searchForm{
   /* The search form. */
