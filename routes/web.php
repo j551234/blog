@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/','indexController@showpixnet');//主頁導向
+Route::get('/','indexController@index');//主頁導向
 
 //result頁面
 Route::get('/result','resultController@index');
@@ -31,6 +31,8 @@ Route::get('/showyoutube','indexController@showyoutube');
 Route::get('/popular','indexController@popular');
 Route::get('/appraise','indexController@appraise');
 Route::get('/random','indexController@random');
+Route::get('/category','indexController@category');
+
 
 
 //contact 頁面

@@ -7,58 +7,38 @@ use App\Pixnet;
 use App\Xuite;
 use App\Ptt;
 use App\Youtube;
+use App\Indexxuite;
 use App\Http\Requests\StoreBlogPost;
 use Illuminate\Http\Request;
 
 
 
 class indexController extends Controller {
-	public function showpixnet(){
-		$pixnetdata = Pixnet::orderBy('id', 'desc')->paginate(12); 
- 
-		return view('index',['showdata'=>$pixnetdata]);
-	 
-
-	}
-	public function showxuite(){
-		$xuite = xuite::orderBy('id', 'desc')->paginate(12); 
-
-		return view('index',['showdata'=>$xuite]);
-	 
-
-	}
-
-	public function showptt(){
-		$ptt = ptt::orderBy('id', 'desc')->paginate(12); 
-
-		return view('index',['showdata'=>$ptt]);
-	 
-
-	}
-		public function showyoutube(){
-		$youtube=youtube::orderBy('id', 'desc')->paginate(12); 
-	 
-		return view('index',['showdata'=>$youtube]);
-	 
-
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-	public function index(){
-	  
-		$pixnetdata = Pixnet::orderBy('search_time', 'desc')->paginate(12); 
 	
-		return view('index',['showdata'=>$pixnetdata]);
+
+	public function index(Request $request){
+	  
+		$show= $request->input('show');
+		if($show!=null)
+			{
+				if($show=='pixnet')
+					$showdata =pixnet::orderBy('id', 'desc')->paginate(12); 
+				if($show=='xuite')
+					$showdata =xuite::orderBy('id', 'desc')->paginate(12); 
+				if($show=='ptt')
+					$showdata =ptt::orderBy('id', 'desc')->paginate(12);
+				if($show=='youtube')
+					$showdata =youtube::orderBy('id', 'desc')->paginate(12); }
+		else
+			{
+				$showdata =pixnet::orderBy('id', 'desc')->paginate(12); 
+
+			}
+
+
+			return view('index',['showdata'=>$showdata]);
+	
+
 	 
 
 	}
@@ -116,6 +96,14 @@ class indexController extends Controller {
 			
 	 
 			return view('index',['showdata'=>$showdata]);
+	}
+	public function category(Request $request){
+		$tag= $request->input('tag');
+		$xuitedata = indexxuite::where('tag','=',$tag)->paginate(12); 
+ 
+		return view('index',['showdata'=>$xuitedata]);
+	 
+
 	}
  	
 }
