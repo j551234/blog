@@ -4,8 +4,7 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading">M.R.中鑒者</h1>
-                <hr>
+            <hr>
                 <form id="searchForm" method="get" action="result">
                 <p><input type="text" class="searchbar" name="search" placeholder="search..."></p>
                 <br>
