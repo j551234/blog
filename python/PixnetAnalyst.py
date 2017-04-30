@@ -19,28 +19,51 @@ def get_web_page(url): #原始地址
     return resp.text
 
 jieba.set_dictionary('dict.txt.big')
+jieba.load_userdict('userdict.txt')
 
 conn = MySQLdb.connect(host="localhost", user="root", passwd="", db="python",charset='utf8')#連結資料庫
 cur = conn.cursor()
 cur.execute("SELECT search_href,id FROM pixnet")
 results = cur.fetchall()
 
-with open('list.txt', 'r',encoding='UTF-8') as list:
-    list1=[]
-    for line in list:
-        list1.append(line.strip('\ufeff').strip())
-    list.close()
+with open('positive.txt', 'r',encoding='UTF-8') as positive:
+    pos=[]
+    for line in positive:
+        pos.append(line.strip('\ufeff').strip())
+    positive.close()
+
+with open('nagative.txt', 'r',encoding='UTF-8') as nagative:
+    nag=[]
+    for line in nagative:
+        nag.append(line.strip('\ufeff').strip())
+    nagative.close()
+
+with open('paid news.txt', 'r',encoding='UTF-8') as paidnews:
+    paid=[]
+    for line in paidnews:
+        paid.append(line.strip('\ufeff').strip())
+    paidnews.close()
     
+print(pos)
+print(nag)
+print(paid)
+
+pos_set=set(pos)
+nag_set=set(nag)
+paid_set=set(paid)
+
+    
+   
 for record in results:    
     db_url = record[0]
-
-    #ixnet_id = record[1]
+    ixnet_id = record[1]
     res=requests.get(db_url)
     res.encoding='utf-8'
     soup = BeautifulSoup (res.text, "html5lib")
     soup2 =  soup.select('meta')[1]
 
     original_url =soup2['content'].lstrip('3;url=')
+
     print (original_url)
 
     res1=requests.get(original_url)
@@ -53,15 +76,24 @@ for record in results:
     sentence=content.split("\n")
     sentence=remove_values_from_list(sentence,'')
 
-    total_count=0
+    total_pos_count=0
+    total_nag_count=0
+    total_paid_count=0
     for line in sentence:
 
         line2=line.strip()
         words=jieba.lcut(line2, cut_all=False)
+        words_set = set(words)
+        pos_intersection=words_set.intersection(pos_set)
+        nag_intersection=words_set.intersection(nag_set)
+        paid_intersection=words_set.intersection(paid_set)
+        pos_count=len(pos_intersection)
+        nag_count=len(nag_intersection)
+        paid_count=len(paid_intersection)
 
-        s1 = set(list1)
-        s2 = set(words)
-        intersection=s1.intersection(s2)
-        count=len(intersection)
-        total_count=total_count+count
-    print(total_count)
+        total_pos_count=total_pos_count+pos_count
+        total_nag_count=total_nag_count+nag_count
+        total_paid_count=total_paid_count+paid_count
+    print(total_pos_count)
+    print(total_nag_count)
+    print(total_paid_count)
