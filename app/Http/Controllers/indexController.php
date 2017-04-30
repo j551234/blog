@@ -67,7 +67,7 @@ class indexController extends Controller {
 			if($show=='pixnet')
 				$showdata =pixnet::orderBy('search_view', 'desc')->paginate(12); 
 			if($show=='xuite')
-				$showdata =xuite::orderBy('search_view', 'desc')->paginate(12); 
+				$showdata =xuite::orderBy('search_title', 'desc')->paginate(12); 
 			if($show=='ptt')
 				$showdata =ptt::orderBy('push_count', 'desc')->paginate(12);
 			if($show=='youtube')
