@@ -16,10 +16,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="{{URL('/index')}}#about">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#classification">Classification</a>
+                        <a class="page-scroll" href="{{URL('/index')}}#classification">Classification</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="{{URL('/message')}}">MessageBoard</a>
