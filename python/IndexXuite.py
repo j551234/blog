@@ -10,7 +10,7 @@ cur = conn.cursor()
 sqli = "insert into indexxuite (tag,search_title,search_author,search_href,article_picture) values (%s,%s,%s,%s,%s)" #選擇資料表
 
 
-tag_list=['美食','旅遊']
+tag_list=['food','travel']
 url_list=[15,17]
 
 
