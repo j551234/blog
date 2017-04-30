@@ -122,7 +122,8 @@
             @foreach($showdata as $data)
                 <div class="col-lg-2 col-sm-3">
                     <a href="{{$data->search_href}}" class="artical-box">
-                       <img class="img-responsive" src="{{$data->article_picture}}" alt="圖片未能抓取"  width="100%">
+                       <img class="img-responsive" src="{{$data->article_picture}}" alt="圖片未能抓取"  width="100%"  
+                       onerror="this.src='./img/nodoge.jpg'">
                         <div class="artical-box-caption">
                             <div class="artical-box-caption-content">
                                 <div class="project-category text-faded">
