@@ -250,16 +250,28 @@ header-result .header-content ul li{
    vertical-align: middle;
 }
 header-result .header-content .searchtype {
-    font-size: 14px;
-    text-align-last: left;
-    padding-left: 290px;
+    /*font-size: 14px;
     padding-top: 10px;
+    padding-left: 0px;
+    display:inline-block;
+    margin-right:15em;
+    padding-bottom: 2em;*/
+    float: left;
 }
 header-result .header-content .searchweb {
-    font-size: 14px;
-    text-align-last: left;
-    padding-left: 290px;
+    /*font-size: 14px;
     padding-top: 10px;
+    padding-left: 0px;
+    display:inline-block;
+    margin-right:3em;
+    padding-bottom: 2em;*/
+    float: right;
+}
+header-result .header-content .search {
+  width: 440px;
+  height: 50px;
+  display: block;
+  margin: 0px 290px ;
 }
 
 header {
@@ -304,15 +316,20 @@ header .header-content .header-content-inner p {
 }
 header .header-content .header-content-inner .searchtype {
     font-size: 14px;
-    text-align-last: left;
-    padding-left: 220px;
     padding-top: 10px;
+    padding-left: 40px;
+    display:inline-block;
+    margin-right:6em;
+    padding-bottom: 2em;
+
   }
 header .header-content .header-content-inner .searchweb {
     font-size: 14px;
-    text-align-last: left;
-    padding-left: 220px;
     padding-top: 10px;
+    padding-left: 40px;
+    display:inline-block;
+    margin-right:2em;
+    padding-bottom: 2em;
   }
 #searchForm{
   /* The search form. */
