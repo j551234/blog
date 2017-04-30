@@ -101,24 +101,18 @@ class indexController extends Controller {
 			$rand4=youtube::all();
 			$show= $request->input('show');
 			if($show=='pixnet')
-				
-				{$a=rand(0,count($rand1->all()));
-				$showdata = pixnet::where('id','>','$a')->paginate(12); }
+			{$a=rand(0,count($rand1->all()));
+
+				$showdata = pixnet::whereBetween('id',array($a,$a+5))->paginate(6); }
 			if($show=='xuite')
-				
-				{$b=rand(10000,count($rand2->all())+10000);
-				$showdata =xuite::where('id','>','$b')->paginate(12);  }
+			{$b=rand(0,count($rand2->all()));
+				$showdata =xuite::whereBetween('id',array($b,$b+5))->paginate(6);}
 			if($show=='ptt')
-				
-
-			{	$c=rand(20000,count($rand3->all())+20000);
-
-				$showdata =ptt::where('id','>','$c')->paginate(12); }
+			{$c=rand(0,count($rand3->all()));
+ 					$showdata =ptt::whereBetween('id',array($c,$c+5))->paginate(6); }
 			if($show=='youtube')
-				
-
-				{$d=rand(30000,count($rand4->all())+30000);
-				$showdata =youtube::where('id','>','$d')->paginate(12); }
+			{$d=rand(0,count($rand4->all()));
+				$showdata =youtube::whereBetween('id',array($d,$d+5))->paginate(6);}
 			
 	 
 			return view('index',['showdata'=>$showdata]);
