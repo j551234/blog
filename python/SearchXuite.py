@@ -18,7 +18,7 @@ cur = conn.cursor()
 sqli = "insert into xuite (key_word,search_title,search_subtitle,article_picture,search_href,search_author,author_href) values (%s,%s,%s,%s,%s,%s,%s)" #選擇資料表
 
 page = '1'
-payload={'query':url_key_word, 'database':'haarticle','type' : 'search','sort':'','p':page  }
+payload={'query':chinese_key_word, 'database':'haarticle','type' : 'search','sort':'','p':page  }
 res=requests.get("http://blog.xuite.net/new_index.php?",params=payload)
 res.encoding='utf-8'
 soup = BeautifulSoup (res.text, "html5lib")
