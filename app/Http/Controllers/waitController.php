@@ -16,7 +16,13 @@ use Illuminate\Http\Request;
 class waitController extends Controller {
 public function index(Request $request)
 	{
+		
+		$search = $request->input('search');
+
+		$searchtype = $request->input('searchtype');
+
+	
 
 
- 		return view('wait',['search'=> $search]);
+ 		return view('wait',['search'=> $search,'searchtype'=>$searchtype]);
 	}
