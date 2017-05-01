@@ -10,7 +10,7 @@ cur = conn.cursor()
 sqli = "insert into indexpixnet (tag,search_title,search_author,search_href,article_picture) values (%s,%s,%s,%s,%s)" #選擇資料表
 
 #food
-for  x  in range(1,3) : 
+for  x  in range(1,10) : 
 
     res=requests.get('https://www.pixnet.net/blog/articles/group/3/hot/'+repr (x))
     res.encoding='utf-8'
@@ -80,7 +80,7 @@ for  x  in range(1,3) :
 
                         cur.execute(sqli,("food",TITLE, AUTHOR, HREF, PICTURE)) #存入資料庫 
 #dress
-for  x  in range(1,3) : 
+for  x  in range(1,10) : 
 
     res=requests.get('https://www.pixnet.net/blog/articles/group/4/hot/'+repr (x))
     res.encoding='utf-8'
@@ -150,7 +150,7 @@ for  x  in range(1,3) :
 
                         cur.execute(sqli,("dress",TITLE, AUTHOR, HREF, PICTURE)) #存入資料庫 
 #travel
-for  x  in range(1,3) : 
+for  x  in range(1,10) : 
 
     res=requests.get('https://www.pixnet.net/blog/articles/group/2/hot/'+repr (x))
     res.encoding='utf-8'
@@ -220,7 +220,7 @@ for  x  in range(1,3) :
 
                         cur.execute(sqli,("travel",TITLE, AUTHOR, HREF, PICTURE)) #存入資料庫 
 #digital
-for  x  in range(1,3) : 
+for  x  in range(1,10) : 
 
     res=requests.get('https://www.pixnet.net/blog/articles/group/2/hot/'+repr (x))
     res.encoding='utf-8'
@@ -294,16 +294,3 @@ cur.close() #斷開連結
 conn.commit()
 conn.close()
             
-
-            
-    
-
-
-
-
-
-
-       
-
-    
-        
