@@ -16,9 +16,14 @@ use Illuminate\Http\Request;
 class resultController extends Controller {
 	public function index(Request $request)
 	{
-
+	
 		$search = $request->input('search');
 		$searchtype = $request->input('searchtype');
+		$searchweb = $request->input('searchweb');
+		if($searchweb!=null)
+			{ 	$showweb= implode (",", $searchweb);
+			
+			}
 
 		$key_word = $search;
 		$url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
@@ -100,19 +105,25 @@ class resultController extends Controller {
 	{	
 		$search = $request->input('search');
 		$searchtype = $request->input('searchtype');
-		if($searchtype=='title')
-			{
-				$rawDataPixnet=Pixnet::where('search_title','like',"%$search%");
-				$rawDataXuite=Xuite::where('search_title','like',"%$search%");
-				$rawDataPtt=Ptt::where('search_title','like',"%$search%");
-				$rawDataYoutube=Youtube::where('search_title','like',"%$search%");
+		searchweb = $request->input('searchweb');
+		if($searchweb!=null)
+			{ 	$showweb= implode (",", $searchweb);
+			
 			}
-		else
+		if($searchtype=='author')
 			{
 				$rawDataPixnet=Pixnet::where('search_author','like',"%$search%");
 				$rawDataXuite=Xuite::where('search_author','like',"%$search%");
 				$rawDataPtt=Ptt::where('search_author','like',"%$search%");
 				$rawDataYoutube=Youtube::where('search_author','like',"%$search%");
+			}
+		else
+			{
+				
+				$rawDataPixnet=Pixnet::where('search_title','like',"%$search%");
+				$rawDataXuite=Xuite::where('search_title','like',"%$search%");
+				$rawDataPtt=Ptt::where('search_title','like',"%$search%");
+				$rawDataYoutube=Youtube::where('search_title','like',"%$search%");
 			}
 
 		$number=array(count($rawDataPixnet->get()),count($rawDataXuite->get()),count($rawDataPtt->get()),count($rawDataYoutube->get()));

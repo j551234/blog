@@ -9,6 +9,9 @@ use App\Ptt;
 use App\Youtube;
 use App\Indexxuite;
 use App\Indexpixnet;
+use App\Indexptt;
+use App\Indexyoutube;
+
 use App\Http\Requests\StoreBlogPost;
 use Illuminate\Http\Request;
 
@@ -48,6 +51,10 @@ class indexController extends Controller {
 							{$showdata =indexpixnet::where('tag','=',$tag)->paginate(12); }
 					if($show=='xuite')
 							{$showdata =indexxuite::where('tag','=',$tag)->paginate(12); }
+					if($show=='ptt')
+							{$showdata =indexptt::where('tag','=',$tag)->paginate(12); }
+					if($show=='youtube')
+							{$showdata =indexyoutube::where('tag','=',$tag)->paginate(12); }
 					}
 			
 					
@@ -145,6 +152,10 @@ class indexController extends Controller {
 									{$showdata =indexpixnet::where('tag','=',$tag)->paginate(12); }
 							if($show=='xuite')
 									{$showdata =indexxuite::where('tag','=',$tag)->paginate(12); }
+							if($show=='ptt')
+									{$showdata =indexptt::where('tag','=',$tag)->paginate(12); }
+							if($show=='youtube')
+									{$showdata =indexyoutube::where('tag','=',$tag)->paginate(12); }
 							}
 					
 							

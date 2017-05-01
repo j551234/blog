@@ -14,10 +14,10 @@
                         <input type="radio" name="searchtype" value="title" id="t" /><label for="t">標題</label>
                     </div>
                     <div class="searchweb">
-                         <input type="checkbox" name="searchweb" value="pixnet" id="p"><label for="p">Pixnet</label>
-                         <input type="checkbox" name="searchweb" value="xuite" id="x"><label for="x">Xuite</label>
-                         <input type="checkbox" name="searchweb" value="ptt" id="pt"><label for="pt">Ptt</label>
-                         <input type="checkbox" name="searchweb" value="youtube" id="y"><label for="y">Youtube</label>
+                         <input type="checkbox" name="searchweb[]" value="pixnet" id="p"><label for="p">Pixnet</label>
+                         <input type="checkbox" name="searchweb[]" value="xuite" id="x"><label for="x">Xuite</label>
+                         <input type="checkbox" name="searchweb[]" value="ptt" id="pt"><label for="pt">Ptt</label>
+                         <input type="checkbox" name="searchweb[]" value="youtube" id="y"><label for="y">Youtube</label>
                     </div>
 
 
@@ -62,7 +62,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="classification-box">
-                        <a class="btn" href='{{URL("category?show=$show&tag=美食")}}#classification'>
+                        <a class="btn" href='{{URL("category?show=$show&tag=food")}}#classification'>
                         <i class="fa fa-4x fa-cutlery text-primary sr-icons" ></i></a>
                         <h3>Foods</h3>
                         <p class="text-muted"></p>
@@ -70,7 +70,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="classification-box">
-                         <a class="btn" href="#">
+                         <a class="btn" href='{{URL("category?show=$show&tag=dress")}}#classification'>
                         <i class="fa fa-4x fa-user text-primary sr-icons"></i></a>
                         <h3>Dresses</h3>
                         <p class="text-muted"></p>
@@ -78,7 +78,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="classification-box">
-                        <a class="btn" href="#">
+                        <a class="btn" href='{{URL("category?show=$show&tag=travel")}}#classification'>
                         <i class="fa fa-4x fa-plane text-primary sr-icons"></i></a>
                         <h3>Travel</h3>
                         <p class="text-muted"></p>
@@ -86,7 +86,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="classification-box">
-                        <a class="btn" href="#">
+                        <a class="btn" href='{{URL("category?show=$show&tag=digital")}}#classification'>
                         <i class="fa fa-4x fa-laptop text-primary sr-icons"></i></a>
                         <h3>Digital</h3>
                         <p class="text-muted"></p>
