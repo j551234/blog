@@ -18,6 +18,7 @@ class resultController extends Controller {
 	{
 
 		$search = $request->input('search');
+		$searchtype = $request->input('searchtype');
 
 		$key_word = $search;
 		$url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
@@ -30,7 +31,7 @@ class resultController extends Controller {
 		pclose($file3);
 		pclose($file4);
 
-		return view('wait',['search'=> $search]);
+		return view('wait',['search'=> $search,'searchtype'=>$searchtype]);
 
 	
 	}
@@ -98,12 +99,21 @@ class resultController extends Controller {
 	public function show(Request $request)
 	{	
 		$search = $request->input('search');
-
-
-		$rawDataPixnet=Pixnet::where('search_title','like',"%$search%");
-		$rawDataXuite=Xuite::where('search_title','like',"%$search%");
-		$rawDataPtt=Ptt::where('search_title','like',"%$search%");
-		$rawDataYoutube=Youtube::where('search_title','like',"%$search%");
+		$searchtype = $request->input('searchtype');
+		if($searchtype=='title')
+			{
+				$rawDataPixnet=Pixnet::where('search_title','like',"%$search%");
+				$rawDataXuite=Xuite::where('search_title','like',"%$search%");
+				$rawDataPtt=Ptt::where('search_title','like',"%$search%");
+				$rawDataYoutube=Youtube::where('search_title','like',"%$search%");
+			}
+		else
+			{
+				$rawDataPixnet=Pixnet::where('search_author','like',"%$search%");
+				$rawDataXuite=Xuite::where('search_author','like',"%$search%");
+				$rawDataPtt=Ptt::where('search_author','like',"%$search%");
+				$rawDataYoutube=Youtube::where('search_author','like',"%$search%");
+			}
 
 		$number=array(count($rawDataPixnet->get()),count($rawDataXuite->get()),count($rawDataPtt->get()),count($rawDataYoutube->get()));
 		$whoIsTheBestDog=array_search(max($number),$number);

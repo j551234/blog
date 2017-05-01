@@ -19,9 +19,16 @@
                          <input type="checkbox" name="searchweb" value="ptt" id="pt"><label for="pt">Ptt</label>
                          <input type="checkbox" name="searchweb" value="youtube" id="y"><label for="y">Youtube</label>
                     </div>
+
+
+
                 </div>
                 <br>
-                <input type="submit" value="Find Out" id="submitButton" class="btn btn-primary btn-xl" />             
+                <input type="submit" value="Find Out" id="submitButton" class="btn btn-primary btn-xl"/>
+          
+
+
+
                 </form>
             </div>
         </div>
