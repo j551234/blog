@@ -23,12 +23,10 @@ def pttcrawler(a,b):
                 judge = article.find('a').text[1]
                 for standard in standard_list:
                     if(judge==standard):
-                        
                         search_title = article.find('a').text
                         search_href = PTT_URL +article.find('a')['href']
                         search_author=article.select('.author')[0].text
-                        print(search_title)          
-                        cur.execute(sqli,(b,search_title,search_author,search_href)) #存入資料庫    
+                        cur.execute(sqli,(b,search_title,search_author,search_href)) #存入資料庫
                         conn.commit()
 
         #翻上一頁
@@ -44,8 +42,6 @@ dress_list=['Mix_Match']
 travel_list=['travel','Hotel','Japan_Travel']
 digital_list=['LCD','hardware','Notebook','Storage_Zone','VideoCard','PC_Shopping']
 
-
-
 for food in food_list:
     pttcrawler(food,tag_list[0])
 for dress in dress_list:
@@ -54,8 +50,6 @@ for travel in travel_list:
     pttcrawler(travel,tag_list[2])
 for digital in digital_list:
     pttcrawler(digital,tag_list[3])
-    
-    
-    
+
 cur.close() #斷開連結
 conn.close()
