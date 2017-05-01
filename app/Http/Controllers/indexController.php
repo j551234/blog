@@ -202,7 +202,7 @@ class indexController extends Controller {
 			$rand5=indexpixnet::all();
 			$rand6=indexxuite::all();
 			$rand7=indexptt::all();
-			$rand8=indexyoutube::all();
+			// $rand8=indexyoutube::all();
 			if($tag==null)
 					{
 						if($show!=null)
