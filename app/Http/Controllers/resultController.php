@@ -50,9 +50,7 @@ class resultController extends Controller {
 	 			pclose($file4);
 								}
 		
-		pclose($file2);
-		pclose($file3);
-		pclose($file4);
+	
 
 		return view('wait',['search'=> $search,'searchtype'=>$searchtype]);
 
@@ -123,7 +121,7 @@ class resultController extends Controller {
 	{	
 		$search = $request->input('search');
 		$searchtype = $request->input('searchtype');
-		searchweb = $request->input('searchweb');
+		$searchweb = $request->input('searchweb');
 		if($searchweb!=null)
 			{ 	$showweb= implode (",", $searchweb);
 			
