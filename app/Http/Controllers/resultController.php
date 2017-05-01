@@ -24,14 +24,32 @@ class resultController extends Controller {
 			{ 	$showweb= implode (",", $searchweb);
 			
 			}
+		$pixnetfind=Pixnet::where('key_word','like',"%$search%");
+		$xuitefind=xuite::where('key_word','like',"%$search%");	
+		$pttfind=ptt::where('key_word','like',"%$search%");
+		$youtubefind=youtube::where('key_word','like',"%$search%");
+		
+
 
 		$key_word = $search;
 		$url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
-		$file1 = popen("start/b C://xampp/htdocs/project/python/SearchPixnet.py $url_key_word",'r');
-		$file2 = popen("start/b C://xampp/htdocs/project/python/SearchPtt.py $url_key_word",'r');
-		$file3 = popen("start/b C://xampp/htdocs/project/python/SearchXuite.py $url_key_word",'r');
-		$file4 = popen("start/b C://xampp/htdocs/project/python/SearchYoutube.py $url_key_word",'r');
-		pclose($file1);
+		if($pixnetfind==null){		
+				$file1 = popen("start/b C://xampp/htdocs/project/python/SearchPixnet.py $url_key_word",'r');
+				pclose($file1);
+				 				}
+	  	 if($xuitefind==null){
+				$file2 = popen("start/b C://xampp/htdocs/project/python/SearchPtt.py $url_key_word",'r');  
+				pclose($file2);
+				 				}
+		if($pttfind==null){
+				$file3 = popen("start/b C://xampp/htdocs/project/python/SearchXuite.py $url_key_word",'r');  
+				pclose($file3); 
+								}
+		if($youtubefind==null){
+				$file4 = popen("start/b C://xampp/htdocs/project/python/SearchYoutube.py $url_key_word",'r'); 
+	 			pclose($file4);
+								}
+		
 		pclose($file2);
 		pclose($file3);
 		pclose($file4);
