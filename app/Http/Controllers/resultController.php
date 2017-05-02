@@ -23,16 +23,17 @@ class resultController extends Controller {
 		if($searchweb!=null)
 			{ 	$showweb= implode (",", $searchweb);
 			
-			}
-		$pixnetfind=Pixnet::where('key_word','like',"%$search%");
+			}	
+		$key_word = $search;
+		$url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
+		$pixnetfind=pixnet::where('key_word','like',"%$search%");
 		$xuitefind=xuite::where('key_word','like',"%$search%");	
 		$pttfind=ptt::where('key_word','like',"%$search%");
 		$youtubefind=youtube::where('key_word','like',"%$search%");
 		
 
 
-		$key_word = $search;
-		$url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
+	
 		if(count($pixnetfind)==0){		
 				$file1 = popen("start/b C://xampp/htdocs/project/python/SearchPixnet.py $url_key_word",'r');
 				pclose($file1);
