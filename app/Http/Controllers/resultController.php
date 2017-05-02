@@ -33,19 +33,19 @@ class resultController extends Controller {
 
 		$key_word = $search;
 		$url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
-		if($pixnetfind==null){		
+		if(count($pixnetfind)==0){		
 				$file1 = popen("start/b C://xampp/htdocs/project/python/SearchPixnet.py $url_key_word",'r');
 				pclose($file1);
 				 				}
-	  	 if($xuitefind==null){
+	  	 if(count($xuitefind)==0){
 				$file2 = popen("start/b C://xampp/htdocs/project/python/SearchPtt.py $url_key_word",'r');  
 				pclose($file2);
 				 				}
-		if($pttfind==null){
+		if(count($pttfind)==0){
 				$file3 = popen("start/b C://xampp/htdocs/project/python/SearchXuite.py $url_key_word",'r');  
 				pclose($file3); 
 								}
-		if($youtubefind==null){
+		if(count($youtubefind)==0){
 				$file4 = popen("start/b C://xampp/htdocs/project/python/SearchYoutube.py $url_key_word",'r'); 
 	 			pclose($file4);
 								}
