@@ -222,7 +222,7 @@ for  x  in range(1,10) :
 #digital
 for  x  in range(1,10) : 
 
-    res=requests.get('https://www.pixnet.net/blog/articles/group/2/hot/'+repr (x))
+    res=requests.get('https://www.pixnet.net/blog/articles/group/10/hot/'+repr (x))
     res.encoding='utf-8'
     soup = BeautifulSoup (res.text, "html5lib")
 

@@ -10,15 +10,28 @@
 
        
                 <form id="searchForm" method="get" action="result">
-                <input type="text"  class="searchbar" name="search" placeholder="search..." value="{{$search}}">
+
                 
-                <input type="submit" value="Find Out" id="submitButton" class="btn btn-primary btn-xl" />
-                <ul>
-                <li> <a href="http://search.ruten.com.tw/search/s000.php?enc=u&searchfrom=indexbar&k={{$search}}&t=0" target="_blank">露天拍賣</a> </li>
-                <li> <a href="https://tw.search.bid.yahoo.com/search/auction/product?kw={{$search}}&p={{$search}}" target="_blank">yahoo拍賣</a> </li>
-                <li> <a href="http://ecshweb.pchome.com.tw/search/v3.3/?q={{$search}}" target="_blank">pchome</a> </li>
-                </ul>
+                <div class="search">
+                    <input type="text"  class="searchbar" name="search" placeholder="search..." value="{{$search}}">
+                    
+                        <div class="searchtype">
+                        <input type="radio" name="searchtype" value="author" id="a" /><label for="a">作者</label>
+                        <input type="radio" name="searchtype" value="title" id="t" /><label for="t">標題</label>
+                        </div>
+                        <div class="searchweb">
+                        <input type="checkbox" name="searchweb" value="pixnet" id="p"><label for="p">Pixnet</label>
+                        <input type="checkbox" name="searchweb" value="xuite" id="x"><label for="x">Xuite</label>
+                        <input type="checkbox" name="searchweb" value="ptt" id="pt"><label for="pt">Ptt</label>
+                        <input type="checkbox" name="searchweb" value="youtube" id="y"><label for="y">Youtube</label>
+                        </div>
+                        <div class="subbotton">
+                         <input type="submit" value="Find Out" id="submitButton" class="btn btn-primary btn-xl" /> 
+                        </div>
+                </div>
                 </form>
+
+
                 
         </div>
     </header-result>
@@ -35,7 +48,14 @@
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
-                    <h4 class="page-header">搜尋結果: {{$search}} </h4>
+                <h4 class="page-header">搜尋結果: {{$search}}                 
+                    <ul>
+                        <li> <a href="http://search.ruten.com.tw/search/s000.php?enc=u&searchfrom=indexbar&k={{$search}}&t=0" target="_blank">露天拍賣</a> </li>
+                        <li> <a href="https://tw.search.bid.yahoo.com/search/auction/product?kw={{$search}}&p={{$search}}" target="_blank">yahoo拍賣</a> </li>
+                        <li> <a href="http://ecshweb.pchome.com.tw/search/v3.3/?q={{$search}}" target="_blank">pchome</a> </li>
+                    </ul>
+                </h4>
+
             </div>
         </div>
                    
