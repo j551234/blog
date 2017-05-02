@@ -26,10 +26,10 @@ class resultController extends Controller {
 			}	
 		$key_word = $search;
 		$url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
-		$pixnetfind=pixnet::where('key_word','like',"%$search%");
-		$xuitefind=xuite::where('key_word','like',"%$search%");	
-		$pttfind=ptt::where('key_word','like',"%$search%");
-		$youtubefind=youtube::where('key_word','like',"%$search%");
+		$pixnetfind=pixnet::where('key_word','like',"%$search%")->get();
+		$xuitefind=xuite::where('key_word','like',"%$search%")->get();
+		$pttfind=ptt::where('key_word','like',"%$search%")->get();
+		$youtubefind=youtube::where('key_word','like',"%$search%")->get();
 		
 
 
