@@ -6,9 +6,8 @@
             <div class="header-content-inner">
             <hr>
                 <form id="searchForm" method="get" action="result">
-                <input type="text" class="searchbar" name="search" placeholder="search...">
-                <br>
                 <div class="search">
+                <input type="text" class="searchbar" name="search" placeholder="search...">  
                     <div class="searchtype">
                          <input type="radio" name="searchtype" value="author" id="a" /><label for="a">作者</label>
                         <input type="radio" name="searchtype" value="title" id="t" /><label for="t">標題</label>
@@ -20,6 +19,8 @@
                          <input type="checkbox" name="searchweb" value="youtube" id="y"><label for="y">Youtube</label>
                     </div>
                 </div>
+                <br>
+                <br>
                 <br>
                 <input type="submit" value="Find Out" id="submitButton" class="btn btn-primary btn-xl" />             
                 </form>
