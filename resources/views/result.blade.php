@@ -10,6 +10,7 @@
 
        
                 <form id="searchForm" method="get" action="result">
+
                 
                 <div class="search">
                     <input type="text"  class="searchbar" name="search" placeholder="search..." value="{{$search}}">
@@ -28,8 +29,9 @@
                          <input type="submit" value="Find Out" id="submitButton" class="btn btn-primary btn-xl" /> 
                         </div>
                 </div>
-                
                 </form>
+
+
                 
         </div>
     </header-result>
@@ -46,13 +48,14 @@
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
-                    <h4 class="page-header">搜尋結果: {{$search}}
+                <h4 class="page-header">搜尋結果: {{$search}}                 
                     <ul>
-                    <li> <a href="http://search.ruten.com.tw/search/s000.php?enc=u&searchfrom=indexbar&k={{$search}}&t=0" target="_blank">露天拍賣</a> </li>
-                    <li> <a href="https://tw.search.bid.yahoo.com/search/auction/product?kw={{$search}}&p={{$search}}" target="_blank">yahoo拍賣</a> </li>
-                    <li> <a href="http://ecshweb.pchome.com.tw/search/v3.3/?q={{$search}}" target="_blank">pchome</a></li>
+                        <li> <a href="http://search.ruten.com.tw/search/s000.php?enc=u&searchfrom=indexbar&k={{$search}}&t=0" target="_blank">露天拍賣</a> </li>
+                        <li> <a href="https://tw.search.bid.yahoo.com/search/auction/product?kw={{$search}}&p={{$search}}" target="_blank">yahoo拍賣</a> </li>
+                        <li> <a href="http://ecshweb.pchome.com.tw/search/v3.3/?q={{$search}}" target="_blank">pchome</a> </li>
                     </ul>
-                    </h4>
+                </h4>
+
             </div>
         </div>
                    
@@ -382,10 +385,12 @@
     <!-- /.container -->
     <script type="text/javascript">
             let search=window.location.search.match(/search=[^&]+/)
+            let searchtype=window.location.search.match(/searchtype=[^&]+/)
             if(search){
                 search=search[0]
+                searchtype=searchtype[0]
                 Array.from(document.querySelectorAll(".pagination a")).forEach(a=>{
-                    a.href=`${a.href}&${search}`
+                    a.href=`${a.href}&${search}&${searchtype}`
                 })
             }
         </script>

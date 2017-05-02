@@ -13,16 +13,19 @@
                         <input type="radio" name="searchtype" value="title" id="t" /><label for="t">標題</label>
                     </div>
                     <div class="searchweb">
-                         <input type="checkbox" name="searchweb" value="pixnet" id="p"><label for="p">Pixnet</label>
-                         <input type="checkbox" name="searchweb" value="xuite" id="x"><label for="x">Xuite</label>
-                         <input type="checkbox" name="searchweb" value="ptt" id="pt"><label for="pt">Ptt</label>
-                         <input type="checkbox" name="searchweb" value="youtube" id="y"><label for="y">Youtube</label>
+                         <input type="checkbox" name="searchweb[]" value="pixnet" id="p"><label for="p">Pixnet</label>
+                         <input type="checkbox" name="searchweb[]" value="xuite" id="x"><label for="x">Xuite</label>
+                         <input type="checkbox" name="searchweb[]" value="ptt" id="pt"><label for="pt">Ptt</label>
+                         <input type="checkbox" name="searchweb[]" value="youtube" id="y"><label for="y">Youtube</label>
                     </div>
+
+
+
                 </div>
                 <br>
                 <br>
-                <br>
-                <input type="submit" value="Find Out" id="submitButton" class="btn btn-primary btn-xl" />             
+                <input type="submit" value="Find Out" id="submitButton" class="btn btn-primary btn-xl"/>
+          
                 </form>
             </div>
         </div>
@@ -56,7 +59,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="classification-box">
-                        <a class="btn" href='{{URL("category?show=$show&tag=美食")}}#classification'>
+                        <a class="btn" href='{{URL("category?show=$show&tag=food")}}#classification'>
                         <i class="fa fa-4x fa-cutlery text-primary sr-icons" ></i></a>
                         <h3>Foods</h3>
                         <p class="text-muted"></p>
@@ -64,7 +67,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="classification-box">
-                         <a class="btn" href="#">
+                         <a class="btn" href='{{URL("category?show=$show&tag=dress")}}#classification'>
                         <i class="fa fa-4x fa-user text-primary sr-icons"></i></a>
                         <h3>Dresses</h3>
                         <p class="text-muted"></p>
@@ -72,7 +75,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="classification-box">
-                        <a class="btn" href="#">
+                        <a class="btn" href='{{URL("category?show=$show&tag=travel")}}#classification'>
                         <i class="fa fa-4x fa-plane text-primary sr-icons"></i></a>
                         <h3>Travel</h3>
                         <p class="text-muted"></p>
@@ -80,7 +83,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="classification-box">
-                        <a class="btn" href="#">
+                        <a class="btn" href='{{URL("category?show=$show&tag=digital")}}#classification'>
                         <i class="fa fa-4x fa-laptop text-primary sr-icons"></i></a>
                         <h3>Digital</h3>
                         <p class="text-muted"></p>
@@ -96,30 +99,30 @@
         
             <li class="mainlink"><a href='{{URL("index?show=pixnet&tag=$tag")}}#classification' class="firstMenu">Pixnet</a>
                 <ul class="sublink">
-                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=pixnet")}}#classification'>熱門文章</a> </li>
-                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=pixnet")}}#classification'>評價最高</a></li>
-                    <li> <a class="sequence page-scroll" href='{{URL("random?show=pixnet")}}#classification'>隨機選取</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=pixnet&tag=$tag")}}#classification'>熱門文章</a> </li>
+                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=pixnet&tag=$tag")}}#classification'>評價最高</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("random?show=pixnet&tag=$tag")}}#classification'>隨機選取</a></li>
                 </ul>
             </li>
             <li class="mainlink"><a href='{{URL("index?show=xuite&tag=$tag")}}#classification' class="firstMenu">Xuite</a>
                 <ul class="sublink">
-                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=xuite")}}#classification'>熱門文章</a> </li>
-                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=xuite")}}#classification'>評價最高</a></li>
-                    <li> <a class="sequence page-scroll" href='{{URL("random?show=xuite")}}#classification'>隨機選取</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=xuite&tag=$tag")}}#classification'>熱門文章</a> </li>
+                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=xuite&tag=$tag")}}#classification'>評價最高</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("random?show=xuite&tag=$tag")}}#classification'>隨機選取</a></li>
                 </ul>
             </li>
-            <li class="mainlink"><a href='{{URL("index?show=ptt")}}#classification'class="firstMenu">Ptt</a>
+            <li class="mainlink"><a href='{{URL("index?show=ptt&tag=$tag")}}#classification'class="firstMenu">Ptt</a>
                 <ul class="sublink">
-                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=ptt")}}#classification'>熱門文章</a> </li>
-                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=ptt")}}#classification'>評價最高</a></li>
-                    <li> <a class="sequence page-scroll" href='{{URL("random?show=ptt")}}#classification'>隨機選取</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=ptt&tag=$tag")}}#classification'>熱門文章</a> </li>
+                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=ptt&tag=$tag")}}#classification'>評價最高</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("random?show=ptt&tag=$tag")}}#classification'>隨機選取</a></li>
                 </ul>
             </li>
-            <li class="mainlink"><a href='{{URL("index?show=youtube")}}#classification'class="firstMenu">Youtube</a>
+            <li class="mainlink"><a href='{{URL("index?show=youtube&tag=$tag")}}#classification'class="firstMenu">Youtube</a>
                 <ul class="sublink">
-                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=youtube")}}#classification'>熱門文章</a> </li>
-                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=youtube")}}#classification'>評價最高</a></li>
-                    <li> <a class="sequence page-scroll" href='{{URL("random?show=youtube")}}#classification'>隨機選取</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=youtube&tag=$tag")}}#classification'>熱門文章</a> </li>
+                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=youtube&tag=$tag")}}#classification'>評價最高</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("random?show=youtube&tag=$tag")}}#classification'>隨機選取</a></li>
                 </ul>
             </li>
         </ul>

@@ -16,21 +16,43 @@ use Illuminate\Http\Request;
 class resultController extends Controller {
 	public function index(Request $request)
 	{
-
+	
 		$search = $request->input('search');
+		$searchtype = $request->input('searchtype');
+		$searchweb = $request->input('searchweb');
+		if($searchweb!=null)
+			{ 	$showweb= implode (",", $searchweb);
+			
+			}
+		$pixnetfind=Pixnet::where('key_word','like',"%$search%");
+		$xuitefind=xuite::where('key_word','like',"%$search%");	
+		$pttfind=ptt::where('key_word','like',"%$search%");
+		$youtubefind=youtube::where('key_word','like',"%$search%");
+		
+
 
 		$key_word = $search;
 		$url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
-		$file1 = popen("start/b C://xampp/htdocs/project/python/SearchPixnet.py $url_key_word",'r');
-		$file2 = popen("start/b C://xampp/htdocs/project/python/SearchPtt.py $url_key_word",'r');
-		$file3 = popen("start/b C://xampp/htdocs/project/python/SearchXuite.py $url_key_word",'r');
-		$file4 = popen("start/b C://xampp/htdocs/project/python/SearchYoutube.py $url_key_word",'r');
-		pclose($file1);
-		pclose($file2);
-		pclose($file3);
-		pclose($file4);
+		if($pixnetfind==null){		
+				$file1 = popen("start/b C://xampp/htdocs/project/python/SearchPixnet.py $url_key_word",'r');
+				pclose($file1);
+				 				}
+	  	 if($xuitefind==null){
+				$file2 = popen("start/b C://xampp/htdocs/project/python/SearchPtt.py $url_key_word",'r');  
+				pclose($file2);
+				 				}
+		if($pttfind==null){
+				$file3 = popen("start/b C://xampp/htdocs/project/python/SearchXuite.py $url_key_word",'r');  
+				pclose($file3); 
+								}
+		if($youtubefind==null){
+				$file4 = popen("start/b C://xampp/htdocs/project/python/SearchYoutube.py $url_key_word",'r'); 
+	 			pclose($file4);
+								}
+		
+	
 
-		return view('wait',['search'=> $search]);
+		return view('wait',['search'=> $search,'searchtype'=>$searchtype]);
 
 	
 	}
@@ -98,12 +120,27 @@ class resultController extends Controller {
 	public function show(Request $request)
 	{	
 		$search = $request->input('search');
-
-
-		$rawDataPixnet=Pixnet::where('search_title','like',"%$search%");
-		$rawDataXuite=Xuite::where('search_title','like',"%$search%");
-		$rawDataPtt=Ptt::where('search_title','like',"%$search%");
-		$rawDataYoutube=Youtube::where('search_title','like',"%$search%");
+		$searchtype = $request->input('searchtype');
+		$searchweb = $request->input('searchweb');
+		if($searchweb!=null)
+			{ 	$showweb= implode (",", $searchweb);
+			
+			}
+		if($searchtype=='author')
+			{
+				$rawDataPixnet=Pixnet::where('search_author','like',"%$search%");
+				$rawDataXuite=Xuite::where('search_author','like',"%$search%");
+				$rawDataPtt=Ptt::where('search_author','like',"%$search%");
+				$rawDataYoutube=Youtube::where('search_author','like',"%$search%");
+			}
+		else
+			{
+				
+				$rawDataPixnet=Pixnet::where('search_title','like',"%$search%");
+				$rawDataXuite=Xuite::where('search_title','like',"%$search%");
+				$rawDataPtt=Ptt::where('search_title','like',"%$search%");
+				$rawDataYoutube=Youtube::where('search_title','like',"%$search%");
+			}
 
 		$number=array(count($rawDataPixnet->get()),count($rawDataXuite->get()),count($rawDataPtt->get()),count($rawDataYoutube->get()));
 		$whoIsTheBestDog=array_search(max($number),$number);
