@@ -20,7 +20,19 @@ class resultController extends Controller {
 		$search = $request->input('search');
 		$searchtype = $request->input('searchtype');
 		$searchweb = $request->input('searchweb');
+
+	
+		if(count($searchweb)>=2)
+		{
+			$searchweb=implode(",",$searchweb);
 		
+		}
+
+		
+		
+
+
+
 	
 			
 	
@@ -124,12 +136,13 @@ class resultController extends Controller {
 		$search = $request->input('search');
 		$searchtype = $request->input('searchtype');
 		$searchweb = $request->input('searchweb');
-		// $showweb= implode (",", $searchweb);
-		dd("$searchweb");
-			$key = in_array('pixnet', $searchweb);
-				dd($key);
+	
+		
+
+		
+;
 		if($searchtype=='author')
-			{
+			{   
 				$rawDataPixnet=Pixnet::where('search_author','like',"%$search%");
 				$rawDataXuite=Xuite::where('search_author','like',"%$search%");
 				$rawDataPtt=Ptt::where('search_author','like',"%$search%");
@@ -146,12 +159,43 @@ class resultController extends Controller {
 
 		$number=array(count($rawDataPixnet->get()),count($rawDataXuite->get()),count($rawDataPtt->get()),count($rawDataYoutube->get()));
 		$whoIsTheBestDog=array_search(max($number),$number);
-		
-	 	$pixnetdata = $rawDataPixnet->paginate(2);
-	 	$xuitedata = $rawDataXuite->paginate(2);
-	 	$pttdata = $rawDataPtt->paginate(2);
-	 	$youtubedata= $rawDataYoutube->paginate(2);
+		if($searchweb==null){
+		 	$pixnetdata = $rawDataPixnet->paginate(2);
+		 	$xuitedata = $rawDataXuite->paginate(2);
+		 	$pttdata = $rawDataPtt->paginate(2);
+		 	$youtubedata= $rawDataYoutube->paginate(2);
+								
+								}
+	else{
 
+
+		if (strpos ($searchweb, "pixnet"))
+			{
+
+				$pixnetdata = $rawDataPixnet->paginate(2);
+			}
+		else
+			{$pixnetdata = null;}	
+		if (strpos ($searchweb, "xuite"))
+			{
+			 	$xuitedata = $rawDataXuite->paginate(2);
+			}
+		else
+			{$xuitedata = null;}	
+		 if (strpos ($searchweb, "ptt"))
+			 {
+			 	$pttdata = $rawDataPtt->paginate(2);
+			 }
+		else
+			{$pttdata = null;}	 
+		 if (strpos ($searchweb, "youtube"))
+			 {
+			 	$youtubedata= $rawDataYoutube->paginate(2);
+			 }
+		else
+			{$youtubedata = null;}			 
+
+			}
 	 	switch ($whoIsTheBestDog) {
 	 		case 0:
 	 			$whoIsTheBestDog=$pixnetdata;

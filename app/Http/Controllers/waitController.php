@@ -21,7 +21,8 @@ public function index(Request $request)
 
 		$searchtype = $request->input('searchtype');
 		$searchweb = $request->input('searchweb');
-		dd($searchweb);
+		
+
 
 	
 

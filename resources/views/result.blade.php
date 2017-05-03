@@ -24,7 +24,6 @@
                         <input type="checkbox" name="searchweb" value="xuite" id="x"><label for="x">Xuite</label>
                         <input type="checkbox" name="searchweb" value="ptt" id="pt"><label for="pt">Ptt</label>
                         <input type="checkbox" name="searchweb" value="youtube" id="y"><label for="y">Youtube</label>
-                        <input type="checkbox" name="searchweb[]" value="mobile01" id="m"><label for="m">mobile01</label>
                         </div>
                         <div class="subbotton">
                          <input type="submit" value="Find Out" id="submitButton" class="btn btn-primary btn-xl" /> 
@@ -387,13 +386,22 @@
     <script type="text/javascript">
             let search=window.location.search.match(/search=[^&]+/)
             let searchtype=window.location.search.match(/searchtype=[^&]+/)
-            if(search){
-                search=search[0]
-                searchtype=searchtype[0]
+            let searchweb=window.location.search.match(/searchweb=[^&]+/)
+
+           
                 Array.from(document.querySelectorAll(".pagination a")).forEach(a=>{
-                    a.href=`${a.href}&${search}&${searchtype}`
-                })
-            }
+                   
+                     if(search)
+                        a.href += "&"+search[0];
+                    if(searchtype)
+                        a.href += "&"+searchtype[0];
+                     if(searchweb)
+                        a.href += "&"+searchweb[0];
+                   
+                   
+
+            })
+   
         </script>
    @endsection
         
