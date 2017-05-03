@@ -71,7 +71,7 @@
             <div class="col-md-7">
                 <a href="{{$data->search_href}}" target="_blank">
              
-                 <img class="img-result" src="{{$data->article_picture}}" alt="圖片未能抓取" align>
+                 <img class="img-result" src="{{$data->article_picture}}" alt="圖片未能抓取" onerror="this.src='./img/nodoge.jpg'">
 
                 </a>
             </div>
@@ -142,7 +142,7 @@
         <div class="row">
             <div class="col-md-7">
                 <a href="{{$data->search_href}}" target="_blank">
-                    <img class="img-result" src="{{$data->article_picture}}" alt="圖片未能抓取" align>
+                    <img class="img-result" src="{{$data->article_picture}}" alt="圖片未能抓取" onerror="this.src='./img/nodoge.jpg'">
 
                 </a>
             </div>
@@ -275,7 +275,7 @@
             <div class="col-md-7">
                <a href="{{$data->search_href}}" target="_blank">
 
-                    <img class="img-result" src="{{$data->article_picture}}" alt="圖片未能抓取" align>
+                    <img class="img-result" src="{{$data->article_picture}}" alt="圖片未能抓取" onerror="this.src='./img/nodoge.jpg'">
 
                 </a>
                
@@ -283,7 +283,7 @@
             <div class="col-md-5">
                 <h3><a href="{{$data->search_href}}" target="_blank">{{$data->search_title}}</a></h3>
                 <h4>{{$data->search_time}}</h4>
-                <h4>作者:{{$data->search_author}}</h4>
+                <h4>作者:<a href="{{$data->author_href}}" target="_blank">{{$data->search_author}}</a></h4>
                 <h4>喜歡:{{$data->push_count}}</h4>
                 <h4>討厭:{{$data->boo_count}}</h4>
 
@@ -327,6 +327,74 @@
                                 
                                   
                                     $('#youtubescore{{$data->id}}').text('評分:'+msg.total_score/msg.score_people);
+
+                                },
+                            });
+                        }
+                    });               
+                    </script>  
+             
+   
+            </div>
+        </div>
+        <!-- /.row -->
+        <hr class="result">
+
+        @endforeach
+        <!--mobile01bedata-->
+        @foreach($mobile01data as $data)
+  
+       
+        <div class="row">
+            <div class="col-md-7">
+               <a href="{{$data->search_href}}" target="_blank">
+
+                    <img class="img-result" src="{{$data->article_picture}}" alt="圖片未能抓取" onerror="this.src='./img/nodoge.jpg'">
+
+                </a>
+               
+            </div>
+            <div class="col-md-5">
+                <h3><a href="{{$data->search_href}}" target="_blank">{{$data->search_title}}</a></h3>
+                <h4>{{$data->search_time}}</h4>
+                <h4>作者:{{$data->search_author}}</h4>  
+                <h5 id="mobile01score{{$data->id}}">網站評分:{{round($data->total_score/$data->score_people,2)}}</h5>
+                <div class="subtitle">
+                <p class="JQellipsis">{{$data->search_subtitle}}</p>
+                </div>
+                   <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
+                
+             
+               
+             
+                <div class="my-rating-4" id="{{$data->id}}"></div>
+                  <script type="text/javascript">                      
+                    $(".my-rating-4").starRating({
+                        totalStars: 5,
+                        emptyColor: 'lightgray',
+                        hoverColor: 'salmon',
+                        activeColor: 'cornflowerblue',
+                        initialRating: 0,
+                        strokeWidth: 0,
+                        useGradient: false,
+                        useFullStars: true,
+                        callback: function(currentRating, $el){
+                            alert('rated ' + currentRating);
+                            console.log('DOM element ', $el);
+                            $.ajax({
+                                headers: {
+                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                },  
+                                url:"{{URL('mobile01score')}}",
+                                data:{    currentRating:currentRating,id: {{$data->id}}   },
+                                type: "POST",
+                                success: function(msg){
+                                    msg = JSON.parse(msg);
+                                    console.log(msg)
+                                   
+                                
+                                  
+                                    $('#mobile01score{{$data->id}}').text('評分:'+msg.total_score/msg.score_people);
 
                                 },
                             });

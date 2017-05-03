@@ -10,6 +10,7 @@ use App\Pixnet;
 use App\Xuite;
 use App\Ptt;
 use App\Youtube;
+use App\Mobile01;
 
 use Illuminate\Http\Request;
 
@@ -21,7 +22,7 @@ public function index(Request $request)
 
 		$searchtype = $request->input('searchtype');
 		$searchweb = $request->input('searchweb');
-		
+
 
 
 	

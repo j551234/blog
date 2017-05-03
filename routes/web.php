@@ -19,6 +19,7 @@ Route::post('/pixnetscore','resultController@pixnetscore');
 Route::post('/xuitescore','resultController@xuitescore');
 Route::post('/pttscore','resultController@pttscore');
 Route::post('/youtubescore','resultController@youtubescore');
+Route::post('/mobile01score','resultController@mobile01score');
 Route::get('/show','resultController@show');
 
 //index頁面
