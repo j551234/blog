@@ -22,7 +22,7 @@ jieba.set_dictionary('dict.txt.big')
 
 conn = MySQLdb.connect(host="localhost", user="root", passwd="", db="python",charset='utf8')#連結資料庫
 cur = conn.cursor()
-cur.execute("SELECT search_href,id,search_title FROM xuite")
+cur.execute("SELECT search_href,id,search_title FROM xuite WHERE title_analyst='-1'")
 results = cur.fetchall()
 
 
@@ -31,9 +31,6 @@ for record in results:
     xuite_id= record[1]
     title=record[2]
     title_list=jieba.lcut(title,cut_all=False)
-    print(title_list)
-    
-    print (db_url)
 
     res=requests.get(db_url)
     res.encoding='utf-8'
@@ -54,7 +51,15 @@ for record in results:
         intersection=s1.intersection(s2)
         count=len(intersection)
         total_count=total_count+count
-    print(total_article_count)
-    print(total_count)
-    print(format(total_count/total_article_count,'0.1%'))
 
+    if total_article_count==0:
+        Title_Analyst = "0"
+
+    else:
+        Title_Analyst = format(total_count/total_article_count*100 , '0.2f')
+
+    cur.execute ("UPDATE xuite SET title_analyst=%s WHERE id='%s'" %  (Title_Analyst,xuite_id))
+    conn.commit()
+    
+cur.close()
+conn.close()    

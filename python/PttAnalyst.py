@@ -26,7 +26,7 @@ def get_web_page(url): #原始地址
 
 conn = MySQLdb.connect(host="localhost", user="root", passwd="", db="python",charset='utf8')#連結資料庫
 cur = conn.cursor()
-cur.execute("SELECT search_href,id FROM ptt")
+cur.execute("SELECT search_href,id FROM ptt WHERE content_analyst='-1'")
 results = cur.fetchall()
 
 with open('positive.txt', 'r',encoding='UTF-8') as positive:
@@ -90,6 +90,18 @@ for record in results:
         total_pos_count=total_pos_count+pos_count
         total_nag_count=total_nag_count+nag_count
         total_paid_count=total_paid_count+paid_count
+        total_count = total_pos_count+total_nag_count+total_paid_count
         print(total_pos_count)
         print(total_nag_count)
         print(total_paid_count)
+        if total_count==0:
+            Content_Analyst = "0"
+            print (Content_Analyst)
+        else:
+            Content_Analyst = format(total_pos_count/total_count*100 , '0.2f')
+            print (Content_Analyst)
+        cur.execute ("UPDATE ptt SET content_analyst=%s WHERE id='%s'" %  (Content_Analyst,ptt_id))
+        conn.commit()
+    
+cur.close()
+conn.close()
