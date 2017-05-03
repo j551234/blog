@@ -17,6 +17,7 @@
                          <input type="checkbox" name="searchweb[]" value="xuite" id="x"><label for="x">Xuite</label>
                          <input type="checkbox" name="searchweb[]" value="ptt" id="pt"><label for="pt">Ptt</label>
                          <input type="checkbox" name="searchweb[]" value="youtube" id="y"><label for="y">Youtube</label>
+                         <input type="checkbox" name="searchweb[]" value="mobile01" id="m"><label for="m">Mobile01</label>
                     </div>
 
 
