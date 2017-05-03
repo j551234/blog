@@ -693,6 +693,14 @@ article .content p{
   color:white;
   height:3em;
 }
+article .contentmanual {
+  margin:0px auto 50px auto;
+}
+.manual {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
 
 ::-moz-selection {
   color: white;

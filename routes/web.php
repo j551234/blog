@@ -41,9 +41,8 @@ Route::post('/mail','contactController@contact');
 //wait頁面
 Route::post('/wait','waitController@index');
 
-
-
-
+//manual頁面
+Route::get('/manual','manualController@index');
 
 
 
