@@ -56,8 +56,7 @@ for  x  in range(3*x-2,3*x+1) :
         search_view= item.select('.search-views')[0].text.strip('人氣( )')
 
         cur.execute(sqli,(chinese_key_word,search_title, search_subtitle, article_picture, search_time, search_href, search_author, author_href, author_picture,search_view)) #存入資料庫    
-        
+        conn.commit()
 
 cur.close() #斷開連結
-conn.commit()
 conn.close()

@@ -94,7 +94,6 @@ for change in range(2,3):
 
 
 driver.close()
-
 cur.close() #斷開連結
 conn.close()
 
