@@ -23,7 +23,7 @@ jieba.load_userdict('userdict.txt')
 
 conn = MySQLdb.connect(host="localhost", user="root", passwd="", db="python",charset='utf8')#連結資料庫
 cur = conn.cursor()
-cur.execute("SELECT search_href,id FROM pixnet")
+cur.execute("SELECT search_href,id FROM pixnet WHERE content_analyst='-1'")
 results = cur.fetchall()
 
 with open('positive.txt', 'r',encoding='UTF-8') as positive:
@@ -56,7 +56,7 @@ paid_set=set(paid)
    
 for record in results:    
     db_url = record[0]
-    ixnet_id = record[1]
+    pixnet_id = record[1]
     res=requests.get(db_url)
     res.encoding='utf-8'
     soup = BeautifulSoup (res.text, "html5lib")
@@ -64,7 +64,6 @@ for record in results:
 
     original_url =soup2['content'].lstrip('3;url=')
 
-    print (original_url)
 
     res1=requests.get(original_url)
     res1.encoding='utf-8'
@@ -94,6 +93,17 @@ for record in results:
         total_pos_count=total_pos_count+pos_count
         total_nag_count=total_nag_count+nag_count
         total_paid_count=total_paid_count+paid_count
-    print(total_pos_count)
-    print(total_nag_count)
-    print(total_paid_count)
+    total_count = total_pos_count+total_nag_count+total_paid_count
+
+    
+    if total_count==0:
+        Content_Analyst = "0"
+
+    else:
+        Content_Analyst = format(total_pos_count/total_count*100 , '0.2f')
+
+    cur.execute ("UPDATE pixnet SET content_analyst=%s WHERE id='%s'" %  (Content_Analyst,pixnet_id))
+    conn.commit()
+
+cur.close()
+conn.close()
