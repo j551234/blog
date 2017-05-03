@@ -299,7 +299,7 @@ header-result .header-content .search .searchtype {
 }
 header-result .header-content .search .searchweb {
   position: absolute;
-  right:25%;
+  right:23%;
 }
 header {
   position: relative;
@@ -407,7 +407,7 @@ label{
 }
 .search .searchweb {
     position: absolute;
-    right:10%;
+    right:8%;
 }
 
 @media (min-width: 768px) {

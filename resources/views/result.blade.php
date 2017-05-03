@@ -386,13 +386,22 @@
     <script type="text/javascript">
             let search=window.location.search.match(/search=[^&]+/)
             let searchtype=window.location.search.match(/searchtype=[^&]+/)
-            if(search){
-                search=search[0]
-                searchtype=searchtype[0]
+            let searchweb=window.location.search.match(/searchweb=[^&]+/)
+
+           
                 Array.from(document.querySelectorAll(".pagination a")).forEach(a=>{
-                    a.href=`${a.href}&${search}&${searchtype}`
-                })
-            }
+                   
+                     if(search)
+                        a.href += "&"+search[0];
+                    if(searchtype)
+                        a.href += "&"+searchtype[0];
+                     if(searchweb)
+                        a.href += "&"+searchweb[0];
+                   
+                   
+
+            })
+   
         </script>
    @endsection
         

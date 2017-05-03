@@ -137,7 +137,7 @@
             <div class="row no-gutter ">
             @foreach($showdata as $data)
                 <div class="col-lg-2 col-sm-3">
-                    <a href="{{$data->search_href}}" class="artical-box">
+                    <a href="{{$data->search_href}}" class="artical-box" target="_blank">
                        <img class="img-responsive" src="{{$data->article_picture}}" alt="圖片未能抓取"  width="100%"  
                        onerror="this.src='./img/nodoge.jpg'">
                         <div class="artical-box-caption">

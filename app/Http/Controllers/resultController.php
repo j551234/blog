@@ -20,12 +20,25 @@ class resultController extends Controller {
 		$search = $request->input('search');
 		$searchtype = $request->input('searchtype');
 		$searchweb = $request->input('searchweb');
-		if($searchweb!=null)
-			{ 	$showweb= implode (",", $searchweb);
+
+	
+		if(count($searchweb)>=2)
+		{
+			$searchweb=implode(",",$searchweb);
+		
+		}
+
+		
+		
+
+
+
+	
 			
-			}	
+	
 		$key_word = $search;
 		$url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
+		
 		$pixnetfind=pixnet::where('key_word','like',"%$search%")->get();
 		$xuitefind=xuite::where('key_word','like',"%$search%")->get();
 		$pttfind=ptt::where('key_word','like',"%$search%")->get();
@@ -53,7 +66,7 @@ class resultController extends Controller {
 		
 	
 
-		return view('wait',['search'=> $search,'searchtype'=>$searchtype]);
+		return view('wait',['search'=> $search,'searchtype'=>$searchtype,'searchweb'=>$searchweb]);
 
 	
 	}
@@ -123,12 +136,13 @@ class resultController extends Controller {
 		$search = $request->input('search');
 		$searchtype = $request->input('searchtype');
 		$searchweb = $request->input('searchweb');
-		if($searchweb!=null)
-			{ 	$showweb= implode (",", $searchweb);
-			
-			}
+	
+		
+
+		
+;
 		if($searchtype=='author')
-			{
+			{   
 				$rawDataPixnet=Pixnet::where('search_author','like',"%$search%");
 				$rawDataXuite=Xuite::where('search_author','like',"%$search%");
 				$rawDataPtt=Ptt::where('search_author','like',"%$search%");
@@ -145,12 +159,43 @@ class resultController extends Controller {
 
 		$number=array(count($rawDataPixnet->get()),count($rawDataXuite->get()),count($rawDataPtt->get()),count($rawDataYoutube->get()));
 		$whoIsTheBestDog=array_search(max($number),$number);
-		
-	 	$pixnetdata = $rawDataPixnet->paginate(2);
-	 	$xuitedata = $rawDataXuite->paginate(2);
-	 	$pttdata = $rawDataPtt->paginate(2);
-	 	$youtubedata= $rawDataYoutube->paginate(2);
+		if($searchweb==null){
+		 	$pixnetdata = $rawDataPixnet->paginate(2);
+		 	$xuitedata = $rawDataXuite->paginate(2);
+		 	$pttdata = $rawDataPtt->paginate(2);
+		 	$youtubedata= $rawDataYoutube->paginate(2);
+								
+								}
+	else{
 
+
+		if (strpos ($searchweb, "pixnet"))
+			{
+
+				$pixnetdata = $rawDataPixnet->paginate(2);
+			}
+		else
+			{$pixnetdata = null;}	
+		if (strpos ($searchweb, "xuite"))
+			{
+			 	$xuitedata = $rawDataXuite->paginate(2);
+			}
+		else
+			{$xuitedata = null;}	
+		 if (strpos ($searchweb, "ptt"))
+			 {
+			 	$pttdata = $rawDataPtt->paginate(2);
+			 }
+		else
+			{$pttdata = null;}	 
+		 if (strpos ($searchweb, "youtube"))
+			 {
+			 	$youtubedata= $rawDataYoutube->paginate(2);
+			 }
+		else
+			{$youtubedata = null;}			 
+
+			}
 	 	switch ($whoIsTheBestDog) {
 	 		case 0:
 	 			$whoIsTheBestDog=$pixnetdata;
@@ -168,26 +213,7 @@ class resultController extends Controller {
 	 			exit("fuck");
 	 			break;
 	 	}
-	 	// $pixnetdata = Pixnet::where('search_title','like',"%$search%")->paginate(2);
-	 	// $xuitedata = Xuite::where('search_title','like',"%$search%")->paginate(2);
-	 	// $pttdata = Ptt::where('search_title','like',"%$search%")->paginate(2);
-	 	// $youtubedata= Youtube::where('search_title','like',"%$search%")->paginate(2);
-
-
-	 	// 	$pixnetdata =Pixnet::select('id', 'search_title','search_href','search_author','score_people','total_score')
-		// 					->where('search_title','like',"%$search%")
-		// 					->get();
-		// 	$xuitedata = Xuite::select('id', 'search_title','search_href','search_author','score_people','total_score')
-		// 					->where('search_title','like',"%$search%")
-		// 					->get();
-		// $pttdata = Ptt::select('id', 'search_title','search_href','search_author','score_people','total_score')
-		// 					->where('search_title','like',"%$search%")
-		// 					->get();
-		// 	$youtubedata = youtube::select('id','search_title','search_href','search_author','score_people','total_score')
-		//  					->where('search_title','like',"%$search%")
-		//  					->get();
-		// 	$searchResults= $pixnetdata->union($xuitedata)->union($pttdata)->union($youtubedata);
-
+	 	
 
 
 		//$page = Input::get('page', 1);
