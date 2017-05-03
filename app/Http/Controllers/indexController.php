@@ -272,11 +272,11 @@ class indexController extends Controller {
 							if($show=='youtube')
 								$showdata =youtube::orderBy('id', 'desc')->paginate(12); 
 							}
-							else
+						else
 							{
-								$showdata =pixnet::orderBy('id', 'desc')->paginate(12);
+								$showdata =indexpixnet::orderBy('id', 'desc')->paginate(12);
 							}
-						$tag=null;
+				
 					}
 				else
 					{
@@ -293,8 +293,8 @@ class indexController extends Controller {
 					
 							
 						else{
-							$showdata =pixnet::orderBy('id', 'desc')->paginate(12);
-							$show==null;
+							$showdata =indexpixnet::where('tag','=',$tag)->paginate(12);
+						
 						}
 					}
 
