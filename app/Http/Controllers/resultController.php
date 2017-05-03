@@ -20,12 +20,13 @@ class resultController extends Controller {
 		$search = $request->input('search');
 		$searchtype = $request->input('searchtype');
 		$searchweb = $request->input('searchweb');
-		if($searchweb!=null)
-			{ 	$showweb= implode (",", $searchweb);
+		
+	
 			
-			}	
+	
 		$key_word = $search;
 		$url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
+		
 		$pixnetfind=pixnet::where('key_word','like',"%$search%")->get();
 		$xuitefind=xuite::where('key_word','like',"%$search%")->get();
 		$pttfind=ptt::where('key_word','like',"%$search%")->get();
@@ -53,7 +54,7 @@ class resultController extends Controller {
 		
 	
 
-		return view('wait',['search'=> $search,'searchtype'=>$searchtype]);
+		return view('wait',['search'=> $search,'searchtype'=>$searchtype,'searchweb'=>$searchweb]);
 
 	
 	}
@@ -123,10 +124,10 @@ class resultController extends Controller {
 		$search = $request->input('search');
 		$searchtype = $request->input('searchtype');
 		$searchweb = $request->input('searchweb');
-		if($searchweb!=null)
-			{ 	$showweb= implode (",", $searchweb);
-			
-			}
+		// $showweb= implode (",", $searchweb);
+		dd("$searchweb");
+			$key = in_array('pixnet', $searchweb);
+				dd($key);
 		if($searchtype=='author')
 			{
 				$rawDataPixnet=Pixnet::where('search_author','like',"%$search%");
@@ -168,26 +169,7 @@ class resultController extends Controller {
 	 			exit("fuck");
 	 			break;
 	 	}
-	 	// $pixnetdata = Pixnet::where('search_title','like',"%$search%")->paginate(2);
-	 	// $xuitedata = Xuite::where('search_title','like',"%$search%")->paginate(2);
-	 	// $pttdata = Ptt::where('search_title','like',"%$search%")->paginate(2);
-	 	// $youtubedata= Youtube::where('search_title','like',"%$search%")->paginate(2);
-
-
-	 	// 	$pixnetdata =Pixnet::select('id', 'search_title','search_href','search_author','score_people','total_score')
-		// 					->where('search_title','like',"%$search%")
-		// 					->get();
-		// 	$xuitedata = Xuite::select('id', 'search_title','search_href','search_author','score_people','total_score')
-		// 					->where('search_title','like',"%$search%")
-		// 					->get();
-		// $pttdata = Ptt::select('id', 'search_title','search_href','search_author','score_people','total_score')
-		// 					->where('search_title','like',"%$search%")
-		// 					->get();
-		// 	$youtubedata = youtube::select('id','search_title','search_href','search_author','score_people','total_score')
-		//  					->where('search_title','like',"%$search%")
-		//  					->get();
-		// 	$searchResults= $pixnetdata->union($xuitedata)->union($pttdata)->union($youtubedata);
-
+	 	
 
 
 		//$page = Input::get('page', 1);
