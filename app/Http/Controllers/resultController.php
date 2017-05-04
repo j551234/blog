@@ -23,8 +23,11 @@ class resultController extends Controller {
 		$searchweb = $request->input('searchweb');
 	
 	
-		
-		$searchweb=implode(",",$searchweb);
+		if($searchweb!=null){
+			$searchweb=implode(",",$searchweb);
+		}
+		$searchweb="pixnet,xuite,ptt,youtube,mobile01";
+
 		
 		
 		
