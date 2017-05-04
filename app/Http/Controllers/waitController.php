@@ -22,6 +22,11 @@ public function index(Request $request)
 
 		$searchtype = $request->input('searchtype');
 		$searchweb = $request->input('searchweb');
+			if(count($searchweb)>=2)
+		{
+			$searchweb=implode(",",$searchweb);
+		
+		}
 
 
 
