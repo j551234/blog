@@ -1,6 +1,9 @@
+#Mobile01 https://www.mobile01.com/
+# -*- coding: UTF-8 -*-
 import MySQLdb
 import requests
 import urllib.parse
+import sys
 import time
 import sys
 from bs4 import BeautifulSoup
