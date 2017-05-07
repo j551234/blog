@@ -99,32 +99,12 @@
     
         
             <li class="mainlink"><a href='{{URL("index?show=pixnet&tag=$tag")}}#classification' class="firstMenu">Pixnet</a>
-                <ul class="sublink">
-                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=pixnet&tag=$tag")}}#classification'>熱門文章</a> </li>
-                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=pixnet&tag=$tag")}}#classification'>評價最高</a></li>
-                    <li> <a class="sequence page-scroll" href='{{URL("random?show=pixnet&tag=$tag")}}#classification'>隨機選取</a></li>
-                </ul>
             </li>
             <li class="mainlink"><a href='{{URL("index?show=xuite&tag=$tag")}}#classification' class="firstMenu">Xuite</a>
-                <ul class="sublink">
-                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=xuite&tag=$tag")}}#classification'>熱門文章</a> </li>
-                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=xuite&tag=$tag")}}#classification'>評價最高</a></li>
-                    <li> <a class="sequence page-scroll" href='{{URL("random?show=xuite&tag=$tag")}}#classification'>隨機選取</a></li>
-                </ul>
             </li>
             <li class="mainlink"><a href='{{URL("index?show=ptt&tag=$tag")}}#classification'class="firstMenu">Ptt</a>
-                <ul class="sublink">
-                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=ptt&tag=$tag")}}#classification'>熱門文章</a> </li>
-                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=ptt&tag=$tag")}}#classification'>評價最高</a></li>
-                    <li> <a class="sequence page-scroll" href='{{URL("random?show=ptt&tag=$tag")}}#classification'>隨機選取</a></li>
-                </ul>
             </li>
             <li class="mainlink"><a href='{{URL("index?show=youtube&tag=$tag")}}#classification'class="firstMenu">Youtube</a>
-                <ul class="sublink">
-                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=youtube&tag=$tag")}}#classification'>熱門文章</a> </li>
-                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=youtube&tag=$tag")}}#classification'>評價最高</a></li>
-                    <li> <a class="sequence page-scroll" href='{{URL("random?show=youtube&tag=$tag")}}#classification'>隨機選取</a></li>
-                </ul>
             </li>
         </ul>
         </div>

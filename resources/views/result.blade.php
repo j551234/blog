@@ -55,14 +55,26 @@
                         <li> <a href="https://tw.search.bid.yahoo.com/search/auction/product?kw={{$search}}&p={{$search}}" target="_blank">yahoo拍賣</a> </li>
                         <li> <a href="http://ecshweb.pchome.com.tw/search/v3.3/?q={{$search}}" target="_blank">pchome</a> </li>
                     </ul>
+                    
                 </h4>
 
+            </div>
+            <div class="menu text-right">
+                <ul class="submenu">
+                    <li class="mainlink"><a href='' class="firstMenu">排序</a>
+                        <ul class="sublink">
+                            <li> <a class="sequence page-scroll" href=''>熱門文章</a> </li>
+                                <li> <a class="sequence page-scroll" href=''>評價最高</a></li>
+                            <li> <a class="sequence page-scroll" href=''>隨機選取</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
                    
         <!-- /.row -->
   
-
+        
     
 
     @foreach($pixnetdata as $data)
