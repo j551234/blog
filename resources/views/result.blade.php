@@ -70,12 +70,12 @@
                     </li>
                 </ul>
             </div>
+            
         </div>
+
                    
         <!-- /.row -->
   
-        
-    
 
     @foreach($pixnetdata as $data)
         <!-- Pixnet -->
@@ -102,6 +102,14 @@
                
             
                 <div class="my-rating-4" id="{{$data->id}}"> </div>
+                    <section class="container">
+
+                        <div class="row">
+                            <div class="col-lg-2">
+                            <div id="test-circle"></div>
+                            </div>
+                        </div>
+                    </section>
                 
   
                 <script type="text/javascript">                      
@@ -136,10 +144,27 @@
                             });
                         }
                     });
-                 
+                 $( document ).ready(function() {
+                      $("#test-circle").circliful({
+                        animation: 1,
+                        animationStep: 5,
+                        foregroundBorderWidth: 15,
+                        backgroundBorderWidth: 15,
+                        textSize: 28,
+                        textStyle: 'font-size: 12px;',
+                        textColor: '#666',
+                        percent: 35 ,
+                        multiPercentage: 1,
+                        percentages: [10, 20, 30]
+                    });
          
-                                                  
+                      
+                 });          
+
                 </script>  
+                    
+
+
              
             </div>
         </div>
@@ -205,7 +230,15 @@
                  
          
                                                   
-                    </script>   
+                    </script> 
+                    <section class="container">
+
+                        <div class="row">
+                            <div class="col-lg-2">
+                            <div id="test-circle"></div>
+                            </div>
+                        </div>
+                    </section>  
             </div>
         </div>
         <!-- /.row-->
@@ -272,7 +305,15 @@
                  
          
                                                   
-                    </script>  
+                    </script>
+                    <section class="container">
+
+                        <div class="row">
+                            <div class="col-lg-2">
+                            <div id="test-circle"></div>
+                            </div>
+                        </div>
+                    </section>  
              
             </div>
                 
@@ -346,7 +387,14 @@
                         }
                     });               
                     </script>  
-             
+                    <section class="container">
+
+                        <div class="row">
+                            <div class="col-lg-2">
+                            <div id="test-circle"></div>
+                            </div>
+                        </div>
+                    </section>
    
             </div>
         </div>
@@ -413,7 +461,15 @@
                             });
                         }
                     });               
-                    </script>  
+                    </script> 
+                    <section class="container">
+
+                        <div class="row">
+                            <div class="col-lg-2">
+                            <div id="test-circle"></div>
+                            </div>
+                        </div>
+                    </section> 
              
    
             </div>
@@ -482,7 +538,12 @@
                    
 
             })
+                
    
         </script>
+        
+        
+
+        
    @endsection
         

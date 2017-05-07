@@ -25,7 +25,9 @@
 
     <!-- Theme CSS -->
     <link href="css/creative.css" rel="stylesheet">
-
+    
+    <!-- Circliful CSS -->
+    <link href='css/jquery.circliful.css' rel="stylesheet" type="text/css" />
     <!-- Star CSS -->
     <link type="text/css" href="css/star-rating-svg.css" rel="stylesheet">
 
@@ -44,6 +46,7 @@
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.js"></script> 
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/jquery.circliful.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
