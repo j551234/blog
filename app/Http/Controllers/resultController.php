@@ -14,12 +14,17 @@ use App\Youtube;
 use App\Mobile01;
 use Illuminate\Http\Request;
 
+
 class resultController extends Controller {
 	public function index(Request $request)
 			{
 			
 				$search = $request->input('search');
 				$searchtype = $request->input('searchtype');
+				if($searchtype==null)
+				{
+					$searchtype="title";
+				}
 				$searchweb = $request->input('searchweb');
 			
 			
@@ -268,18 +273,164 @@ class resultController extends Controller {
 					$mobile01data=[];
 				}
 
+			 	switch ($whoIsTheBestDog) {
+			 		case 0:
+			 			$whoIsTheBestDog=$pixnetdata;
+			 			break;
+			 		case 1:
+			 			$whoIsTheBestDog=$xuitedata;
+			 			break;
+			 		case 2:
+			 			$whoIsTheBestDog=$pttdata;
+			 			break;
+			 		case 3:
+			 			$whoIsTheBestDog=$youtubedata;
+			 			break;
+			 		case 4:
+			 			$whoIsTheBestDog=$mobile01data;
+			 			break;
+			 		default:
+			 			exit("fuck");
+			 			break;
+			 	}
 
 
-				
-			 	
 
-
-				
-				 
+			
+				return view('result',['pixnetdata'=>$pixnetdata,
+					'xuitedata'=>$xuitedata,'pttdata'=>$pttdata,
+					'youtubedata'=>$youtubedata,'mobile01data'=>$mobile01data
+					,'whoIsTheBestDog'=>$whoIsTheBestDog,'search'=> $search,'searchtype'=>$searchtype,'searchweb'=>$searchweb]);
+			}
+	public function popular (Request $request)
+			{	
+				$search = $request->input('search');
+			
+				$searchtype = $request->input('searchtype');
+				if($searchtype==null)
+				{
+					$searchtype="title";
+				}
+				$searchweb = $request->input('searchweb');
+				$pagenumber=2;
 			
 				
-							
 
+				
+
+				if($searchtype=='author')
+					{   
+						$rawDataPixnet=Pixnet::where('search_author','like',"%$search%");
+						$rawDataXuite=Xuite::where('search_author','like',"%$search%");
+						$rawDataPtt=Ptt::where('search_author','like',"%$search%");
+						$rawDataYoutube=Youtube::where('search_author','like',"%$search%");
+						$rawDataMobile01=Mobile01::where('search_author','like',"%$search%");
+					}
+				else
+					{
+						
+						$rawDataPixnet=Pixnet::where('search_title','like',"%$search%");
+						$rawDataXuite=Xuite::where('search_title','like',"%$search%");
+						$rawDataPtt=Ptt::where('search_title','like',"%$search%");
+						$rawDataYoutube=Youtube::where('search_title','like',"%$search%");
+						$rawDataMobile01=Mobile01::where('search_title','like',"%$search%");
+					}
+				if($searchweb!=null)
+
+				{
+						
+				
+					if (strpos ($searchweb,'pixnet')==false)
+						{
+							$rawDataPixnet=[];
+							$pagenumber++;
+
+
+						}	
+					if (strpos ($searchweb,'xuite')==false)
+						{
+							$rawDataXuite=[];
+							$pagenumber++;
+
+						}	
+					if (strpos ($searchweb,'ptt')==false)
+						{
+							$rawDataPtt =[];
+							$pagenumber++;
+						}	 
+					if (strpos ($searchweb,'youtube')==false)
+						{
+							$rawDataYoutube=[];
+							$pagenumber++;
+
+						}
+					if (strpos ($searchweb,'mobile01')==false)
+						{
+							$rawDataMobile01=[];
+							$pagenumber++;
+
+						}
+				}
+				$number=array(count($rawDataPixnet),count($rawDataXuite),count($rawDataPtt),
+					count($rawDataYoutube),count($rawDataMobile01));
+				$whoIsTheBestDog=array_search(max($number),$number);		
+				
+
+
+			
+				if(count($rawDataPixnet)!=0)
+				{
+					$pixnetdata = $rawDataPixnet
+					->orderBy('search_view', 'desc')
+					->paginate($pagenumber);
+				}
+				elseif($rawDataPixnet==[])
+				{
+					$pixnetdata = [];
+				}
+
+				if(count($rawDataXuite)!=0)
+				{
+					$xuitedata = $rawDataXuite
+					->orderBy('score_people', 'desc')
+					->paginate($pagenumber);	
+				}
+				elseif ($rawDataXuite==[])
+				{
+					$xuitedata = [];	
+				}
+				if (count($rawDataPtt)!=0)
+				{
+					$pttdata=$rawDataPtt
+					->orderBy('push_count', 'desc')
+					->paginate($pagenumber);
+				}
+				elseif ($rawDataPtt==[])
+				{
+					$pttdata= [];	
+				}
+				if(count($rawDataYoutube)!=0)
+				{
+					$youtubedata= $rawDataYoutube
+					->orderBy('push_count', 'desc')
+					->paginate($pagenumber);
+				}
+				elseif($rawDataYoutube==[])
+				{
+					$youtubedata=[];
+				}
+				if(count($rawDataMobile01)!=0)
+				{
+					
+					$mobile01data=$rawDataMobile01
+					->orderBy('search_view', 'desc')
+					->paginate($pagenumber);
+					
+
+				}
+				elseif($rawDataMobile01==[]) {
+					$mobile01data=[];
+				}
 
 			 	switch ($whoIsTheBestDog) {
 			 		case 0:
@@ -308,8 +459,333 @@ class resultController extends Controller {
 				return view('result',['pixnetdata'=>$pixnetdata,
 					'xuitedata'=>$xuitedata,'pttdata'=>$pttdata,
 					'youtubedata'=>$youtubedata,'mobile01data'=>$mobile01data
-					,'whoIsTheBestDog'=>$whoIsTheBestDog,'search'=> $search]);
+					,'whoIsTheBestDog'=>$whoIsTheBestDog,'search'=> $search,'searchtype'=>$searchtype,'searchweb'=>$searchweb]);
+
 			}
+	public function appraise (Request $request)
+			{	
+				$search = $request->input('search');
+			
+				$searchtype = $request->input('searchtype');
+				if($searchtype==null)
+				{
+					$searchtype="title";
+				}
+				$searchweb = $request->input('searchweb');
+				$pagenumber=2;
+			
+				
+
+				
+
+				if($searchtype=='author')
+					{   
+						$rawDataPixnet=Pixnet::where('search_author','like',"%$search%");
+						$rawDataXuite=Xuite::where('search_author','like',"%$search%");
+						$rawDataPtt=Ptt::where('search_author','like',"%$search%");
+						$rawDataYoutube=Youtube::where('search_author','like',"%$search%");
+						$rawDataMobile01=Mobile01::where('search_author','like',"%$search%");
+					}
+				else
+					{
+						
+						$rawDataPixnet=Pixnet::where('search_title','like',"%$search%");
+						$rawDataXuite=Xuite::where('search_title','like',"%$search%");
+						$rawDataPtt=Ptt::where('search_title','like',"%$search%");
+						$rawDataYoutube=Youtube::where('search_title','like',"%$search%");
+						$rawDataMobile01=Mobile01::where('search_title','like',"%$search%");
+					}
+				if($searchweb!=null)
+
+				{
+						
+				
+					if (strpos ($searchweb,'pixnet')==false)
+						{
+							$rawDataPixnet=[];
+							$pagenumber++;
+
+
+						}	
+					if (strpos ($searchweb,'xuite')==false)
+						{
+							$rawDataXuite=[];
+							$pagenumber++;
+
+						}	
+					if (strpos ($searchweb,'ptt')==false)
+						{
+							$rawDataPtt =[];
+							$pagenumber++;
+						}	 
+					if (strpos ($searchweb,'youtube')==false)
+						{
+							$rawDataYoutube=[];
+							$pagenumber++;
+
+						}
+					if (strpos ($searchweb,'mobile01')==false)
+						{
+							$rawDataMobile01=[];
+							$pagenumber++;
+
+						}
+				}
+				$number=array(count($rawDataPixnet),count($rawDataXuite),count($rawDataPtt),
+					count($rawDataYoutube),count($rawDataMobile01));
+				$whoIsTheBestDog=array_search(max($number),$number);		
+				
+
+
+			
+				if(count($rawDataPixnet)!=0)
+				{
+					$pixnetdata = $rawDataPixnet
+					->orderBy('total_score', 'desc')
+					->paginate($pagenumber);
+				}
+				elseif($rawDataPixnet==[])
+				{
+					$pixnetdata = [];
+				}
+
+				if(count($rawDataXuite)!=0)
+				{
+					$xuitedata = $rawDataXuite
+					->orderBy('total_score', 'desc')
+					->paginate($pagenumber);	
+				}
+				elseif ($rawDataXuite==[])
+				{
+					$xuitedata = [];	
+				}
+				if (count($rawDataPtt)!=0)
+				{
+					$pttdata=$rawDataPtt
+					->orderBy('total_score', 'desc')
+					->paginate($pagenumber);
+				}
+				elseif ($rawDataPtt==[])
+				{
+					$pttdata= [];	
+				}
+				if(count($rawDataYoutube)!=0)
+				{
+					$youtubedata= $rawDataYoutube
+					->orderBy('total_score', 'desc')
+					->paginate($pagenumber);
+				}
+				elseif($rawDataYoutube==[])
+				{
+					$youtubedata=[];
+				}
+				if(count($rawDataMobile01)!=0)
+				{
+					
+					$mobile01data=$rawDataMobile01
+					->orderBy('total_score', 'desc')
+					->paginate($pagenumber);
+					
+
+				}
+				elseif($rawDataMobile01==[]) {
+					$mobile01data=[];
+				}
+
+			 	switch ($whoIsTheBestDog) {
+			 		case 0:
+			 			$whoIsTheBestDog=$pixnetdata;
+			 			break;
+			 		case 1:
+			 			$whoIsTheBestDog=$xuitedata;
+			 			break;
+			 		case 2:
+			 			$whoIsTheBestDog=$pttdata;
+			 			break;
+			 		case 3:
+			 			$whoIsTheBestDog=$youtubedata;
+			 			break;
+			 		case 4:
+			 			$whoIsTheBestDog=$mobile01data;
+			 			break;
+			 		default:
+			 			exit("fuck");
+			 			break;
+			 	}
+
+
+
+			
+				return view('result',['pixnetdata'=>$pixnetdata,
+					'xuitedata'=>$xuitedata,'pttdata'=>$pttdata,
+					'youtubedata'=>$youtubedata,'mobile01data'=>$mobile01data
+					,'whoIsTheBestDog'=>$whoIsTheBestDog,'search'=> $search,'searchtype'=>$searchtype,'searchweb'=>$searchweb]);
+
+			}
+			public function random(Request $request)
+			{	
+				$search = $request->input('search');
+			
+				$searchtype = $request->input('searchtype');
+				if($searchtype==null)
+				{
+					$searchtype="title";
+				}
+				$searchweb = $request->input('searchweb');
+				$pagenumber=2;
+				$a=0;
+				$b=0;
+				$c=0;
+				$d=0;
+				$e=0;
+			
+				
+
+				
+
+				if($searchtype=='author')
+					{   
+						$rawDataPixnet=Pixnet::where('search_author','like',"%$search%");
+						$rawDataXuite=Xuite::where('search_author','like',"%$search%");
+						$rawDataPtt=Ptt::where('search_author','like',"%$search%");
+						$rawDataYoutube=Youtube::where('search_author','like',"%$search%");
+						$rawDataMobile01=Mobile01::where('search_author','like',"%$search%");
+					}
+				else
+					{
+						
+						$rawDataPixnet=Pixnet::where('search_title','like',"%$search%");
+						$rawDataXuite=Xuite::where('search_title','like',"%$search%");
+						$rawDataPtt=Ptt::where('search_title','like',"%$search%");
+						$rawDataYoutube=Youtube::where('search_title','like',"%$search%");
+						$rawDataMobile01=Mobile01::where('search_title','like',"%$search%");
+					}
+				if($searchweb!=null)
+
+				{
+						
+				
+					if (strpos ($searchweb,'pixnet')==false)
+						{
+							$rawDataPixnet=[];
+							$pagenumber++;
+
+
+						}	
+					if (strpos ($searchweb,'xuite')==false)
+						{
+							$rawDataXuite=[];
+							$pagenumber++;
+
+						}	
+					if (strpos ($searchweb,'ptt')==false)
+						{
+							$rawDataPtt =[];
+							$pagenumber++;
+						}	 
+					if (strpos ($searchweb,'youtube')==false)
+						{
+							$rawDataYoutube=[];
+							$pagenumber++;
+
+						}
+					if (strpos ($searchweb,'mobile01')==false)
+						{
+							$rawDataMobile01=[];
+							$pagenumber++;
+
+						}
+				}
+				$number=array(count($rawDataPixnet),count($rawDataXuite),count($rawDataPtt),
+					count($rawDataYoutube),count($rawDataMobile01));
+				$whoIsTheBestDog=array_search(max($number),$number);		
+				
+
+
+			
+				if(count($rawDataPixnet)!=0)
+				{
+					
+					$a=rand(0,count($rawDataPixnet));
+					$pixnetdata = $rawDataPixnet::where('id','=','$a')->paginate($pagenumber); 
+				}
+				elseif($rawDataPixnet==[])
+				{
+					$pixnetdata = [];
+				}
+
+				if(count($rawDataXuite)!=0)
+				{
+					$b=rand(0,count($rawDataXuite));
+					$xuitedata = $rawDataXuite::where('id','=','$b')->paginate($pagenumber); 
+				}
+				elseif ($rawDataXuite==[])
+				{
+					$xuitedata = [];	
+				}
+				if (count($rawDataPtt)!=0)
+				{
+					$c=rand(0,count($rawDataPtt));
+					$pttdata = $rawDataPtt::where('id','=','$c')->paginate($pagenumber); 
+				}
+				elseif ($rawDataPtt==[])
+				{
+					$pttdata= [];	
+				}
+				if(count($rawDataYoutube)!=0)
+				{
+					$d=rand(0,count($rawDataYoutube));
+					$youtubedata = $rawDataYoutube::where('id','=','$d')->paginate($pagenumber); 
+				}
+				elseif($rawDataYoutube==[])
+				{
+					$youtubedata=[];
+				}
+				if(count($rawDataMobile01)!=0)
+				{
+					
+					$e=rand(0,count($rawDataMobile01->all()));
+					$mobiledata = $rawDataMobile01::where('id','=','$e')->paginate($pagenumber); 
+					
+
+				}
+				elseif($rawDataMobile01==[]) {
+					$mobile01data=[];
+				}
+
+			 	switch ($whoIsTheBestDog) {
+			 		case 0:
+			 			$whoIsTheBestDog=$pixnetdata;
+			 			break;
+			 		case 1:
+			 			$whoIsTheBestDog=$xuitedata;
+			 			break;
+			 		case 2:
+			 			$whoIsTheBestDog=$pttdata;
+			 			break;
+			 		case 3:
+			 			$whoIsTheBestDog=$youtubedata;
+			 			break;
+			 		case 4:
+			 			$whoIsTheBestDog=$mobile01data;
+			 			break;
+			 		default:
+			 			exit("fuck");
+			 			break;
+			 	}
+
+
+
+			
+				return view('result',['pixnetdata'=>$pixnetdata,
+					'xuitedata'=>$xuitedata,'pttdata'=>$pttdata,
+					'youtubedata'=>$youtubedata,'mobile01data'=>$mobile01data
+					,'whoIsTheBestDog'=>$whoIsTheBestDog,'search'=> $search,'searchtype'=>$searchtype,'searchweb'=>$searchweb]);
+
+			}
+
+
+
 
 
 
