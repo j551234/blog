@@ -75,8 +75,8 @@ for change in range(2,5):
                     article_picture=picture
             else:
                 article_picture='./img/mobile01.jpg'
-                cur.execute(sqli,(chinese_key_word,search_title,search_href,search_time,search_author,article_picture,author_href,search_view)) #存入資料庫    
-                conn.commit()
+            cur.execute(sqli,(chinese_key_word,search_title,search_href,search_time,search_author,article_picture,author_href,search_view)) #存入資料庫    
+            conn.commit()
         time.sleep(0.5)
 
     a=repr(change)
