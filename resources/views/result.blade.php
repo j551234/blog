@@ -439,7 +439,7 @@
              
                
              
-                <div class="my-rating-4 percentBall" data-percent="87" id="{{$data->id}}"></div>
+                <div class="my-rating-4 percentBall" data-percent="0" id="{{$data->id}}"></div>
                   <script type="text/javascript">                      
                     $(".my-rating-4").starRating({
                         totalStars: 5,
@@ -560,6 +560,7 @@
             const makePie = (where, percent) => {
                let foregroundColor
                let fontcolor
+               let backgroundColor
                console.log(percent)
                if (percent >= 75) {
                    foregroundColor = "red"
@@ -567,9 +568,12 @@
                } else if (percent >= 50) {
                    foregroundColor = "orange"
                    fontcolor = "orange"
-               } else {
+               } else if (percent <50 && percent > 0) {
                    foregroundColor = "green"
                    fontcolor = "green"
+               } else {
+                   backgroundColor = "#404040"
+                   fontcolor = "red"
                }
 
 
@@ -577,6 +581,7 @@
                    animation: 1,
                    animationStep: 5,
                    foregroundColor: foregroundColor,
+                   backgroundColor: backgroundColor,
                    foregroundBorderWidth: 15,
                    backgroundBorderWidth: 15,
                    textSize: 28,
