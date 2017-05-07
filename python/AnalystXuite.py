@@ -44,9 +44,6 @@ with open('paid news.txt', 'r',encoding='UTF-8') as paidnews:
         paid.append(line.strip('\ufeff').strip())
     paidnews.close()
     
-print(pos)
-print(nag)
-print(paid)
 
 pos_set=set(pos)
 nag_set=set(nag)
@@ -56,44 +53,43 @@ for record in results:
     db_url = record[0]
     xuite_id= record[1]
 
-    print (db_url)
 
     res=requests.get(db_url)
     res.encoding='utf-8'
     soup = BeautifulSoup (res.text, "html5lib")
     #內文
     main_article = soup.select('#content_all')   
-    sentence=main_article[0].select('span')
-    total_pos_count=0
-    total_nag_count=0
-    total_paid_count=0
-    for line in sentence:
+    if len(main_article):
+        sentence=main_article[0].select('span')    
+        total_pos_count=0
+        total_nag_count=0
+        total_paid_count=0
+        for line in sentence:
 
-        line2=line.text.strip()
-        words=jieba.lcut(line2, cut_all=False)
-        words_set = set(words)
-        pos_intersection=words_set.intersection(pos_set)
-        nag_intersection=words_set.intersection(nag_set)
-        paid_intersection=words_set.intersection(paid_set)
-        pos_count=len(pos_intersection)
-        nag_count=len(nag_intersection)
-        paid_count=len(paid_intersection)
+            line2=line.text.strip()
+            words=jieba.lcut(line2, cut_all=False)
+            words_set = set(words)
+            pos_intersection=words_set.intersection(pos_set)
+            nag_intersection=words_set.intersection(nag_set)
+            paid_intersection=words_set.intersection(paid_set)
+            pos_count=len(pos_intersection)
+            nag_count=len(nag_intersection)
+            paid_count=len(paid_intersection)
 
-        total_pos_count=total_pos_count+pos_count
-        total_nag_count=total_nag_count+nag_count
-        total_paid_count=total_paid_count+paid_count
-    total_count = total_pos_count+total_nag_count+total_paid_count
-    print(total_pos_count)
-    print(total_nag_count)
-    print(total_paid_count)
-    if total_count==0:
-        Content_Analyst = "0"
-        print (Content_Analyst)
-    else:
-        Content_Analyst = format(total_pos_count/total_count*100 , '0.2f')
-        print (Content_Analyst)
-    cur.execute ("UPDATE xuite SET content_analyst=%s WHERE id='%s'" %  (Content_Analyst,xuite_id))
-    conn.commit()
-    
+            total_pos_count=total_pos_count+pos_count
+            total_nag_count=total_nag_count+nag_count
+            total_paid_count=total_paid_count+paid_count
+        total_count = total_pos_count+total_nag_count+total_paid_count
+
+        if total_count==0:
+            Content_Analyst = "0"
+        else:
+            Content_Analyst = format(total_pos_count/total_count*100 , '0.2f')
+        cur.execute ("UPDATE xuite SET content_analyst=%s WHERE id='%s'" %  (Content_Analyst,xuite_id))
+        conn.commit()
+    else :
+        cur.execute ("DELETE FROM xuite WHERE id='%s'" %  (xuite_id))
+        conn.commit()
+
 cur.close()
 conn.close()
