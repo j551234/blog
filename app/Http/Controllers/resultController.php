@@ -58,8 +58,7 @@ class resultController extends Controller {
 				$youtubefind=youtube::where('key_word','like',"%$search%")->get();
 				
 
-
-			
+				pclose(popen("start/b C://xampp/htdocs/project/python/InsertDict.py $url_key_word",'r'));
 				if(count($pixnetfind)==0){		
 						$file1 = popen("start/b C://xampp/htdocs/project/python/SearchPixnet.py $url_key_word",'r');
 						pclose($file1);
@@ -705,7 +704,7 @@ class resultController extends Controller {
 				{
 					
 			
-					$pixnetdata = $rawDataPixnet::inRandomOrder()->get();
+					$pixnetdata = $rawDataPixnet->inRandomOrder()->paginate($pagenumber);
 				}
 				elseif($rawDataPixnet==[])
 				{
@@ -715,7 +714,8 @@ class resultController extends Controller {
 				if(count($rawDataXuite)!=0)
 				{
 					
-					$xuitedata = $rawDataXuite::inRandomOrder()->get();
+					$xuitedata = $rawDataXuite->inRandomOrder()->paginate($pagenumber);
+					         
 						
 				}
 				elseif ($rawDataXuite==[])
@@ -725,8 +725,7 @@ class resultController extends Controller {
 				if (count($rawDataPtt)!=0)
 				{
 					
-					$pttdata = $rawDataPtt::inRandomOrder()->get();
-					
+					$pttdata = $rawDataPtt->inRandomOrder()->paginate($pagenumber);					
 				}	
 				elseif ($rawDataPtt==[])
 				{
@@ -735,8 +734,7 @@ class resultController extends Controller {
 				if(count($rawDataYoutube)!=0)
 				{
 					
-					$youtubedata = $rawDataYoutube::inRandomOrder()->get();
-					
+					$youtubedata = $rawDataYoutube->inRandomOrder()->paginate($pagenumber);
 				}
 				elseif(count($rawDataYoutube)==[])
 				{
@@ -746,7 +744,7 @@ class resultController extends Controller {
 				{
 					
 					
-					$mobiledata = $rawDataMobile01::inRandomOrder()->get();
+					$mobile01data = $rawDataMobile01->inRandomOrder()->paginate($pagenumber);
                 }
 				elseif($rawDataMobile01==[]) 
 				{

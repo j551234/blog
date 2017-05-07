@@ -134,8 +134,20 @@
                             });
                         }
                     });
+
+          
+                </script> 
+      
+                    
+
+
+             
+            </div>
+                <script type="text/javascript">
+
                  $( document ).ready(function() {
                       $("#{{$data->id}}").circliful({
+
                         animation: 1,
                         animationStep: 5,
                         foregroundColor: '#fc8d59',
@@ -153,13 +165,7 @@
          
                       
                  });          
-
-                </script>  
-                    
-
-
-             
-            </div>
+                </script>
         </div>
         <!-- /.row -->
         <hr class="result">
