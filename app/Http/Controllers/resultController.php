@@ -26,7 +26,9 @@ class resultController extends Controller {
 		if($searchweb!=null){
 			$searchweb=implode(",",$searchweb);
 		}
-		$searchweb="pixnet,xuite,ptt,youtube,mobile01";
+		elseif ($searchweb==null) {
+			$searchweb="pixnet,xuite,ptt,youtube,mobile01";
+		}
 
 			
 			
@@ -156,6 +158,7 @@ class resultController extends Controller {
 		$searchtype = $request->input('searchtype');
 		$searchweb = $request->input('searchweb');
 		$null=[];
+		$numberofpage=2;
 	
 		
 
@@ -205,44 +208,49 @@ class resultController extends Controller {
 	
 		if($rawDataPixnet!=$null)
 		{
-			$pixnetdata = $rawDataPixnet->paginate(2);
+			$pixnetdata = $rawDataPixnet->paginate($numberofpage);
 		}
 		elseif($rawDataPixnet==$null)
 		{
 			$pixnetdata = $null;
+			$numberofpage=$numberofpage+1;	
 		}
 
 		if($rawDataXuite!=$null)
 		{
-			$xuitedata = $rawDataXuite->paginate(2);	
+			$xuitedata = $rawDataXuite->paginate($numberofpage);	
 		}
 		elseif ($rawDataXuite==$null)
 		{
-			$xuitedata = $null;	
+			$xuitedata = $null;
+			$numberofpage=$numberofpage+1;	
 		}
 		if ($rawDataPtt!=$null)
 		{
-			$pttdata=$rawDataPtt->paginate(2);
+			$pttdata=$rawDataPtt->paginate($numberofpage);
 		}
 		elseif ($rawDataPtt==$null)
 		{
-			$pttdata= $null;	
+			$pttdata= $null;
+			$numberofpage=$numberofpage+1;	
 		}
 		if($rawDataYoutube!=$null)
 		{
-			$youtubedata= $rawDataYoutube->paginate(2);
+			$youtubedata= $rawDataYoutube->paginate($numberofpage);
 		}
 		elseif($rawDataYoutube==$null)
 		{
-			$youtubedata=$null;
+			$youtubedata=$null;;
+			$numberofpage=$numberofpage+1;	
 
 		}
 		if($rawDataMobile01!=$null)
 		{
-			$mobile01data=$rawDataMobile01->paginate(2);
+			$mobile01data=$rawDataMobile01->paginate($numberofpage);
 		}
 		elseif ($rawDataMobile01==$null) {
 			$mobile01data=$null;
+			$numberofpage=$numberofpage+1;	
 		}
 
 
