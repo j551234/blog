@@ -77,6 +77,8 @@ mobile01_url='https://www.mobile01.com/'
 
 for food in food_list:
     Mobile01crawler(food,tag_list[0])
+for travel in travel_list:
+    Mobile01crawler(travel,tag_list[1])
 for dress in dress_list:
     Mobile01crawler(dress,tag_list[2])
 for digital in digital_list:

@@ -104,7 +104,7 @@
             </li>
             <li class="mainlink"><a href='{{URL("index?show=ptt&tag=$tag")}}#classification'class="firstMenu">Ptt</a>
             </li>
-            <li class="mainlink"><a href='{{URL("index?show=youtube&tag=$tag")}}#classification'class="firstMenu">Youtube</a>
+            <li class="mainlink"><a href='{{URL("index?show=mobile01&tag=$tag")}}#classification'class="firstMenu">Mobile01</a>
             </li>
         </ul>
         </div>
