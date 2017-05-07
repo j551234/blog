@@ -13,11 +13,11 @@
                         <input type="radio" name="searchtype" value="title" id="t" /><label for="t">標題</label>
                     </div>
                     <div class="searchweb">
-                         <input type="checkbox" name="searchweb[]" value="pixnet" id="p"><label for="p">Pixnet</label>
-                         <input type="checkbox" name="searchweb[]" value="xuite" id="x"><label for="x">Xuite</label>
-                         <input type="checkbox" name="searchweb[]" value="ptt" id="pt"><label for="pt">Ptt</label>
-                         <input type="checkbox" name="searchweb[]" value="youtube" id="y"><label for="y">Youtube</label>
-                         <input type="checkbox" name="searchweb[]" value="mobile01" id="m"><label for="m">Mobile01</label>
+                         <input type="checkbox" name="searchweb[]" value="rpixnet" id="p"><label for="p">Pixnet</label>
+                         <input type="checkbox" name="searchweb[]" value="rxuite" id="x"><label for="x">Xuite</label>
+                         <input type="checkbox" name="searchweb[]" value="rptt" id="pt"><label for="pt">Ptt</label>
+                         <input type="checkbox" name="searchweb[]" value="ryoutube" id="y"><label for="y">Youtube</label>
+                         <input type="checkbox" name="searchweb[]" value="rmobile01" id="m"><label for="m">Mobile01</label>
                     </div>
 
 
