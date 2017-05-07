@@ -113,6 +113,15 @@ p {
   border-radius: 6px;
   background-color: #f0f0f0;
 }
+.detail {
+  position: relative;
+}
+.detail svg.circliful {
+  position: absolute;
+  max-height:130px;
+  top:65%;
+  left:25%;
+}
 .bg-primary {
   background-color: #F05F40;
 }

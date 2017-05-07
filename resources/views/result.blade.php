@@ -88,7 +88,7 @@
 
                 </a>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5 detail">
                 <h3><a href="{{$data->search_href}}" target="_blank">{{$data->search_title}}</a></h3>
                 <h4>{{$data->search_time}}</h4>
                 <h4>作者:<a href="{{$data->author_href}}" target="_blank">{{$data->search_author}}</a></h4>
@@ -138,14 +138,17 @@
                       $("#{{$data->id}}").circliful({
                         animation: 1,
                         animationStep: 5,
+                        foregroundColor: '#fc8d59',
                         foregroundBorderWidth: 15,
                         backgroundBorderWidth: 15,
                         textSize: 28,
                         textStyle: 'font-size: 12px;',
                         textColor: '#666',
+                        fontColor: '#7a1700',
                         percent: 35 ,
                         multiPercentage: 1,
                         percentages: [10, 20, 30]
+                        
                     });
          
                       
@@ -174,7 +177,7 @@
 
                 </a>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5 detail">
                 <h3><a href="{{$data->search_href}}" target="_blank">{{$data->search_title}}</a></h3>
                 <h4>{{$data->search_time}}</h4>
                 <h4>作者:<a href="{{$data->author_href}}" target="_blank">{{$data->search_author}}</a></h4>
@@ -222,11 +225,13 @@
                       $("#{{$data->id}}").circliful({
                         animation: 1,
                         animationStep: 5,
+                        foregroundColor: '#fc8d59',
                         foregroundBorderWidth: 15,
                         backgroundBorderWidth: 15,
                         textSize: 28,
                         textStyle: 'font-size: 12px;',
                         textColor: '#666',
+                        fontColor: '#7a1700',
                         percent: 35 ,
                         multiPercentage: 1,
                         percentages: [10, 20, 30]
@@ -255,7 +260,7 @@
 
                 </a>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5 detail">
                 <h3><a href="{{$data->search_href}}" target="_blank">{{$data->search_title}}</a></h3>
                 <h4>{{$data->search_time}}</h4>
                 <h4>作者:<a href="{{$data->author_href}}" target="_blank">{{$data->search_author}}</a></h4>
@@ -305,11 +310,13 @@
                       $("{{$data->id}}").circliful({
                         animation: 1,
                         animationStep: 5,
+                        foregroundColor: '#fc8d59',
                         foregroundBorderWidth: 15,
                         backgroundBorderWidth: 15,
                         textSize: 28,
                         textStyle: 'font-size: 12px;',
                         textColor: '#666',
+                        fontColor: '#7a1700',
                         percent: 35 ,
                         multiPercentage: 1,
                         percentages: [10, 20, 30]
@@ -340,7 +347,7 @@
                 </a>
                
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5 detail">
                 <h3><a href="{{$data->search_href}}" target="_blank">{{$data->search_title}}</a></h3>
                 <h4>{{$data->search_time}}</h4>
                 <h4>作者:<a href="{{$data->author_href}}" target="_blank">{{$data->search_author}}</a></h4>
@@ -396,11 +403,13 @@
                       $("{{$data->id}}").circliful({
                         animation: 1,
                         animationStep: 5,
+                        foregroundColor: '#fc8d59',
                         foregroundBorderWidth: 15,
                         backgroundBorderWidth: 15,
                         textSize: 28,
                         textStyle: 'font-size: 12px;',
                         textColor: '#666',
+                        fontColor: '#7a1700',
                         percent: 35 ,
                         multiPercentage: 1,
                         percentages: [10, 20, 30]
@@ -430,7 +439,7 @@
                 </a>
                
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5 detail">
                 <h3><a href="{{$data->search_href}}" target="_blank">{{$data->search_title}}</a></h3>
                 <h4>{{$data->search_time}}</h4>
                 <h4>作者:{{$data->search_author}}</h4>  
@@ -480,11 +489,13 @@
                       $("#{{$data->id}}").circliful({
                         animation: 1,
                         animationStep: 5,
+                        foregroundColor: '#fc8d59',
                         foregroundBorderWidth: 15,
                         backgroundBorderWidth: 15,
                         textSize: 28,
                         textStyle: 'font-size: 12px;',
                         textColor: '#666',
+                        fontColor: '#7a1700',
                         percent: 35 ,
                         multiPercentage: 1,
                         percentages: [10, 20, 30]
