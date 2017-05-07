@@ -6,11 +6,11 @@ use View;
 use App\Pixnet;
 use App\Xuite;
 use App\Ptt;
-use App\Youtube;
+use App\mobile01;
 use App\Indexxuite;
 use App\Indexpixnet;
 use App\Indexptt;
-use App\Indexyoutube;
+use App\Indexmobile01;
 
 use App\Http\Requests\StoreBlogPost;
 use Illuminate\Http\Request;
@@ -35,8 +35,8 @@ class indexController extends Controller {
 					if($show=='ptt')
 						$showdata =ptt::orderBy('id', 'desc')->paginate(12);
 
-					if($show=='youtube')
-						$showdata =youtube::orderBy('id', 'desc')->paginate(12); 
+					if($show=='mobile01')
+						$showdata =mobile01::orderBy('id', 'desc')->paginate(12); 
 					}
 					else
 					{
@@ -53,8 +53,8 @@ class indexController extends Controller {
 							{$showdata =indexxuite::where('tag','=',$tag)->paginate(12); }
 					if($show=='ptt')
 							{$showdata =indexptt::where('tag','=',$tag)->paginate(12); }
-					if($show=='youtube')
-							{$showdata =indexyoutube::where('tag','=',$tag)->paginate(12); }
+					if($show=='mobile01')
+							{$showdata =indexmobile01::where('tag','=',$tag)->paginate(12); }
 					}
 			
 					
@@ -83,8 +83,8 @@ class indexController extends Controller {
 	// 						if($show=='ptt')
 	// 							$showdata =ptt::orderBy('push_count', 'desc')->paginate(12);
 
-	// 						if($show=='youtube')
-	// 							$showdata =youtube::orderBy('push_count', 'desc')->paginate(12); 
+	// 						if($show=='mobile01')
+	// 							$showdata =mobile01::orderBy('push_count', 'desc')->paginate(12); 
 	// 						}
 	// 						else
 	// 						{
@@ -107,8 +107,8 @@ class indexController extends Controller {
 	// 								{$showdata =indexptt::where('tag','=',$tag)
 	// 								->orderBy('score_people', 'desc')
 	// 								->paginate(12); }
-	// 						if($show=='youtube')
-	// 								{$showdata =indexyoutube::where('tag','=',$tag)
+	// 						if($show=='mobile01')
+	// 								{$showdata =indexmobile01::where('tag','=',$tag)
 	// 								->orderBy('score_people', 'desc')
 	// 								->paginate(12); }
 	// 						}
@@ -144,8 +144,8 @@ class indexController extends Controller {
 	// 						if($show=='ptt')
 	// 							$showdata =ptt::orderBy('total_score', 'desc')->paginate(12);
 
-	// 						if($show=='youtube')
-	// 							$showdata =youtube::orderBy('total_score', 'desc')->paginate(12); 
+	// 						if($show=='mobile01')
+	// 							$showdata =mobile01::orderBy('total_score', 'desc')->paginate(12); 
 	// 						}
 	// 						else
 	// 						{
@@ -168,8 +168,8 @@ class indexController extends Controller {
 	// 								{$showdata =indexptt::where('tag','=',$tag)
 	// 								->orderBy('total_score', 'desc')
 	// 								->paginate(12); }
-	// 						if($show=='youtube')
-	// 								{$showdata =indexyoutube::where('tag','=',$tag)
+	// 						if($show=='mobile01')
+	// 								{$showdata =indexmobile01::where('tag','=',$tag)
 	// 								->orderBy('total_score', 'desc')
 	// 								->paginate(12); }
 	// 						           }
@@ -197,12 +197,12 @@ class indexController extends Controller {
 	// 		$rand1=pixnet::all();
 	// 		$rand2=xuite::all();
 	// 		$rand3=ptt::all();
-	// 		$rand4=youtube::all();
+	// 		$rand4=mobile01::all();
 
 	// 		$rand5=indexpixnet::all();
 	// 		$rand6=indexxuite::all();
 	// 		$rand7=indexptt::all();
-	// 		// $rand8=indexyoutube::all();
+	// 		// $rand8=indexmobile01::all();
 	// 		if($tag==null)
 	// 				{
 	// 					if($show!=null)
@@ -216,9 +216,9 @@ class indexController extends Controller {
 	// 								if($show=='ptt')
 	// 								 {$c=rand(0,count($rand3->all()));
 	// 			 						$showdata =ptt::whereBetween('id',array($c,$c+5))->paginate(6); }
-	// 								if($show=='youtube')
+	// 								if($show=='mobile01')
 	// 								 {$d=rand(0,count($rand4->all()));
-	// 									$showdata =youtube::whereBetween('id',array($d,$d+5))->paginate(6);}
+	// 									$showdata =mobile01::whereBetween('id',array($d,$d+5))->paginate(6);}
 	// 						}
 	// 						else
 	// 						{
@@ -237,9 +237,9 @@ class indexController extends Controller {
 	// 								if($show=='ptt')
 	// 								 {$g=rand(0,count($rand3->all()));
 	// 			 						$showdata =indexptt::whereBetween('id',array($g,$g+5))->paginate(6); }
-	// 								if($show=='youtube')
+	// 								if($show=='mobile01')
 	// 								 {$h=rand(0,count($rand4->all()));
-	// 									$showdata =indexyoutube::whereBetween('id',array($h,$h+5))->paginate(6);}
+	// 									$showdata =indexmobile01::whereBetween('id',array($h,$h+5))->paginate(6);}
 	// 						}
 					
 							
@@ -269,8 +269,8 @@ class indexController extends Controller {
 							if($show=='ptt')
 								$showdata =ptt::orderBy('id', 'desc')->paginate(12);
 
-							if($show=='youtube')
-								$showdata =youtube::orderBy('id', 'desc')->paginate(12); 
+							if($show=='mobile01')
+								$showdata =mobile01::orderBy('id', 'desc')->paginate(12); 
 							}
 						else
 							{
@@ -287,8 +287,8 @@ class indexController extends Controller {
 									{$showdata =indexxuite::where('tag','=',$tag)->paginate(12); }
 							if($show=='ptt')
 									{$showdata =indexptt::where('tag','=',$tag)->paginate(12); }
-							if($show=='youtube')
-									{$showdata =indexyoutube::where('tag','=',$tag)->paginate(12); }
+							if($show=='mobile01')
+									{$showdata =indexmobile01::where('tag','=',$tag)->paginate(12); }
 							}
 					
 							
