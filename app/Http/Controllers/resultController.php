@@ -13,6 +13,9 @@ use App\Ptt;
 use App\Youtube;
 use App\Mobile01;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+
 
 
 class resultController extends Controller {
@@ -633,12 +636,7 @@ class resultController extends Controller {
 				}
 				$searchweb = $request->input('searchweb');
 				$pagenumber=2;
-				$a=0;
-				$b=0;
-				$c=0;
-				$d=0;
-				$e=0;
-			
+		
 				
 
 				
@@ -706,8 +704,8 @@ class resultController extends Controller {
 				if(count($rawDataPixnet)!=0)
 				{
 					
-					$a=rand(0,count($rawDataPixnet));
-					$pixnetdata = $rawDataPixnet::where('id','=','$a')->paginate($pagenumber); 
+			
+					$pixnetdata = $rawDataPixnet::inRandomOrder()->get();
 				}
 				elseif($rawDataPixnet==[])
 				{
@@ -716,8 +714,9 @@ class resultController extends Controller {
 
 				if(count($rawDataXuite)!=0)
 				{
-					$b=rand(0,count($rawDataXuite));
-					$xuitedata = $rawDataXuite::where('id','=','$b')->paginate($pagenumber); 
+					
+					$xuitedata = $rawDataXuite::inRandomOrder()->get();
+						
 				}
 				elseif ($rawDataXuite==[])
 				{
@@ -725,31 +724,32 @@ class resultController extends Controller {
 				}
 				if (count($rawDataPtt)!=0)
 				{
-					$c=rand(0,count($rawDataPtt));
-					$pttdata = $rawDataPtt::where('id','=','$c')->paginate($pagenumber); 
-				}
+					
+					$pttdata = $rawDataPtt::inRandomOrder()->get();
+					
+				}	
 				elseif ($rawDataPtt==[])
 				{
 					$pttdata= [];	
 				}
 				if(count($rawDataYoutube)!=0)
 				{
-					$d=rand(0,count($rawDataYoutube));
-					$youtubedata = $rawDataYoutube::where('id','=','$d')->paginate($pagenumber); 
+					
+					$youtubedata = $rawDataYoutube::inRandomOrder()->get();
+					
 				}
-				elseif($rawDataYoutube==[])
+				elseif(count($rawDataYoutube)==[])
 				{
 					$youtubedata=[];
 				}
 				if(count($rawDataMobile01)!=0)
 				{
 					
-					$e=rand(0,count($rawDataMobile01->all()));
-					$mobiledata = $rawDataMobile01::where('id','=','$e')->paginate($pagenumber); 
 					
-
-				}
-				elseif($rawDataMobile01==[]) {
+					$mobiledata = $rawDataMobile01::inRandomOrder()->get();
+                }
+				elseif($rawDataMobile01==[]) 
+				{
 					$mobile01data=[];
 				}
 
