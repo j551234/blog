@@ -69,41 +69,45 @@ for record in results:
     res1.encoding='utf-8'
     soup1 = BeautifulSoup (res1.text, "html5lib")
     #內文
-    main_article = soup1.select('.article-content-inner')    
+    main_article = soup1.select('.article-content-inner') 
+    if len(main_article):  
 
-    content=main_article[0].text.strip()
-    sentence=content.split("\n")
-    sentence=remove_values_from_list(sentence,'')
+        content=main_article[0].text.strip()
+        sentence=content.split("\n")
+        sentence=remove_values_from_list(sentence,'')
 
-    total_pos_count=0
-    total_nag_count=0
-    total_paid_count=0
-    for line in sentence:
+        total_pos_count=0
+        total_nag_count=0
+        total_paid_count=0
+        for line in sentence:
 
-        line2=line.strip()
-        words=jieba.lcut(line2, cut_all=False)
-        words_set = set(words)
-        pos_intersection=words_set.intersection(pos_set)
-        nag_intersection=words_set.intersection(nag_set)
-        paid_intersection=words_set.intersection(paid_set)
-        pos_count=len(pos_intersection)
-        nag_count=len(nag_intersection)
-        paid_count=len(paid_intersection)
+            line2=line.strip()
+            words=jieba.lcut(line2, cut_all=False)
+            words_set = set(words)
+            pos_intersection=words_set.intersection(pos_set)
+            nag_intersection=words_set.intersection(nag_set)
+            paid_intersection=words_set.intersection(paid_set)
+            pos_count=len(pos_intersection)
+            nag_count=len(nag_intersection)
+            paid_count=len(paid_intersection)
 
-        total_pos_count=total_pos_count+pos_count
-        total_nag_count=total_nag_count+nag_count
-        total_paid_count=total_paid_count+paid_count
-    total_count = total_pos_count+total_nag_count+total_paid_count
+            total_pos_count=total_pos_count+pos_count
+            total_nag_count=total_nag_count+nag_count
+            total_paid_count=total_paid_count+paid_count
+        total_count = total_pos_count+total_nag_count+total_paid_count
 
-    
-    if total_count==0:
-        Content_Analyst = "0"
+        
+        if total_count==0:
+            Content_Analyst = "0"
 
-    else:
-        Content_Analyst = format(total_pos_count/total_count*100 , '0.2f')
+        else:
+            Content_Analyst = format(total_pos_count/total_count*100 , '0.2f')
 
-    cur.execute ("UPDATE pixnet SET content_analyst=%s WHERE id='%s'" %  (Content_Analyst,pixnet_id))
-    conn.commit()
+        cur.execute ("UPDATE pixnet SET content_analyst=%s WHERE id='%s'" %  (Content_Analyst,pixnet_id))
+        conn.commit()
+    else :
+        cur.execute ("DELETE FROM pixnet WHERE id='%s'" %  (pixnet_id))
+        conn.commit()
 
 cur.close()
 conn.close()

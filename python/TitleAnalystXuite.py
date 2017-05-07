@@ -33,33 +33,38 @@ for record in results:
     title_list=jieba.lcut(title,cut_all=False)
 
     res=requests.get(db_url)
-    res.encoding='utf-8'
+    res.encoding='utf-8'    
     soup = BeautifulSoup (res.text, "html5lib")
     #內文
-    main_article = soup.select('#content_all')   
-    sentence=main_article[0].select('span')
-    total_count=0
-    total_article_count=0
-    for line in sentence:
+    main_article = soup.select('#content_all')
+    if len(main_article):
+        sentence=main_article[0].select('span')
+        total_count=0
+        total_article_count=0
+        for line in sentence:
 
-        line2=line.text.strip()
-        words=jieba.lcut(line2, cut_all=False)
-        s1 = set(title_list)
-        s2 = set(words)
-        article_count=len(s2)
-        total_article_count=total_article_count+article_count
-        intersection=s1.intersection(s2)
-        count=len(intersection)
-        total_count=total_count+count
+            line2=line.text.strip()
+            words=jieba.lcut(line2, cut_all=False)
+            s1 = set(title_list)
+            s2 = set(words)
+            article_count=len(s2)
+            total_article_count=total_article_count+article_count
+            intersection=s1.intersection(s2)
+            count=len(intersection)
+            total_count=total_count+count
 
-    if total_article_count==0:
-        Title_Analyst = "0"
+        if total_article_count==0:
+            Title_Analyst = "0"
 
-    else:
-        Title_Analyst = format(total_count/total_article_count*100 , '0.2f')
+        else:
+            Title_Analyst = format(total_count/total_article_count*100 , '0.2f')
 
-    cur.execute ("UPDATE xuite SET title_analyst=%s WHERE id='%s'" %  (Title_Analyst,xuite_id))
-    conn.commit()
+        cur.execute ("UPDATE xuite SET title_analyst=%s WHERE id='%s'" %  (Title_Analyst,xuite_id))
+        conn.commit()        
+    else :
+        cur.execute ("DELETE FROM xuite WHERE id='%s'" %  (xuite_id))
+        conn.commit()
+    
     
 cur.close()
 conn.close()    
