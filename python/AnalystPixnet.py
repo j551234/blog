@@ -59,17 +59,17 @@ for record in results:
     pixnet_id = record[1]
     res=requests.get(db_url)
     res.encoding='utf-8'
-    soup = BeautifulSoup (res.text, "html5lib")
-    soup2 =  soup.select('meta')[1]
+    soup = BeautifulSoup (res.text, "lxml")
+    # soup2 =  soup.select('meta')[1]
 
-    original_url =soup2['content'].lstrip('3;url=')
+    # original_url =soup2['content'].lstrip('3;url=')
 
 
-    res1=requests.get(original_url)
-    res1.encoding='utf-8'
-    soup1 = BeautifulSoup (res1.text, "html5lib")
+    # res1=requests.get(original_url)
+    # res1.encoding='utf-8'
+    # soup1 = BeautifulSoup (res1.text, "html5lib")
     #內文
-    main_article = soup1.select('.article-content-inner') 
+    main_article = soup.select('.article-content-inner') 
     if len(main_article):  
 
         content=main_article[0].text.strip()
