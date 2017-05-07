@@ -1,9 +1,6 @@
-#Mobile01 https://www.mobile01.com/
-# -*- coding: UTF-8 -*-
 import MySQLdb
 import requests
 import urllib.parse
-import sys
 import time
 import sys
 from bs4 import BeautifulSoup
@@ -39,7 +36,6 @@ for change in range(2,5):
         
         #ChromeDriver
         #search_href=link.find('a')['href']
-
         
         #PhantomJS
         search_href=Google_url + link.find('a')['href']
