@@ -21,6 +21,10 @@ public function index(Request $request)
 		$search = $request->input('search');
 
 		$searchtype = $request->input('searchtype');
+		if($searchtype==null)
+		{
+			$searchtype="title";
+		}
 		$searchweb = $request->input('searchweb');
 			if(count($searchweb)>=2)
 		{

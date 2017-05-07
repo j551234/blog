@@ -21,6 +21,9 @@ Route::post('/pttscore','resultController@pttscore');
 Route::post('/youtubescore','resultController@youtubescore');
 Route::post('/mobile01score','resultController@mobile01score');
 Route::get('/show','resultController@show');
+Route::get('/popular','resultController@popular');
+Route::get('/appraise','resultController@appraise');
+Route::get('/random','resultController@random');
 
 //index頁面
 Route::get('/index','indexController@index');
@@ -29,9 +32,7 @@ Route::get('/showxuite','indexController@showxuite');
 Route::get('/showptt','indexController@showptt');
 Route::get('/showyoutube','indexController@showyoutube');
 
-Route::get('/popular','indexController@popular');
-Route::get('/appraise','indexController@appraise');
-Route::get('/random','indexController@random');
+
 Route::get('/category','indexController@category');
 
 
