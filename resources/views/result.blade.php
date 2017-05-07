@@ -20,11 +20,11 @@
                         <input type="radio" name="searchtype" value="title" id="t" /><label for="t">標題</label>
                         </div>
                         <div class="searchweb">
-                        <input type="checkbox" name="searchweb[]" value="pixnet" id="p"><label for="p">Pixnet</label>
-                        <input type="checkbox" name="searchweb[]" value="xuite" id="x"><label for="x">Xuite</label>
-                        <input type="checkbox" name="searchweb[]" value="ptt" id="pt"><label for="pt">Ptt</label>
-                        <input type="checkbox" name="searchweb[]" value="youtube" id="y"><label for="y">Youtube</label>
-                        <input type="checkbox" name="searchweb[]" value="mobile01" id="m"><label for="m">Mobile01</label>
+                        <input type="checkbox" name="searchweb[]" value="rpixnet" id="p"><label for="p">Pixnet</label>
+                        <input type="checkbox" name="searchweb[]" value="rxuite" id="x"><label for="x">Xuite</label>
+                        <input type="checkbox" name="searchweb[]" value="rptt" id="pt"><label for="pt">Ptt</label>
+                        <input type="checkbox" name="searchweb[]" value="ryoutube" id="y"><label for="y">Youtube</label>
+                        <input type="checkbox" name="searchweb[]" value="rmobile01" id="m"><label for="m">Mobile01</label>
                         </div>
                         <div class="subbotton">
                          <input type="submit" value="Find Out" id="submitButton" class="btn btn-primary btn-xl" /> 
@@ -63,9 +63,9 @@
                 <ul class="submenu">
                     <li class="mainlink"><a href='' class="firstMenu">排序</a>
                         <ul class="sublink">
-                            <li> <a class="sequence page-scroll" href=''>熱門文章</a> </li>
-                                <li> <a class="sequence page-scroll" href=''>評價最高</a></li>
-                            <li> <a class="sequence page-scroll" href=''>隨機選取</a></li>
+                            <li> <a class="sequence page-scroll" href='{{URL("popular?search=$search&searchtype=$searchtype&searchweb=$searchweb")}}'>熱門文章</a> </li>
+                                <li> <a class="sequence page-scroll" href='{{URL("appraise?search=$search&searchtype=$searchtype&searchweb=$searchweb")}}'>評價最高</a></li>
+                            <li> <a class="sequence page-scroll" href='{{URL("random?search=$search&searchtype=$searchtype&searchweb=$searchweb")}}'>隨機選取</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -371,7 +371,7 @@
                                 headers: {
                                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                                 },  
-                                url:"{{URL('pttscore')}}",
+                                url:"{{URL('youtubescore')}}",
                                 data:{    currentRating:currentRating,id: {{$data->id}}   },
                                 type: "POST",
                                 success: function(msg){
