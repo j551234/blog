@@ -144,7 +144,16 @@
                             });
                         }
                     });
-                 $( document ).ready(function() {
+          
+                </script> 
+      
+                    
+
+
+             
+            </div>
+                <script type="text/javascript">
+                   $( document ).ready(function() {
                       $("#test-circle").circliful({
                         animation: 1,
                         animationStep: 5,
@@ -153,20 +162,14 @@
                         textSize: 28,
                         textStyle: 'font-size: 12px;',
                         textColor: '#666',
-                        percent: 35 ,
+                        percent: {{$data->pecrcent}} ,
                         multiPercentage: 1,
                         percentages: [10, 20, 30]
                     });
          
                       
                  });          
-
-                </script>  
-                    
-
-
-             
-            </div>
+                </script>
         </div>
         <!-- /.row -->
         <hr class="result">
