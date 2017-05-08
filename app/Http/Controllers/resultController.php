@@ -36,18 +36,7 @@ class resultController extends Controller {
 				}
 				elseif ($searchweb==null) {
 					$searchweb="rpixnet,rxuite,rptt,ryoutube,rmobile01";
-				}
-				
-
-				
-				
-				
-				
-
-
-
-			
-					
+				}			
 			
 				$key_word = $search;
 				
@@ -57,17 +46,21 @@ class resultController extends Controller {
 				$xuitefind=xuite::where('key_word','like',"%$search%")->get();
 				$pttfind=ptt::where('key_word','like',"%$search%")->get();
 				$youtubefind=youtube::where('key_word','like',"%$search%")->get();
-				
+				$mobile01find=mobile01::where('key_word','like',"%$search%")->get();
+
 
 
 				
 				$url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
+				pclose(popen("start/b C://xampp/htdocs/project/python/InsertDict.py $url_key_word",'r'));
+
 				if(count($pixnetfind)==0){		
 						$file1 = popen("start/b C://xampp/htdocs/project/python/SearchPixnet.py $url_key_word",'w');
 
 						pclose($file1);
+						
 						 				}
-			  	 if(count($xuitefind)==0){
+			  	if(count($xuitefind)==0){
 						$file2 = popen("start/b C://xampp/htdocs/project/python/SearchPtt.py $url_key_word",'r');  
 						pclose($file2);
 						 				}
@@ -79,15 +72,16 @@ class resultController extends Controller {
 						$file4 = popen("start/b C://xampp/htdocs/project/python/SearchYoutube.py $url_key_word",'r'); 
 			 			pclose($file4);
 										}
-				if(count($youtubefind)==0){
-						$file4 = popen("start/b C://xampp/htdocs/project/python/SearchMobile01.py $url_key_word",'r'); 
-			 			pclose($file4);
-										}
-				
+
+
+				if(count($mobile01find)==0){
+                		$file5 = popen("start/b C://xampp/htdocs/project/python/SearchMobile01.py $url_key_word",'r'); 
+                 		pclose($file5);
+                                		}				
+
 			
 
 				return view('wait',['search'=> $search,'searchtype'=>$searchtype,'searchweb'=>$searchweb]);
-
 			
 			}
 	public function pixnetscore(Request $request)

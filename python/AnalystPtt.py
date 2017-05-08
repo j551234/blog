@@ -60,11 +60,11 @@ paid_set=set(paid)
 for record in results: 
     url = record[0]
     ptt_id = record[1]
-    
-    print (url)
+ 
     soup=BeautifulSoup(get_web_page(url), "lxml")
 
     article = soup.select('div[id="main-container"]')
+
     #內文 
     if article!=[]:
         main_article=article[0].text.split("※ 發信站: 批踢踢實業坊(ptt.cc)")
