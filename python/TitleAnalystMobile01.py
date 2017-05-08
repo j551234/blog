@@ -1,5 +1,6 @@
 # -*- coding: UTF-8 -*-
 
+import time
 import requests
 import MySQLdb
 from bs4 import BeautifulSoup
@@ -69,6 +70,7 @@ for record in results:
     else :
         cur.execute ("DELETE FROM mobile01 WHERE id='%s'" %  (mobile01_id))
         conn.commit()
+    time.sleep(0.5)
 
 cur.close()
 conn.close()

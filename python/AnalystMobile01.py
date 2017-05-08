@@ -86,6 +86,7 @@ for record in results:
     print(Content_Analyst)
     cur.execute ("UPDATE mobile01 SET content_analyst=%s WHERE id='%s'" %  (Content_Analyst,mobile01_id))
     conn.commit()
+    time.sleep(0.5)
     
 cur.close() #斷開連結
 conn.close()
