@@ -8,7 +8,7 @@ import time
 import urllib.parse
 from bs4 import BeautifulSoup
 from selenium import webdriver
-
+import os
 
 
 
@@ -97,9 +97,6 @@ driver.close()
 cur.close() #斷開連結
 conn.close()
 
-
-
-
-
-
+os.system ("python C:/xampp/htdocs/project/python/AnalystPtt.py")
+os.system ("python C:/xampp/htdocs/project/python/TitleAnalystPtt.py")
 
