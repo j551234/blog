@@ -44,37 +44,40 @@ for record in results:
     # soup1 = BeautifulSoup (res1.text, "html5lib")
     #內文
     main_article = soup.select('.article-content-inner')    
+    if len(main_article):
+        content=main_article[0].text.strip()
+        sentence=content.split("\n")
+        sentence=remove_values_from_list(sentence,'')
 
-    content=main_article[0].text.strip()
-    sentence=content.split("\n")
-    sentence=remove_values_from_list(sentence,'')
 
+        total_count=0
+        total_article_count=0
+        for line in sentence:
 
-    total_count=0
-    total_article_count=0
-    for line in sentence:
+            line2=line.strip()
+            words=jieba.lcut(line2, cut_all=False)
 
-        line2=line.strip()
-        words=jieba.lcut(line2, cut_all=False)
+            s1 = set(title_list)
+            s2 = set(words)
+            article_count=len(s2)
+            total_article_count=total_article_count+article_count
+            intersection=s1.intersection(s2)
+            count=len(intersection)
+            total_count=total_count+count
+        
 
-        s1 = set(title_list)
-        s2 = set(words)
-        article_count=len(s2)
-        total_article_count=total_article_count+article_count
-        intersection=s1.intersection(s2)
-        count=len(intersection)
-        total_count=total_count+count
-    
+    #     print(format(total_count/total_article_count,'0.1%'))
+        if total_article_count==0:
+            Title_Analyst = "0"
 
-#     print(format(total_count/total_article_count,'0.1%'))
-    if total_article_count==0:
-        Title_Analyst = "0"
+        else:
+            Title_Analyst = format(total_count/total_article_count*100 , '0.2f')
 
-    else:
-        Title_Analyst = format(total_count/total_article_count*100 , '0.2f')
-
-    cur.execute ("UPDATE pixnet SET title_analyst=%s WHERE id='%s'" %  (Title_Analyst,pixnet_id))
-    conn.commit()
+        cur.execute ("UPDATE pixnet SET title_analyst=%s WHERE id='%s'" %  (Title_Analyst,pixnet_id))
+        conn.commit()
+    else :
+        cur.execute ("DELETE FROM pixnet WHERE id='%s'" %  (pixnet_id))
+        conn.commit()
 
 cur.close()
 conn.close()
