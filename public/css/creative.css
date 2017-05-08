@@ -347,12 +347,14 @@ header-result .header-content .search .searchtype {
     position: absolute;
     left: 0%;
     top: 65%;
+    color: rgba(55,55,55,0.9);
 }
 
 header-result .header-content .search .searchweb {
     position: absolute;
     right: 19%;
     top: 67%;
+    color: rgba(55,55,55,0.9);
 }
 
 header {
