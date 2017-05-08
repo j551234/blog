@@ -144,7 +144,7 @@ p {
 .detail .percentBall2 svg.circliful {
     position: absolute;
     max-height: 110px;
-    bottom: -1%;
+    bottom: -10%;
     left: 40%;
 }
 
