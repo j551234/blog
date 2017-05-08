@@ -59,11 +59,11 @@ for item in soup.select('div[class="n"]'):
        
 
 
-asd = input()
-print ("123")
-os.system (" python C:/xampp/htdocs/project/python/AnalystXuite.py")
-print ("456")
-qwe = input()
+# asd = input()
+# print ("123")
+# os.popen (" python C:/xampp/htdocs/project/python/AnalystXuite.py")
+# print ("456")
+# qwe = input()
 
 # os.system ("python C:/xampp/htdocs/project/python/TitleAnalystXuite.py")
 
