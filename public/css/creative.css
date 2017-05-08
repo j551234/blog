@@ -135,11 +135,17 @@ p {
     position: relative;
 }
 
-.detail svg.circliful {
+.detail .percentBall1 svg.circliful {
     position: absolute;
-    max-height: 130px;
-    top: 65%;
-    left: 25%;
+    max-height: 110px;
+    bottom: -10%;
+    left: 18%;
+}
+.detail .percentBall2 svg.circliful {
+    position: absolute;
+    max-height: 110px;
+    bottom: -10%;
+    left: 40%;
 }
 
 .jq-star {
@@ -228,7 +234,7 @@ aside {
 
 @media (min-width: 768px) {
     .navbar-default {
-        background-color: rgba(38, 38, 38, 1);
+        background-color: #2B2B2B;
         border-color: rgba(255, 255, 255, 0.3);
     }
     .navbar-default .navbar-header .navbar-brand {
@@ -346,18 +352,20 @@ header-result .header-content .search .searchbar {
 
 header-result .header-content .search .subbotton {
     position: absolute;
-    top: 0%;
+    top: -17%;
     right: 0%;
 }
 
 header-result .header-content .search .searchtype {
     position: absolute;
-    left: 5%;
+    left: 0%;
+    top: 65%;
 }
 
 header-result .header-content .search .searchweb {
     position: absolute;
-    right: 23%;
+    right: 19%;
+    top: 67%;
 }
 
 header {
@@ -404,20 +412,6 @@ header .header-content .header-content-inner p {
 }
 
 
-/*header .header-content .header-content-inner .search {
-  width: 440px;
-  height: 50px;
-  display: block;
-  margin: 10px auto 0px auto;
-}
-header .header-content .header-content-inner .searchtype {
-  float: left;
-  }
-header .header-content .header-content-inner .searchweb {
-  float: right;
-  }*/
-
-
 /*hidden checkbox*/
 
 input[type*=checkbox] {
@@ -436,7 +430,7 @@ label {
 #searchForm {
     /* The search form. */
     padding: 0px 50px 0px;
-    margin: 50px auto 0px auto;
+    margin: 10px auto 0px auto;
     position: relative;
 }
 
@@ -448,7 +442,7 @@ label {
 
 .searchbar {
     /* The search text box. */
-    background: #fcfcfc;
+    background: rgba(255,255,255,0.9);
     border: 1px solid #d1d1d1;
     font: bold 16px Arial, Helvetica, Sans-serif;
     color: #bebebe;
@@ -474,12 +468,27 @@ label {
 
 .search .searchtype {
     position: absolute;
-    left: 15%;
+    left: 3%;
+    font-size: 16px;
+    top: 125%;
 }
 
 .search .searchweb {
     position: absolute;
-    right: 8%;
+    right: -8%;
+    top: 128%;
+    font-size: 16px;
+}
+.search .searchweb label {
+    margin-right: 1em;
+}
+.search .searchweb label:hover {
+    color: rgba(192,192,192,1);
+}
+.search .subbutton {
+    position: absolute;
+    top: 400%;
+    left: 40.5%;
 }
 
 @media (min-width: 768px) {
@@ -488,7 +497,7 @@ label {
     }
     header .header-content {
         position: absolute;
-        top: 50%;
+        top: 40%;
         -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
