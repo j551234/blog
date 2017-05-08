@@ -144,7 +144,7 @@ p {
 .detail .percentBall2 svg.circliful {
     position: absolute;
     max-height: 110px;
-    bottom: -10%;
+    bottom: -1%;
     left: 40%;
 }
 
@@ -308,19 +308,6 @@ header-result .header-content ul li {
 }
 
 
-/*header-result .header-content .searchtype {
-    float: left;
-}
-header-result .header-content .searchweb {
-    float: right;
-}
-header-result .header-content .search {
-  width: 440px;
-  height: 50px;
-  display: block;
-  margin: 0px auto;
-}*/
-
 header-result .header-content .search {
     position: relative;
     width: 650px;
@@ -471,6 +458,7 @@ label {
     left: 3%;
     font-size: 16px;
     top: 125%;
+    color: rgba(255,255,255,0.9);
 }
 
 .search .searchweb {
@@ -478,6 +466,7 @@ label {
     right: -8%;
     top: 128%;
     font-size: 16px;
+    color: rgba(255,255,255,0.9);
 }
 .search .searchweb label {
     margin-right: 1em;
