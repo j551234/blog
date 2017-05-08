@@ -7,6 +7,8 @@ from bs4 import BeautifulSoup
 import jieba
 import jieba.analyse
 
+time.sleep(10)
+
 def remove_values_from_list(the_list, val):
     return [value for value in the_list if value != val]
 
