@@ -715,10 +715,7 @@ class resultController extends Controller {
 
 				if(count($rawDataXuite)!=0)
 				{
-					
 					$xuitedata = $rawDataXuite->inRandomOrder()->paginate($pagenumber);
-					         
-						
 				}
 				elseif ($rawDataXuite==[])
 				{
@@ -729,7 +726,7 @@ class resultController extends Controller {
 					
 					$pttdata = $rawDataPtt->inRandomOrder()->paginate($pagenumber);					
 				}	
-				elseif ($rawDataPtt==[])
+				elseif($rawDataPtt==[])
 				{
 					$pttdata= [];	
 				}
@@ -744,8 +741,6 @@ class resultController extends Controller {
 				}
 				if(count($rawDataMobile01)!=0)
 				{
-					
-					
 					$mobile01data = $rawDataMobile01->inRandomOrder()->paginate($pagenumber);
                 }
 				elseif($rawDataMobile01==[]) 
@@ -773,6 +768,7 @@ class resultController extends Controller {
 			 			exit("fuck");
 			 			break;
 			 	}
+
 
 
 
