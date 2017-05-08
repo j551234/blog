@@ -6,6 +6,8 @@ import sys
 import requests
 import urllib.parse
 from bs4 import BeautifulSoup
+import os
+import time
 
 conn = MySQLdb.connect(host="localhost", user="root", passwd="", db="python",charset='utf8')#連結資料庫
 cur = conn.cursor()
@@ -67,3 +69,6 @@ for  x  in range(3*x-2,3*x+1) :
 
 cur.close() #斷開連結
 conn.close()
+
+os.system ("python C:/xampp/htdocs/project/python/AnalystPixnet.py")
+os.system ("python C:/xampp/htdocs/project/python/TitleAnalystPixnet.py")

@@ -5,7 +5,7 @@ import time
 import sys
 from bs4 import BeautifulSoup
 from selenium import webdriver
-
+import os
 
 conn = MySQLdb.connect(host="localhost", user="root", passwd="", db="python",charset='utf8')#連結資料庫
 cur = conn.cursor() 
@@ -85,3 +85,6 @@ for change in range(2,5):
 driver.close()
 cur.close() #斷開連結
 conn.close()
+
+os.system ("python C:/xampp/htdocs/project/python/AnalystMobile01.py")
+os.system ("python C:/xampp/htdocs/project/python/TitleAnalystMobile01.py")
