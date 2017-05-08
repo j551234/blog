@@ -81,12 +81,15 @@
         <!-- Pixnet -->
        
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-md-7 ">
                 <a href="{{$data->search_href}}" target="_blank">
              
                  <img class="img-result" src="{{$data->article_picture}}" alt="圖片未能抓取" onerror="this.src='./img/nodoge.jpg'">
 
                 </a>
+                
+                
+
             </div>
             <div class="col-md-5 detail">
                 <h3><a href="{{$data->search_href}}" target="_blank">{{$data->search_title}}</a></h3>
@@ -101,7 +104,13 @@
                    <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
                
             
-                <div class="my-rating-4 percentBall" data-percent="35" id="{{$data->id}}"> </div>
+                <div class="my-rating-4" id="{{$data->id}}"> </div>
+                <div class="percentBall1">
+                    <div class="percentBall" data-percent="35" id="{{$data->id}}"></div>
+                </div>
+                <div class="percentBall2">
+                    <div class="percentBall" data-percent="0" id="{{$data->id}}"></div>
+                </div>
                 <script type="text/javascript">                      
                     $(".my-rating-4").starRating({
                         totalStars: 5,
@@ -137,35 +146,8 @@
 
           
                 </script> 
-      
-                    
-
-
-             
+ 
             </div>
-                <script type="text/javascript">
-
-                 // $( document ).ready(function() {
-                 //      $("#{{$data->id}}").circliful({
-
-                 //        animation: 1,
-                 //        animationStep: 5,
-                 //        foregroundColor: '#fc8d59',
-                 //        foregroundBorderWidth: 15,
-                 //        backgroundBorderWidth: 15,
-                 //        textSize: 28,
-                 //        textStyle: 'font-size: 12px;',
-                 //        textColor: '#666',
-                 //        fontColor: '#7a1700',
-                 //        percent: 35 ,
-                 //        multiPercentage: 1,
-                 //        percentages: [10, 20, 30]
-                        
-                 //    });
-         
-                      
-                 // });          
-                </script>
         </div>
         <!-- /.row -->
         <hr class="result">
@@ -195,7 +177,13 @@
                 </div>
                  <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
              
-                 <div class="my-rating-4 percentBall" data-percent="75" id="{{$data->id}}"></div>
+                 <div class="my-rating-4" id="{{$data->id}}"></div>
+                 <div class="percentBall1">
+                    <div class="percentBall" data-percent="80" id="{{$data->id}}"></div>
+                </div>
+                <div class="percentBall2">
+                    <div class="percentBall" data-percent="50" id="{{$data->id}}"></div>
+                </div>
                   <script type="text/javascript">                      
                     $(".my-rating-4").starRating({
                         totalStars: 5,
@@ -260,7 +248,13 @@
 
               
              
-                <div class="my-rating-4 percentBall" data-percent="35" id="{{$data->id}}">  </div>
+                <div class="my-rating-4" id="{{$data->id}}">  </div>
+                <div class="percentBall1">
+                    <div class="percentBall" data-percent="60" id="{{$data->id}}"></div>
+                </div>
+                <div class="percentBall2">
+                    <div class="percentBall" data-percent="30" id="{{$data->id}}"></div>
+                </div>
                   <script type="text/javascript">                      
                     $(".my-rating-4").starRating({
                         totalStars: 5,
@@ -291,25 +285,7 @@
                             });
                         }
                     });
-                 
-                    // $( document ).ready(function() {
-                    //   $("{{$data->id}}").circliful({
-                    //     animation: 1,
-                    //     animationStep: 5,
-                    //     foregroundColor: '#fc8d59',
-                    //     foregroundBorderWidth: 15,
-                    //     backgroundBorderWidth: 15,
-                    //     textSize: 28,
-                    //     textStyle: 'font-size: 12px;',
-                    //     textColor: '#666',
-                    //     fontColor: '#7a1700',
-                    //     percent: 35 ,
-                    //     multiPercentage: 1,
-                    //     percentages: [10, 20, 30]
-                    // });
-         
-                      
-                 // });    
+                    
                                                   
                     </script>
                      
@@ -352,7 +328,13 @@
              
                
              
-                <div class="my-rating-4 percentBall" data-percent="66" id="{{$data->id}}"></div>
+                <div class="my-rating-4" id="{{$data->id}}"></div>
+                <div class="percentBall1">
+                    <div class="percentBall" data-percent="99" id="{{$data->id}}"></div>
+                </div>
+                <div class="percentBall2">
+                    <div class="percentBall" data-percent="45" id="{{$data->id}}"></div>
+                </div>
                   <script type="text/javascript">                      
                     $(".my-rating-4").starRating({
                         totalStars: 5,
@@ -385,24 +367,7 @@
                             });
                         }
                     });  
-                 //     $( document ).ready(function() {
-                 //      $("{{$data->id}}").circliful({
-                 //        animation: 1,
-                 //        animationStep: 5,
-                 //        foregroundColor: '#fc8d59',
-                 //        foregroundBorderWidth: 15,
-                 //        backgroundBorderWidth: 15,
-                 //        textSize: 28,
-                 //        textStyle: 'font-size: 12px;',
-                 //        textColor: '#666',
-                 //        fontColor: '#7a1700',
-                 //        percent: 35 ,
-                 //        multiPercentage: 1,
-                 //        percentages: [10, 20, 30]
-                 //    });
-         
-                      
-                 // });                 
+          
                     </script>  
                     
    
@@ -438,7 +403,13 @@
              
                
              
-                <div class="my-rating-4 percentBall" data-percent="0" id="{{$data->id}}"></div>
+                <div class="my-rating-4" id="{{$data->id}}"></div>
+                <div class="percentBall1">
+                    <div class="percentBall" data-percent="87" id="{{$data->id}}"></div>
+                </div>
+                <div class="percentBall2">
+                    <div class="percentBall" data-percent="50" id="{{$data->id}}"></div>
+                </div>
                   <script type="text/javascript">                      
                     $(".my-rating-4").starRating({
                         totalStars: 5,
@@ -471,24 +442,7 @@
                             });
                         }
                     });         
-                 //    $( document ).ready(function() {
-                 //      $("#{{$data->id}}").circliful({
-                 //        animation: 1,
-                 //        animationStep: 5,
-                 //        foregroundColor: '#fc8d59',
-                 //        foregroundBorderWidth: 15,
-                 //        backgroundBorderWidth: 15,
-                 //        textSize: 28,
-                 //        textStyle: 'font-size: 12px;',
-                 //        textColor: '#666',
-                 //        fontColor: '#7a1700',
-                 //        percent: 35 ,
-                 //        multiPercentage: 1,
-                 //        percentages: [10, 20, 30]
-                 //    });
-         
-                      
-                 // });       
+   
                     </script> 
                     
              
@@ -501,22 +455,6 @@
         @endforeach
 
 
-
-
-
-
-
-
-
-
-
-  
-
-
-     
-
-
-          
         <!-- Pagination -->
         <div class="paginate">
 
@@ -594,8 +532,6 @@
            }
 
            $(document).ready(function() {
-                           //makePie("#{{$data->id}}", 35)<-------------這行留會有問題 data在foreach 外
-
             Array.from(document.querySelectorAll(".percentBall")).forEach((el)=>{
                 makePie(el,el.dataset.percent)
             })
