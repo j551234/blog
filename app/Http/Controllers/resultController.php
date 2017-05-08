@@ -50,7 +50,8 @@ class resultController extends Controller {
 					
 			
 				$key_word = $search;
-				$url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
+				
+
 				
 				$pixnetfind=pixnet::where('key_word','like',"%$search%")->get();
 				$xuitefind=xuite::where('key_word','like',"%$search%")->get();
@@ -59,9 +60,11 @@ class resultController extends Controller {
 				
 
 
-			
+				
+				$url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
 				if(count($pixnetfind)==0){		
-						$file1 = popen("start/b C://xampp/htdocs/project/python/SearchPixnet.py $url_key_word",'r');
+						$file1 = popen("start/b C://xampp/htdocs/project/python/SearchPixnet.py $url_key_word",'w');
+
 						pclose($file1);
 						 				}
 			  	 if(count($xuitefind)==0){
@@ -74,6 +77,10 @@ class resultController extends Controller {
 										}
 				if(count($youtubefind)==0){
 						$file4 = popen("start/b C://xampp/htdocs/project/python/SearchYoutube.py $url_key_word",'r'); 
+			 			pclose($file4);
+										}
+				if(count($youtubefind)==0){
+						$file4 = popen("start/b C://xampp/htdocs/project/python/SearchMobile01.py $url_key_word",'r'); 
 			 			pclose($file4);
 										}
 				
