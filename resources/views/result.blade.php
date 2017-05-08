@@ -241,8 +241,8 @@
                 <h4>作者:<a href="{{$data->author_href}}" target="_blank">{{$data->search_author}}</a></h4>
                 <h4>推:{{$data->push_count}}</h4>
                 <h4>噓:{{$data->boo_count}}</h4>
-                <h4>箭頭:{{$data->arrow_count}}</h4>
-                <h5 id="pttscore{{$data->id}}">網站評分:{{round($data->total_score/$data->score_people,2)}}</h5>
+                <h4>評論:{{$data->push_count+$data->arrow_count+$data->boo_count}}</h4>
+                <h4 id="pttscore{{$data->id}}">網站評分:{{round($data->total_score/$data->score_people,2)}}</h4>
                 <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
                
 
@@ -270,8 +270,7 @@
                             console.log('DOM element ', $el);
                             $.ajax({
                                 headers: {
-                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                                },  
+                                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},  
                                 url:"{{URL('pttscore')}}",
                                 data:{    currentRating:currentRating,id: {{$data->id}}   },
                                 type: "POST",
@@ -286,9 +285,7 @@
                             });
                         }
                     });
-                 
-                      
-                 });    
+                    
                                                   
                     </script>
                      
