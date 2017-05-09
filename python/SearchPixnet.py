@@ -6,6 +6,8 @@ import sys
 import requests
 import urllib.parse
 from bs4 import BeautifulSoup
+import os
+import time
 
 conn = MySQLdb.connect(host="localhost", user="root", passwd="", db="python",charset='utf8')#連結資料庫
 cur = conn.cursor()
@@ -24,40 +26,51 @@ for  x  in range(3*x-2,3*x+1) :
         
         #取出標題
         search_title = (item.select('.search-title')[0].text) 
-        
+
         #取小標題
-        a = item.select('.search-desc')[0].text
-        search_subtitle = a.strip('繼續閱讀 »') 
+        search_subtitle=item.select('.search-desc')[0].text.strip('繼續閱讀 »') 
         
-        #文章圖片
-        a = item.find('a')['style'].strip('background-image: url(')
-        article_picture = a.rstrip(')')
-          #去除字串background-image: url(
+        #取出各個網址
+        href =item.find('a')['href'] 
+        res2=requests.get(href)
+        res2.encoding='utf-8'
+        soup1 = BeautifulSoup (res2.text, "lxml")
+        soup2 =  soup1.select('meta')[1]
+        search_href =soup2['content'].lstrip('3;url=')
         
         #取得發表時間
         search_time = item.select('.search-postTime')[0].text
-
-        #取出各個網址
-        search_href =item.find('a')['href'] 
+        
+        #文章圖片
+        href_res=requests.get(search_href)
+        href_res.encoding='utf-8'
+        soup3 = BeautifulSoup (href_res.text, "html5lib")
+        main_article = soup3.select('.article-content-inner')
+        article_picture = main_article[0].find('img')['src']
         
         #作者名字
-        search_author=item.select('.search-author')[0].text 
-                
-        #作者部落格           
+        search_author=item.select('.search-author')[0].text
+        
+        #作者部落格
         for author in item.select('.search-meta'):
             author_href=author.find('a')['href']
-            
-
-        #取出作者圖片    
+        
+        #取出作者圖片
         for src in item.select('.search-avatar'):
             author_picture=item.find('img')['src']
-           
+        
         #文章人氣
         search_view= item.select('.search-views')[0].text.strip('人氣( )')
 
+        time.sleep(0.5)
+
         cur.execute(sqli,(chinese_key_word,search_title, search_subtitle, article_picture, search_time, search_href, search_author, author_href, author_picture,search_view)) #存入資料庫    
-        
+        conn.commit()
 
 cur.close() #斷開連結
-conn.commit()
 conn.close()
+
+#os.system ("C:\Users\wang\Desktop\123.bat")
+
+# os.system ("python C:/xampp/htdocs/project/python/AnalystPixnet.py")
+# os.system ("python C:/xampp/htdocs/project/python/TitleAnalystPixnet.py")

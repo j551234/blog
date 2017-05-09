@@ -2,17 +2,34 @@ import MySQLdb
 import requests
 import urllib.parse
 import time
+<<<<<<< HEAD
 from bs4 import BeautifulSoup
 from selenium import webdriver
 
 conn = MySQLdb.connect(host="localhost", user="root", passwd="", db="python",charset='utf8')#連結資料庫
 cur = conn.cursor()
+=======
+import sys
+from bs4 import BeautifulSoup
+from selenium import webdriver
+import os
+
+conn = MySQLdb.connect(host="localhost", user="root", passwd="", db="python",charset='utf8')#連結資料庫
+cur = conn.cursor() 
+>>>>>>> 8f1c74c7928bb2a61884497d1e450642d1ff83de
 
 Google_url='https://www.google.com/'
 mobile01_url='https://www.mobile01.com/'
 
+<<<<<<< HEAD
 url_key_word=sys.argv[1]
 chinese_key_word=urllib.parse.unquote(url_key_word)
+=======
+
+url_key_word=sys.argv[1]
+chinese_key_word=urllib.parse.unquote(url_key_word)
+print (url_key_word)
+>>>>>>> 8f1c74c7928bb2a61884497d1e450642d1ff83de
 sqli = "insert into mobile01 (key_word,search_title,search_href,search_time,search_author,article_picture,author_href,search_view) values (%s,%s,%s,%s,%s,%s,%s,%s)" #選擇資料表
 
 #driver=webdriver.Chrome(executable_path=r'C:/Users/user/MingChien/chromedriver') #模擬瀏覽器
@@ -22,7 +39,11 @@ payload={'q':url_key_word,'site':'site:https://www.mobile01.com/'}
 url='https://google.com.tw/search?q='+payload['q']+'+'+payload['site']
 driver.get(url)
 
+<<<<<<< HEAD
 print(url)
+=======
+
+>>>>>>> 8f1c74c7928bb2a61884497d1e450642d1ff83de
 
 for change in range(2,5):
     pageSource = driver.page_source #重新讀取當前頁面
@@ -31,6 +52,7 @@ for change in range(2,5):
     for link in soup.select('.r'):
         
         #ChromeDriver
+<<<<<<< HEAD
         search_href=link.find('a')['href']
         
         #PhantomJS
@@ -78,6 +100,50 @@ for change in range(2,5):
                     article_picture='./img/mobile01.jpg'
                 cur.execute(sqli,(chinese_key_word,search_title,search_href,search_time,search_author,article_picture,author_href,search_view)) #存入資料庫    
                 conn.commit()
+=======
+        #search_href=link.find('a')['href']
+        
+        #PhantomJS
+        search_href=Google_url + link.find('a')['href']
+        res=requests.get(search_href)
+        res.encoding='utf-8'
+        soup2 = BeautifulSoup (res.text, "lxml")
+        href_split=search_href.split('%')
+        if href_split[0]=='https://www.google.com//url?q=https://www.mobile01.com/topicdetail.php'or href_split[0]=='https://www.google.com//url?q=https://www.mobile01.com/waypointtopicdetail.php':
+            Main_article = soup2.find_all('main')
+            #標題
+            search_title=Main_article[0].select('.topic')[0].text
+            print(search_title)
+            #作者、作者網址
+            authors = Main_article[0].select('.inner')
+            author_name = authors[0].select('.fn')
+            search_author=author_name[0].find('a').text
+            author_href=mobile01_url+author_name[0].find('a')['href']
+
+            #人氣
+            info=authors[0].select('.info')
+            search_view=info[0].text.strip('文章人氣:').lstrip().replace(',','')
+            #文章時間
+            time1=authors[0].select('.date')
+            search_time=time1[0].text.strip('#1')
+            #文章圖片
+            post = Main_article[0].select('.single-post-content')
+            if post[0].find('img')!=None:
+                picture=post[0].find('img')['src'].strip()
+                split=picture.split('/')
+                if split[2]=='attach.mobile01.com':
+                    article_picture='https:'+picture
+                elif split[2]=='download.mobile01.com':
+                    article_picture='https:'+picture
+                elif split[2]=='attach2.mobile01.com':
+                    article_picture='./img/mobile01.jpg'
+                else:
+                    article_picture=picture
+            else:
+                article_picture='./img/mobile01.jpg'
+            cur.execute(sqli,(chinese_key_word,search_title,search_href,search_time,search_author,article_picture,author_href,search_view)) #存入資料庫    
+            conn.commit()
+>>>>>>> 8f1c74c7928bb2a61884497d1e450642d1ff83de
         time.sleep(0.5)
 
     a=repr(change)
@@ -86,3 +152,9 @@ for change in range(2,5):
 driver.close()
 cur.close() #斷開連結
 conn.close()
+<<<<<<< HEAD
+=======
+
+os.system ("python C:/xampp/htdocs/project/python/AnalystMobile01.py")
+os.system ("python C:/xampp/htdocs/project/python/TitleAnalystMobile01.py")
+>>>>>>> 8f1c74c7928bb2a61884497d1e450642d1ff83de

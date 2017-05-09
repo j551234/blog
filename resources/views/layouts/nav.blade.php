@@ -19,6 +19,9 @@
                         <a class="page-scroll" href="{{URL('/index')}}#about">About</a>
                     </li>
                     <li>
+                        <a class="page-scroll" href="{{URL('/manual')}}">Manual</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="{{URL('/index')}}#classification">Classification</a>
                     </li>
                     <li>

@@ -4,31 +4,27 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-            <hr>
                 <form id="searchForm" method="get" action="result">
-                <input type="text" class="searchbar" name="search" placeholder="search...">
-                <br>
                 <div class="search">
+                <input type="text" class="searchbar" name="search" placeholder="search...">  
                     <div class="searchtype">
                          <input type="radio" name="searchtype" value="author" id="a" /><label for="a">作者</label>
                         <input type="radio" name="searchtype" value="title" id="t" /><label for="t">標題</label>
                     </div>
                     <div class="searchweb">
-                         <input type="checkbox" name="searchweb[]" value="pixnet" id="p"><label for="p">Pixnet</label>
-                         <input type="checkbox" name="searchweb[]" value="xuite" id="x"><label for="x">Xuite</label>
-                         <input type="checkbox" name="searchweb[]" value="ptt" id="pt"><label for="pt">Ptt</label>
-                         <input type="checkbox" name="searchweb[]" value="youtube" id="y"><label for="y">Youtube</label>
+                         <input type="checkbox" name="searchweb[]" value="rpixnet" id="p"><label for="p">Pixnet</label>
+                         <input type="checkbox" name="searchweb[]" value="rxuite" id="x"><label for="x">Xuite</label>
+                         <input type="checkbox" name="searchweb[]" value="rptt" id="pt"><label for="pt">Ptt</label>
+                         <input type="checkbox" name="searchweb[]" value="ryoutube" id="y"><label for="y">Youtube</label>
+                         <input type="checkbox" name="searchweb[]" value="rmobile01" id="m"><label for="m">Mobile01</label>
                     </div>
-
-
-
+                    <div class="subbutton">
+                         <input type="submit" value="Find Out" id="submitButton" class="btn btn-primary btn-xl"/>
+                    </div>
                 </div>
-                <br>
-                <input type="submit" value="Find Out" id="submitButton" class="btn btn-primary btn-xl"/>
+
+               
           
-
-
-
                 </form>
             </div>
         </div>
@@ -101,32 +97,12 @@
     
         
             <li class="mainlink"><a href='{{URL("index?show=pixnet&tag=$tag")}}#classification' class="firstMenu">Pixnet</a>
-                <ul class="sublink">
-                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=pixnet&tag=$tag")}}#classification'>熱門文章</a> </li>
-                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=pixnet&tag=$tag")}}#classification'>評價最高</a></li>
-                    <li> <a class="sequence page-scroll" href='{{URL("random?show=pixnet&tag=$tag")}}#classification'>隨機選取</a></li>
-                </ul>
             </li>
             <li class="mainlink"><a href='{{URL("index?show=xuite&tag=$tag")}}#classification' class="firstMenu">Xuite</a>
-                <ul class="sublink">
-                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=xuite&tag=$tag")}}#classification'>熱門文章</a> </li>
-                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=xuite&tag=$tag")}}#classification'>評價最高</a></li>
-                    <li> <a class="sequence page-scroll" href='{{URL("random?show=xuite&tag=$tag")}}#classification'>隨機選取</a></li>
-                </ul>
             </li>
             <li class="mainlink"><a href='{{URL("index?show=ptt&tag=$tag")}}#classification'class="firstMenu">Ptt</a>
-                <ul class="sublink">
-                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=ptt&tag=$tag")}}#classification'>熱門文章</a> </li>
-                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=ptt&tag=$tag")}}#classification'>評價最高</a></li>
-                    <li> <a class="sequence page-scroll" href='{{URL("random?show=ptt&tag=$tag")}}#classification'>隨機選取</a></li>
-                </ul>
             </li>
-            <li class="mainlink"><a href='{{URL("index?show=youtube&tag=$tag")}}#classification'class="firstMenu">Youtube</a>
-                <ul class="sublink">
-                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=youtube&tag=$tag")}}#classification'>熱門文章</a> </li>
-                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=youtube&tag=$tag")}}#classification'>評價最高</a></li>
-                    <li> <a class="sequence page-scroll" href='{{URL("random?show=youtube&tag=$tag")}}#classification'>隨機選取</a></li>
-                </ul>
+            <li class="mainlink"><a href='{{URL("index?show=mobile01&tag=$tag")}}#classification'class="firstMenu">Mobile01</a>
             </li>
         </ul>
         </div>
@@ -140,7 +116,7 @@
             <div class="row no-gutter ">
             @foreach($showdata as $data)
                 <div class="col-lg-2 col-sm-3">
-                    <a href="{{$data->search_href}}" class="artical-box">
+                    <a href="{{$data->search_href}}" class="artical-box" target="_blank">
                        <img class="img-responsive" src="{{$data->article_picture}}" alt="圖片未能抓取"  width="100%"  
                        onerror="this.src='./img/nodoge.jpg'">
                         <div class="artical-box-caption">

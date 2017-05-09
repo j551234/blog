@@ -10,6 +10,7 @@ use App\Pixnet;
 use App\Xuite;
 use App\Ptt;
 use App\Youtube;
+use App\Mobile01;
 
 use Illuminate\Http\Request;
 
@@ -20,9 +21,21 @@ public function index(Request $request)
 		$search = $request->input('search');
 
 		$searchtype = $request->input('searchtype');
+		if($searchtype==null)
+		{
+			$searchtype="title";
+		}
+		$searchweb = $request->input('searchweb');
+			if(count($searchweb)>=2)
+		{
+			$searchweb=implode(",",$searchweb);
+		
+		}
+
+
 
 	
 
 
- 		return view('wait',['search'=> $search,'searchtype'=>$searchtype]);
+ 		return view('wait',['search'=> $search,'searchtype'=>$searchtype,'searchweb'=>$searchweb]);
 	}

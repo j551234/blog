@@ -6,7 +6,7 @@ import sys
 import requests
 import urllib.parse
 from bs4 import BeautifulSoup
-
+import os
 #編碼使用
 
 
@@ -58,7 +58,14 @@ for item in soup.select('div[class="n"]'):
         conn.commit()
        
 
+
+# asd = input()
+# print ("123")
+# os.popen (" python C:/xampp/htdocs/project/python/AnalystXuite.py")
+# print ("456")
+# qwe = input()
+
+# os.system ("python C:/xampp/htdocs/project/python/TitleAnalystXuite.py")
+
 cur.close() #斷開連結
 conn.close()
-
-   
