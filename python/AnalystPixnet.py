@@ -102,7 +102,8 @@ for record in results:
 
         else:
             Content_Analyst = format(total_pos_count/total_count*100 , '0.2f')
-
+        print (pixnet_id)
+        print ( Content_Analyst)
         cur.execute ("UPDATE pixnet SET content_analyst=%s WHERE id='%s'" %  (Content_Analyst,pixnet_id))
         conn.commit()
     else :

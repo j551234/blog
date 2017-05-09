@@ -74,10 +74,10 @@ class resultController extends Controller {
                 		$file5 = popen("start/b C://xampp/htdocs/project/python/SearchMobile01.py $url_key_word",'r'); 
                  		pclose($file5);
                                 		}
-				pclose(popen("start/b C:/xampp/htdocs/project/python/ToAnalystPixnet.bat", "r"));
-				pclose(popen("start/b C:/xampp/htdocs/project/python/ToAnalystXuite.bat", "r"));
-				pclose(popen("start/b C:/xampp/htdocs/project/python/ToAnalystPtt.bat", "r"));
-				pclose(popen("start/b C:/xampp/htdocs/project/python/ToAnalystMobile01.bat", "r"));
+				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystPixnet.bat", "r"));
+				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystXuite.bat", "r"));
+				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystPtt.bat", "r"));
+				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystMobile01.bat", "r"));
 				
 
 				
