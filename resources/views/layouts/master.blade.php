@@ -59,7 +59,8 @@
          @yield('content') 
          
     <!-- Theme JavaScript -->
-    <script src="js/creative.min.js"></script>
+    <script src="js/creative.js"></script>
+    <script src="js/hiddenCheckbox.js"></script>
 </body>
 
 

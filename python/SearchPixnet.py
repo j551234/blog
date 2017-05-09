@@ -4,7 +4,6 @@
 import MySQLdb
 import sys
 import requests
-import time
 import urllib.parse
 from bs4 import BeautifulSoup
 
@@ -25,13 +24,15 @@ for  x  in range(3*x-2,3*x+1) :
         
         #取出標題
         search_title = (item.select('.search-title')[0].text) 
- 
+        
         #取小標題
         a = item.select('.search-desc')[0].text
         search_subtitle = a.strip('繼續閱讀 »') 
         
         #文章圖片
-        article_picture = item.find('a')['style'].strip('background-image: url(')  #去除字串background-image: url(
+        a = item.find('a')['style'].strip('background-image: url(')
+        article_picture = a.rstrip(')')
+          #去除字串background-image: url(
         
         #取得發表時間
         search_time = item.select('.search-postTime')[0].text

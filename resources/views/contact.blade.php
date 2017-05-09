@@ -6,7 +6,6 @@
    
    <section id="contact">
         <div class="contact-container">
-            
                 <div class="text-center">
                     <h2 class="section-heading">Let's Get In Touch!</h2>
                     <hr class="primary">
@@ -45,16 +44,11 @@
 						<label class="contact-message" for="Field1">Message</label>
 						<textarea class="contact-message" id="Field1" name="contact_message" spellcheck="true" required data-error-msg="Please enter a message."></textarea>
                       
-                           <script type="text/javascript">
-							function display_alert()
-							  {
-							  alert("感謝你的回報")
-							  }
-							</script>
+                     
 						
 
 
-					    <input class="submit-btn" name="saveForm" type="submit" value="Send Message"  onclick="display_alert()">
+					    <input class="submit-btn" name="saveForm" type="submit" value="Send Message"  onclick="return(confirm('確認要送出本表單嗎？'))">
 
 						<div class="hide">
 							<label for="comment">Do Not Fill This Out</label>

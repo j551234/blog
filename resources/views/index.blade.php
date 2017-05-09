@@ -2,16 +2,33 @@
 
 @section('content')
     <header>
-
-
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading">M.R.中鑒者</h1>
-                <hr>
+            <hr>
                 <form id="searchForm" method="get" action="result">
-                <p><input type="text" class="searchbar" name="search" placeholder="search..."></p>
+                <input type="text" class="searchbar" name="search" placeholder="search...">
                 <br>
-                <input type="submit" value="Find Out" id="submitButton" class="btn btn-primary btn-xl" />
+                <div class="search">
+                    <div class="searchtype">
+                         <input type="radio" name="searchtype" value="author" id="a" /><label for="a">作者</label>
+                        <input type="radio" name="searchtype" value="title" id="t" /><label for="t">標題</label>
+                    </div>
+                    <div class="searchweb">
+                         <input type="checkbox" name="searchweb[]" value="pixnet" id="p"><label for="p">Pixnet</label>
+                         <input type="checkbox" name="searchweb[]" value="xuite" id="x"><label for="x">Xuite</label>
+                         <input type="checkbox" name="searchweb[]" value="ptt" id="pt"><label for="pt">Ptt</label>
+                         <input type="checkbox" name="searchweb[]" value="youtube" id="y"><label for="y">Youtube</label>
+                    </div>
+
+
+
+                </div>
+                <br>
+                <input type="submit" value="Find Out" id="submitButton" class="btn btn-primary btn-xl"/>
+          
+
+
+
                 </form>
             </div>
         </div>
@@ -45,15 +62,15 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="classification-box">
-                        <a class="btn" href="#">
+                        <a class="btn" href='{{URL("category?show=$show&tag=food")}}#classification'>
                         <i class="fa fa-4x fa-cutlery text-primary sr-icons" ></i></a>
                         <h3>Foods</h3>
-                        <p class="text-muted">來自各國各地的美食饗宴滿足你的味蕾，擺脫你總是找不到美食的惡夢！ </p>
+                        <p class="text-muted"></p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="classification-box">
-                         <a class="btn" href="#">
+                         <a class="btn" href='{{URL("category?show=$show&tag=dress")}}#classification'>
                         <i class="fa fa-4x fa-user text-primary sr-icons"></i></a>
                         <h3>Dresses</h3>
                         <p class="text-muted"></p>
@@ -61,7 +78,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="classification-box">
-                        <a class="btn" href="#">
+                        <a class="btn" href='{{URL("category?show=$show&tag=travel")}}#classification'>
                         <i class="fa fa-4x fa-plane text-primary sr-icons"></i></a>
                         <h3>Travel</h3>
                         <p class="text-muted"></p>
@@ -69,21 +86,49 @@
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="classification-box">
-                        <a class="btn" href="#">
+                        <a class="btn" href='{{URL("category?show=$show&tag=digital")}}#classification'>
                         <i class="fa fa-4x fa-laptop text-primary sr-icons"></i></a>
                         <h3>Digital</h3>
                         <p class="text-muted"></p>
                     </div>
                 </div>
             </div> 
-            
+            <!--  row end -->
         </div>
-        <div class="text-center">
-             <ul>
-                <li> <a class="sequence page-scroll" href="{{URL('popular')}}#classification">熱門文章</a> </li>
-                <li> <a class="sequence page-scroll" href="{{URL('appraise')}}#classification">評價最高</a></li>
-                <li> <a class="sequence page-scroll" href="{{URL('random')}}#classification">隨機選取</a></li>
-             </ul>
+        <!--  container end -->
+        <div class="menu text-center">
+        <ul class="submenu">
+    
+        
+            <li class="mainlink"><a href='{{URL("index?show=pixnet&tag=$tag")}}#classification' class="firstMenu">Pixnet</a>
+                <ul class="sublink">
+                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=pixnet&tag=$tag")}}#classification'>熱門文章</a> </li>
+                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=pixnet&tag=$tag")}}#classification'>評價最高</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("random?show=pixnet&tag=$tag")}}#classification'>隨機選取</a></li>
+                </ul>
+            </li>
+            <li class="mainlink"><a href='{{URL("index?show=xuite&tag=$tag")}}#classification' class="firstMenu">Xuite</a>
+                <ul class="sublink">
+                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=xuite&tag=$tag")}}#classification'>熱門文章</a> </li>
+                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=xuite&tag=$tag")}}#classification'>評價最高</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("random?show=xuite&tag=$tag")}}#classification'>隨機選取</a></li>
+                </ul>
+            </li>
+            <li class="mainlink"><a href='{{URL("index?show=ptt&tag=$tag")}}#classification'class="firstMenu">Ptt</a>
+                <ul class="sublink">
+                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=ptt&tag=$tag")}}#classification'>熱門文章</a> </li>
+                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=ptt&tag=$tag")}}#classification'>評價最高</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("random?show=ptt&tag=$tag")}}#classification'>隨機選取</a></li>
+                </ul>
+            </li>
+            <li class="mainlink"><a href='{{URL("index?show=youtube&tag=$tag")}}#classification'class="firstMenu">Youtube</a>
+                <ul class="sublink">
+                    <li> <a class="sequence page-scroll" href='{{URL("popular?show=youtube&tag=$tag")}}#classification'>熱門文章</a> </li>
+                    <li> <a class="sequence page-scroll" href='{{URL("appraise?show=youtube&tag=$tag")}}#classification'>評價最高</a></li>
+                    <li> <a class="sequence page-scroll" href='{{URL("random?show=youtube&tag=$tag")}}#classification'>隨機選取</a></li>
+                </ul>
+            </li>
+        </ul>
         </div>
     </section>
 
@@ -93,10 +138,11 @@
 
         <div class="container-fluid">
             <div class="row no-gutter ">
-            @foreach($pixnetdata as $data)
+            @foreach($showdata as $data)
                 <div class="col-lg-2 col-sm-3">
                     <a href="{{$data->search_href}}" class="artical-box">
-                       <img class="img-responsive" src="{{$data->article_picture}}" alt="圖片未能抓取"  width="100%">
+                       <img class="img-responsive" src="{{$data->article_picture}}" alt="圖片未能抓取"  width="100%"  
+                       onerror="this.src='./img/nodoge.jpg'">
                         <div class="artical-box-caption">
                             <div class="artical-box-caption-content">
                                 <div class="project-category text-faded">
@@ -120,11 +166,35 @@
             </div>
             <!--  Pagination -->
             <div class="paginate">
-             {{$pixnetdata->fragment('classification')->links()}} 
+             {{$showdata->fragment('classification')->links()}} 
             </div>
         </div>
-
+        $abc = "123";
+        "$abc" => 123
+        '$abc' => $abc
     </section>
+     <script type="text/javascript">
+            let show=window.location.search.match(/show=[^&]+/)
+            let tag=window.location.search.match(/tag=[^&]+/)
+
+            console.log(tag)
+         
+            // if(show){
+                // show=show[0]
+                Array.from(document.querySelectorAll(".pagination a")).forEach(a=>{
+                    let index=a.href.match(/#.+$/).index
+                    // a.href=`${a.href.substring(0,index)}&${tag}&${show}${a.href.substring(index)}`
+                    let sharp = a.href.substring(index);
+                    a.href = a.href.substring(0, index);
+                    if(show)
+                        a.href += "&"+show[0];
+                    if(tag)
+                        a.href += "&"+tag[0];
+                    a.href += sharp;
+                    // a.href = a.href.substring(0,index)+"&"+show+a.href.substring(index);
+                })
+            // }
+        </script>
 
 
 @endsection

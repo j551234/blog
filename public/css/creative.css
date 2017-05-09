@@ -41,6 +41,7 @@ a {
 a:hover,
 a:focus {
   color: #eb3812;
+  text-decoration:none;
 }
 h1,
 h2 {
@@ -64,23 +65,53 @@ p {
   margin: 40px auto;
   text-align: center;
 }
-#classification ul{
-    padding: 0px;
-    margin: 0px auto;
-    list-style: none;
-    max-width: 75%;
-    height: 24px;
-    overflow: hidden;
-    text-align:center;
+.menu{
+  padding-top: 40px;
 }
-#classification ul li{
-    padding: 0px 15px;
-    border-right: 1px dotted #666;
-    display: inline-block;
-    font-size: 13px;
-    letter-spacing: 1px;
-    vertical-align: middle;
-
+.menu>.submenu{
+  padding-left: 0;
+}
+.menu>.submenu>li{
+  display: inline-block;
+  padding:0em 2em;
+  min-width: 10em;
+  border-right: 1px dotted #666;
+  position: relative;
+  font-size: 1.3em;
+  margin-bottom: 0.5em;
+}
+.menu>.submenu>li:hover >a{
+  color: #fff28a;
+}
+.menu>.submenu>li:last-child{
+  border-right: none;
+}
+.menu>.submenu>li:hover>ul{
+  max-height: 10em;
+}
+.menu>.submenu>li>ul{
+  padding: .5em;
+  transition: max-height 0.5s;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px; 
+  max-height: 0em;
+  overflow: hidden;
+  list-style-type: none;
+  position: absolute;
+  z-index: 100;
+  width:100%;
+  left: 0;
+  top:100%;
+  background-color: rgba(255,255,255,.87)
+}
+.menu>.submenu>li>ul>li{
+  letter-spacing: 0.1em;
+  font-size: 1em;
+  padding: 0.5em 0;
+}
+.menu>.submenu>li>ul>li:hover>a{
+  border-radius: 6px;
+  background-color: #f0f0f0;
 }
 .bg-primary {
   background-color: #F05F40;
@@ -149,7 +180,7 @@ aside{
 }
 @media (min-width: 768px) {
   .navbar-default {
-    background-color: rgba(74, 66, 63, 1); 
+    background-color: rgba(38, 38, 38, 1); 
     border-color: rgba(255, 255, 255, 0.3);
   }
   .navbar-default .navbar-header .navbar-brand {
@@ -218,6 +249,19 @@ header-result .header-content ul li{
    letter-spacing: 1px;
    vertical-align: middle;
 }
+header-result .header-content .searchtype {
+    float: left;
+}
+header-result .header-content .searchweb {
+    float: right;
+}
+header-result .header-content .search {
+  width: 440px;
+  height: 50px;
+  display: block;
+  margin: 0px 290px ;
+}
+
 header {
   position: relative;
   width: 100%;
@@ -258,6 +302,31 @@ header .header-content .header-content-inner p {
   font-size: 16px;
   margin-bottom: 50px;
 }
+header .header-content .header-content-inner .search {
+  width: 440px;
+  height: 50px;
+  display: block;
+  margin: 10px 240px 0px;
+}
+header .header-content .header-content-inner .searchtype {
+  float: left;
+  }
+header .header-content .header-content-inner .searchweb {
+  float: right;
+  }
+
+/*hidden checkbox*/  
+input[type*=checkbox]{
+  display:none;
+}
+label{
+  margin-right:1em;
+}
+.clicked{
+  color: #F05F40;
+  transform: scale(1.2);
+}
+
 #searchForm{
   /* The search form. */
   padding:0px 50px 0px;
@@ -308,10 +377,10 @@ header .header-content .header-content-inner p {
     margin-right: auto;
   }
   header .header-content .header-content-inner p {
-    font-size: 18px;
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 14px;
+    text-align-last: left;
+    padding-left: 220px;
+    padding-top: 10px;
   }
 }
 .section-heading {
@@ -322,6 +391,27 @@ header .header-content .header-content-inner p {
     padding-left: 100px;
     margin-right: auto;
     margin-left: auto;
+}
+.page-header {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  border-bottom: 1px solid #eee;
+}
+.page-header ul {
+    position: absolute;
+    list-style: none;
+    height: 24px;
+    overflow: hidden;
+    right: 40%;
+    top: 40%;
+}
+.page-header ul li {
+   padding: 0px 15px;
+   border-right: 1px dotted #666;
+   display: inline-block;
+   font-size: 13px;
+   letter-spacing: 1px;
+   vertical-align: middle;
 }
 .classification-box {
   max-width: 400px;
@@ -335,13 +425,8 @@ header .header-content .header-content-inner p {
 .classification-box p {
   margin-bottom: 0;
 }
-.sequence { 
-   font-size: 20px;
 
-}
-.sequence:hover { 
-   text-decoration:none;
-}
+
 .artical-box {
   position: relative;
   display: block;
@@ -475,8 +560,8 @@ fieldset[disabled] .btn-default.active {
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
-  color: white;
-  background-color: #ee4b28;
+  color:  #ee4b28;
+  background-color: white;
   border-color: #ed431f;
 }
 .btn-primary:active,

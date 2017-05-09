@@ -28,15 +28,13 @@
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
-                    <h3 class="page-header">{{$search}}搜尋中,將在五秒後跳頁 </h3>
+                    <h3 class="page-header" aling="center">{{$search}}依搜尋中,將在五秒後跳頁 </h3>
                   
         </div>
                    
         <!-- /.row -->
    
-   <meta http-equiv="refresh" content='5;url={{URL("show?search=$search")}}' />
-     {{ method_field('PUT') }}
-       {{ csrf_field() }}
+   <meta http-equiv="refresh" content='1;url={{URL("show?search=$search&searchtype=$searchtype")}}' />
 
 
 

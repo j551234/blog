@@ -23,9 +23,16 @@ Route::get('/show','resultController@show');
 
 //index頁面
 Route::get('/index','indexController@index');
+Route::get('/showpixnet','indexController@showpixnet');
+Route::get('/showxuite','indexController@showxuite');
+Route::get('/showptt','indexController@showptt');
+Route::get('/showyoutube','indexController@showyoutube');
+
 Route::get('/popular','indexController@popular');
 Route::get('/appraise','indexController@appraise');
 Route::get('/random','indexController@random');
+Route::get('/category','indexController@category');
+
 
 
 //contact 頁面
