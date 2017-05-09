@@ -97,6 +97,7 @@ driver.close()
 cur.close() #斷開連結
 conn.close()
 
-os.system ("python C:/xampp/htdocs/project/python/AnalystPtt.py")
-os.system ("python C:/xampp/htdocs/project/python/TitleAnalystPtt.py")
+#os.system ("C:\Users\wang\Desktop\123.bat")
+# os.system ("python C:/xampp/htdocs/project/python/AnalystPtt.py")
+# os.system ("python C:/xampp/htdocs/project/python/TitleAnalystPtt.py")
 

@@ -1,0 +1,52 @@
+diff a/public/css/creative.css b/public/css/creative.css	(rejected hunks)
+@@ -135,11 +135,17 @@
+     position: relative;
+ }
+ 
+-.detail svg.circliful {
++.detail .percentBall1 svg.circliful {
+     position: absolute;
+-    max-height: 130px;
+-    top: 65%;
+-    left: 25%;
++    max-height: 110px;
++    bottom: -10%;
++    left: 18%;
++}
++.detail .percentBall2 svg.circliful {
++    position: absolute;
++    max-height: 110px;
++    bottom: -10%;
++    left: 40%;
+ }
+ 
+ .jq-star {
+@@ -228,7 +234,7 @@
+ 
+ @media (min-width: 768px) {
+     .navbar-default {
+-        background-color: rgba(38, 38, 38, 1);
++        background-color: #2B2B2B;
+         border-color: rgba(255, 255, 255, 0.3);
+     }
+     .navbar-default .navbar-header .navbar-brand {
+@@ -302,19 +308,6 @@
+ }
+ 
+ 
+-/*header-result .header-content .searchtype {
+-    float: left;
+-}
+-header-result .header-content .searchweb {
+-    float: right;
+-}
+-header-result .header-content .search {
+-  width: 440px;
+-  height: 50px;
+-  display: block;
+-  margin: 0px auto;
+-}*/
+-
+ header-result .header-content .search {
+     position: relative;
+     width: 650px;

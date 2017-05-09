@@ -54,14 +54,12 @@ class resultController extends Controller {
 				$url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
 				pclose(popen("start/b C://xampp/htdocs/project/python/InsertDict.py $url_key_word",'r'));
 
-				if(count($pixnetfind)==0){		
-						$file1 = popen("start/b C://xampp/htdocs/project/python/SearchPixnet.py $url_key_word",'w');
-
-						pclose($file1);
-						
+				if(count($pixnetfind)==0){
+					$file1 = popen("start/b C://xampp/htdocs/project/python/SearchPixnet.py $url_key_word",'r');
+					pclose($file1);					
 						 				}
 			  	if(count($xuitefind)==0){
-						$file2 = popen("start/b C://xampp/htdocs/project/python/SearchPtt.py $url_key_word",'r');  
+						$file2 = popen("start C://xampp/htdocs/project/python/SearchPtt.py $url_key_word",'r');  
 						pclose($file2);
 						 				}
 				if(count($pttfind)==0){

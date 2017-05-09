@@ -1,0 +1,20 @@
+diff a/resources/views/index.blade.php b/resources/views/index.blade.php	(rejected hunks)
+@@ -18,13 +18,12 @@
+                          <input type="checkbox" name="searchweb[]" value="ryoutube" id="y"><label for="y">Youtube</label>
+                          <input type="checkbox" name="searchweb[]" value="rmobile01" id="m"><label for="m">Mobile01</label>
+                     </div>
+-
+-
+-
++                    <div class="subbutton">
++                         <input type="submit" value="Find Out" id="submitButton" class="btn btn-primary btn-xl"/>
++                    </div>
+                 </div>
+-                <br>
+-                <br>
+-                <input type="submit" value="Find Out" id="submitButton" class="btn btn-primary btn-xl"/>
++
++               
+           
+                 </form>
+             </div>
