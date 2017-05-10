@@ -70,7 +70,3 @@ for  x  in range(3*x-2,3*x+1) :
 cur.close() #斷開連結
 conn.close()
 
-#os.system ("C:\Users\wang\Desktop\123.bat")
-
-# os.system ("python C:/xampp/htdocs/project/python/AnalystPixnet.py")
-# os.system ("python C:/xampp/htdocs/project/python/TitleAnalystPixnet.py")

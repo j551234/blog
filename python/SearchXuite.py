@@ -56,16 +56,6 @@ for item in soup.select('div[class="n"]'):
 #        print (author_href)
         cur.execute(sqli,(chinese_key_word,search_title, search_subtitle, article_picture, search_href, search_author, author_href)) #存入資料庫    
         conn.commit()
-       
-
-
-# asd = input()
-# print ("123")
-# os.popen (" python C:/xampp/htdocs/project/python/AnalystXuite.py")
-# print ("456")
-# qwe = input()
-
-# os.system ("python C:/xampp/htdocs/project/python/TitleAnalystXuite.py")
 
 cur.close() #斷開連結
 conn.close()
