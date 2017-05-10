@@ -54,9 +54,11 @@ class resultController extends Controller {
 				$url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
 				pclose(popen("start/b C://xampp/htdocs/project/python/InsertDict.py $url_key_word",'r'));
 
-				if(count($pixnetfind)==0){
-					$file1 = popen("start/b C://xampp/htdocs/project/python/SearchPixnet.py $url_key_word",'r');
-					pclose($file1);					
+				if(count($pixnetfind)==0){		
+						$file1 = popen("start/b C://xampp/htdocs/project/python/SearchPixnet.py $url_key_word",'r');
+
+						pclose($file1);
+						
 						 				}
 			  	if(count($xuitefind)==0){
 						$file2 = popen("start/b C://xampp/htdocs/project/python/SearchPtt.py $url_key_word",'r');  
@@ -70,21 +72,25 @@ class resultController extends Controller {
 						$file4 = popen("start/b C://xampp/htdocs/project/python/SearchYoutube.py $url_key_word",'r'); 
 			 			pclose($file4);
 										}
+
+
 				if(count($mobile01find)==0){
                 		$file5 = popen("start/b C://xampp/htdocs/project/python/SearchMobile01.py $url_key_word",'r'); 
                  		pclose($file5);
+<<<<<<< HEAD
                                 		}
 				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystPixnet.bat", "r"));
 				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystXuite.bat", "r"));
 				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystPtt.bat", "r"));
 				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystMobile01.bat", "r"));
 				
+=======
+                                		}				
+>>>>>>> d1f836914c11fc92e0565b9f8c566ac426f53a8b
 
-				
+			
 
 				return view('wait',['search'=> $search,'searchtype'=>$searchtype,'searchweb'=>$searchweb]);
-
-				
 			
 			}
 	public function pixnetscore(Request $request)
