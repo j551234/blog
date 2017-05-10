@@ -20,7 +20,7 @@ print (url_key_word)
 sqli = "insert into mobile01 (key_word,search_title,search_href,search_time,search_author,article_picture,author_href,search_view) values (%s,%s,%s,%s,%s,%s,%s,%s)" #選擇資料表
 
 #driver=webdriver.Chrome(executable_path=r'C:/Users/user/MingChien/chromedriver') #模擬瀏覽器
-driver=webdriver.PhantomJS(executable_path=r'D:/xampp/htdocs/project/python/phantomjs-2.1.1-windows/bin/phantomjs.exe')
+driver=webdriver.PhantomJS(executable_path=r'C:/xampp/htdocs/project/python/phantomjs-2.1.1-windows/bin/phantomjs.exe')
 driver.maximize_window()
 payload={'q':url_key_word,'site':'site:https://www.mobile01.com/'}
 url='https://google.com.tw/search?q='+payload['q']+'+'+payload['site']
