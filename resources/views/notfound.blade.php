@@ -28,7 +28,7 @@
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
-                    <h3 class="page-header" aling="center">sorry  {{$search}}  未能找到結果 </h3>
+                    <h3 class="page-header" aling="center"> {{$search}}  未能找到結果 </h3>
                   
         </div>
                    

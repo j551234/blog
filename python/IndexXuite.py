@@ -1,6 +1,7 @@
 #隨意窩Xuite:http://www.a.blog.xuite.net/new_index.php
 # -*- coding: UTF-8 -*-
 
+import time
 import MySQLdb
 import requests
 from bs4 import BeautifulSoup
@@ -41,6 +42,7 @@ for topic in range(0,2):
             #author_href='http://xuite.net/'+search_author
             cur.execute(sqli,(tag_list[topic],search_title,search_author,search_href,article_picture)) #存入資料庫    
             conn.commit()
+            time.sleep(0.5)
            
 
 cur.close() #斷開連結
