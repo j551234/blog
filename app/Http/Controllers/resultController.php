@@ -77,7 +77,12 @@ class resultController extends Controller {
 				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystPixnet.bat", "r"));
 				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystXuite.bat", "r"));
 				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystPtt.bat", "r"));
+
+				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystMobile01.bat", "r"));
+				
+
 				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystMobile01.bat", "r"));                    		
+
 
 			
 
