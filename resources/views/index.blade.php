@@ -4,7 +4,6 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-            <hr>
                 <form id="searchForm" method="get" action="result">
                 <div class="search">
                 <input type="text" class="searchbar" name="search" placeholder="search...">  
@@ -19,13 +18,12 @@
                          <input type="checkbox" name="searchweb[]" value="ryoutube" id="y"><label for="y">Youtube</label>
                          <input type="checkbox" name="searchweb[]" value="rmobile01" id="m"><label for="m">Mobile01</label>
                     </div>
-
-
-
+                    <div class="subbutton">
+                         <input type="submit" value="Find Out" id="submitButton" class="btn btn-primary btn-xl"/>
+                    </div>
                 </div>
-                <br>
-                <br>
-                <input type="submit" value="Find Out" id="submitButton" class="btn btn-primary btn-xl"/>
+
+               
           
                 </form>
             </div>

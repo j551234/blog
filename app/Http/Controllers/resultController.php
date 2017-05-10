@@ -42,42 +42,48 @@ class resultController extends Controller {
 				
 
 				
-				$pixnetfind=pixnet::where('key_word','like',"%$search%")->get();
-				$xuitefind=xuite::where('key_word','like',"%$search%")->get();
-				$pttfind=ptt::where('key_word','like',"%$search%")->get();
-				$youtubefind=youtube::where('key_word','like',"%$search%")->get();
-				$mobile01find=mobile01::where('key_word','like',"%$search%")->get();
-
+				$pixnetfind=pixnet::where('key_word','=',"$search")->get();
+				$xuitefind=xuite::where('key_word','=',"$search")->get();
+				$pttfind=ptt::where('key_word','=',"$search")->get();
+				$youtubefind=youtube::where('key_word','=',"$search")->get();
+				$mobile01find=mobile01::where('key_word','=',"$search")->get();
 
 
 				
-				$url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
-				pclose(popen("start/b C://xampp/htdocs/project/python/InsertDict.py $url_key_word",'r'));
+				// $url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
+				// pclose(popen("start/b C://xampp/htdocs/project/python/InsertDict.py $url_key_word",'r'));
+				
+				// if(count($pixnetfind)==0){		
+				// 		$file1 = popen("start/b C://xampp/htdocs/project/python/SearchPixnet.py $url_key_word",'r');
 
-				if(count($pixnetfind)==0){		
-						$file1 = popen("start/b C://xampp/htdocs/project/python/SearchPixnet.py $url_key_word",'r');
-
-						pclose($file1);
+				// 		pclose($file1);
 						
-						 				}
-			  	if(count($xuitefind)==0){
-						$file2 = popen("start/b C://xampp/htdocs/project/python/SearchPtt.py $url_key_word",'r');  
-						pclose($file2);
-						 				}
-				if(count($pttfind)==0){
-						$file3 = popen("start/b C://xampp/htdocs/project/python/SearchXuite.py $url_key_word",'r');  
-						pclose($file3); 
-										}
-				if(count($youtubefind)==0){
-						$file4 = popen("start/b C://xampp/htdocs/project/python/SearchYoutube.py $url_key_word",'r'); 
-			 			pclose($file4);
-										}
+				// 		 				}
+			 //  	if(count($xuitefind)==0){
+				// 		$file2 = popen("start/b C://xampp/htdocs/project/python/SearchPtt.py $url_key_word",'r');  
+				// 		pclose($file2);
+				// 		 				}
+				// if(count($pttfind)==0){
+				// 		$file3 = popen("start/b C://xampp/htdocs/project/python/SearchXuite.py $url_key_word",'r');  
+				// 		pclose($file3); 
+				// 						}
+				// if(count($youtubefind)==0){
+				// 		$file4 = popen("start/b C://xampp/htdocs/project/python/SearchYoutube.py $url_key_word",'r'); 
+			 // 			pclose($file4);
+				// 						}
+				// if(count($mobile01find)==0){
+    //             		$file5 = popen("start C://xampp/htdocs/project/python/SearchMobile01.py $url_key_word",'r'); 
+    //              		pclose($file5);
+    //                         		}
+				// pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystPixnet.bat", "r"));
+				// pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystXuite.bat", "r"));
+				// pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystPtt.bat", "r"));
 
+				// pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystMobile01.bat", "r"));
+				
 
-				if(count($mobile01find)==0){
-                		$file5 = popen("start/b C://xampp/htdocs/project/python/SearchMobile01.py $url_key_word",'r'); 
-                 		pclose($file5);
-                                		}				
+				// pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystMobile01.bat", "r"));                    		
+
 
 			
 
@@ -297,14 +303,24 @@ class resultController extends Controller {
 			 			exit("fuck");
 			 			break;
 			 	}
-
+			 
 
 
 			
-				return view('result',['pixnetdata'=>$pixnetdata,
+			
+			if(count($pixnetdata)+count($xuitedata)+count($pttdata)+count($youtubedata)+count($mobile01data)==0)
+			{
+				 return view('notfound',['search'=> $search,'searchtype'=>$searchtype,'searchweb'=>$searchweb]);
+			}
+			else
+			{
+				  return view('result',['pixnetdata'=>$pixnetdata,
 					'xuitedata'=>$xuitedata,'pttdata'=>$pttdata,
 					'youtubedata'=>$youtubedata,'mobile01data'=>$mobile01data
 					,'whoIsTheBestDog'=>$whoIsTheBestDog,'search'=> $search,'searchtype'=>$searchtype,'searchweb'=>$searchweb]);
+			}
+
+			
 			}
 	public function popular (Request $request)
 			{	
@@ -455,17 +471,18 @@ class resultController extends Controller {
 			 		default:
 			 			exit("fuck");
 			 			break;
+
 			 	}
 
-
-
-			
-				return view('result',['pixnetdata'=>$pixnetdata,
+			 		return view('result',['pixnetdata'=>$pixnetdata,
 					'xuitedata'=>$xuitedata,'pttdata'=>$pttdata,
 					'youtubedata'=>$youtubedata,'mobile01data'=>$mobile01data
 					,'whoIsTheBestDog'=>$whoIsTheBestDog,'search'=> $search,'searchtype'=>$searchtype,'searchweb'=>$searchweb]);
 
-			}
+			 }
+
+
+
 	public function appraise (Request $request)
 			{	
 				$search = $request->input('search');

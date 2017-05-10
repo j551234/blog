@@ -35,9 +35,6 @@ with open('paid news.txt', 'r',encoding='UTF-8') as paidnews:
         paid.append(line.strip('\ufeff').strip())
     paidnews.close()
     
-print(pos)
-print(nag)
-print(paid)
 
 pos_set=set(pos)
 nag_set=set(nag)
@@ -86,6 +83,7 @@ for record in results:
     print(Content_Analyst)
     cur.execute ("UPDATE mobile01 SET content_analyst=%s WHERE id='%s'" %  (Content_Analyst,mobile01_id))
     conn.commit()
+    time.sleep(0.5)
     
 cur.close() #斷開連結
 conn.close()

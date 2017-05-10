@@ -42,9 +42,12 @@ Route::get('/contact','contactController@index');
 Route::post('/mail','contactController@contact');
 //wait頁面
 Route::post('/wait','waitController@index');
+//notfound
+Route::get('/notfound','notfoundController@index');
 
 //manual頁面
 Route::get('/manual','manualController@index');
+
 
 
 
