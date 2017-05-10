@@ -234,7 +234,7 @@ aside {
 
 @media (min-width: 768px) {
     .navbar-default {
-        background-color: rgb(68,68,68);
+        background-color: rgb(57,57,57);
         border-color: rgba(255, 255, 255, 0.3);
     }
     .navbar-default .navbar-header .navbar-brand {
@@ -434,7 +434,7 @@ label {
     background: rgba(255,255,255,0.9);
     border: 1px solid #d1d1d1;
     font: bold 16px Arial, Helvetica, Sans-serif;
-    color: #bebebe;
+    color: rgb(54,54,54);
     width: 500px;
     padding: 6px 15px 6px 35px;
     margin: 0, auto;
@@ -522,6 +522,7 @@ label {
     padding-bottom: 9px;
     margin: 40px 0 20px;
     border-bottom: 1px solid #eee;
+    position: relative;
 }
 
 .page-header ul {
@@ -530,7 +531,7 @@ label {
     height: 24px;
     overflow: hidden;
     right: 40%;
-    top: 40%;
+    top: 0%;
 }
 
 .page-header ul li {
@@ -541,7 +542,11 @@ label {
     letter-spacing: 1px;
     vertical-align: middle;
 }
-
+.page-header .analysis {
+  position: absolute;
+  top:-25%;
+  right: 3%;
+}
 .classification-box {
     max-width: 400px;
     margin: 50px auto 0;
@@ -634,6 +639,9 @@ label {
 
 .text-primary {
     color: #F05F40;
+}
+.text-primary:hover {
+    color:red;
 }
 
 .no-gutter > [class*='col-'] {
