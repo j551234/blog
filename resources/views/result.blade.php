@@ -55,9 +55,19 @@
                         <li> <a href="https://tw.search.bid.yahoo.com/search/auction/product?kw={{$search}}&p={{$search}}" target="_blank">yahoo拍賣</a> </li>
                         <li> <a href="http://ecshweb.pchome.com.tw/search/v3.3/?q={{$search}}" target="_blank">pchome</a> </li>
                     </ul>
-                    
+                    <a class="btn btn-default analysis">請稍後...</a>
                 </h4>
+                <script type="text/javascript">                      
 
+                setTimeout(()=>{
+                    let el=document.querySelector('.analysis')
+                    el.innerHTML="點擊分析"
+                    el.style.backgroundColor="#F05F40"
+                    el.style.color="#fff"
+                    el.onclick=()=>window.location.reload()
+                },3000)
+     
+                </script> 
             </div>
             <div class="menu text-right">
                 <ul class="submenu">
@@ -145,6 +155,7 @@
                     });
 
           
+
                 </script> 
  
             </div>

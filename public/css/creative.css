@@ -522,6 +522,7 @@ label {
     padding-bottom: 9px;
     margin: 40px 0 20px;
     border-bottom: 1px solid #eee;
+    position: relative;
 }
 
 .page-header ul {
@@ -530,7 +531,7 @@ label {
     height: 24px;
     overflow: hidden;
     right: 40%;
-    top: 40%;
+    top: 0%;
 }
 
 .page-header ul li {
@@ -541,7 +542,11 @@ label {
     letter-spacing: 1px;
     vertical-align: middle;
 }
-
+.page-header .analysis {
+    position: absolute;
+    top: -25%;
+    right: 3%;
+}
 .classification-box {
     max-width: 400px;
     margin: 50px auto 0;
@@ -634,6 +639,9 @@ label {
 
 .text-primary {
     color: #F05F40;
+}
+.text-primary:hover {
+    color: red;
 }
 
 .no-gutter > [class*='col-'] {
