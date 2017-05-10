@@ -50,43 +50,9 @@ class resultController extends Controller {
 
 
 				
-				// $url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
-				// pclose(popen("start/b C://xampp/htdocs/project/python/InsertDict.py $url_key_word",'r'));
-				
-<<<<<<< HEAD
-				// if(count($pixnetfind)==0){		
-				// 		$file1 = popen("start/b C://xampp/htdocs/project/python/SearchPixnet.py $url_key_word",'r');
+				$url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
+				 pclose(popen("start/b C://xampp/htdocs/project/python/InsertDict.py $url_key_word",'r'));
 
-				// 		pclose($file1);
-						
-				// 		 				}
-			 //  	if(count($xuitefind)==0){
-				// 		$file2 = popen("start/b C://xampp/htdocs/project/python/SearchPtt.py $url_key_word",'r');  
-				// 		pclose($file2);
-				// 		 				}
-				// if(count($pttfind)==0){
-				// 		$file3 = popen("start/b C://xampp/htdocs/project/python/SearchXuite.py $url_key_word",'r');  
-				// 		pclose($file3); 
-				// 						}
-				// if(count($youtubefind)==0){
-				// 		$file4 = popen("start/b C://xampp/htdocs/project/python/SearchYoutube.py $url_key_word",'r'); 
-			 // 			pclose($file4);
-				// 						}
-				// if(count($mobile01find)==0){
-    //             		$file5 = popen("start C://xampp/htdocs/project/python/SearchMobile01.py $url_key_word",'r'); 
-    //              		pclose($file5);
-    //                         		}
-				// pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystPixnet.bat", "r"));
-				// pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystXuite.bat", "r"));
-				// pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystPtt.bat", "r"));
-
-				// pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystMobile01.bat", "r"));
-				
-
-				// pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystMobile01.bat", "r"));                    		
-
-
-=======
 				if(count($pixnetfind)==0){		
 						$file1 = popen("start/b C://xampp/htdocs/project/python/SearchPixnet.py $url_key_word",'r');
 						pclose($file1);						
@@ -111,7 +77,7 @@ class resultController extends Controller {
 				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystXuite.bat", "r"));
 				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystPtt.bat", "r"));
 				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystMobile01.bat", "r"));
->>>>>>> 5e69049e87051fbda41daeabfde49746d9022dc2
+
 			
 
 				return view('wait',['search'=> $search,'searchtype'=>$searchtype,'searchweb'=>$searchweb]);
