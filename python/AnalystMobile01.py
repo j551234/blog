@@ -35,9 +35,6 @@ with open('paid news.txt', 'r',encoding='UTF-8') as paidnews:
         paid.append(line.strip('\ufeff').strip())
     paidnews.close()
     
-print(pos)
-print(nag)
-print(paid)
 
 pos_set=set(pos)
 nag_set=set(nag)

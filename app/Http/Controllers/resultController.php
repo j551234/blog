@@ -42,11 +42,11 @@ class resultController extends Controller {
 				
 
 				
-				$pixnetfind=pixnet::where('key_word','like',"%$search%")->get();
-				$xuitefind=xuite::where('key_word','like',"%$search%")->get();
-				$pttfind=ptt::where('key_word','like',"%$search%")->get();
-				$youtubefind=youtube::where('key_word','like',"%$search%")->get();
-				$mobile01find=mobile01::where('key_word','like',"%$search%")->get();
+				$pixnetfind=pixnet::where('key_word','=',"%$search%")->get();
+				$xuitefind=xuite::where('key_word','=',"%$search%")->get();
+				$pttfind=ptt::where('key_word','=',"%$search%")->get();
+				$youtubefind=youtube::where('key_word','=',"%$search%")->get();
+				$mobile01find=mobile01::where('key_word','=',"%$search%")->get();
 
 
 
@@ -54,12 +54,14 @@ class resultController extends Controller {
 				$url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
 				pclose(popen("start/b C://xampp/htdocs/project/python/InsertDict.py $url_key_word",'r'));
 
-				if(count($pixnetfind)==0){
-					$file1 = popen("start/b C://xampp/htdocs/project/python/SearchPixnet.py $url_key_word",'r');
-					pclose($file1);					
+				if(count($pixnetfind)==0){		
+						$file1 = popen("start/b C://xampp/htdocs/project/python/SearchPixnet.py $url_key_word",'r');
+
+						pclose($file1);
+						
 						 				}
 			  	if(count($xuitefind)==0){
-						$file2 = popen("start C://xampp/htdocs/project/python/SearchPtt.py $url_key_word",'r');  
+						$file2 = popen("start/b C://xampp/htdocs/project/python/SearchPtt.py $url_key_word",'r');  
 						pclose($file2);
 						 				}
 				if(count($pttfind)==0){
@@ -75,7 +77,17 @@ class resultController extends Controller {
 				if(count($mobile01find)==0){
                 		$file5 = popen("start/b C://xampp/htdocs/project/python/SearchMobile01.py $url_key_word",'r'); 
                  		pclose($file5);
-                                		}				
+
+                                		}
+				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystPixnet.bat", "r"));
+				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystXuite.bat", "r"));
+				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystPtt.bat", "r"));
+
+				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystMobile01.bat", "r"));
+				
+
+				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystMobile01.bat", "r"));                    		
+
 
 			
 
