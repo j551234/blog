@@ -89,6 +89,34 @@
                     </div>
                 </div>
             </div> 
+            <script type="text/javascript">                      
+
+                    let match =window.location.search.match(/tag=[^&]+/)
+                    if(match){
+                        let tag=match[0].substring(4)
+                        let Changecolor=document.querySelectorAll(".text-primary")
+                        switch(tag){
+                            case "food":{
+                                Changecolor[0].style.color="red"
+                                break
+                            }
+                            case "dress":{
+                                Changecolor[1].style.color="red"
+                                break
+                            }
+                            case "travel":{
+                                Changecolor[2].style.color="red"
+                                break
+                            }
+                            case "digital":{
+                                Changecolor[3].style.color="red"
+                                break
+                            }
+                        }
+                    }
+         
+     
+                </script> 
             <!--  row end -->
         </div>
         <!--  container end -->
@@ -106,6 +134,7 @@
             </li>
         </ul>
         </div>
+
     </section>
 
     <section class="no-padding" id="artical">

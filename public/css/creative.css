@@ -434,7 +434,7 @@ label {
     background: rgba(255,255,255,0.9);
     border: 1px solid #d1d1d1;
     font: bold 16px Arial, Helvetica, Sans-serif;
-    color: #bebebe;
+    color: rgb(54,54,54);
     width: 500px;
     padding: 6px 15px 6px 35px;
     margin: 0, auto;
