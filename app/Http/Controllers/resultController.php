@@ -55,8 +55,7 @@ class resultController extends Controller {
 				
 				if(count($pixnetfind)==0){		
 						$file1 = popen("start/b C://xampp/htdocs/project/python/SearchPixnet.py $url_key_word",'r');
-						pclose($file1);
-						
+						pclose($file1);						
 						 				}
 			  	if(count($xuitefind)==0){
 						$file2 = popen("start/b C://xampp/htdocs/project/python/SearchPtt.py $url_key_word",'r');  
@@ -77,13 +76,7 @@ class resultController extends Controller {
 				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystPixnet.bat", "r"));
 				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystXuite.bat", "r"));
 				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystPtt.bat", "r"));
-
 				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystMobile01.bat", "r"));
-				
-
-				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystMobile01.bat", "r"));                    		
-
-
 			
 
 				return view('wait',['search'=> $search,'searchtype'=>$searchtype,'searchweb'=>$searchweb]);
