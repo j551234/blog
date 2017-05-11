@@ -84,34 +84,34 @@
                     <ul class="submenu">
                         <li class="col-lg-3 col-md-6 text-center">Foods
                             <ul>
-                                <li class="mainlink"><a href='{{URL("index?show=pixnet&tag=$tag")}}#classification' class="firstMenu">Pixnet</a></li>
-                                <li class="mainlink"><a href='{{URL("index?show=xuite&tag=$tag")}}#classification' class="firstMenu">Xuite</a></li>
-                                <li class="mainlink"><a href='{{URL("index?show=ptt&tag=$tag")}}#classification' class="firstMenu">Ptt</a> </li>
-                                <li class="mainlink"><a href='{{URL("index?show=mobile01&tag=$tag")}}#classification' class="firstMenu">Mobile01</a> </li>
+                                <li class="mainlink"><a href='{{URL("index?show=pixnet&tag=food")}}#classification' class="firstMenu">Pixnet</a></li>
+                                <li class="mainlink"><a href='{{URL("index?show=xuite&tag=food")}}#classification' class="firstMenu">Xuite</a></li>
+                                <li class="mainlink"><a href='{{URL("index?show=ptt&tag=food")}}#classification' class="firstMenu">Ptt</a> </li>
+                                <li class="mainlink"><a href='{{URL("index?show=mobile01&tag=food")}}#classification' class="firstMenu">Mobile01</a> </li>
                             </ul>
                         </li>
                         <li class="col-lg-3 col-md-6 text-center">Dresses
                             <ul>
-                                <li class="mainlink"><a href='{{URL("index?show=pixnet&tag=$tag")}}#classification' class="firstMenu">Pixnet</a></li>
-                                <li class="mainlink"><a href='{{URL("index?show=xuite&tag=$tag")}}#classification' class="firstMenu">Xuite</a></li>
-                                <li class="mainlink"><a href='{{URL("index?show=ptt&tag=$tag")}}#classification' class="firstMenu">Ptt</a> </li>
-                                <li class="mainlink"><a href='{{URL("index?show=mobile01&tag=$tag")}}#classification' class="firstMenu">Mobile01</a> </li>
+                                <li class="mainlink"><a href='{{URL("index?show=pixnet&tag=dress")}}#classification' class="firstMenu">Pixnet</a></li>
+<!--                                 <li class="mainlink"><a href='{{URL("index?show=xuite&tag=$tag")}}#classification' class="firstMenu">Xuite</a></li> -->
+                                <li class="mainlink"><a href='{{URL("index?show=ptt&tag=dress")}}#classification' class="firstMenu">Ptt</a> </li>
+                                <li class="mainlink"><a href='{{URL("index?show=mobile01&tag=dress")}}#classification' class="firstMenu">Mobile01</a> </li>
                             </ul>
                         </li>
                         <li class="col-lg-3 col-md-6 text-center">Travel
                             <ul>
-                                <li class="mainlink"><a href='{{URL("index?show=pixnet&tag=$tag")}}#classification' class="firstMenu">Pixnet</a></li>
-                                <li class="mainlink"><a href='{{URL("index?show=xuite&tag=$tag")}}#classification' class="firstMenu">Xuite</a></li>
-                                <li class="mainlink"><a href='{{URL("index?show=ptt&tag=$tag")}}#classification' class="firstMenu">Ptt</a> </li>
-                                <li class="mainlink"><a href='{{URL("index?show=mobile01&tag=$tag")}}#classification' class="firstMenu">Mobile01</a> </li>
+                                <li class="mainlink"><a href='{{URL("index?show=pixnet&tag=travel")}}#classification' class="firstMenu">Pixnet</a></li>
+<!--                                 <li class="mainlink"><a href='{{URL("index?show=xuite&tag=$tag")}}#classification' class="firstMenu">Xuite</a></li> -->
+                                <li class="mainlink"><a href='{{URL("index?show=ptt&tag=travel")}}#classification' class="firstMenu">Ptt</a> </li>
+                                <li class="mainlink"><a href='{{URL("index?show=mobile01&tag=travel")}}#classification' class="firstMenu">Mobile01</a> </li>
                             </ul>
                         </li>
                         <li class="col-lg-3 col-md-6 text-center">Digital
                             <ul>
-                                <li class="mainlink"><a href='{{URL("index?show=pixnet&tag=$tag")}}#classification' class="firstMenu">Pixnet</a></li>
-                                <li class="mainlink"><a href='{{URL("index?show=xuite&tag=$tag")}}#classification' class="firstMenu">Xuite</a></li>
-                                <li class="mainlink"><a href='{{URL("index?show=ptt&tag=$tag")}}#classification' class="firstMenu">Ptt</a> </li>
-                                <li class="mainlink"><a href='{{URL("index?show=mobile01&tag=$tag")}}#classification' class="firstMenu">Mobile01</a> </li>
+                                <li class="mainlink"><a href='{{URL("index?show=pixnet&tag=digital")}}#classification' class="firstMenu">Pixnet</a></li>
+<!--                                 <li class="mainlink"><a href='{{URL("index?show=xuite&tag=digital")}}#classification' class="firstMenu">Xuite</a></li> -->
+                                <li class="mainlink"><a href='{{URL("index?show=ptt&tag=digital")}}#classification' class="firstMenu">Ptt</a> </li>
+                                <li class="mainlink"><a href='{{URL("index?show=mobile01&tag=digital")}}#classification' class="firstMenu">Mobile01</a> </li>
                             </ul>
                         </li>
                      </ul>
