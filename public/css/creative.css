@@ -86,9 +86,8 @@ p {
     display: inline-block;
     padding: 0em 2em;
     min-width: 10em;
-    border-right: 1px dotted #666;
     position: relative;
-    font-size: 1.3em;
+    font-size: 1.6em;
     margin-bottom: 0.5em;
 }
 
@@ -106,7 +105,7 @@ p {
 
 .menu>.submenu>li>ul {
     padding: .5em;
-    transition: max-height 0.5s;
+    transition: max-height 0.8s;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
     max-height: 0em;
@@ -114,15 +113,15 @@ p {
     list-style-type: none;
     position: absolute;
     z-index: 100;
-    width: 100%;
-    left: 0;
+    width: 60%;
+    left: 2.6em;
     top: 100%;
     background-color: rgba(255, 255, 255, .87)
 }
 
 .menu>.submenu>li>ul>li {
     letter-spacing: 0.1em;
-    font-size: 1em;
+    font-size: 0.8em;
     padding: 0.5em 0;
 }
 
