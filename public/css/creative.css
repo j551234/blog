@@ -637,7 +637,7 @@ label {
 }
 
 .text-primary {
-    color: #F05F40;
+    color: rgb(210,210,210);
 }
 .text-primary:hover {
     color:red;

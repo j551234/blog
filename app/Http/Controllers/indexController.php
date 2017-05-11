@@ -29,18 +29,18 @@ class indexController extends Controller {
 					{
 
 					if($show=='pixnet')
-						$showdata =pixnet::orderBy('id', 'desc')->paginate(12); 
+						$showdata =indexpixnet::orderBy('id', 'desc')->paginate(12); 
 					if($show=='xuite')
-						$showdata =xuite::orderBy('id', 'desc')->paginate(12); 
+						$showdata =indexxuite::orderBy('id', 'desc')->paginate(12); 
 					if($show=='ptt')
 						$showdata =ptt::orderBy('id', 'desc')->paginate(12);
 
 					if($show=='mobile01')
-						$showdata =mobile01::orderBy('id', 'desc')->paginate(12); 
+						$showdata =indexmobile01::orderBy('id', 'desc')->paginate(12); 
 					}
 					else
 					{
-						$showdata =pixnet::orderBy('id', 'desc')->paginate(12);
+						$showdata =indexpixnet::inRandomOrder()->paginate(12);
 					}
 				$tag=null;
 			}
@@ -59,7 +59,7 @@ class indexController extends Controller {
 			
 					
 				else{
-					$showdata =indexpixnet::orderBy('id', 'desc')->paginate(12);
+					$showdata =indexpixnet::inRandomOrder()->paginate(12);
 					$show==null;
 				}
 
@@ -263,14 +263,14 @@ class indexController extends Controller {
 							{
 
 							if($show=='pixnet')
-								$showdata =pixnet::orderBy('id', 'desc')->paginate(12); 
+								$showdata =indexpixnet::orderBy('id', 'desc')->paginate(12); 
 							if($show=='xuite')
-								$showdata =xuite::orderBy('id', 'desc')->paginate(12); 
+								$showdata =indexxuite::orderBy('id', 'desc')->paginate(12); 
 							if($show=='ptt')
-								$showdata =ptt::orderBy('id', 'desc')->paginate(12);
+								$showdata =indexptt::orderBy('id', 'desc')->paginate(12);
 
 							if($show=='mobile01')
-								$showdata =mobile01::orderBy('id', 'desc')->paginate(12); 
+								$showdata =indexmobile01::orderBy('id', 'desc')->paginate(12); 
 							}
 						else
 							{
@@ -293,7 +293,7 @@ class indexController extends Controller {
 					
 							
 						else{
-							$showdata =indexpixnet::where('tag','=',$tag)->paginate(12);
+							$showdata =indexpixnet::inRandomOrder()->paginate(12);
 						
 						}
 					}
