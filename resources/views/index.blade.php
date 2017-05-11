@@ -60,33 +60,61 @@
                     <div class="classification-box">
                         <a class="btn" href='{{URL("category?show=$show&tag=food")}}#classification'>
                         <i class="fa fa-4x fa-cutlery text-primary sr-icons" ></i></a>
-                        <h3>Foods</h3>
-                        <p class="text-muted"></p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="classification-box">
                          <a class="btn" href='{{URL("category?show=$show&tag=dress")}}#classification'>
                         <i class="fa fa-4x fa-user text-primary sr-icons"></i></a>
-                        <h3>Dresses</h3>
-                        <p class="text-muted"></p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="classification-box">
                         <a class="btn" href='{{URL("category?show=$show&tag=travel")}}#classification'>
                         <i class="fa fa-4x fa-plane text-primary sr-icons"></i></a>
-                        <h3>Travel</h3>
-                        <p class="text-muted"></p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="classification-box">
                         <a class="btn" href='{{URL("category?show=$show&tag=digital")}}#classification'>
                         <i class="fa fa-4x fa-laptop text-primary sr-icons"></i></a>
-                        <h3>Digital</h3>
-                        <p class="text-muted"></p>
                     </div>
+                </div>
+                <div class="menu text-center">
+                    <ul class="submenu">
+                        <li class="col-lg-3 col-md-6 text-center">Foods
+                            <ul>
+                                <li class="mainlink"><a href='{{URL("index?show=pixnet&tag=$tag")}}#classification' class="firstMenu">Pixnet</a></li>
+                                <li class="mainlink"><a href='{{URL("index?show=xuite&tag=$tag")}}#classification' class="firstMenu">Xuite</a></li>
+                                <li class="mainlink"><a href='{{URL("index?show=ptt&tag=$tag")}}#classification' class="firstMenu">Ptt</a> </li>
+                                <li class="mainlink"><a href='{{URL("index?show=mobile01&tag=$tag")}}#classification' class="firstMenu">Mobile01</a> </li>
+                            </ul>
+                        </li>
+                        <li class="col-lg-3 col-md-6 text-center">Dresses
+                            <ul>
+                                <li class="mainlink"><a href='{{URL("index?show=pixnet&tag=$tag")}}#classification' class="firstMenu">Pixnet</a></li>
+                                <li class="mainlink"><a href='{{URL("index?show=xuite&tag=$tag")}}#classification' class="firstMenu">Xuite</a></li>
+                                <li class="mainlink"><a href='{{URL("index?show=ptt&tag=$tag")}}#classification' class="firstMenu">Ptt</a> </li>
+                                <li class="mainlink"><a href='{{URL("index?show=mobile01&tag=$tag")}}#classification' class="firstMenu">Mobile01</a> </li>
+                            </ul>
+                        </li>
+                        <li class="col-lg-3 col-md-6 text-center">Travel
+                            <ul>
+                                <li class="mainlink"><a href='{{URL("index?show=pixnet&tag=$tag")}}#classification' class="firstMenu">Pixnet</a></li>
+                                <li class="mainlink"><a href='{{URL("index?show=xuite&tag=$tag")}}#classification' class="firstMenu">Xuite</a></li>
+                                <li class="mainlink"><a href='{{URL("index?show=ptt&tag=$tag")}}#classification' class="firstMenu">Ptt</a> </li>
+                                <li class="mainlink"><a href='{{URL("index?show=mobile01&tag=$tag")}}#classification' class="firstMenu">Mobile01</a> </li>
+                            </ul>
+                        </li>
+                        <li class="col-lg-3 col-md-6 text-center">Digital
+                            <ul>
+                                <li class="mainlink"><a href='{{URL("index?show=pixnet&tag=$tag")}}#classification' class="firstMenu">Pixnet</a></li>
+                                <li class="mainlink"><a href='{{URL("index?show=xuite&tag=$tag")}}#classification' class="firstMenu">Xuite</a></li>
+                                <li class="mainlink"><a href='{{URL("index?show=ptt&tag=$tag")}}#classification' class="firstMenu">Ptt</a> </li>
+                                <li class="mainlink"><a href='{{URL("index?show=mobile01&tag=$tag")}}#classification' class="firstMenu">Mobile01</a> </li>
+                            </ul>
+                        </li>
+                     </ul>
                 </div>
             </div> 
              <script type="text/javascript">                      
@@ -120,20 +148,7 @@
             <!--  row end -->
         </div>
         <!--  container end -->
-        <div class="menu text-center">
-        <ul class="submenu">
-    
-        
-            <li class="mainlink"><a href='{{URL("index?show=pixnet&tag=$tag")}}#classification' class="firstMenu">Pixnet</a>
-            </li>
-            <li class="mainlink"><a href='{{URL("index?show=xuite&tag=$tag")}}#classification' class="firstMenu">Xuite</a>
-            </li>
-            <li class="mainlink"><a href='{{URL("index?show=ptt&tag=$tag")}}#classification' class="firstMenu">Ptt</a>
-            </li>
-            <li class="mainlink"><a href='{{URL("index?show=mobile01&tag=$tag")}}#classification' class="firstMenu">Mobile01</a>
-            </li>
-        </ul>
-        </div>
+       
     </section>
 
     <section class="no-padding" id="artical">
