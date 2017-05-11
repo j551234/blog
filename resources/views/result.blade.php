@@ -116,10 +116,10 @@
             
                 <div class="my-rating-4" id="{{$data->id}}"> </div>
                 <div class="percentBall1">
-                    <div class="percentBall" data-percent="35" id="{{$data->id}}"></div>
+                    <div class="percentBall" data-percent="{{$data->content_analyst}}" id="{{$data->id}}"></div>
                 </div>
                 <div class="percentBall2">
-                    <div class="percentBall" data-percent="0" id="{{$data->id}}"></div>
+                    <div class="percentBall" data-percent="{{$data->title_analyst}}" id="{{$data->id}}"></div>
                 </div>
                 <script type="text/javascript">                      
                     $(".my-rating-4").starRating({
@@ -189,10 +189,10 @@
              
                  <div class="my-rating-4" id="{{$data->id}}"></div>
                  <div class="percentBall1">
-                    <div class="percentBall" data-percent="80" id="{{$data->id}}"></div>
+                    <div class="percentBall" data-percent="{{$data->content_analyst}}" id="{{$data->id}}"></div>
                 </div>
                 <div class="percentBall2">
-                    <div class="percentBall" data-percent="50" id="{{$data->id}}"></div>
+                    <div class="percentBall" data-percent="{{$data->title_analyst}}" id="{{$data->id}}"></div>
                 </div>
                   <script type="text/javascript">                      
                     $(".my-rating-4").starRating({
@@ -260,10 +260,10 @@
              
                 <div class="my-rating-4" id="{{$data->id}}">  </div>
                 <div class="percentBall1">
-                    <div class="percentBall" data-percent="60" id="{{$data->id}}"></div>
+                    <div class="percentBall" data-percent="{{$data->content_analyst}}" id="{{$data->id}}"></div>
                 </div>
                 <div class="percentBall2">
-                    <div class="percentBall" data-percent="30" id="{{$data->id}}"></div>
+                    <div class="percentBall" data-percent="{{$data->title_analyst}}" id="{{$data->id}}"></div>
                 </div>
                   <script type="text/javascript">                      
                     $(".my-rating-4").starRating({
@@ -340,10 +340,10 @@
              
                 <div class="my-rating-4" id="{{$data->id}}"></div>
                 <div class="percentBall1">
-                    <div class="percentBall" data-percent="99" id="{{$data->id}}"></div>
+                    <div class="percentBall" data-percent="{{$data->content_analyst}}" id="{{$data->id}}"></div>
                 </div>
                 <div class="percentBall2">
-                    <div class="percentBall" data-percent="45" id="{{$data->id}}"></div>
+                    <div class="percentBall" data-percent="{{$data->title_analyst}}" id="{{$data->id}}"></div>
                 </div>
                   <script type="text/javascript">                      
                     $(".my-rating-4").starRating({
@@ -415,10 +415,10 @@
              
                 <div class="my-rating-4" id="{{$data->id}}"></div>
                 <div class="percentBall1">
-                    <div class="percentBall" data-percent="87" id="{{$data->id}}"></div>
+                    <div class="percentBall" data-percent="{{$data->content_analyst}}" id="{{$data->id}}"></div>
                 </div>
                 <div class="percentBall2">
-                    <div class="percentBall" data-percent="50" id="{{$data->id}}"></div>
+                    <div class="percentBall" data-percent="{{$data->title_analyst}}" id="{{$data->id}}"></div>
                 </div>
                   <script type="text/javascript">                      
                     $(".my-rating-4").starRating({
