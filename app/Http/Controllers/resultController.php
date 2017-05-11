@@ -70,7 +70,7 @@ class resultController extends Controller {
 			 			pclose($file4);
 										}
 				if(count($mobile01find)==0){
-                		$file5 = popen("start C://xampp/htdocs/project/python/SearchMobile01.py $url_key_word",'r'); 
+                		$file5 = popen("start/b C://xampp/htdocs/project/python/SearchMobile01.py $url_key_word",'r'); 
                  		pclose($file5);
                             		}
 				pclose(popen("start C:/xampp/htdocs/project/python/ToAnalystPixnet.bat", "r"));
