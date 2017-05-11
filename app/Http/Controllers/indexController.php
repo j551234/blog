@@ -40,7 +40,7 @@ class indexController extends Controller {
 					}
 					else
 					{
-						$showdata =indexpixnet::inRandomOrder()->paginate(12);
+						$showdata =indexmobile01::inRandomOrder()->paginate(12);
 					}
 				$tag=null;
 			}
@@ -59,7 +59,7 @@ class indexController extends Controller {
 			
 					
 				else{
-					$showdata =indexpixnet::inRandomOrder()->paginate(12);
+					$showdata =indexmobile01::inRandomOrder()->paginate(12);
 					$show==null;
 				}
 
@@ -293,7 +293,7 @@ class indexController extends Controller {
 					
 							
 						else{
-							$showdata =indexpixnet::inRandomOrder()->paginate(12);
+							$showdata =indexmobile01::inRandomOrder()->paginate(12);
 						
 						}
 					}
