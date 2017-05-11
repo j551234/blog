@@ -26,6 +26,8 @@ class contactController extends Controller {
     			)
 		);
 
+		
+
         return view('contact')->with('success','已送出回報');
 	
 	}
