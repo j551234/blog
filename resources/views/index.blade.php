@@ -1,6 +1,37 @@
 @extends('./layouts/master')
 
 @section('content')
+
+
+<!-- #
+#                       _oo0oo_
+#                      o8888888o
+#                      88" . "88
+#                      (| -_- |)
+#                      0\  =  /0
+#                    ___/`---'\___
+#                  .' \\|     |# '.
+#                 / \\|||  :  |||# \
+#                / _||||| -:- |||||- \
+#               |   | \\\  -  #/ |   |
+#               | \_|  ''\---/''  |_/ |
+#               \  .-\__  '-'  ___/-. /
+#             ___'. .'  /--.--\  `. .'___
+#          ."" '<  `.___\_<|>_/___.' >' "".
+#         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+#         \  \ `_.   \_ __\ /__ _/   .-` /  /
+#     =====`-.____`.___ \_____/___.-`___.-'=====
+#                       `=---='
+#
+#
+#     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+#               佛祖保佑         永无BUG
+#
+#
+# -->
+
+
     <header>
         <div class="header-content">
             <div class="header-content-inner">
@@ -125,19 +156,19 @@
                         let Changecolor=document.querySelectorAll(".text-primary")
                         switch(tag){
                             case "food":{
-                                Changecolor[0].style.color="#6a91b9"
+                                Changecolor[0].style.color="#F05F40"
                                 break
                             }
                             case "dress":{
-                                Changecolor[1].style.color="#6a91b9"
+                                Changecolor[1].style.color="#F05F40"
                                 break
                             }
                             case "travel":{
-                                Changecolor[2].style.color="#6a91b9"
+                                Changecolor[2].style.color="#F05F40"
                                 break
                             }
                             case "digital":{
-                                Changecolor[3].style.color="#6a91b9"
+                                Changecolor[3].style.color="#F05F40"
                                 break
                             }
                         }
