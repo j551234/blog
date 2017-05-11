@@ -34,5 +34,8 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+    'mandrill' => [
+    'secret' => 'your-mandrill-key', // use .env variables as above to remove from version control
+    ],
 
 ];

@@ -59,7 +59,7 @@ class indexController extends Controller {
 			
 					
 				else{
-					$showdata =pixnet::orderBy('id', 'desc')->paginate(12);
+					$showdata =indexpixnet::orderBy('id', 'desc')->paginate(12);
 					$show==null;
 				}
 

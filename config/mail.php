@@ -16,7 +16,9 @@ return [
     |
     */
 
-    'driver' => env('MAIL_DRIVER', 'smtp'),
+    'driver' => 'smtp',
+    
+
 
     /*
     |--------------------------------------------------------------------------
@@ -28,6 +30,7 @@ return [
     | the Mailgun mail service which will provide reliable deliveries.
     |
     */
+    // 'host' => 'smtp.gmail.com',
 
     'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
 
@@ -41,6 +44,7 @@ return [
     | stay compatible with the Mailgun e-mail application by default.
     |
     */
+        // 'port' => 587,
 
     'port' => env('MAIL_PORT', 587),
 
@@ -56,8 +60,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'owenpeng19960704@gmail.com'),
+        'name' => env('MAIL_FROM_NAME','system'),
     ],
 
     /*
@@ -87,6 +91,9 @@ return [
     'username' => env('MAIL_USERNAME'),
 
     'password' => env('MAIL_PASSWORD'),
+
+    // 'username' => 'owenpeng19960704',
+    // 'password' => 'owenpeng',
 
     /*
     |--------------------------------------------------------------------------

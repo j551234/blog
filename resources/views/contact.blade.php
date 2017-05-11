@@ -48,7 +48,17 @@
 						
 
 
-					    <input class="submit-btn" name="saveForm" type="submit" value="Send Message"  onclick="return(confirm('確認要送出本表單嗎？'))">
+					    <input class="submit-btn" name="saveForm" type="submit" value="Send Message">
+					    <script type="text/javascript">
+					    	document.querySelector('input[type*=submit]').onclick=(e)=>{
+					    		if(confirm("是否送出訊息?")){
+					    			alert("成功")
+					    		}
+					    		else{
+					    			e.preventDefault()
+					    		}
+					    	}
+					    </script>
 
 						<div class="hide">
 							<label for="comment">Do Not Fill This Out</label>
