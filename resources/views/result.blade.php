@@ -339,12 +339,12 @@
                
              
                 <div class="my-rating-4" id="{{$data->id}}"></div>
-                <div class="percentBall1">
+         <!--        <div class="percentBall1">
                     <div class="percentBall" data-percent="{{$data->content_analyst}}" id="{{$data->id}}"></div>
                 </div>
                 <div class="percentBall2">
                     <div class="percentBall" data-percent="{{$data->title_analyst}}" id="{{$data->id}}"></div>
-                </div>
+                </div> -->
                   <script type="text/javascript">                      
                     $(".my-rating-4").starRating({
                         totalStars: 5,
