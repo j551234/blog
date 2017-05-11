@@ -518,9 +518,13 @@
                } else if (percent <50 && percent > 0) {
                    foregroundColor = "green"
                    fontcolor = "green"
-               } else {
+               } else if (percent == 0) {
                    backgroundColor = "#404040"
                    fontcolor = "red"
+               }
+               else {
+                   percent = null
+                   fontcolor = "rgba(255,255,255,0)"
                }
 
 
