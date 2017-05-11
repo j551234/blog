@@ -125,19 +125,19 @@
                         let Changecolor=document.querySelectorAll(".text-primary")
                         switch(tag){
                             case "food":{
-                                Changecolor[0].style.color="red"
+                                Changecolor[0].style.color="#6a91b9"
                                 break
                             }
                             case "dress":{
-                                Changecolor[1].style.color="red"
+                                Changecolor[1].style.color="#6a91b9"
                                 break
                             }
                             case "travel":{
-                                Changecolor[2].style.color="red"
+                                Changecolor[2].style.color="#6a91b9"
                                 break
                             }
                             case "digital":{
-                                Changecolor[3].style.color="red"
+                                Changecolor[3].style.color="#6a91b9"
                                 break
                             }
                         }
