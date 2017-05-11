@@ -77,15 +77,15 @@
 	    <div>
                 <div class="col-lg-4 text-center">
                     <i class="fa fa-phone fa-3x sr-contact"></i>
-                    <p>123-456-6789</p>
+                    <p>0903-380-830</p>
                 </div>
                 <div class="col-lg-4 text-center">
                     <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-                    <p><a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a></p>
+                    <p><a href="mailto:10030812peter@gmail.com">10030812peter@gmail.com</a></p>
                 </div>
                 <div class="col-lg-4 text-center">
                     <i class="fa fa-facebook-official fa-3x sr-contact"></i>
-                    <p>123-456-6789</p>
+                    <p>MR. 中鑒者</p>
                 </div>
             </div>
         </div>
