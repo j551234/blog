@@ -36,7 +36,7 @@ class contactController extends Controller {
    		ini_set("smtp_port","25");
   		ini_set("sendmail_from","owenpeng19960704@gmail.com");
    	
-	  	Mail::send('contact', $request, function ($message) use ($request) {
+	  	Mail::send('feedback', $request, function ($message) use ($request) {
                 $message->to($request[2], $request[1])->subject('已收到回應 我們會盡快回復');
         });
        
