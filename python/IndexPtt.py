@@ -6,7 +6,10 @@ from bs4 import BeautifulSoup
 conn = MySQLdb.connect(host="localhost", user="root", passwd="", db="python",charset='utf8')#連結資料庫
 cur = conn.cursor()
 sqli = "insert into indexptt (tag,search_title,search_author,search_href) values (%s,%s,%s,%s)" #選擇資料
-
+#刪除資料庫
+deletespli = "truncate table indexptt"
+cur.execute(deletespli) 
+conn.commit()
 def pttcrawler(a,b):
     current_page= PTT_URL +'/bbs/'+a+'/index.html'
     for page in range(1,5):

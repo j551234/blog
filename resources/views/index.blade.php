@@ -219,9 +219,9 @@
              {{$showdata->fragment('classification')->links()}} 
             </div>
         </div>
-        $abc = "123";
+   <!--      $abc = "123";
         "$abc" => 123
-        '$abc' => $abc
+        '$abc' => $abc -->
     </section>
      <script type="text/javascript">
             let show=window.location.search.match(/show=[^&]+/)
