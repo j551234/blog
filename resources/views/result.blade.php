@@ -157,7 +157,7 @@
                 
 
             </div>
-            <div class="col-md-5 detail">
+            <div class="col-md-5">
                 <h3><a href="{{$data->search_href}}" target="_blank">{{$data->search_title}}</a></h3>
                 <h4>{{$data->search_time}}</h4>
                 <h4>作者:<a href="{{$data->author_href}}" target="_blank">{{$data->search_author}}</a></h4>
@@ -243,12 +243,15 @@
                 </div>
                  <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
              
-                 <div class="my-rating-4" id="{{$data->id}}"></div>
+                 <div class="my-rating-4" id="{{$data->id}}">
                  <div class="percentBall1">
+                    <div class="ballTitle text-muted">內文分析</div>                    
                     <div class="percentBall" data-percent="{{$data->content_analyst}}" id="{{$data->id}}"></div>
                 </div>
                 <div class="percentBall2">
+                    <div class="ballTitle text-muted">標題分析</div>
                     <div class="percentBall" data-percent="{{$data->title_analyst}}" id="{{$data->id}}"></div>
+                </div>
                 </div>
                   <script type="text/javascript">                      
                     $(".my-rating-4").starRating({
