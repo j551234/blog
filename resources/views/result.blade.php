@@ -170,14 +170,15 @@
                    <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
                
             
-                <div class="my-rating-4" id="{{$data->id}}"> </div>
-                <div class="percentBall1">
-                    <div class="ballTitle text-muted">內文分析</div>
-                    <div class="percentBall" data-percent="{{$data->content_analyst}}" id="{{$data->id}}"></div>
-                </div>
-                <div class="percentBall2">
-                    <div class="ballTitle text-muted">標題分析</div>
-                    <div class="percentBall" data-percent="{{$data->title_analyst}}" id="{{$data->id}}"></div>
+                <div class="my-rating-4" id="{{$data->id}}"> 
+                    <div class="percentBall1">
+                        <div class="ballTitle text-muted">內文分析</div>
+                        <div class="percentBallC" data-percent="{{$data->content_analyst}}" id="{{$data->id}}"></div>
+                    </div>
+                    <div class="percentBall2">
+                        <div class="ballTitle text-muted">標題分析</div>
+                        <div class="percentBallT" data-percent="{{$data->title_analyst}}" id="{{$data->id}}"></div>
+                    </div>
                 </div>
                 <script type="text/javascript">                      
                     $(".my-rating-4").starRating({
@@ -246,14 +247,14 @@
                  <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
              
                  <div class="my-rating-4" id="{{$data->id}}">
-                 <div class="percentBall1">
-                    <div class="ballTitle text-muted">內文分析</div>                    
-                    <div class="percentBallC" data-percent="{{$data->content_analyst}}" id="{{$data->id}}"></div>
-                </div>
-                <div class="percentBall2">
-                    <div class="ballTitle text-muted">標題分析</div>
-                    <div class="percentBallT" data-percent="{{$data->title_analyst}}" id="{{$data->id}}"></div>
-                </div>
+                    <div class="percentBall1">
+                        <div class="ballTitle text-muted">內文分析</div>                    
+                        <div class="percentBallC" data-percent="{{$data->content_analyst}}" id="{{$data->id}}"></div>
+                    </div>
+                    <div class="percentBall2">
+                        <div class="ballTitle text-muted">標題分析</div>
+                        <div class="percentBallT" data-percent="{{$data->title_analyst}}" id="{{$data->id}}"></div>
+                    </div>
                 </div>
                   <script type="text/javascript">                      
                     $(".my-rating-4").starRating({
@@ -319,14 +320,15 @@
 
               
              
-                <div class="my-rating-4" id="{{$data->id}}">  </div>
-                <div class="percentBall1">
-                    <div class="ballTitle text-muted">內文分析</div>
-                    <div class="percentBall" data-percent="{{$data->content_analyst}}" id="{{$data->id}}"></div>
-                </div>
-                <div class="percentBall2">
-                    <div class="ballTitle text-muted">標題分析</div>
-                    <div class="percentBall" data-percent="{{$data->title_analyst}}" id="{{$data->id}}"></div>
+                <div class="my-rating-4" id="{{$data->id}}">  
+                    <div class="percentBall1">
+                        <div class="ballTitle text-muted">內文分析</div>
+                        <div class="percentBallC" data-percent="{{$data->content_analyst}}" id="{{$data->id}}"></div>
+                    </div>
+                    <div class="percentBall2">
+                        <div class="ballTitle text-muted">標題分析</div>
+                        <div class="percentBallT" data-percent="{{$data->title_analyst}}" id="{{$data->id}}"></div>
+                    </div>
                 </div>
                   <script type="text/javascript">                      
                     $(".my-rating-4").starRating({
@@ -476,14 +478,15 @@
              
                
              
-                <div class="my-rating-4" id="{{$data->id}}"></div>
-                <div class="percentBall1">
-                    <div class="ballTitle text-muted">內文分析</div>
-                    <div class="percentBall" data-percent="{{$data->content_analyst}}" id="{{$data->id}}"></div>
-                </div>
-                <div class="percentBall2">
-                    <div class="ballTitle text-muted">標題分析</div>
-                    <div class="percentBall" data-percent="{{$data->title_analyst}}" id="{{$data->id}}"></div>
+                <div class="my-rating-4" id="{{$data->id}}">
+                    <div class="percentBall1">
+                        <div class="ballTitle text-muted">內文分析</div>
+                        <div class="percentBallC" data-percent="{{$data->content_analyst}}" id="{{$data->id}}"></div>
+                    </div>
+                    <div class="percentBall2">
+                        <div class="ballTitle text-muted">標題分析</div>
+                        <div class="percentBallT" data-percent="{{$data->title_analyst}}" id="{{$data->id}}"></div>
+                    </div>
                 </div>
                   <script type="text/javascript">                      
                     $(".my-rating-4").starRating({
