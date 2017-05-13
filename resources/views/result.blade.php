@@ -170,12 +170,15 @@
                    <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
                
             
-                <div class="my-rating-4" id="{{$data->id}}"> </div>
-                <div class="percentBall1">
-                    <div class="percentBall" data-percent="{{$data->content_analyst}}" id="{{$data->id}}"></div>
-                </div>
-                <div class="percentBall2">
-                    <div class="percentBall" data-percent="{{$data->title_analyst}}" id="{{$data->id}}"></div>
+                <div class="my-rating-4" id="{{$data->id}}"> 
+                    <div class="percentBall1">
+                        <div class="ballTitle text-muted">內文分析</div>
+                        <div class="percentBallC" data-percent="{{$data->content_analyst}}" id="{{$data->id}}"></div>
+                    </div>
+                    <div class="percentBall2">
+                        <div class="ballTitle text-muted">標題分析</div>
+                        <div class="percentBallT" data-percent="{{$data->title_analyst}}" id="{{$data->id}}"></div>
+                    </div>
                 </div>
                 <script type="text/javascript">                      
                     $(".my-rating-4").starRating({
@@ -244,14 +247,14 @@
                  <a class="btn btn-primary" href="{{$data->search_href}}" target="_blank">查看更多 <span class="glyphicon glyphicon-chevron-right"></span></a>
              
                  <div class="my-rating-4" id="{{$data->id}}">
-                 <div class="percentBall1">
-                    <div class="ballTitle text-muted">內文分析</div>                    
-                    <div class="percentBall" data-percent="{{$data->content_analyst}}" id="{{$data->id}}"></div>
-                </div>
-                <div class="percentBall2">
-                    <div class="ballTitle text-muted">標題分析</div>
-                    <div class="percentBall" data-percent="{{$data->title_analyst}}" id="{{$data->id}}"></div>
-                </div>
+                    <div class="percentBall1">
+                        <div class="ballTitle text-muted">內文分析</div>                    
+                        <div class="percentBallC" data-percent="{{$data->content_analyst}}" id="{{$data->id}}"></div>
+                    </div>
+                    <div class="percentBall2">
+                        <div class="ballTitle text-muted">標題分析</div>
+                        <div class="percentBallT" data-percent="{{$data->title_analyst}}" id="{{$data->id}}"></div>
+                    </div>
                 </div>
                   <script type="text/javascript">                      
                     $(".my-rating-4").starRating({
@@ -317,12 +320,15 @@
 
               
              
-                <div class="my-rating-4" id="{{$data->id}}">  </div>
-                <div class="percentBall1">
-                    <div class="percentBall" data-percent="{{$data->content_analyst}}" id="{{$data->id}}"></div>
-                </div>
-                <div class="percentBall2">
-                    <div class="percentBall" data-percent="{{$data->title_analyst}}" id="{{$data->id}}"></div>
+                <div class="my-rating-4" id="{{$data->id}}">  
+                    <div class="percentBall1">
+                        <div class="ballTitle text-muted">內文分析</div>
+                        <div class="percentBallC" data-percent="{{$data->content_analyst}}" id="{{$data->id}}"></div>
+                    </div>
+                    <div class="percentBall2">
+                        <div class="ballTitle text-muted">標題分析</div>
+                        <div class="percentBallT" data-percent="{{$data->title_analyst}}" id="{{$data->id}}"></div>
+                    </div>
                 </div>
                   <script type="text/javascript">                      
                     $(".my-rating-4").starRating({
@@ -472,12 +478,15 @@
              
                
              
-                <div class="my-rating-4" id="{{$data->id}}"></div>
-                <div class="percentBall1">
-                    <div class="percentBall" data-percent="{{$data->content_analyst}}" id="{{$data->id}}"></div>
-                </div>
-                <div class="percentBall2">
-                    <div class="percentBall" data-percent="{{$data->title_analyst}}" id="{{$data->id}}"></div>
+                <div class="my-rating-4" id="{{$data->id}}">
+                    <div class="percentBall1">
+                        <div class="ballTitle text-muted">內文分析</div>
+                        <div class="percentBallC" data-percent="{{$data->content_analyst}}" id="{{$data->id}}"></div>
+                    </div>
+                    <div class="percentBall2">
+                        <div class="ballTitle text-muted">標題分析</div>
+                        <div class="percentBallT" data-percent="{{$data->title_analyst}}" id="{{$data->id}}"></div>
+                    </div>
                 </div>
                   <script type="text/javascript">                      
                     $(".my-rating-4").starRating({
@@ -563,7 +572,47 @@
                         a.href += "&"+searchweb[0];
             })
 
-            const makePie = (where, percent) => {
+            const makePieT = (where, percent) => {
+               let foregroundColor
+               let fontcolor
+               let backgroundColor
+               console.log(percent)
+               if (percent > 20 || (percent <= 3 && percent > 0)) {
+                   foregroundColor = "red"
+                   fontcolor = "red"
+               } else if (percent <= 20 && percent > 10) {
+                   foregroundColor = "orange"
+                   fontcolor = "orange"
+               } else if (percent <=10 && percent > 3) {
+                   foregroundColor = "green"
+                   fontcolor = "green"
+               } else if (percent == 0) {
+                   backgroundColor = "#404040"
+                   fontcolor = "red"
+               }
+               else {
+                   percent = null
+                   fontcolor = "rgba(255,255,255,0)"
+               }
+
+
+               $(where).circliful({
+                   animation: 1,
+                   animationStep: 5,
+                   foregroundColor: foregroundColor,
+                   backgroundColor: backgroundColor,
+                   foregroundBorderWidth: 15,
+                   backgroundBorderWidth: 15,
+                   textSize: 28,
+                   textStyle: 'font-size: 12px;',
+                   textColor: '#666',
+                   fontColor: fontcolor,
+                   percent: percent,
+                   multiPercentage: 1,
+                   percentages: [10, 20, 30]
+               });
+           }
+           const makePieC = (where, percent) => {
                let foregroundColor
                let fontcolor
                let backgroundColor
@@ -571,10 +620,10 @@
                if (percent >= 75) {
                    foregroundColor = "red"
                    fontcolor = "red"
-               } else if (percent >= 50) {
+               } else if (percent < 75 && percent > 50) {
                    foregroundColor = "orange"
                    fontcolor = "orange"
-               } else if (percent <50 && percent > 0) {
+               } else if (percent <=50 && percent > 0) {
                    foregroundColor = "green"
                    fontcolor = "green"
                } else if (percent == 0) {
@@ -605,11 +654,15 @@
            }
 
            $(document).ready(function() {
-            Array.from(document.querySelectorAll(".percentBall")).forEach((el)=>{
-                makePie(el,el.dataset.percent)
+            Array.from(document.querySelectorAll(".percentBallT")).forEach((el)=>{
+                makePieT(el,el.dataset.percent)
             })
-
-           });
+            })
+           ;$(document).ready(function() {
+            Array.from(document.querySelectorAll(".percentBallC")).forEach((el)=>{
+                makePieC(el,el.dataset.percent)
+            })
+            })
         </script>
         
         
