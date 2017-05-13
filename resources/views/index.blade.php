@@ -201,9 +201,6 @@
                                 <div class="project-name text-faded">
                                    {{$data->search_author}}
                                 </div>
-                                <div class="avgscore text-faded">
-                                    {{round($data->total_score/$data->score_people,2)}}
-                                </div>
                             </div>
                         </div>
                     </a>
