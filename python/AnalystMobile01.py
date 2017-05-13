@@ -80,6 +80,8 @@ def analyst (results):
             Content_Analyst = "0"
 
         else:
+            total_pos_count=total_pos_count+1
+            total_count=total_count+2
             Content_Analyst = format(total_pos_count/total_count*100 , '0.2f')
         print (mobile01_id)   
         cur.execute ("UPDATE mobile01 SET content_analyst=%s WHERE id='%s'" %  (Content_Analyst,mobile01_id))

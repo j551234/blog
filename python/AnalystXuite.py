@@ -89,6 +89,8 @@ def analyst(results):
             if total_count==0:
                 Content_Analyst = "0"
             else:
+                total_pos_count=total_pos_count+1
+                total_count=total_count+2
                 Content_Analyst = format(total_pos_count/total_count*100 , '0.2f')
             cur.execute ("UPDATE xuite SET content_analyst=%s WHERE id='%s'" %  (Content_Analyst,xuite_id))
             conn.commit()

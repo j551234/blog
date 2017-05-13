@@ -101,6 +101,8 @@ def analyst(results):
                 Content_Analyst = "0"
 
             else:
+                total_pos_count=total_pos_count+1
+                total_count=total_count+2
                 Content_Analyst = format(total_pos_count/total_count*100 , '0.2f')
             print (pixnet_id)
             print (Content_Analyst)
