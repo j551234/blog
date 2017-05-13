@@ -18,11 +18,11 @@ with open('positive.txt', 'r',encoding='UTF-8') as positive:
         pos.append(line.strip('\ufeff').strip())
     positive.close()
 
-with open('nagative.txt', 'r',encoding='UTF-8') as nagative:
-    nag=[]
-    for line in nagative:
-        nag.append(line.strip('\ufeff').strip())
-    nagative.close()
+with open('negative.txt', 'r',encoding='UTF-8') as negative:
+    neg=[]
+    for line in negative:
+        neg.append(line.strip('\ufeff').strip())
+    negative.close()
 
 with open('paid news.txt', 'r',encoding='UTF-8') as paidnews:
     paid=[]
@@ -31,7 +31,7 @@ with open('paid news.txt', 'r',encoding='UTF-8') as paidnews:
     paidnews.close()
 
 pos_set=set(pos)
-nag_set=set(nag)
+neg_set=set(neg)
 paid_set=set(paid)
 
 def remove_values_from_list(the_list, val):
@@ -73,7 +73,7 @@ def analyst(results):
             sentence=remove_values_from_list(sentence,'')
 
             total_pos_count=0
-            total_nag_count=0
+            total_neg_count=0
             total_paid_count=0
             for line in sentence:
 
@@ -81,21 +81,19 @@ def analyst(results):
                 words=jieba.lcut(line2, cut_all=False)
                 words_set = set(words)
                 pos_intersection=words_set.intersection(pos_set)
-                nag_intersection=words_set.intersection(nag_set)
+                neg_intersection=words_set.intersection(neg_set)
                 paid_intersection=words_set.intersection(paid_set)
                 pos_count=len(pos_intersection)
-                nag_count=len(nag_intersection)
+                neg_count=len(neg_intersection)
                 paid_count=len(paid_intersection)
 
             total_pos_count=total_pos_count+pos_count
-            total_nag_count=total_nag_count+nag_count
+            total_neg_count=total_neg_count+neg_count
             total_paid_count=total_paid_count+paid_count
-            total_count = total_pos_count+total_nag_count+total_paid_count
+            total_count = total_pos_count+total_neg_count+total_paid_count
 
             print (ptt_id)
-            print(total_pos_count)
-            print(total_nag_count)
-            print(total_paid_count)
+
             if total_count==0:
                 Content_Analyst = "0"
                 print (Content_Analyst)
