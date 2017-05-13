@@ -87,9 +87,9 @@ def analyst(results):
                 neg_count=len(neg_intersection)
                 paid_count=len(paid_intersection)
 
-            total_pos_count=total_pos_count+pos_count
-            total_neg_count=total_neg_count+neg_count
-            total_paid_count=total_paid_count+paid_count
+                total_pos_count=total_pos_count+pos_count
+                total_neg_count=total_neg_count+neg_count
+                total_paid_count=total_paid_count+paid_count
             total_count = total_pos_count+total_neg_count+total_paid_count
 
             print (ptt_id)
