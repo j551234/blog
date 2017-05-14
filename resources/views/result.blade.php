@@ -405,12 +405,6 @@
                
              
                 <div class="my-rating-4" id="{{$data->id}}"></div>
-         <!--        <div class="percentBall1">
-                    <div class="percentBall" data-percent="{{$data->content_analyst}}" id="{{$data->id}}"></div>
-                </div>
-                <div class="percentBall2">
-                    <div class="percentBall" data-percent="{{$data->title_analyst}}" id="{{$data->id}}"></div>
-                </div> -->
                   <script type="text/javascript">                      
                     $(".my-rating-4").starRating({
                         totalStars: 5,
@@ -627,16 +621,7 @@
                } else if (percent <=50 && percent > 0) {
                    foregroundColor = "green"
                    fontcolor = "green"
-<<<<<<< HEAD
-               }
-               else if (percent==-1) {
-                   foregroundColor = "black"
-                   fontcolor = "black"
-                   percent='未分析'
-               }else {
-=======
-               } else if (percent == 0) {
->>>>>>> c9e731d380800d6e5df7bad388c19efbbd26e6e9
+               } else if (percent == 0) {   
                    backgroundColor = "#404040"
                    fontcolor = "red"
                }
