@@ -132,7 +132,7 @@
                         <li class="col-lg-3 col-md-6 text-center">Travel
                             <ul>
                                 <li class="mainlink"><a href='{{URL("index?show=pixnet&tag=travel")}}#classification' class="firstMenu">Pixnet</a></li>
-<!--                                 <li class="mainlink"><a href='{{URL("index?show=xuite&tag=$tag")}}#classification' class="firstMenu">Xuite</a></li> -->
+                                <li class="mainlink"><a href='{{URL("index?show=xuite&tag=$tag")}}#classification' class="firstMenu">Xuite</a></li>
                                 <li class="mainlink"><a href='{{URL("index?show=ptt&tag=travel")}}#classification' class="firstMenu">Ptt</a> </li>
                                 <li class="mainlink"><a href='{{URL("index?show=mobile01&tag=travel")}}#classification' class="firstMenu">Mobile01</a> </li>
                             </ul>
