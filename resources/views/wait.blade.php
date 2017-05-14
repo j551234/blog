@@ -34,7 +34,7 @@
                    
         <!-- /.row -->
    
-   <meta http-equiv="refresh" content='1;url={{URL("show?search=$search&searchtype=$searchtype&searchweb=$searchweb")}}' />
+   <meta http-equiv="refresh" content='5;url={{URL("show?search=$search&searchtype=$searchtype&searchweb=$searchweb")}}' />
 
 
 

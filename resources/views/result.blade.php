@@ -116,7 +116,7 @@
             
                 <div class="my-rating-4" id="{{$data->id}}"> </div>
                 <div class="percentBall1">
-                    <div class="percentBall" data-percent="{{$data->content_analyst}}" id="{{$data->id}}"></div>
+                    <div class="percentBall" data-percent="{{($data->content_analyst}}" id="{{$data->id}}"></div>
                 </div>
                 <div class="percentBall2">
                     <div class="percentBall" data-percent="{{$data->title_analyst}}" id="{{$data->id}}"></div>
@@ -518,7 +518,12 @@
                } else if (percent <50 && percent > 0) {
                    foregroundColor = "green"
                    fontcolor = "green"
-               } else {
+               }
+               else if (percent==-1) {
+                   foregroundColor = "black"
+                   fontcolor = "black"
+                   percent='未分析'
+               }else {
                    backgroundColor = "#404040"
                    fontcolor = "red"
                }
