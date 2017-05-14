@@ -70,7 +70,7 @@ for record in results:
     else :
         cur.execute ("DELETE FROM mobile01 WHERE id='%s'" %  (mobile01_id))
         conn.commit()
-    time.sleep(0.5)
+    time.sleep(1)
 
 cur.close()
 conn.close()
