@@ -3,6 +3,7 @@
 
 import requests
 import MySQLdb
+import time
 from bs4 import BeautifulSoup
 import jieba
 import jieba.analyse
@@ -108,9 +109,11 @@ def analyst(results):
             print (Content_Analyst)
             cur.execute ("UPDATE pixnet SET content_analyst=%s WHERE id='%s'" %  (Content_Analyst,pixnet_id))
             conn.commit()
+
         else :
             cur.execute ("DELETE FROM pixnet WHERE id='%s'" %  (pixnet_id))
             conn.commit()
+        time.sleep(1)
 
 result=get()
 print (len(result))

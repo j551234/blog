@@ -4,6 +4,7 @@
 import requests
 import MySQLdb
 from bs4 import BeautifulSoup
+import time
 import jieba
 import jieba.analyse
 
@@ -78,6 +79,7 @@ for record in results:
     else :
         cur.execute ("DELETE FROM pixnet WHERE id='%s'" %  (pixnet_id))
         conn.commit()
+    time.sleep(1)
 
 cur.close()
 conn.close()

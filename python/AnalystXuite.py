@@ -4,6 +4,7 @@
 import requests
 import MySQLdb
 from bs4 import BeautifulSoup
+import time
 import jieba
 import jieba.analyse
 
@@ -97,6 +98,7 @@ def analyst(results):
         else :
             cur.execute ("DELETE FROM xuite WHERE id='%s'" %  (xuite_id))
             conn.commit()
+        time.sleep(0.5)
 
 result=get()
 print (len(result))
