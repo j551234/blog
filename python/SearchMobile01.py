@@ -68,11 +68,11 @@ for change in range(2,5):
                 elif split[2]=='download.mobile01.com':
                     article_picture='https:'+picture
                 elif split[2]=='attach2.mobile01.com':
-                    article_picture='./img/mobile01.jpg'
+                    article_picture='./public/img/mobile01.jpg'
                 else:
                     article_picture=picture
             else:
-                article_picture='./img/mobile01.jpg'
+                article_picture='./public/img/mobile01.jpg'
             cur.execute(sqli,(chinese_key_word,search_title,search_href,search_time,search_author,article_picture,author_href,search_view)) #存入資料庫    
             conn.commit()
         time.sleep(0.5)
