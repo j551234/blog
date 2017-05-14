@@ -51,7 +51,7 @@ class resultController extends Controller {
 
 				
 				$url_key_word=urlencode(mb_convert_encoding($key_word, 'utf-8'));
-				 pclose(popen("start/b C://xampp/htdocs/project/python/InsertDict.py $url_key_word",'r'));
+				pclose(popen("start C://xampp/htdocs/project/python/InsertDict.py $url_key_word",'r'));
 
 				if(count($pixnetfind)==0){		
 						$file1 = popen("start/b C://xampp/htdocs/project/python/SearchPixnet.py $url_key_word",'r');

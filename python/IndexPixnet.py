@@ -8,6 +8,10 @@ from bs4 import BeautifulSoup
 conn = MySQLdb.connect(host="localhost", user="root", passwd="", db="python",charset='utf8')#連結資料庫
 cur = conn.cursor()
 sqli = "insert into indexpixnet (tag,search_title,search_author,search_href,article_picture) values (%s,%s,%s,%s,%s)" #選擇資料表
+#刪除資料庫
+deletespli = "truncate table indexpixnet"
+cur.execute(deletespli) 
+conn.commit()
 
 #food
 for  x  in range(1,10) : 

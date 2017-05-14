@@ -7,6 +7,12 @@ from selenium import webdriver
 
 conn = MySQLdb.connect(host="localhost", user="root", passwd="", db="python",charset='utf8')#連結資料庫
 cur = conn.cursor()
+
+#刪除資料庫
+deletespli = "truncate table indexmobile01"
+cur.execute(deletespli) 
+conn.commit()
+
 sqli = "insert into indexmobile01 (tag,search_title,search_author,search_href,article_picture) values (%s,%s,%s,%s,%s)" #選擇資料表
 
 def Mobile01crawler(a,b):

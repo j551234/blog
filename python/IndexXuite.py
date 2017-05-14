@@ -10,6 +10,10 @@ conn = MySQLdb.connect(host="localhost", user="root", passwd="", db="python",cha
 cur = conn.cursor()
 sqli = "insert into indexxuite (tag,search_title,search_author,search_href,article_picture) values (%s,%s,%s,%s,%s)" #選擇資料表
 
+#刪除資料庫
+deletespli = "truncate table indexxuite"
+cur.execute(deletespli) 
+conn.commit()
 
 tag_list=['food','travel']
 url_list=[15,17]

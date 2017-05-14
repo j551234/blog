@@ -4,6 +4,7 @@
 import requests
 import MySQLdb
 from bs4 import BeautifulSoup
+import time
 import jieba
 import jieba.analyse
 
@@ -27,11 +28,11 @@ with open('positive.txt', 'r',encoding='UTF-8') as positive:
         pos.append(line.strip('\ufeff').strip())
     positive.close()
 
-with open('nagative.txt', 'r',encoding='UTF-8') as nagative:
-    nag=[]
-    for line in nagative:
-        nag.append(line.strip('\ufeff').strip())
-    nagative.close()
+with open('negative.txt', 'r',encoding='UTF-8') as negative:
+    neg=[]
+    for line in negative:
+        neg.append(line.strip('\ufeff').strip())
+    negative.close()
 
 with open('paid news.txt', 'r',encoding='UTF-8') as paidnews:
     paid=[]
@@ -40,7 +41,7 @@ with open('paid news.txt', 'r',encoding='UTF-8') as paidnews:
     paidnews.close()
     
 pos_set=set(pos)
-nag_set=set(nag)
+neg_set=set(neg)
 paid_set=set(paid)
 
 conn = MySQLdb.connect(host="localhost", user="root", passwd="", db="python",charset='utf8')#連結資料庫
@@ -65,7 +66,7 @@ def analyst(results):
         if len(main_article):
             sentence=main_article[0].select('span')    
             total_pos_count=0
-            total_nag_count=0
+            total_neg_count=0
             total_paid_count=0
             for line in sentence:
 
@@ -73,28 +74,31 @@ def analyst(results):
                 words=jieba.lcut(line2, cut_all=False)
                 words_set = set(words)
                 pos_intersection=words_set.intersection(pos_set)
-                nag_intersection=words_set.intersection(nag_set)
+                neg_intersection=words_set.intersection(neg_set)
                 paid_intersection=words_set.intersection(paid_set)
                 pos_count=len(pos_intersection)
-                nag_count=len(nag_intersection)
+                neg_count=len(neg_intersection)
                 paid_count=len(paid_intersection)
 
                 total_pos_count=total_pos_count+pos_count
-                total_nag_count=total_nag_count+nag_count
+                total_neg_count=total_neg_count+neg_count
                 total_paid_count=total_paid_count+paid_count
-            total_count = total_pos_count+total_nag_count+total_paid_count
+            total_count = total_pos_count+total_neg_count+total_paid_count
 
             print (xuite_id)
 
             if total_count==0:
                 Content_Analyst = "0"
             else:
+                total_pos_count=total_pos_count+1
+                total_count=total_count+2
                 Content_Analyst = format(total_pos_count/total_count*100 , '0.2f')
             cur.execute ("UPDATE xuite SET content_analyst=%s WHERE id='%s'" %  (Content_Analyst,xuite_id))
             conn.commit()
         else :
             cur.execute ("DELETE FROM xuite WHERE id='%s'" %  (xuite_id))
             conn.commit()
+        time.sleep(0.5)
 
 result=get()
 print (len(result))
