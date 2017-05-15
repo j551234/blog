@@ -129,31 +129,32 @@ p {
     border-radius: 6px;
     background-color: #f0f0f0;
 }
-.my-rating-4 {
+.detail {
    position: relative;
 }
-
-.my-rating-4 .percentBall1 .ballTitle {
+.detail .percentBall1 {
     position: absolute;
-    left: 60%;
-    bottom: 150%;
+    right: 12%;
+    bottom: 25%;
 }
-.my-rating-4 .percentBall1 svg.circliful {
+.detail .percentBall1 .ballTitle {
     position: absolute;
-    max-height: 110px;
-    left: 17%;
-    bottom: -60%;
 }
-.my-rating-4 .percentBall2 .ballTitle {
+.detail .percentBall1 svg.circliful {
     position: absolute;
-    left: 84%;
-    bottom: 150%;
+    height: 110px;
 }
-.my-rating-4 .percentBall2 svg.circliful {
+.detail .percentBall2 {
     position: absolute;
-    max-height: 110px;
-    left: 41%;
-    bottom: -60%;
+    right: 40%;
+    bottom: 25%;
+}
+.detail .percentBall2 .ballTitle {
+    position: absolute;
+}
+.detail .percentBall2 svg.circliful {
+    position: absolute;
+    height: 110px;
 }
 
 .jq-star {
