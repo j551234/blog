@@ -268,8 +268,7 @@ class resultController extends Controller {
 				if(count($rawDataMobile01)!=0)
 				{
 					
-					$mobile01data=$rawDataMobile01->paginate($pagenumber);
-					
+					$mobile01data=$rawDataMobile01->paginate($pagenumber);	
 
 				}
 				elseif($rawDataMobile01==[]) {
@@ -302,19 +301,19 @@ class resultController extends Controller {
 			
 			
 			if(count($pixnetdata)+count($xuitedata)+count($pttdata)+count($youtubedata)+count($mobile01data)==0)
-			{
-				 return view('notfound',['search'=> $search,'searchtype'=>$searchtype,'searchweb'=>$searchweb]);
-			}
-			else
-			{
-				  return view('result',['pixnetdata'=>$pixnetdata,
-					'xuitedata'=>$xuitedata,'pttdata'=>$pttdata,
-					'youtubedata'=>$youtubedata,'mobile01data'=>$mobile01data
-					,'whoIsTheBestDog'=>$whoIsTheBestDog,'search'=> $search,'searchtype'=>$searchtype,'searchweb'=>$searchweb]);
-			}
+				{
+					 return view('notfound',['search'=> $search,'searchtype'=>$searchtype,'searchweb'=>$searchweb]);
+				}
+			elseif(count($pixnetdata)+count($xuitedata)+count($pttdata)+count($youtubedata)+count($mobile01data)!=0)
+				{
+					  return view('result',['pixnetdata'=>$pixnetdata,
+						'xuitedata'=>$xuitedata,'pttdata'=>$pttdata,
+						'youtubedata'=>$youtubedata,'mobile01data'=>$mobile01data
+						,'whoIsTheBestDog'=>$whoIsTheBestDog,'search'=> $search,'searchtype'=>$searchtype,'searchweb'=>$searchweb]);
+				}
 
 			
-			}
+		}
 	public function popular (Request $request)
 			{	
 				$search = $request->input('search');
