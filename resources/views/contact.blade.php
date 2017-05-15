@@ -85,7 +85,7 @@
                 </div>
                 <div class="col-lg-4 text-center">
                     <i class="fa fa-facebook-official fa-3x sr-contact"></i>
-                    <p>MR. 中鑒者</p>
+                    <p><a href="https://www.facebook.com/MiddleRecommend">MR. 中鑒者</p>
                 </div>
             </div>
         </div>
