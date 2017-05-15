@@ -95,7 +95,7 @@ class resultController extends Controller {
 
 
 		   //      $search = $request->input('search');
-		 		// $resultdata = Pixnet::where('search_title','like',"%$search%")
+		 		// $resultdata = Pixnet::where('key_word','=',"$search")
 		 		// ->paginate(5);
 				$pixnetchange = pixnet::find($request->id);
 				return $pixnetchange->toJson();
@@ -174,20 +174,20 @@ class resultController extends Controller {
 
 				if($searchtype=='author')
 					{   
-						$rawDataPixnet=Pixnet::where('search_author','like',"%$search%");
-						$rawDataXuite=Xuite::where('search_author','like',"%$search%");
-						$rawDataPtt=Ptt::where('search_author','like',"%$search%");
-						$rawDataYoutube=Youtube::where('search_author','like',"%$search%");
-						$rawDataMobile01=Mobile01::where('search_author','like',"%$search%");
+						$rawDataPixnet=Pixnet::where('search_author','=',"$search");
+						$rawDataXuite=Xuite::where('search_author','=',"$search");
+						$rawDataPtt=Ptt::where('search_author','=',"$search");
+						$rawDataYoutube=Youtube::where('search_author','=',"$search");
+						$rawDataMobile01=Mobile01::where('search_author','=',"$search");
 					}
 				else
 					{
 						
-						$rawDataPixnet=Pixnet::where('search_title','like',"%$search%");
-						$rawDataXuite=Xuite::where('search_title','like',"%$search%");
-						$rawDataPtt=Ptt::where('search_title','like',"%$search%");
-						$rawDataYoutube=Youtube::where('search_title','like',"%$search%");
-						$rawDataMobile01=Mobile01::where('search_title','like',"%$search%");
+						$rawDataPixnet=Pixnet::where('key_word','=',"$search");
+						$rawDataXuite=Xuite::where('key_word','=',"$search");
+						$rawDataPtt=Ptt::where('key_word','=',"$search");
+						$rawDataYoutube=Youtube::where('key_word','=',"$search");
+						$rawDataMobile01=Mobile01::where('key_word','=',"$search");
 					}
 				if($searchweb!=null)
 
@@ -332,20 +332,20 @@ class resultController extends Controller {
 
 				if($searchtype=='author')
 					{   
-						$rawDataPixnet=Pixnet::where('search_author','like',"%$search%");
-						$rawDataXuite=Xuite::where('search_author','like',"%$search%");
-						$rawDataPtt=Ptt::where('search_author','like',"%$search%");
-						$rawDataYoutube=Youtube::where('search_author','like',"%$search%");
-						$rawDataMobile01=Mobile01::where('search_author','like',"%$search%");
+						$rawDataPixnet=Pixnet::where('search_author','=',"$search");
+						$rawDataXuite=Xuite::where('search_author','=',"$search");
+						$rawDataPtt=Ptt::where('search_author','=',"$search");
+						$rawDataYoutube=Youtube::where('search_author','=',"$search");
+						$rawDataMobile01=Mobile01::where('search_author','=',"$search");
 					}
 				else
 					{
 						
-						$rawDataPixnet=Pixnet::where('search_title','like',"%$search%");
-						$rawDataXuite=Xuite::where('search_title','like',"%$search%");
-						$rawDataPtt=Ptt::where('search_title','like',"%$search%");
-						$rawDataYoutube=Youtube::where('search_title','like',"%$search%");
-						$rawDataMobile01=Mobile01::where('search_title','like',"%$search%");
+						$rawDataPixnet=Pixnet::where('key_word','=',"$search");
+						$rawDataXuite=Xuite::where('key_word','=',"$search");
+						$rawDataPtt=Ptt::where('key_word','=',"$search");
+						$rawDataYoutube=Youtube::where('key_word','=',"$search");
+						$rawDataMobile01=Mobile01::where('key_word','=',"$search");
 					}
 				if($searchweb!=null)
 
@@ -493,20 +493,20 @@ class resultController extends Controller {
 
 				if($searchtype=='author')
 					{   
-						$rawDataPixnet=Pixnet::where('search_author','like',"%$search%");
-						$rawDataXuite=Xuite::where('search_author','like',"%$search%");
-						$rawDataPtt=Ptt::where('search_author','like',"%$search%");
-						$rawDataYoutube=Youtube::where('search_author','like',"%$search%");
-						$rawDataMobile01=Mobile01::where('search_author','like',"%$search%");
+						$rawDataPixnet=Pixnet::where('search_author','=',"$search");
+						$rawDataXuite=Xuite::where('search_author','=',"$search");
+						$rawDataPtt=Ptt::where('search_author','=',"$search");
+						$rawDataYoutube=Youtube::where('search_author','=',"$search");
+						$rawDataMobile01=Mobile01::where('search_author','=',"$search");
 					}
 				else
 					{
 						
-						$rawDataPixnet=Pixnet::where('search_title','like',"%$search%");
-						$rawDataXuite=Xuite::where('search_title','like',"%$search%");
-						$rawDataPtt=Ptt::where('search_title','like',"%$search%");
-						$rawDataYoutube=Youtube::where('search_title','like',"%$search%");
-						$rawDataMobile01=Mobile01::where('search_title','like',"%$search%");
+						$rawDataPixnet=Pixnet::where('key_word','=',"$search");
+						$rawDataXuite=Xuite::where('key_word','=',"$search");
+						$rawDataPtt=Ptt::where('key_word','=',"$search");
+						$rawDataYoutube=Youtube::where('key_word','=',"$search");
+						$rawDataMobile01=Mobile01::where('key_word','=',"$search");
 					}
 				if($searchweb!=null)
 
@@ -655,20 +655,20 @@ class resultController extends Controller {
 
 				if($searchtype=='author')
 					{   
-						$rawDataPixnet=Pixnet::where('search_author','like',"%$search%");
-						$rawDataXuite=Xuite::where('search_author','like',"%$search%");
-						$rawDataPtt=Ptt::where('search_author','like',"%$search%");
-						$rawDataYoutube=Youtube::where('search_author','like',"%$search%");
-						$rawDataMobile01=Mobile01::where('search_author','like',"%$search%");
+						$rawDataPixnet=Pixnet::where('search_author','=',"$search");
+						$rawDataXuite=Xuite::where('search_author','=',"$search");
+						$rawDataPtt=Ptt::where('search_author','=',"$search");
+						$rawDataYoutube=Youtube::where('search_author','=',"$search");
+						$rawDataMobile01=Mobile01::where('search_author','=',"$search");
 					}
 				else
 					{
 						
-						$rawDataPixnet=Pixnet::where('search_title','like',"%$search%");
-						$rawDataXuite=Xuite::where('search_title','like',"%$search%");
-						$rawDataPtt=Ptt::where('search_title','like',"%$search%");
-						$rawDataYoutube=Youtube::where('search_title','like',"%$search%");
-						$rawDataMobile01=Mobile01::where('search_title','like',"%$search%");
+						$rawDataPixnet=Pixnet::where('key_word','=',"$search");
+						$rawDataXuite=Xuite::where('key_word','=',"$search");
+						$rawDataPtt=Ptt::where('key_word','=',"$search");
+						$rawDataYoutube=Youtube::where('key_word','=',"$search");
+						$rawDataMobile01=Mobile01::where('key_word','=',"$search");
 					}
 				if($searchweb!=null)
 

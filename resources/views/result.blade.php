@@ -150,7 +150,7 @@
             <div class="col-md-7 ">
                 <a href="{{$data->search_href}}" target="_blank">
              
-                 <img class="img-result" src="{{$data->article_picture}}" alt="圖片未能抓取" onerror="this.src='./img/nodoge.jpg'">
+                 <img class="img-result" src="{{$data->article_picture}}" alt="圖片未能抓取" onerror="this.src='./img/pixnet.jpg'">
 
                 </a>
                 
@@ -231,7 +231,7 @@
         <div class="row">
             <div class="col-md-7">
                 <a href="{{$data->search_href}}" target="_blank">
-                    <img class="img-result" src="{{$data->article_picture}}" alt="圖片未能抓取" onerror="this.src='./img/nodoge.jpg'">
+                    <img class="img-result" src="{{$data->article_picture}}" alt="圖片未能抓取" onerror="this.src='./img/xuite.jpg'">
 
                 </a>
             </div>
@@ -380,7 +380,7 @@
             <div class="col-md-7">
                <a href="{{$data->search_href}}" target="_blank">
 
-                    <img class="img-result" src="{{$data->article_picture}}" alt="圖片未能抓取" onerror="this.src='./img/nodoge.jpg'">
+                    <img class="img-result" src="{{$data->article_picture}}" alt="圖片未能抓取" onerror="this.src='./img/youtube.jpg'">
 
                 </a>
                
@@ -455,7 +455,7 @@
             <div class="col-md-7">
                <a href="{{$data->search_href}}" target="_blank">
 
-                    <img class="img-result" src="{{$data->article_picture}}" alt="圖片未能抓取" onerror="this.src='./img/nodoge.jpg'">
+                    <img class="img-result" src="{{$data->article_picture}}" alt="圖片未能抓取" onerror="this.src='./img/mobile01.jpg'">
 
                 </a>
                
