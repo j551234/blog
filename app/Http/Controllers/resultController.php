@@ -623,7 +623,9 @@ class resultController extends Controller {
 			 			$whoIsTheBestDog=$mobile01data;
 			 			break;
 			 		default:
-			 			exit("fuck");
+			 		$whoIsTheBestDog=$youtubedata;
+
+			 			
 			 			break;
 			 	}
 
