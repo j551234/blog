@@ -18,7 +18,7 @@ sqli = "insert into pixnet (key_word,search_title,search_subtitle,article_pictur
 
 x = 1
 for  x  in range(3*x-2,3*x+1) :    
-    payload={'q':url_key_word,'page':x}
+    payload={'q':chinese_key_word,'page':x}
     res=requests.get("https://www.pixnet.net/searcharticle",params=payload)
     res.encoding='utf-8'
     soup = BeautifulSoup (res.text, "html5lib")
