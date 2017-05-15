@@ -623,7 +623,7 @@ class resultController extends Controller {
 			 			$whoIsTheBestDog=$mobile01data;
 			 			break;
 			 		default:
-			 		$whoIsTheBestDog=$youtubedata;
+			 			$whoIsTheBestDog=$youtubedata;
 
 			 			
 			 			break;
