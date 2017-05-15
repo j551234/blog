@@ -612,13 +612,13 @@
                let fontcolor
                let backgroundColor
                console.log(percent)
-               if (percent >= 75) {
+               if (percent > 80 || percent <= 20) {
                    foregroundColor = "red"
                    fontcolor = "red"
-               } else if (percent < 75 && percent > 50) {
+               } else if ((percent <= 80 && percent > 60) || (percent <= 40 && percent >20)) {
                    foregroundColor = "orange"
                    fontcolor = "orange"
-               } else if (percent <=50 && percent > 0) {
+               } else if (percent <= 60 && percent > 40 ) {
                    foregroundColor = "green"
                    fontcolor = "green"
                } else if (percent == 0) {   
