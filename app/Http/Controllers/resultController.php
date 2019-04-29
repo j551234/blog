@@ -385,7 +385,7 @@ class resultController extends Controller {
 				}
 				$number=array(count($rawDataPixnet),count($rawDataXuite),count($rawDataPtt),
 					count($rawDataYoutube),count($rawDataMobile01));
-				$whoIsTheBestDog=array_search(max($number),$number);		
+				$max_number=array_search(max($number),$number);		
 				
 
 
@@ -444,24 +444,24 @@ class resultController extends Controller {
 					$mobile01data=[];
 				}
 
-			 	switch ($whoIsTheBestDog) {
+			 	switch ($max_number) {
 			 		case 0:
-			 			$whoIsTheBestDog=$pixnetdata;
+			 			$max_number=$pixnetdata;
 			 			break;
 			 		case 1:
-			 			$whoIsTheBestDog=$xuitedata;
+			 			$max_number=$xuitedata;
 			 			break;
 			 		case 2:
-			 			$whoIsTheBestDog=$pttdata;
+			 			$max_number=$pttdata;
 			 			break;
 			 		case 3:
-			 			$whoIsTheBestDog=$youtubedata;
+			 			$max_number=$youtubedata;
 			 			break;
 			 		case 4:
-			 			$whoIsTheBestDog=$mobile01data;
+			 			$max_number=$mobile01data;
 			 			break;
 			 		default:
-			 			exit("fuck");
+			 			exit("null");
 			 			break;
 
 			 	}
@@ -469,7 +469,7 @@ class resultController extends Controller {
 			 		return view('result',['pixnetdata'=>$pixnetdata,
 					'xuitedata'=>$xuitedata,'pttdata'=>$pttdata,
 					'youtubedata'=>$youtubedata,'mobile01data'=>$mobile01data
-					,'whoIsTheBestDog'=>$whoIsTheBestDog,'search'=> $search,'searchtype'=>$searchtype,'searchweb'=>$searchweb]);
+					,'max_number'=>$max_number,'search'=> $search,'searchtype'=>$searchtype,'searchweb'=>$searchweb]);
 
 			 }
 
@@ -546,7 +546,7 @@ class resultController extends Controller {
 				}
 				$number=array(count($rawDataPixnet),count($rawDataXuite),count($rawDataPtt),
 					count($rawDataYoutube),count($rawDataMobile01));
-				$whoIsTheBestDog=array_search(max($number),$number);		
+				$max_number=array_search(max($number),$number);		
 				
 
 
@@ -605,24 +605,24 @@ class resultController extends Controller {
 					$mobile01data=[];
 				}
 
-			 	switch ($whoIsTheBestDog) {
+			 	switch ($max_number) {
 			 		case 0:
-			 			$whoIsTheBestDog=$pixnetdata;
+			 			$max_number=$pixnetdata;
 			 			break;
 			 		case 1:
-			 			$whoIsTheBestDog=$xuitedata;
+			 			$max_number=$xuitedata;
 			 			break;
 			 		case 2:
-			 			$whoIsTheBestDog=$pttdata;
+			 			$max_number=$pttdata;
 			 			break;
 			 		case 3:
-			 			$whoIsTheBestDog=$youtubedata;
+			 			$max_number=$youtubedata;
 			 			break;
 			 		case 4:
-			 			$whoIsTheBestDog=$mobile01data;
+			 			$max_number=$mobile01data;
 			 			break;
 			 		default:
-			 			$whoIsTheBestDog=$youtubedata;
+			 			$max_number=$youtubedata;
 
 			 			
 			 			break;
@@ -634,7 +634,7 @@ class resultController extends Controller {
 				return view('result',['pixnetdata'=>$pixnetdata,
 					'xuitedata'=>$xuitedata,'pttdata'=>$pttdata,
 					'youtubedata'=>$youtubedata,'mobile01data'=>$mobile01data
-					,'whoIsTheBestDog'=>$whoIsTheBestDog,'search'=> $search,'searchtype'=>$searchtype,'searchweb'=>$searchweb]);
+					,'max_number'=>$max_number,'search'=> $search,'searchtype'=>$searchtype,'searchweb'=>$searchweb]);
 
 			}
 			public function random(Request $request)
@@ -708,7 +708,7 @@ class resultController extends Controller {
 				}
 				$number=array(count($rawDataPixnet),count($rawDataXuite),count($rawDataPtt),
 					count($rawDataYoutube),count($rawDataMobile01));
-				$whoIsTheBestDog=array_search(max($number),$number);		
+				$max_number=array_search(max($number),$number);		
 				
 
 
@@ -759,24 +759,24 @@ class resultController extends Controller {
 					$mobile01data=[];
 				}
 
-			 	switch ($whoIsTheBestDog) {
+			 	switch ($max_number) {
 			 		case 0:
-			 			$whoIsTheBestDog=$pixnetdata;
+			 			$max_number=$pixnetdata;
 			 			break;
 			 		case 1:
-			 			$whoIsTheBestDog=$xuitedata;
+			 			$max_number=$xuitedata;
 			 			break;
 			 		case 2:
-			 			$whoIsTheBestDog=$pttdata;
+			 			$max_number=$pttdata;
 			 			break;
 			 		case 3:
-			 			$whoIsTheBestDog=$youtubedata;
+			 			$max_number=$youtubedata;
 			 			break;
 			 		case 4:
-			 			$whoIsTheBestDog=$mobile01data;
+			 			$max_number=$mobile01data;
 			 			break;
 			 		default:
-			 			$whoIsTheBestDog=$mobile01data;
+			 			$max_number=$mobile01data;
 			 			break;
 			 	}
 
@@ -787,7 +787,7 @@ class resultController extends Controller {
 				return view('result',['pixnetdata'=>$pixnetdata,
 					'xuitedata'=>$xuitedata,'pttdata'=>$pttdata,
 					'youtubedata'=>$youtubedata,'mobile01data'=>$mobile01data
-					,'whoIsTheBestDog'=>$whoIsTheBestDog,'search'=> $search,'searchtype'=>$searchtype,'searchweb'=>$searchweb]);
+					,'max_number'=>$max_number,'search'=> $search,'searchtype'=>$searchtype,'searchweb'=>$searchweb]);
 
 			}
 
