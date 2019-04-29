@@ -1,2 +1,2 @@
 #中鑒者
-![首頁](h圖片1.png)
+![首頁](https://github.com/j551234/blog/blob/new/%E5%9C%96%E7%89%871.png)
